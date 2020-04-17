@@ -11,7 +11,7 @@ public class Crop {
         daysUntilHarvest = tempDaysUntilHarvest;
     }
 
-    public void Harvest() {
+    public void harvest() {
         //TO DO: implement me
     }
 }
