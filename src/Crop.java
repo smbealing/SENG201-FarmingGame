@@ -1,9 +1,10 @@
-public class Crop {
+public abstract class Crop {
 
     private double purchasingPrice;
     private double sellingPrice;
     private int daysUntilHarvest;
-    private int thirstLevel = 0;
+    private int thirstLevel;
+    private String name;
 
     public Crop(double tempPurchasingPrice, double tempSellingPrice, int tempDaysUntilHarvest) {
         purchasingPrice = tempPurchasingPrice;
