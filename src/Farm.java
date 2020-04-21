@@ -3,15 +3,16 @@ import java.util.ArrayList;
 public abstract class Farm {
 
     private String name;
-    public String type;
+    private String type;
     private Farmer farmer;
     private double moneyAvailable = 20;
     private ArrayList<Crop> crops;
     private ArrayList<Animal> animals;
 
-    public Farm(String tempName, Farmer tempFarmer) {
+    public Farm(String tempName, Farmer tempFarmer, String tempType) {
         name = tempName;
         farmer = tempFarmer;
+        type = tempType;
         crops = new ArrayList<Crop>();
         animals = new ArrayList<Animal>();
     }
@@ -22,10 +23,6 @@ public abstract class Farm {
 
     public String getName() {
         return name;
-    }
-
-    public void setType(String tempType) {
-        type = tempType;
     }
 
     public void addCrop(Crop crop) {
