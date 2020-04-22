@@ -1,4 +1,5 @@
-package GameEvironment;
+package GameEnvironment;
+
 public class BrokenFence extends RandomEvent {
 
 }

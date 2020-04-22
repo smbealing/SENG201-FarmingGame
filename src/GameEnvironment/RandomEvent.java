@@ -1,4 +1,4 @@
-package GameEvironment;
+package GameEnvironment;
 import java.util.Random;
 
 public abstract class RandomEvent {

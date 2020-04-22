@@ -1,4 +1,4 @@
-package GameEvironment;
+package GameEnvironment;
 
 public class GameState {
 

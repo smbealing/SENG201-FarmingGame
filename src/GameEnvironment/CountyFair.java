@@ -1,4 +1,4 @@
-package GameEvironment;
+package GameEnvironment;
 import java.util.ArrayList;
 
 import Animal.Animal;
