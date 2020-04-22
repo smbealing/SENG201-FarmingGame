@@ -14,6 +14,26 @@ public abstract class Crop {
         daysUntilHarvest = tempDaysUntilHarvest;
         thirstLevel = tempThirstLevel;
     }
+    
+    public String getName() {
+    	return name;
+    }
+    
+    public double getPurchasingPrice() {
+    	return purchasingPrice;
+    }
+    
+    public double getSellingPrice() {
+    	return sellingPrice;
+    }
+    
+    public int getDaysUntilHarvest() {
+    	return daysUntilHarvest;
+    }
+    
+    public int getThirstLevel() {
+    	return thirstLevel;
+    }
 
     public void harvest() {
         //TO DO: implement me

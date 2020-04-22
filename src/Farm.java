@@ -5,7 +5,7 @@ public abstract class Farm {
     private String name;
     private String type;
     private Farmer farmer;
-    private double moneyAvailable = 20;
+    private double moneyAvailable;
     private ArrayList<Crop> crops;
     private ArrayList<Animal> animals;
 
@@ -23,6 +23,18 @@ public abstract class Farm {
 
     public String getName() {
         return name;
+    }
+    
+    public String getType() {
+    	return type;
+    }
+    
+    public Farmer getFarmer() {
+    	return farmer;
+    }
+    
+    public double getMoneyAvailable() {
+    	return moneyAvailable;
     }
 
     public void addCrop(Crop crop) {
