@@ -6,6 +6,9 @@ public abstract class Crop {
     private double sellingPrice;
     private int daysUntilHarvest;
     private int thirstLevel;
+    private int currentGrowthLevel = 0;
+    private boolean planted = false;
+    private int maxThirstLevel = 10;
 
 
     public Crop(String tempName, double tempPurchasingPrice, double tempSellingPrice, int tempDaysUntilHarvest, int tempThirstLevel) {
@@ -34,6 +37,22 @@ public abstract class Crop {
     
     public int getThirstLevel() {
     	return thirstLevel;
+    }
+
+    public int getMaxThirstLevel() {
+        return maxThirstLevel;
+    }
+
+    public int getCurrentGrowthLevel() {
+        return currentGrowthLevel;
+    }
+
+    public boolean getPlanted() {
+        return planted;
+    }
+
+    public void setPlanted() {
+        planted = true;
     }
 
     public void harvest() {

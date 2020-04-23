@@ -14,7 +14,6 @@ public class Farmer {
         name = tempName;
     }
 
-
     public void setAge(int tempAge) {
         age = tempAge;
     }
@@ -23,15 +22,19 @@ public class Farmer {
         return name;
     }
 
-
     public int getAge() {
         return age;
     }
 
-    public static void main(String[] args) {
-        Farmer adam = new Farmer("Adam",  21);
-        System.out.println("Farmer: " + adam.getName() + ". Age: " + adam.getAge());
+    public int getActionCount() {
+        return actionCount;
     }
+
+    public void reduceActionCount() {
+        actionCount -= 1;
+    }
+
+
 
 
 }

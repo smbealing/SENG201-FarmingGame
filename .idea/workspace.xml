@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="639218dd-4070-46d6-ab68-92dd20931f7a" name="Default Changelist" comment="" />
+    <list default="true" id="639218dd-4070-46d6-ab68-92dd20931f7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Action/FarmerAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Action/FeedAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Action/HarvestCrop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Action/PlayWithAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Action/TendToCrop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Action/TendToFarmLand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Crop/Crop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Crop/Crop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Crop/DragonFruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Crop/DragonFruit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Farm/Farmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Farm/Farmer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +25,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1aeFx3OKVeqrLmvUSwMBpLU6Hx6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,11 +37,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Farm">
+    <configuration name="Farm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Farm" />
+      <module name="Farmiza" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Farmer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Farmer" />
       <module name="Farmiza" />
@@ -36,6 +59,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Farm" />
         <item itemvalue="Application.Farmer" />
       </list>
     </recent_temporary>
@@ -58,37 +82,45 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="243" y="57" key="#Project_Structure/0.23.1280.777@0.23.1280.777" timestamp="1587088467559" />
-    <state width="1218" height="229" key="GridCell.Tab.0.bottom" timestamp="1587089679358">
+    <state width="1218" height="184" key="GridCell.Tab.0.bottom" timestamp="1587269917031">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="229" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587089679358" />
-    <state width="1218" height="229" key="GridCell.Tab.0.center" timestamp="1587089679355">
+    <state width="1218" height="184" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587269917031" />
+    <state width="1218" height="184" key="GridCell.Tab.0.center" timestamp="1587269917030">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="229" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1587089679355" />
-    <state width="1218" height="229" key="GridCell.Tab.0.left" timestamp="1587089679354">
+    <state width="1218" height="184" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1587269917030" />
+    <state width="1218" height="184" key="GridCell.Tab.0.left" timestamp="1587269917026">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="229" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1587089679354" />
-    <state width="1218" height="229" key="GridCell.Tab.0.right" timestamp="1587089679356">
+    <state width="1218" height="184" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1587269917026" />
+    <state width="1218" height="184" key="GridCell.Tab.0.right" timestamp="1587269917030">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="229" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1587089679356" />
-    <state width="1218" height="229" key="GridCell.Tab.1.bottom" timestamp="1587089679361">
+    <state width="1218" height="184" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1587269917030" />
+    <state width="1218" height="229" key="GridCell.Tab.1.bottom" timestamp="1587100825669">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="229" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587089679361" />
-    <state width="1218" height="229" key="GridCell.Tab.1.center" timestamp="1587089679359">
+    <state width="1218" height="229" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1587100825669" />
+    <state width="1218" height="229" key="GridCell.Tab.1.center" timestamp="1587100825668">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="229" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1587089679359" />
-    <state width="1218" height="229" key="GridCell.Tab.1.left" timestamp="1587089679359">
+    <state width="1218" height="229" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1587100825668" />
+    <state width="1218" height="229" key="GridCell.Tab.1.left" timestamp="1587100825667">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="229" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1587089679359" />
-    <state width="1218" height="229" key="GridCell.Tab.1.right" timestamp="1587089679360">
+    <state width="1218" height="229" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1587100825667" />
+    <state width="1218" height="229" key="GridCell.Tab.1.right" timestamp="1587100825669">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="229" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1587089679360" />
+    <state width="1218" height="229" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1587100825669" />
+    <state x="322" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1587613295461">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="322" y="224" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1587613295461" />
+    <state x="230" y="23" width="909" height="777" key="dock-window-1" timestamp="1587614519879">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="230" y="23" width="909" height="777" key="dock-window-1/0.23.1280.777@0.23.1280.777" timestamp="1587614519879" />
   </component>
 </project>
