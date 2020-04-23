@@ -1,4 +1,5 @@
 package Item;
+
 public abstract class AnimalFood extends Item {
 	
 	private int healthBoost;
