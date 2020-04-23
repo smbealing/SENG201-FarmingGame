@@ -1,9 +1,6 @@
 package Action;
 
-import Farm.Farm;
-import Farm.Farmer;
-
-import java.util.Scanner;
+import GameEnvironment.GameState;
 
 public class TendToCrop extends FarmerAction {
 

@@ -2,6 +2,8 @@ package Action;
 
 import java.util.Scanner;
 
+import GameEnvironment.GameState;
+
 public class TendToFarmLand extends FarmerAction {
 
     public void perform(GameState state) {

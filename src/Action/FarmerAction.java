@@ -2,6 +2,8 @@ package Action;
 
 import java.util.Scanner;
 
+import GameEnvironment.GameState;
+
 public class FarmerAction {
     protected Scanner s;
     private String farmerActions = 	"1. Tend to Crops\n" +
