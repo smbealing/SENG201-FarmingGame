@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import GameEnvironment.GameState;
 
-public class FarmerAction {
+public class FarmerAction extends Action {
     protected Scanner s;
     private String farmerActions = 	"1. Tend to Crops\n" +
             "2. Feed Animals\n" +

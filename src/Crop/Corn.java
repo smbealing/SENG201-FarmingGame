@@ -3,6 +3,6 @@ public class Corn extends Crop {
 
 
     public Corn(){
-        super("Corn", 0.5, 1.5, 4, 1);
+        super("Corn", 0.50, 1.50, 4, 1);
     }
 }

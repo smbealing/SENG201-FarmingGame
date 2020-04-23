@@ -10,15 +10,14 @@ public abstract class Farm {
     private String type;
     private Farmer farmer;
     private double moneyAvailable;
-    private ArrayList<Crop> crops;
-    private ArrayList<Animal> animals;
+    private int maintenanceLevel = 1;
+
 
     public Farm(String tempName, Farmer tempFarmer, String tempType) {
         name = tempName;
         farmer = tempFarmer;
         type = tempType;
-        crops = new ArrayList<Crop>();
-        animals = new ArrayList<Animal>();
+
     }
 
     public void setName(String tempName) {
@@ -41,12 +40,12 @@ public abstract class Farm {
     	return moneyAvailable;
     }
 
-    public void addCrop(Crop crop) {
-        crops.add(crop);
+    public int getMaintenanceLevel() {
+        return maintenanceLevel;
     }
 
-    public void addAnimal(Animal animal) {
-        animals.add(animal);
+    public void setMaintenanceLevel(int tempMaintenanceLevel) {
+        maintenanceLevel = tempMaintenanceLevel;
     }
 
 
