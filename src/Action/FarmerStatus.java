@@ -2,7 +2,7 @@ package Action;
 
 import GameEnvironment.GameState;
 
-public class FarmerStatus {
+public class FarmerStatus extends Action {
 
 
     public void perform(GameState state) {
