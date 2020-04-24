@@ -1,8 +1,10 @@
-package GameEnvironment;
+package GameEnvironment.RandomEvent;
 import java.util.ArrayList;
 
 import Animal.Animal;
 import Crop.Crop;
+import GameEnvironment.GameEnvironment;
+import GameEnvironment.RandomEvent.RandomEvent;
 
 public class CountyFair extends RandomEvent {
 	

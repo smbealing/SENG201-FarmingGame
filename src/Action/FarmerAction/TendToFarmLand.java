@@ -1,14 +1,15 @@
-package Action;
+package Action.FarmerAction;
 
 import java.util.Scanner;
 
+import Action.Action;
 import GameEnvironment.GameState;
 
-public class FeedAnimal extends FarmerAction {
+public class TendToFarmLand  {
 
     public void perform(GameState state) {
         if (state.farmer.getActionCount() > 0) {
-            // Do something
+            state.farm.setMaintenanceLevel(1);
             state.farmer.reduceActionCount();
 
 
@@ -18,6 +19,6 @@ public class FeedAnimal extends FarmerAction {
     }
 
     private void returnBack(GameState state) {
-        super.perform(state);
+//        super.perform(state);
     }
 }

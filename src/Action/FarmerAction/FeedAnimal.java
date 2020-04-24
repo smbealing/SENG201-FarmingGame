@@ -1,8 +1,11 @@
-package Action;
+package Action.FarmerAction;
 
+import java.util.Scanner;
+
+import Action.Action;
 import GameEnvironment.GameState;
 
-public class TendToCrop extends FarmerAction {
+public class FeedAnimal {
 
     public void perform(GameState state) {
         if (state.farmer.getActionCount() > 0) {
@@ -16,6 +19,6 @@ public class TendToCrop extends FarmerAction {
     }
 
     private void returnBack(GameState state) {
-        super.perform(state);
+//        super.perform(state);
     }
 }

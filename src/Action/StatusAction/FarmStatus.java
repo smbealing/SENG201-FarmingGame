@@ -1,12 +1,12 @@
-package Action;
+package Action.StatusAction;
 
+import Action.Action;
 import GameEnvironment.GameState;
 
-public class FarmerStatus {
-
+public class FarmStatus {
 
     public void perform(GameState state) {
-        System.out.println("Your farmer has " + state.farmer.getActionCount() + " action(s) left today");
+        System.out.println("Your farm has " + state.totalMoney + " available");
 
         returnBack(state);
     }

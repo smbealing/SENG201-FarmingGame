@@ -1,13 +1,15 @@
-package Action;
+package Action.FarmerAction;
 
 import java.util.Scanner;
 
+import Action.Action;
 import Animal.Animal;
 import GameEnvironment.GameState;
 import Item.Speech;
 import Item.Warmth;
 
-public class PlayWithAnimal extends FarmerAction {
+public class PlayWithAnimal {
+    protected Scanner s;
 
     public void perform(GameState state) {
         if (state.farmer.getActionCount() > 0) {
@@ -70,7 +72,7 @@ public class PlayWithAnimal extends FarmerAction {
 
 
     private void returnBack(GameState state) {
-        super.perform(state);
+//        super.perform(state);
     }
 
 }

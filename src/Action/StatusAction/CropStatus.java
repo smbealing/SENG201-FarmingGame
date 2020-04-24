@@ -1,7 +1,8 @@
-package Action;
+package Action.StatusAction;
 
 import java.util.Scanner;
 
+import Action.Action;
 import GameEnvironment.GameState;
 
 public class CropStatus {

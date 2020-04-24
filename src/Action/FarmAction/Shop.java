@@ -1,5 +1,6 @@
-package Action;
+package Action.FarmAction;
 
+import Action.Action;
 import GameEnvironment.GameState;
 
 public class Shop extends Action {

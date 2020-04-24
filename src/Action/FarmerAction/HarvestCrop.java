@@ -1,11 +1,12 @@
-package Action;
+package Action.FarmerAction;
 
 
+import Action.Action;
 import GameEnvironment.GameState;
 import Crop.Crop;
 
 
-public class HarvestCrop extends FarmerAction {
+public class HarvestCrop  {
 
     public void perform(GameState state) {
         if (state.farmer.getActionCount() > 0) {
@@ -28,6 +29,6 @@ public class HarvestCrop extends FarmerAction {
     }
 
     private void returnBack(GameState state) {
-        super.perform(state);
+//        super.perform(state);
     }
 }

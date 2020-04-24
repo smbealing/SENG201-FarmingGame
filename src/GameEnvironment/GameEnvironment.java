@@ -3,14 +3,18 @@ package GameEnvironment;
 //import java.util.ArrayList;
 import java.util.Scanner;
 
-import Action.NextDay;
-import Action.Shop;
+import Action.FarmAction.NextDay;
+import Action.FarmAction.Shop;
 import Farm.CityFarm;
 import Farm.Farm;
 import Farm.Farmer;
 import Farm.HardcoreFarm;
 import Farm.NormalFarm;
 import Farm.TropicalFarm;
+import Action.StatusAction.AnimalStatus;
+import Action.StatusAction.FarmStatus;
+import Action.StatusAction.FarmerStatus;
+import Action.StatusAction.CropStatus;
 
 
 public class GameEnvironment {
@@ -124,16 +128,16 @@ public class GameEnvironment {
 				case 3:
 					switch (state.getOption(5, statusOptions)) {
 						case 1:
-		//					FarmerStatus.perform(state);
+							new FarmerStatus().perform(state);
 							break;
 						case 2:
-		//					FarmStatus.perform(state);
+							new FarmStatus().perform(state);
 							break;
 						case 3:
-		//					CropStatus.perform(state);
+							new CropStatus().perform(state);
 							break;
 						case 4:
-		//					AnimalStatus.perform(state);
+							new AnimalStatus().perform(state);
 							break;
 					}
 					break;

@@ -1,5 +1,6 @@
-package Action;
+package Action.FarmAction;
 
+import Action.Action;
 import Animal.Animal;
 import Crop.Crop;
 import GameEnvironment.GameState;
