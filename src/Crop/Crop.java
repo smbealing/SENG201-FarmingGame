@@ -55,7 +55,4 @@ public abstract class Crop {
         planted = true;
     }
 
-    public void harvest() {
-        //TO DO: implement me
-    }
 }

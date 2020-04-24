@@ -8,7 +8,7 @@ public class TendToFarmLand extends FarmerAction {
 
     public void perform(GameState state) {
         if (state.farmer.getActionCount() > 0) {
-            // Do something
+            state.farm.setMaintenanceLevel(1);
             state.farmer.reduceActionCount();
 
 

@@ -34,5 +34,9 @@ public abstract class Animal {
 	public int getHappiness() {
 		return happiness;
 	}
+
+	public void increaseHappiness(int amount) {
+		happiness += amount;
+	}
 	
 }

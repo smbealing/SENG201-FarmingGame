@@ -9,7 +9,6 @@ public abstract class Farm {
     private String name;
     private String type;
     private Farmer farmer;
-    private double moneyAvailable;
     private int maintenanceLevel = 1;
 
 
@@ -34,10 +33,6 @@ public abstract class Farm {
     
     public Farmer getFarmer() {
     	return farmer;
-    }
-    
-    public double getMoneyAvailable() {
-    	return moneyAvailable;
     }
 
     public int getMaintenanceLevel() {
