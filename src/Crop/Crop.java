@@ -1,4 +1,5 @@
 package Crop;
+
 public abstract class Crop {
 
     private String name;
@@ -6,9 +7,10 @@ public abstract class Crop {
     private double sellingPrice;
     private int daysUntilHarvest;
     private int thirstLevel;
-    private int currentGrowthLevel = 0;
-    private boolean planted = false;
     private int maxThirstLevel = 10;
+    
+    public boolean planted = false;
+    public int currentGrowthLevel = 0;
 
 
     public Crop(String tempName, double tempPurchasingPrice, double tempSellingPrice, int tempDaysUntilHarvest, int tempThirstLevel) {
@@ -53,6 +55,14 @@ public abstract class Crop {
 
     public void setPlanted() {
         planted = true;
+    }
+    
+    public void increaseThirstLevel() {   	
+    	if (thirstLevel != 10) { thirstLevel += 1;}
+    }
+    
+    public void decreaseThirstLevel() {
+    	thirstLevel = 0;
     }
 
 }
