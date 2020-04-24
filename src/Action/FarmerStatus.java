@@ -2,7 +2,8 @@ package Action;
 
 import GameEnvironment.GameState;
 
-public class FarmerStatus extends ViewStatus {
+public class FarmerStatus {
+
 
     public void perform(GameState state) {
         System.out.println("Your farmer has " + state.farmer.getActionCount() + " action(s) left today");
@@ -11,6 +12,6 @@ public class FarmerStatus extends ViewStatus {
     }
 
     private void returnBack(GameState state) {
-        super.perform(state);
+//        super.perform(state);
     }
 }

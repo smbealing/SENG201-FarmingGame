@@ -2,7 +2,7 @@ package Action;
 
 import GameEnvironment.GameState;
 
-public class FarmStatus extends ViewStatus {
+public class FarmStatus {
 
     public void perform(GameState state) {
         System.out.println("Your farm has " + state.totalMoney + " available");
@@ -11,6 +11,6 @@ public class FarmStatus extends ViewStatus {
     }
 
     private void returnBack(GameState state) {
-        super.perform(state);
+//        super.perform(state);
     }
 }

@@ -5,7 +5,8 @@ import java.util.Scanner;
 import GameEnvironment.GameState;
 import Animal.Animal;
 
-public class AnimalStatus extends ViewStatus {
+public class AnimalStatus {
+    protected Scanner s;
 
     public void perform(GameState state) {
 
@@ -40,6 +41,6 @@ public class AnimalStatus extends ViewStatus {
     }
 
     private void returnBack(GameState state) {
-        super.perform(state);
+//        super.perform(state);
     }
 }

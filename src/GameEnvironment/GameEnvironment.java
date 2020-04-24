@@ -12,6 +12,7 @@ import Farm.HardcoreFarm;
 import Farm.NormalFarm;
 import Farm.TropicalFarm;
 
+
 public class GameEnvironment {
 	
 	private GameState state;
@@ -123,16 +124,16 @@ public class GameEnvironment {
 				case 3:
 					switch (state.getOption(5, statusOptions)) {
 						case 1:
-		//					.perform(state);
+		//					FarmerStatus.perform(state);
 							break;
 						case 2:
-		//					.perform(state);
+		//					FarmStatus.perform(state);
 							break;
 						case 3:
-		//					.perform(state);
+		//					CropStatus.perform(state);
 							break;
 						case 4:
-		//					.perform(state);
+		//					AnimalStatus.perform(state);
 							break;
 					}
 					break;

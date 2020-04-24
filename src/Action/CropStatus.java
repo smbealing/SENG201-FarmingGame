@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 import GameEnvironment.GameState;
 
-public class CropStatus extends ViewStatus {
+public class CropStatus {
+    protected Scanner s;
 
     public void perform(GameState state) {
 
@@ -44,6 +45,6 @@ public class CropStatus extends ViewStatus {
     }
 
     private void returnBack(GameState state) {
-        super.perform(state);
+//        super.perform(state);
     }
 }

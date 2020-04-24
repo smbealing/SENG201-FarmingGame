@@ -56,7 +56,7 @@ public abstract class Crop {
     public void setPlanted() {
         planted = true;
     }
-    
+
     public void increaseThirstLevel() {   	
     	if (thirstLevel != 10) { thirstLevel += 1;}
     }
