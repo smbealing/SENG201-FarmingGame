@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="639218dd-4070-46d6-ab68-92dd20931f7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/AnimalStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/StatusAction/AnimalStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/CropStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/StatusAction/CropStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/FarmStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/StatusAction/FarmStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/FarmerAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/FarmerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/StatusAction/FarmerStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/FeedAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/FeedAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/HarvestCrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/HarvestCrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/PlayWithAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/PlayWithAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/TendToCrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/TendToCrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/TendToFarmLand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/TendToFarmLand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEnvironment/BrokenFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment/RandomEvent/BrokenFence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEnvironment/CountyFair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment/RandomEvent/CountyFair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEnvironment/Drought.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment/RandomEvent/Drought.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Action/StatusAction/FarmerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/StatusAction/FarmerStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEnvironment/GameEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment/GameEnvironment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEnvironment/RandomEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment/RandomEvent/RandomEvent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
