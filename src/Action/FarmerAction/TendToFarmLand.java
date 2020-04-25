@@ -1,7 +1,5 @@
 package Action.FarmerAction;
 
-import java.util.Scanner;
-
 import Action.Action;
 import GameEnvironment.GameState;
 
@@ -13,7 +11,7 @@ public class TendToFarmLand  {
             state.farmer.reduceActionCount();
 
 
-        } else System.out.println("You have no more actions left today!");
+        } else System.out.println("| You have no more actions left today!");
 
         returnBack(state);
     }

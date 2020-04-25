@@ -14,7 +14,7 @@ public class HarvestCrop  {
             harvestCrops(state);
             System.out.println();
 
-        } else System.out.println("You have no more actions left today!");
+        } else System.out.println("| You have no more actions left today!");
 
         returnBack(state);
     }

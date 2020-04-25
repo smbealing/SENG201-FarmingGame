@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 
 import Action.FarmAction.NextDay;
+import Action.FarmAction.PlantCrop;
 import Action.FarmAction.Shop;
+import Action.FarmerAction.*;
 import Farm.CityFarm;
 import Farm.Farm;
 import Farm.Farmer;
@@ -102,27 +104,27 @@ public class GameEnvironment {
 					switch (state.getOption(7, farmOptions)) {
 						case 1:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new TendToFarmLand().perform(state);
 							break;
 						case 2:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new PlantCrop().perform(state);
 							break;
 						case 3:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new TendToCrop().perform(state);
 							break;
 						case 4:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new HarvestCrop().perform(state);
 							break;
 						case 5:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new FeedAnimal().perform(state);
 							break;
 						case 6:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new PlayWithAnimal().perform(state);
 							break;
 					}
 					break;

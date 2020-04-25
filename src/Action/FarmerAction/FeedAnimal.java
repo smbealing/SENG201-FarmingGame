@@ -13,7 +13,7 @@ public class FeedAnimal {
             state.farmer.reduceActionCount();
 
 
-        } else System.out.println("You have no more actions left today!");
+        } else System.out.println("| You have no more actions left today!");
 
         returnBack(state);
     }

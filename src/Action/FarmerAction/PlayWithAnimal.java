@@ -17,7 +17,7 @@ public class PlayWithAnimal {
             selectAnimal(state);
 
 
-        } else System.out.println("You have no more actions left today!");
+        } else System.out.println("| You have no more actions left today!");
 
         returnBack(state);
     }
@@ -28,10 +28,12 @@ public class PlayWithAnimal {
         String animalOptions = "";
 
         for (int i = 1; i <= state.animals.size(); i ++) {
-            animalOptions = animalOptions.concat(i + ". " + state.animals.get(i-1).getName() + "\n");
+            animalOptions = animalOptions.concat("| " + i + ". " + state.animals.get(i-1).getName() + "\n");
         }
 
-        System.out.println("Select an animal:");
+        System.out.println("|-------------------|\r\n" +
+                "| Select an animal. |\r\n" +
+                "|-------------------|");
 
         do {
             System.out.println(animalOptions);

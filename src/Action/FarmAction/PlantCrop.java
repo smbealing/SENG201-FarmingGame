@@ -24,11 +24,13 @@ public class PlantCrop extends Action {
         for (int i = 1; i <= state.crops.size(); i ++) {
             //Only prints out crops if they haven't been planted, maybe just print all?
             if (state.crops.get(i-1).getPlanted() == false) {
-                cropOptions = cropOptions.concat(i + ". " + state.crops.get(i-1).getName() + "\n");
+                cropOptions = cropOptions.concat("| " + i + ". " + state.crops.get(i-1).getName() + "\n");
             }
         }
 
-        System.out.println("Select a crop:");
+        System.out.println("|-------------------------|\r\n" +
+                           "| Select a crop to plant. |\r\n" +
+                           "|-------------------------|");
 
         do {
             System.out.println(cropOptions);
@@ -40,7 +42,7 @@ public class PlantCrop extends Action {
 
     public void plantCrop(int selection, GameState state) {
         state.crops.get(selection).setPlanted();
-        System.out.println("Your " + state.crops.get(selection).getName() + " has been planted.");
+        System.out.println("| Your " + state.crops.get(selection).getName() + " has been planted.");
     }
 
     private void returnBack(GameState state) {
