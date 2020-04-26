@@ -48,7 +48,7 @@ public class GameState {
 		do {
 			System.out.println(options);
 			selection = s.nextInt();
-		} while (selection < 0 || selection > num);
+		} while (selection < 1 || selection > num);
 		
 		return selection;
 	}

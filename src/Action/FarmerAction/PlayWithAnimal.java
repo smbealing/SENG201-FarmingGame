@@ -55,20 +55,15 @@ public class PlayWithAnimal {
         String animalPlayOptions = "1. Speak to animal\n" +
                 "2. Give animal warmth";
 
-        s = new Scanner(System.in);
-        int option = 0;
-
-        do {
-            System.out.println(animalPlayOptions);
-            option = s.nextInt();
-
-        } while(option < 1 || option > 2);
-
-        if (option == 1) {
-            state.animals.get(selection).increaseHappiness(new Speech().getGeneralBoost());
-        } else if (option == 2) {
-            state.animals.get(selection).increaseHappiness(new Warmth().getGeneralBoost());
+        switch (state.getOption(2, animalPlayOptions)) {
+            case 1:
+                state.animals.get(selection).increaseHappiness(new Speech().getGeneralBoost());
+                break;
+            case 2:
+                state.animals.get(selection).increaseHappiness(new Warmth().getGeneralBoost());
+                break;
         }
+
     }
 
 
