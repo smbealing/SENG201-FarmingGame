@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="639218dd-4070-46d6-ab68-92dd20931f7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Action/StatusAction/FarmerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/StatusAction/FarmerStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Action/FarmerAction/PlayWithAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/FarmerAction/PlayWithAnimal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameEnvironment/GameEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment/GameEnvironment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameEnvironment/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment/GameState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,9 +116,9 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="322" y="224" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1587770527099" />
-    <state x="230" y="23" width="909" height="777" key="dock-window-1" timestamp="1587768796337">
+    <state x="424" y="220" width="909" height="777" key="dock-window-1" timestamp="1587777679547">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="230" y="23" width="909" height="777" key="dock-window-1/0.23.1280.777@0.23.1280.777" timestamp="1587768796337" />
+    <state x="424" y="220" width="909" height="777" key="dock-window-1/0.23.1280.777@0.23.1280.777" timestamp="1587777679547" />
   </component>
 </project>

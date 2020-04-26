@@ -1,12 +1,11 @@
 package Farm;
-import Crop.Corn;
+
 
 public class HardcoreFarm extends Farm {
 
     public HardcoreFarm(String tempName, Farmer tempFarmer) {
-        super(tempName, tempFarmer, "Hardcore Farm");
+        super(tempName, tempFarmer, "Hardcore Farm", 15, 5);
 
-        addCrop(new Corn());
 
     }
 }

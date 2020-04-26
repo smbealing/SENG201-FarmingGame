@@ -6,7 +6,7 @@ import GameEnvironment.GameState;
 public class FarmStatus {
 
     public void perform(GameState state) {
-        System.out.println("Your farm has " + state.totalMoney + " available");
+        System.out.println("| Your farm has " + state.totalMoney + " available");
 
         returnBack(state);
     }

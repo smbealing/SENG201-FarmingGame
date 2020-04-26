@@ -26,6 +26,7 @@ public class TendToCrop extends Action {
 									 "|---------------------------|";
 	
     public void perform(GameState state) {
+<<<<<<< HEAD
     	if (checkFarmerAction(state)) {
     		if(getOptions(state)) {
     			
@@ -178,6 +179,16 @@ public class TendToCrop extends Action {
     			crop.decreaseThirstLevel();
     		}
     	}
+=======
+        if (state.farmer.getActionCount() > 0) {
+            // Do something
+            state.farmer.reduceActionCount();
+
+
+        } else System.out.println("| You have no more actions left today!");
+
+        returnBack(state);
+>>>>>>> c22d09ed296ea09e876cfbe2bf19b7fe4d1a0979
     }
 
 //    private void returnBack(GameState state) {

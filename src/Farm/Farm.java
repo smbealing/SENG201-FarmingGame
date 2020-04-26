@@ -1,8 +1,5 @@
 package Farm;
-import java.util.ArrayList;
 
-import Animal.Animal;
-import Crop.Crop;
 
 public abstract class Farm {
 
@@ -11,11 +8,16 @@ public abstract class Farm {
     private Farmer farmer;
     private int maintenanceLevel = 1;
 
+    public int cropCapacity;
+    public int animalCapacity;
 
-    public Farm(String tempName, Farmer tempFarmer, String tempType) {
+
+    public Farm(String tempName, Farmer tempFarmer, String tempType, int tempCropCapacity, int tempAnimalCapacity) {
         name = tempName;
         farmer = tempFarmer;
         type = tempType;
+        cropCapacity = tempCropCapacity;
+        animalCapacity = tempAnimalCapacity;
 
     }
 

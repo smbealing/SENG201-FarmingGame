@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 
 import Action.FarmAction.NextDay;
+import Action.FarmAction.PlantCrop;
 import Action.FarmAction.Shop;
+import Action.FarmerAction.*;
 import Farm.CityFarm;
 import Farm.Farm;
 import Farm.Farmer;
@@ -95,40 +97,40 @@ public class GameEnvironment {
 		while (state.currentDay <= totalDays) {
 			System.out.println(farmImage);
 			
-			switch (state.getOption(5, mainOptions)) {
+			switch (state.getOption(4, mainOptions)) {
 				case 1:
 					new Shop().perform(state);
 					break;
 				case 2:
-					switch (state.getOption(7, farmOptions)) {
+					switch (state.getOption(6, farmOptions)) {
 						case 1:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new TendToFarmLand().perform(state);
 							break;
 						case 2:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new PlantCrop().perform(state);
 							break;
 						case 3:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new TendToCrop().perform(state);
 							break;
 						case 4:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new HarvestCrop().perform(state);
 							break;
 						case 5:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new FeedAnimal().perform(state);
 							break;
 						case 6:
 							System.out.println(fenceImage);
-		//					.perform(state);
+							new PlayWithAnimal().perform(state);
 							break;
 					}
 					break;
 				case 3:
-					switch (state.getOption(5, statusOptions)) {
+					switch (state.getOption(4, statusOptions)) {
 						case 1:
 							new FarmerStatus().perform(state);
 							break;
@@ -187,7 +189,7 @@ public class GameEnvironment {
 	
 	public void setFarm() {
 		s = new Scanner(System.in);
-		int selection;
+		int selection = 0;
 		String name;
 		
 		System.out.println("|-------------------------------------------|\r\n" +
@@ -198,7 +200,7 @@ public class GameEnvironment {
 		do {
 			System.out.println(farmTypes);
 			selection = s.nextInt();
-		} while (selection < 0 || selection > 4);
+		} while (selection < 1 || selection > 4);
 		
 		switch (selection) {
 		case 1:

@@ -21,10 +21,12 @@ public class CropStatus {
         String cropOptions = "";
 
         for (int i = 1; i <= state.crops.size(); i ++) {
-            cropOptions = cropOptions.concat(i + ". " + state.crops.get(i-1).getName() + "\n");
+            cropOptions = cropOptions.concat("| " + i + ". " + state.crops.get(i-1).getName() + "\n");
         }
 
-        System.out.println("Select a crop:");
+        System.out.println("|----------------|\r\n" +
+                           "| Select a crop. |\r\n" +
+                           "|----------------|");
 
         do {
             System.out.println(cropOptions);
@@ -35,12 +37,12 @@ public class CropStatus {
     }
 
     public void showCropStatus(int selection, GameState state) {
-        System.out.println("You have selected: " + state.crops.get(selection).getName());
+        System.out.println("| You have selected: " + state.crops.get(selection).getName());
         if (state.crops.get(selection).getPlanted()) {
-            System.out.println("This crop has grown for " + state.crops.get(selection).getCurrentGrowthLevel() + " day(s).");
-            System.out.println("Day(s) left until harvest " + state.crops.get(selection).getDaysUntilHarvest());
+            System.out.println("| This crop has grown for " + state.crops.get(selection).getCurrentGrowthLevel() + " day(s).");
+            System.out.println("| Day(s) left until harvest " + state.crops.get(selection).getDaysUntilHarvest());
         } else {
-            System.out.println("This crop has not been planted yet.");
+            System.out.println("| This crop has not been planted yet.");
         }
 
     }
