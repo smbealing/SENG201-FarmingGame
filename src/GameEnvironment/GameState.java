@@ -10,6 +10,9 @@ import Farm.Farmer;
 import Item.AnimalFood;
 import Item.CropItem;
 import Item.GenericItem;
+import Item.Speech;
+import Item.Warmth;
+import Item.Water;
 
 public class GameState {
 	
@@ -39,6 +42,9 @@ public class GameState {
 		cropItems = new ArrayList<CropItem>();
 		animalFood = new ArrayList<AnimalFood>();
 		items = new ArrayList<GenericItem>();
+		items.add(new Water());
+		items.add(new Warmth());
+		items.add(new Speech());
 	}
 	
 	public int getOption(int num, String options) {

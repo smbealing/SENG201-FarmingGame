@@ -55,6 +55,7 @@ public class GameEnvironment {
 							    "| 4. Advance to Next Day    |\r\n" +
 							    "|---------------------------|";
 	public String farmOptions = "|---------------------------|\r\n" +
+								"|     ~ FARM OPTIONS ~      |\r\n" +
 								"| 1. Tend To Farm Land      |\r\n" +
 								"|     ~ CROP OPTIONS ~      |\r\n" +
 		    					"| 2. Plant Crop             |\r\n" +

@@ -64,5 +64,11 @@ public abstract class Crop {
     public void decreaseThirstLevel() {
     	thirstLevel = 0;
     }
+    
+    public void increaseGrowthLevel(int boost) {   	
+    	currentGrowthLevel += boost;
+    	
+    	if (currentGrowthLevel > daysUntilHarvest) { currentGrowthLevel = daysUntilHarvest;}
+    }
 
 }
