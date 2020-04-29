@@ -8,16 +8,16 @@ public abstract class Farm {
     private Farmer farmer;
     private int maintenanceLevel = 1;
 
-    public int cropCapacity;
-    public int animalCapacity;
+    private final int maxCropCount;
+    private final int maxAnimalCount;
 
 
-    public Farm(String tempName, Farmer tempFarmer, String tempType, int tempCropCapacity, int tempAnimalCapacity) {
+    public Farm(String tempName, Farmer tempFarmer, String tempType, int tempMaxCropCount, int tempMaxAnimalCount) {
         name = tempName;
         farmer = tempFarmer;
         type = tempType;
-        cropCapacity = tempCropCapacity;
-        animalCapacity = tempAnimalCapacity;
+        maxCropCount = tempMaxCropCount;
+        maxAnimalCount = tempMaxAnimalCount;
 
     }
 
@@ -44,6 +44,17 @@ public abstract class Farm {
     public void setMaintenanceLevel(int tempMaintenanceLevel) {
         maintenanceLevel = tempMaintenanceLevel;
     }
+    
+    public int getMaxAnimalCount() {
+    	return maxAnimalCount;
+    }
+    
+    
+    public int getMaxCropCount() {
+    	return maxCropCount;
+    }
+    
+    
 
 
 }

@@ -1,9 +1,5 @@
-/Item/
-/Crop/
-/Animal/
-/Farm/
-/GameEnvironment/
-/Farm2/
-/FarmerAction.class
 /Action/
-/Event/
+/Crop/
+/GameEnvironment/
+/Farm/
+/Animal/
