@@ -47,9 +47,9 @@ public class Shop extends Action {
 			 						 "|---------------------------|";
 	private String animalShopOptions = "|------------------------------|\r\n" +
 			 						   "|      ~ ANIMAL OPTIONS ~      |\r\n" +
-			 						   "| 1. Cow           $           |\r\n" +
-			 						   "| 2. Horse         $           |\r\n" +
-			 						   "| 3. Sheep         $           |\r\n" +
+			 						   "| 1. Cow           $40.00      |\r\n" +
+			 						   "| 2. Horse         $89.99      |\r\n" +
+			 						   "| 3. Sheep         $20.00      |\r\n" +
 			 						   "|    ~ ANIMAL FOOD OPTIONS ~   |\r\n" +
 			 						   "| 4. Carrot        $5.00       |\r\n" +
 			 						   "| 5. Grain         $24.99      |\r\n" +
@@ -149,7 +149,7 @@ public class Shop extends Action {
 	
 	private void purchasingAnimal(GameState state, Animal animal) {
 		boolean enoughSpace = true;
-		if (state.farm.getCurrentAnimalCount() == state.farm.getMaxAnimalCount()) {
+		if (state.animals.size() == state.farm.getMaxAnimalCount()) {
 			enoughSpace = false;
 			
 			System.out.println("|---------------------------------------------------------------|\r\n" +

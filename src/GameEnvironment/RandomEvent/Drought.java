@@ -1,8 +1,5 @@
 package GameEnvironment.RandomEvent;
-import java.util.ArrayList;
 
-import Crop.Crop;
-import GameEnvironment.GameEnvironment;
 import GameEnvironment.GameState;
 import GameEnvironment.RandomEvent.RandomEvent;
 
