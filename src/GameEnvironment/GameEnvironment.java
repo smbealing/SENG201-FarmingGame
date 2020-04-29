@@ -18,6 +18,7 @@ import Action.StatusAction.AnimalStatus;
 import Action.StatusAction.FarmStatus;
 import Action.StatusAction.FarmerStatus;
 import Action.StatusAction.CropStatus;
+import Animal.Animal;
 
 
 public class GameEnvironment {
@@ -154,7 +155,37 @@ public class GameEnvironment {
 	}
 	
 	public void endGame() {
+		System.out.println("Farmer: " + state.farmer.getName());
+		System.out.println("Game duration " + totalDays + " days.");
+		double profit = state.totalMoney - 50.00;
+		System.out.println("Profit made: $" + profit);
 		
+		
+		
+		//Score = game duration + number of crops + (sum of animal statuses) + money earned
+		int score = totalDays + state.crops.size() ;
+		for (Animal animal : state.animals) {
+			score += animal.getHappiness();
+			score += animal.getHealth();
+		}
+		score += state.totalMoney;
+		System.out.println("|------------------------------------|\r\n" +
+				   		   "| Your final score is: " + score + " |\r\n" +
+				   		   "|------------------------------------|");
+		if (score < 50) {
+			System.out.println("You've done a terrible job of looking after your farm.");
+		} else if (score < 100) {
+			System.out.println("Next time you should try to do a better job of looking after your farm.");
+		} else if (score < 200) {
+			System.out.println("Well done! You've looked after your farm well.");
+		} else {
+			System.out.println("Wow! You're a fantastic farmer");
+		}
+		
+		
+		System.out.println("|--------------------------------|\r\n" +
+		   		   		   "| Thank you for playing Farmiza. |\r\n" +
+		   		   		   "|--------------------------------|");
 	}
 	
 	public void setTotalDays() {
