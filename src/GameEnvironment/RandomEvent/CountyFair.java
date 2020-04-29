@@ -1,15 +1,20 @@
 package GameEnvironment.RandomEvent;
-import java.util.ArrayList;
 
-import Animal.Animal;
-import Crop.Crop;
-import GameEnvironment.GameEnvironment;
+import GameEnvironment.GameState;
 import GameEnvironment.RandomEvent.RandomEvent;
 
 public class CountyFair extends RandomEvent {
 	
 	private double moneyWon;
-	private ArrayList<Crop> crops;
-	private ArrayList<Animal> animals;
+	
+	public void apply(GameState state) {
+		
+		System.out.println("|--------------------------------------------------------------|\r\n" +
+	  	   		   		   "|                         Congratulations!                     |\r\n" +
+	  	   		   		   "| Your farm has won the top award at the annual Country Fair!  |\r\n" +
+	  	   		   		   "|--------------------------------------------------------------|");
+		moneyWon = state.animals.size() * 50.00 + state.crops.size() * 10.00;
+		state.totalMoney += moneyWon;		
+	}
 
 }

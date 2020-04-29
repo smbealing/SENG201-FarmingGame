@@ -1,8 +1,6 @@
 package GameEnvironment;
 
-//import java.util.ArrayList;
 import java.util.Scanner;
-
 
 import Action.FarmAction.NextDay;
 import Action.FarmAction.PlantCrop;
