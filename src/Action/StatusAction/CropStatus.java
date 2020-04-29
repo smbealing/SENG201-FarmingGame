@@ -39,7 +39,8 @@ public class CropStatus {
     public void showCropStatus(int selection, GameState state) {
         System.out.println("| You have selected: " + state.crops.get(selection).getName());
         if (state.crops.get(selection).getPlanted()) {
-            System.out.println("| This crop has grown for " + state.crops.get(selection).getCurrentGrowthLevel() + " day(s).");
+        	System.out.println("| This crop has thirst level: " + state.crops.get(selection).getThirstLevel() + "/" + state.crops.get(selection).getMaxThirstLevel());
+            System.out.println("| It has grown for " + state.crops.get(selection).getCurrentGrowthLevel() + " day(s).");
             System.out.println("| Day(s) left until harvest " + state.crops.get(selection).getDaysUntilHarvest());
         } else {
             System.out.println("| This crop has not been planted yet.");

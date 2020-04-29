@@ -35,7 +35,7 @@ public class Shop extends Action {
 									 "|---------------------------|";
 	private String cropShopOptions = "|---------------------------|\r\n" +
 			 						 "|     ~ CROP OPTIONS ~      |\r\n" +
-			 						 "| 1. Banna           $1.00  |\r\n" +
+			 						 "| 1. Banana          $1.00  |\r\n" +
 			 						 "| 2. Corn            $0.50  |\r\n" +
 			 						 "| 3. Dragon Fruit    $2.00  |\r\n" +
 			 						 "| 4. Potato          $0.50  |\r\n" +

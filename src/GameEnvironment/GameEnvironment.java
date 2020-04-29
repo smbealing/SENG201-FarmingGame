@@ -153,10 +153,10 @@ public class GameEnvironment {
 	}
 	
 	public void endGame() {
-		System.out.println("Farmer: " + state.farmer.getName());
-		System.out.println("Game duration " + totalDays + " days.");
+		System.out.println("| Farmer: " + state.farmer.getName());
+		System.out.println("| Game duration: " + totalDays + " days.");
 		double profit = state.totalMoney - 50.00;
-		System.out.println("Profit made: $" + profit);
+		System.out.println("| Profit made: $" + profit);
 		
 		
 		
@@ -167,23 +167,40 @@ public class GameEnvironment {
 			score += animal.getHealth();
 		}
 		score += state.totalMoney;
-		System.out.println("|------------------------------------|\r\n" +
-				   		   "| Your final score is: " + score + " |\r\n" +
-				   		   "|------------------------------------|");
+		System.out.println("| Your final score is: " + score);
+		
+		//Box these
 		if (score < 50) {
-			System.out.println("You've done a terrible job of looking after your farm.");
+			
+			System.out.println("|--------------------------------------------------------|\r\n" +
+	   		   		   		   "| You've done a terrible job of looking after your farm. |\r\n" +
+	   		   		   		   "|--------------------------------------------------------|");
+			
 		} else if (score < 100) {
-			System.out.println("Next time you should try to do a better job of looking after your farm.");
+			
+			System.out.println("|-------------------------------------------------------------------------|\r\n" +
+	   		   		   		   "| Next time you should try to do a better job of looking after your farm. |\r\n" +
+							   "|-------------------------------------------------------------------------|");
+			
 		} else if (score < 200) {
-			System.out.println("Well done! You've looked after your farm well.");
+			
+			System.out.println("|------------------------------------------------|\r\n" +
+	   		   		   		   "| Well done! You've looked after your farm well. |\r\n" +
+							   "|------------------------------------------------|");
+			
+
 		} else {
-			System.out.println("Wow! You're a fantastic farmer");
+			System.out.println("|---------------------------------|\r\n" +
+							   "| Wow! You're a fantastic farmer. |\r\n" +
+	   		   		   		   "|---------------------------------|");
+
 		}
 		
 		
 		System.out.println("|--------------------------------|\r\n" +
 		   		   		   "| Thank you for playing Farmiza. |\r\n" +
 		   		   		   "|--------------------------------|");
+		System.out.println(fenceImage);
 	}
 	
 	public void setTotalDays() {
@@ -196,9 +213,9 @@ public class GameEnvironment {
 			totalDays = s.nextInt();
 		}
 		
-		System.out.println("|-----------------------------------------|\r\n" + 
+		System.out.println("|-------------------------|\r\n" + 
 						   "| You have chosen " + totalDays + " days. |\r\n" +
-						   "|-----------------------------------------|");
+						   "|-------------------------|");
 	}
 	
 	public void setFarmer() {
@@ -245,6 +262,10 @@ public class GameEnvironment {
 			farm = new HardcoreFarm(name, farmer);
 			break;
 		}
+	}
+	
+	public static void main(String[] args) {
+		GameEnvironment game = new GameEnvironment();
 	}
 
 }
