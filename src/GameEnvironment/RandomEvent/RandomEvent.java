@@ -1,7 +1,8 @@
 package GameEnvironment.RandomEvent;
-import GameEnvironment.GameEnvironment;
 
 import java.util.Random;
+
+import GameEnvironment.GameState;
 
 public abstract class RandomEvent {
 	
@@ -10,4 +11,6 @@ public abstract class RandomEvent {
 	public RandomEvent() {
 		randomGenerator = new Random();
 	}
+	
+//	public abstract void apply(GameState state);
 }

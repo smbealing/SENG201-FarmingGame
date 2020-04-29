@@ -6,8 +6,8 @@ public abstract class Animal {
 	private double income;
 	private int health;
 	private int happiness;
-	
-	public int maxHappiness;
+	private final int maxHappiness;
+	private final int maxHealth;
 	
 	public Animal(String tempName, double tempPurchasingPrice, double tempIncome, int tempHealth, int tempHappiness) {
 		name = tempName;
@@ -17,6 +17,7 @@ public abstract class Animal {
 		happiness = tempHappiness;
 		
 		maxHappiness = tempHappiness;
+		maxHealth = tempHealth;
 	}
 	
 	public String getName() {
@@ -38,9 +39,21 @@ public abstract class Animal {
 	public int getHappiness() {
 		return happiness;
 	}
+	
+	public int getMaxHappiness() {
+		return maxHappiness;
+	}
 
 	public void increaseHappiness(int amount) {
 		happiness += amount;
+		
+		if (happiness > maxHappiness) {happiness = maxHappiness;}
+	}
+	
+	public void increaseHealth(int amount) {
+		health += amount;
+		
+		if (health > maxHealth) {health = maxHealth;}
 	}
 	
 	public void decreaseHappiness() {

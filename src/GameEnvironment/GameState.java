@@ -59,4 +59,15 @@ public class GameState {
 		return selection;
 	}
 	
+	 public boolean checkFarmerAction() {
+	    	if (farmer.getActionCount() == 0) {
+	    		System.out.println("|--------------------------------------------------------------------------------|\r\n" +
+				   		   		   "| Oh no! " + farmer.getName() + " does not have any energy left for today! |\r\n" +
+	    						   "|--------------------------------------------------------------------------------|");
+	    		return false;
+	    	}
+	    	
+	    	return true;
+	    }
+	
 }

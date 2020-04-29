@@ -26,8 +26,8 @@ public class TendToCrop extends Action {
 									 "|---------------------------|";
 	
     public void perform(GameState state) {
-<<<<<<< HEAD
-    	if (checkFarmerAction(state)) {
+
+    	if (state.checkFarmerAction()) {
     		if(getOptions(state)) {
     			
     			ArrayList<Crop> plantedCrops = new ArrayList<Crop>(plantedCropsSet);
@@ -75,17 +75,6 @@ public class TendToCrop extends Action {
 //        returnBack(state);
     }
     
-    private boolean checkFarmerAction(GameState state) {
-    	if (state.farmer.getActionCount() == 0) {
-    		System.out.println("|--------------------------------------------------------------------------------|\r\n" +
-			   		   		   "| Oh no! " + state.farmer.getName() + " does not have any energy left for today! |\r\n" +
-    						   "|--------------------------------------------------------------------------------|");
-    		return false;
-    	}
-    	
-    	return true;
-    }
-    
     private boolean getOptions(GameState state) {
     	int index = 1;
     	String title = "| PLANTED CROPS |\r\n";
@@ -116,13 +105,13 @@ public class TendToCrop extends Action {
     
     private void useCropItem(GameState state, String itemName) {
     	boolean found = false;
-    	state.farmer.reduceActionCount();
     	
     	for (CropItem item: state.cropItems) {
     		if (item.getName() == itemName) {
     			found = true;
     			
     			useItem(state, item.getGeneralBoost(), item.getGrowthBoost());
+    			state.cropItems.remove(item);
     			
     			break;
     		}
@@ -135,9 +124,7 @@ public class TendToCrop extends Action {
     	}
     }
     
-    private void useGenericItem(GameState state, String itemName) {
-    	state.farmer.reduceActionCount();
-    	
+    private void useGenericItem(GameState state, String itemName) {    	
     	for (GenericItem item: state.items) {
     		if (item.getName() == itemName) {
     			
@@ -166,6 +153,7 @@ public class TendToCrop extends Action {
     }
     
     private void useItem(GameState state, int boost, int growthBoost) {
+    	state.farmer.reduceActionCount();
     	for (Crop crop: state.crops) {
     		if (crop.planted && crop.getName() == selectedCrop.getName()) {
     			crop.increaseGrowthLevel(boost + growthBoost);
@@ -179,16 +167,6 @@ public class TendToCrop extends Action {
     			crop.decreaseThirstLevel();
     		}
     	}
-=======
-        if (state.farmer.getActionCount() > 0) {
-            // Do something
-            state.farmer.reduceActionCount();
-
-
-        } else System.out.println("| You have no more actions left today!");
-
-        returnBack(state);
->>>>>>> c22d09ed296ea09e876cfbe2bf19b7fe4d1a0979
     }
 
 //    private void returnBack(GameState state) {

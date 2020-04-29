@@ -5,9 +5,9 @@ public abstract class Crop {
     private String name;
     private double purchasingPrice;
     private double sellingPrice;
-    private int daysUntilHarvest;
+    private final int daysUntilHarvest;
     private int thirstLevel;
-    private int maxThirstLevel = 10;
+    private final int maxThirstLevel = 10;
     
     public boolean planted = false;
     public int currentGrowthLevel = 0;
@@ -58,7 +58,7 @@ public abstract class Crop {
     }
 
     public void increaseThirstLevel() {   	
-    	if (thirstLevel != 10) { thirstLevel += 1;}
+    	if (thirstLevel != maxThirstLevel) { thirstLevel += 1;}
     }
     
     public void decreaseThirstLevel() {

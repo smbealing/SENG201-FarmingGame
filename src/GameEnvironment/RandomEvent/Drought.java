@@ -3,11 +3,12 @@ import java.util.ArrayList;
 
 import Crop.Crop;
 import GameEnvironment.GameEnvironment;
+import GameEnvironment.GameState;
 import GameEnvironment.RandomEvent.RandomEvent;
 
 public class Drought extends RandomEvent {
 	
-	private ArrayList<Crop> crops;
-	
-
+	public void apply(GameState state) {
+		
+	}
 }
