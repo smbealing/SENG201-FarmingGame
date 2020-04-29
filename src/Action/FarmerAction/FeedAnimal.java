@@ -44,6 +44,7 @@ public class FeedAnimal extends Action {
     			found = true;
     			
     			useItem(state, item.getHealthBoost(), item.getGeneralBoost());
+    			state.animalFood.remove(item);
     			
     			break;
     		}

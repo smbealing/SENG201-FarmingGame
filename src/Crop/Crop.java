@@ -56,6 +56,10 @@ public abstract class Crop {
     public void setPlanted() {
         planted = true;
     }
+    
+    public void setThirstLevel(int tempThirstLevel) {
+    	thirstLevel = tempThirstLevel;
+    }
 
     public void increaseThirstLevel() {   	
     	if (thirstLevel != maxThirstLevel) { thirstLevel += 1;}
