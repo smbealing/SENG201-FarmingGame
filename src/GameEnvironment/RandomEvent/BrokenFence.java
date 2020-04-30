@@ -11,24 +11,28 @@ public class BrokenFence extends RandomEvent {
 	public void apply(GameState state) {
 		
 		System.out.println("|--------------------------------|\r\n" +
-			  	   		   "|    Oh no! Your fence broke!    |\r\n" +
-			  	   		   "| Some of your animals escaped!  |\r\n" +
-			  	   		   "|--------------------------------|");
-		animalsLost = randomGenerator.nextInt(state.animals.size()) + 1;
+						   "|    Oh no! Your fence broke!    |\r\n" +
+						   "| Some of your animals escaped!  |\r\n" +
+						   "|--------------------------------|");
 		
-		for (Animal animal: state.animals) {
-			animal.decreaseHappiness();
-			animal.decreaseHappiness();
+		if (state.animals.size() != 0) {
+						
+			animalsLost = randomGenerator.nextInt(state.animals.size());
 			
-			if (animalsLost != 0) {
-				switch(randomGenerator.nextInt(1)) {
+			for (Animal animal: state.animals) {
+				animal.decreaseHappiness();
+				animal.decreaseHappiness();
+				
+				if (animalsLost != 0) {
+					switch(randomGenerator.nextInt(1)) {
 					case 0:
 						break;
 					case 1:
 						state.animals.remove(animal);
 						break;
+					}
+					animalsLost--;
 				}
-				animalsLost--;
 			}
 		}
 	}

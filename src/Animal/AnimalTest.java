@@ -33,7 +33,17 @@ public class AnimalTest {
 		testCow.decreaseHappiness();
 		assertEquals(80, testCow.getHappiness());
 		
+		Horse testHorse = new Horse();
+		assertEquals(50, testCow.getHappiness());
+		testHorse.decreaseHappiness();
+		testHorse.decreaseHappiness();
+		testHorse.increaseHappiness(50);
+		assertEquals(50, testCow.getHappiness());
 		
+		Sheep testSheep = new Sheep();
+		assertEquals(30, testCow.getHappiness());
+		testSheep.decreaseHeath();
+		assertEquals(10, testCow.getHappiness());
 		
 	}
 

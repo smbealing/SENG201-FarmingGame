@@ -189,30 +189,38 @@ public class GameEnvironment {
 	public void setTotalDays() {
 		s = new Scanner(System.in);
 		
-		while (totalDays < 3 || totalDays > 10) {
+		while ((totalDays < 3 || totalDays > 10)) {
+			s = new Scanner(System.in);
 			System.out.println("|-------------------------------------------------|\r\n" +
 							   "| Please enter a number of days between 5 and 10. |\r\n" +
 							   "|-------------------------------------------------|");
-			totalDays = s.nextInt();
+			if (!s.hasNextInt()) {
+				totalDays = 0;
+			} else {
+				totalDays = s.nextInt();
+			}
 		}
 		
-		System.out.println("|-----------------------------------------|\r\n" + 
-						   "| You have chosen " + totalDays + " days. |\r\n" +
-						   "|-----------------------------------------|");
+		System.out.println("| You have chosen " + totalDays + " days.");
 	}
 	
 	public void setFarmer() {
 		farmer = new Farmer();
 		s = new Scanner(System.in);
 		
-		System.out.println("|--------------------------------------|\r\n" +
-				   		   "| Please give your farmer a firstname. |\r\n" +
-				   		   "|--------------------------------------|");
-		farmer.setName(s.next());
+		System.out.println("|--------------------------|\r\n" +
+				   		   "| Please name your farmer. |\r\n" +
+				   		   "|--------------------------|");
+		farmer.setName(s.nextLine());
 		
-		System.out.println("|---------------------------------------------------|\r\n" +
-		   		   		   "| How old is your farmer? Please enter his/her age. |\r\n" +
-		   		   		   "|---------------------------------------------------|");
+		do {
+			s = new Scanner(System.in);
+			System.out.println("|---------------------------------------------------|\r\n" +
+							   "| How old is your farmer? Please enter his/her age. |\r\n" +
+							   "|---------------------------------------------------|");
+			
+		} while (!s.hasNextInt());
+		
 		farmer.setAge(s.nextInt());
 	}
 	
@@ -221,14 +229,21 @@ public class GameEnvironment {
 		int selection = 0;
 		String name;
 		
-		System.out.println("|-------------------------------------------|\r\n" +
-				   		   "| Please give your farm a name in one word. |\r\n" +
-				   		   "|-------------------------------------------|");
-		name = s.next();
+		System.out.println("|------------------------|\r\n" +
+				   		   "| Please name your farm. |\r\n" +
+				   		   "|------------------------|");
+		name = s.nextLine();
 		
 		do {
+			s = new Scanner(System.in);
 			System.out.println(farmTypes);
-			selection = s.nextInt();
+			
+			if (!s.hasNextInt()) {
+				selection = 0;
+			} else {
+				selection = s.nextInt();
+			}
+			
 		} while (selection < 1 || selection > 4);
 		
 		switch (selection) {
@@ -245,6 +260,10 @@ public class GameEnvironment {
 			farm = new HardcoreFarm(name, farmer);
 			break;
 		}
+	}
+	
+	public static void main(String[] args) {
+		new GameEnvironment();
 	}
 
 }
