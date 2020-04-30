@@ -43,9 +43,9 @@ public class PlayWithAnimal {
     }
 
     public void showAnimalSelected(int selection, GameState state) {
-        System.out.println("| You have selected: " + state.animals.get(selection).getName());
+        System.out.println("| You have selected: " + state.animals.get(selection - 1).getName());
         selectPlayOption(selection, state);
-        System.out.println("| Your animal now has happiness: " + state.animals.get(selection).getHappiness());
+        System.out.println("| Your animal now has happiness: " + state.animals.get(selection - 1).getHappiness());
 
 
     }
@@ -59,10 +59,10 @@ public class PlayWithAnimal {
 
         switch (state.getOption(2, animalPlayOptions)) {
             case 1:
-                state.animals.get(selection).increaseHappiness(new Speech().getGeneralBoost());
+                state.animals.get(selection - 1).increaseHappiness(new Speech().getGeneralBoost());
                 break;
             case 2:
-                state.animals.get(selection).increaseHappiness(new Warmth().getGeneralBoost());
+                state.animals.get(selection - 1).increaseHappiness(new Warmth().getGeneralBoost());
                 break;
         }
 

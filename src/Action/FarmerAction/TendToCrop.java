@@ -119,7 +119,7 @@ public class TendToCrop extends Action {
     	
     	if (!found) {
     		System.out.println("|--------------------------------------------------|\r\n" +
-    						   "| Oh no you don't have any more of the " + itemName + ". |\r\n" +
+    						   "| Oh no! You don't have any more of the " + itemName + ". |\r\n" +
  		   		   	  		   "|--------------------------------------------------|");
     	}
     }

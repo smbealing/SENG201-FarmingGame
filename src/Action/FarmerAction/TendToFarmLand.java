@@ -11,7 +11,7 @@ public class TendToFarmLand  {
             state.farmer.reduceActionCount();
 
 
-        } 
+        }
 
         returnBack(state);
     }

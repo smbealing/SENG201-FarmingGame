@@ -206,7 +206,7 @@ public class GameEnvironment {
 	public void setTotalDays() {
 		s = new Scanner(System.in);
 		
-		while (totalDays < 3 || totalDays > 10) {
+		while (totalDays < 5 || totalDays > 10) {
 			System.out.println("|-------------------------------------------------|\r\n" +
 							   "| Please enter a number of days between 5 and 10. |\r\n" +
 							   "|-------------------------------------------------|");
