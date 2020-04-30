@@ -6,7 +6,7 @@ public abstract class Farm {
     private String name;
     private String type;
     private Farmer farmer;
-    private int maintenanceLevel = 1;
+    private int maintenanceLevel = 0;
 
     private final int maxCropCount;
     private final int maxAnimalCount;

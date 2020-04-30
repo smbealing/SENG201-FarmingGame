@@ -18,7 +18,7 @@ public class FeedAnimal extends Action {
 
     public void perform(GameState state) {
         if (state.checkFarmerAction()) {
-        	switch(state.getOption(6, foodItemOptions)) {
+        	switch(state.getOption(4, foodItemOptions)) {
 	        	case 1:
 	        		useFoodItem(state, "Carrot");
 	        		break;
@@ -51,9 +51,9 @@ public class FeedAnimal extends Action {
     	}
     	
     	if (!found) {
-    		System.out.println("|--------------------------------------------------|\r\n" +
-    						   "| Oh no you don't have any more of that food item. |\r\n" +
- 		   		   	  		   "|--------------------------------------------------|");
+    		System.out.println("|---------------------------------------------------|\r\n" +
+    						   "| Oh no! You don't have any more of that food item. |\r\n" +
+ 		   		   	  		   "|---------------------------------------------------|");
     	}
     }
     

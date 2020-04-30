@@ -153,10 +153,10 @@ public class GameEnvironment {
 	}
 	
 	public void endGame() {
-		System.out.println("Farmer: " + state.farmer.getName());
-		System.out.println("Game duration " + totalDays + " days.");
+		System.out.println("| Farmer: " + state.farmer.getName());
+		System.out.println("| Game duration: " + totalDays + " days.");
 		double profit = state.totalMoney - 50.00;
-		System.out.println("Profit made: $" + profit);
+		System.out.println("| Profit made: $" + profit);
 		
 		
 		
@@ -167,30 +167,51 @@ public class GameEnvironment {
 			score += animal.getHealth();
 		}
 		score += state.totalMoney;
-		System.out.println("|------------------------------------|\r\n" +
-				   		   "| Your final score is: " + score + " |\r\n" +
-				   		   "|------------------------------------|");
-		if (score < 50) {
-			System.out.println("You've done a terrible job of looking after your farm.");
-		} else if (score < 100) {
-			System.out.println("Next time you should try to do a better job of looking after your farm.");
+		System.out.println("| Your final score is: " + score);
+		
+		//Box these
+		if (score < 60) {
+			
+			System.out.println("|--------------------------------------------------------|\r\n" +
+	   		   		   		   "| You've done a terrible job of looking after your farm. |\r\n" +
+	   		   		   		   "|--------------------------------------------------------|");
+			
+		} else if (score < 120) {
+			
+			System.out.println("|-------------------------------------------------------------------------|\r\n" +
+	   		   		   		   "| Next time you should try to do a better job of looking after your farm. |\r\n" +
+							   "|-------------------------------------------------------------------------|");
+			
 		} else if (score < 200) {
-			System.out.println("Well done! You've looked after your farm well.");
+			
+			System.out.println("|------------------------------------------------|\r\n" +
+	   		   		   		   "| Well done! You've looked after your farm well. |\r\n" +
+							   "|------------------------------------------------|");
+			
+
 		} else {
-			System.out.println("Wow! You're a fantastic farmer");
+			System.out.println("|---------------------------------|\r\n" +
+							   "| Wow! You're a fantastic farmer. |\r\n" +
+	   		   		   		   "|---------------------------------|");
+
 		}
 		
 		
 		System.out.println("|--------------------------------|\r\n" +
 		   		   		   "| Thank you for playing Farmiza. |\r\n" +
 		   		   		   "|--------------------------------|");
+		System.out.println(fenceImage);
 	}
 	
 	public void setTotalDays() {
 		s = new Scanner(System.in);
 		
+<<<<<<< HEAD
 		while ((totalDays < 3 || totalDays > 10)) {
 			s = new Scanner(System.in);
+=======
+		while (totalDays < 5 || totalDays > 10) {
+>>>>>>> adab025622e13ae6ab83b872b6d1e571e1458cc7
 			System.out.println("|-------------------------------------------------|\r\n" +
 							   "| Please enter a number of days between 5 and 10. |\r\n" +
 							   "|-------------------------------------------------|");
@@ -201,7 +222,13 @@ public class GameEnvironment {
 			}
 		}
 		
+<<<<<<< HEAD
 		System.out.println("| You have chosen " + totalDays + " days.");
+=======
+		System.out.println("|-------------------------|\r\n" + 
+						   "| You have chosen " + totalDays + " days. |\r\n" +
+						   "|-------------------------|");
+>>>>>>> adab025622e13ae6ab83b872b6d1e571e1458cc7
 	}
 	
 	public void setFarmer() {
@@ -263,7 +290,11 @@ public class GameEnvironment {
 	}
 	
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		new GameEnvironment();
+=======
+		GameEnvironment game = new GameEnvironment();
+>>>>>>> adab025622e13ae6ab83b872b6d1e571e1458cc7
 	}
 
 }

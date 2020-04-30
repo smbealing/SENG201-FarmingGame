@@ -35,7 +35,7 @@ public class Shop extends Action {
 									 "|---------------------------|";
 	private String cropShopOptions = "|---------------------------|\r\n" +
 			 						 "|     ~ CROP OPTIONS ~      |\r\n" +
-			 						 "| 1. Banna           $1.00  |\r\n" +
+			 						 "| 1. Banana          $1.00  |\r\n" +
 			 						 "| 2. Corn            $0.50  |\r\n" +
 			 						 "| 3. Dragon Fruit    $2.00  |\r\n" +
 			 						 "| 4. Potato          $0.50  |\r\n" +
@@ -58,9 +58,9 @@ public class Shop extends Action {
 	
 	public void perform(GameState state) {
 		
-		switch (state.getOption(4, mainShopOptions)) {
+		switch (state.getOption(2, mainShopOptions)) {
 			case 1 : 
-				switch (state.getOption(4, cropShopOptions)) {
+				switch (state.getOption(8, cropShopOptions)) {
 					case 1 : 
 						crop = new Banana();
 						purchasingCrop(state, crop);
@@ -96,7 +96,7 @@ public class Shop extends Action {
 				}
 				break;
 			case 2 :
-				switch (state.getOption(4, animalShopOptions)) {
+				switch (state.getOption(6, animalShopOptions)) {
 					case 1 : 
 						animal = new Cow();
 						purchasingAnimal(state, animal);

@@ -53,9 +53,9 @@ public class TendToCrop extends Action {
 		    			break;
 	    		}
 	    		
-	    		switch(state.getOption(6, cropItemOptions)) {
+	    		switch(state.getOption(5, cropItemOptions)) {
 		    		case 1:
-		    			useCropItem(state, "Fetiliser");
+		    			useCropItem(state, "Fertiliser");
 		    			break;
 		    		case 2:
 		    			useCropItem(state, "Pesticide");
@@ -119,7 +119,7 @@ public class TendToCrop extends Action {
     	
     	if (!found) {
     		System.out.println("|--------------------------------------------------|\r\n" +
-    						   "| Oh no you don't have any more of the " + itemName + ". |\r\n" +
+    						   "| Oh no! You don't have any more of the " + itemName + ". |\r\n" +
  		   		   	  		   "|--------------------------------------------------|");
     	}
     }
