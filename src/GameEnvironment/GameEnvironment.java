@@ -206,12 +206,9 @@ public class GameEnvironment {
 	public void setTotalDays() {
 		s = new Scanner(System.in);
 		
-<<<<<<< HEAD
-		while ((totalDays < 3 || totalDays > 10)) {
+		while ((totalDays < 5 || totalDays > 10)) {
 			s = new Scanner(System.in);
-=======
-		while (totalDays < 5 || totalDays > 10) {
->>>>>>> adab025622e13ae6ab83b872b6d1e571e1458cc7
+			
 			System.out.println("|-------------------------------------------------|\r\n" +
 							   "| Please enter a number of days between 5 and 10. |\r\n" +
 							   "|-------------------------------------------------|");
@@ -222,13 +219,7 @@ public class GameEnvironment {
 			}
 		}
 		
-<<<<<<< HEAD
 		System.out.println("| You have chosen " + totalDays + " days.");
-=======
-		System.out.println("|-------------------------|\r\n" + 
-						   "| You have chosen " + totalDays + " days. |\r\n" +
-						   "|-------------------------|");
->>>>>>> adab025622e13ae6ab83b872b6d1e571e1458cc7
 	}
 	
 	public void setFarmer() {
@@ -287,14 +278,6 @@ public class GameEnvironment {
 			farm = new HardcoreFarm(name, farmer);
 			break;
 		}
-	}
-	
-	public static void main(String[] args) {
-<<<<<<< HEAD
-		new GameEnvironment();
-=======
-		GameEnvironment game = new GameEnvironment();
->>>>>>> adab025622e13ae6ab83b872b6d1e571e1458cc7
 	}
 
 }
