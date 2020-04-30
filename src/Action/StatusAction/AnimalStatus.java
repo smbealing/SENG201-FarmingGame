@@ -38,9 +38,9 @@ public class AnimalStatus {
     }
 
     public void showAnimalStatus(int selection, GameState state) {
-        System.out.println("You have selected: " + state.animals.get(selection).getName());
-        System.out.println("Health: " + state.animals.get(selection).getHealth());
-        System.out.println("Happiness: " + state.animals.get(selection).getHappiness());
+        System.out.println("| You have selected: " + state.animals.get(selection).getName());
+        System.out.println("| Health: " + state.animals.get(selection).getHealth());
+        System.out.println("| Happiness: " + state.animals.get(selection).getHappiness());
     }
 
     private void returnBack(GameState state) {

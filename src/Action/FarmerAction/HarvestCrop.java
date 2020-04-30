@@ -9,12 +9,12 @@ import Crop.Crop;
 public class HarvestCrop  {
 
     public void perform(GameState state) {
-        if (state.farmer.getActionCount() > 0) {
+        if (state.checkFarmerAction()) {
             state.farmer.reduceActionCount();
             harvestCrops(state);
             System.out.println();
 
-        } else System.out.println("| You have no more actions left today!");
+        }
 
         returnBack(state);
     }

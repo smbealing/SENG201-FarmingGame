@@ -170,13 +170,13 @@ public class GameEnvironment {
 		System.out.println("| Your final score is: " + score);
 		
 		//Box these
-		if (score < 50) {
+		if (score < 60) {
 			
 			System.out.println("|--------------------------------------------------------|\r\n" +
 	   		   		   		   "| You've done a terrible job of looking after your farm. |\r\n" +
 	   		   		   		   "|--------------------------------------------------------|");
 			
-		} else if (score < 100) {
+		} else if (score < 120) {
 			
 			System.out.println("|-------------------------------------------------------------------------|\r\n" +
 	   		   		   		   "| Next time you should try to do a better job of looking after your farm. |\r\n" +

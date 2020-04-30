@@ -65,9 +65,10 @@ public class GameState {
 				   		   		   "| Oh no! " + farmer.getName() + " does not have any energy left for today! |\r\n" +
 	    						   "|--------------------------------------------------------------------------------|");
 	    		return false;
-	    	}
-	    	
-	    	return true;
-	    }
+	    	} else {
+
+				return true;
+			}
+	}
 	
 }
