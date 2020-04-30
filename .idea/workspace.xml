@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="639218dd-4070-46d6-ab68-92dd20931f7a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/FarmAction/PlantCrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/FarmAction/PlantCrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/FarmAction/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/FarmAction/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/FarmerAction/PlayWithAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/FarmerAction/PlayWithAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/FarmerAction/TendToCrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/FarmerAction/TendToCrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/FarmerAction/TendToFarmLand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/FarmerAction/TendToFarmLand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Action/StatusAction/CropStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Action/StatusAction/CropStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animal/AnimalTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Farm/FarmTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameEnvironment/GameEnvironment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameEnvironment/GameEnvironment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,22 +91,22 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="382" y="145" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.777@0.23.1280.777" timestamp="1587771042619" />
-    <state width="1218" height="184" key="GridCell.Tab.0.bottom" timestamp="1588229071246">
+    <state width="1218" height="184" key="GridCell.Tab.0.bottom" timestamp="1588230799369">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="184" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1588229071246" />
-    <state width="1218" height="184" key="GridCell.Tab.0.center" timestamp="1588229071245">
+    <state width="1218" height="184" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1588230799369" />
+    <state width="1218" height="184" key="GridCell.Tab.0.center" timestamp="1588230799368">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="184" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1588229071245" />
-    <state width="1218" height="184" key="GridCell.Tab.0.left" timestamp="1588229071245">
+    <state width="1218" height="184" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1588230799368" />
+    <state width="1218" height="184" key="GridCell.Tab.0.left" timestamp="1588230799367">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="184" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1588229071245" />
-    <state width="1218" height="184" key="GridCell.Tab.0.right" timestamp="1588229071245">
+    <state width="1218" height="184" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1588230799367" />
+    <state width="1218" height="184" key="GridCell.Tab.0.right" timestamp="1588230799368">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="184" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1588229071245" />
+    <state width="1218" height="184" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1588230799368" />
     <state width="1218" height="229" key="GridCell.Tab.1.bottom" timestamp="1587100825669">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
