@@ -5,11 +5,6 @@ public class Farmer {
     private int age;
     private int actionCount = 2;
 
-//    public Farmer(String tempName, int tempAge) {
-//        name = tempName;
-//        age = tempAge;
-//    }
-
     public void setName(String tempName) {
         name = tempName;
     }
@@ -29,12 +24,12 @@ public class Farmer {
     public int getActionCount() {
         return actionCount;
     }
+    
+    public void setActionCount() {
+    	actionCount = 2;
+    }
 
     public void reduceActionCount() {
         actionCount -= 1;
     }
-
-
-
-
 }

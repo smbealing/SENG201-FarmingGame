@@ -59,69 +59,69 @@ public class Shop extends Action {
 	public void perform(GameState state) {
 		
 		switch (state.getOption(2, mainShopOptions)) {
+		case 1 : 
+			switch (state.getOption(8, cropShopOptions)) {
 			case 1 : 
-				switch (state.getOption(8, cropShopOptions)) {
-					case 1 : 
-						crop = new Banana();
-						purchasingCrop(state, crop);
-						break;
-					case 2 :
-						crop = new Corn();
-						purchasingCrop(state, crop);
-						break;
-					case 3 :
-						crop = new DragonFruit();
-						purchasingCrop(state, crop);
-						break;
-					case 4 :
-						crop = new Potato();
-						purchasingCrop(state, crop);
-						break;
-					case 5 :
-						crop = new Tomato();
-						purchasingCrop(state, crop);
-						break;
-					case 6 :
-						crop = new Wheat();
-						purchasingCrop(state, crop);
-						break;
-					case 7 :
-						item = new Fertiliser();
-						purchasingCropItem(state, item);
-						break;
-					case 8 :
-						item = new Pesticide();
-						purchasingCropItem(state, item);
-						break;
-				}
+				crop = new Banana();
+				purchasingCrop(state, crop);
 				break;
 			case 2 :
-				switch (state.getOption(6, animalShopOptions)) {
-					case 1 : 
-						animal = new Cow();
-						purchasingAnimal(state, animal);
-						break;
-					case 2 :
-						animal = new Horse();
-						purchasingAnimal(state, animal);
-						break;
-					case 3 :
-						animal = new Sheep();
-						purchasingAnimal(state, animal);
-						break;
-					case 4 :
-						animalFood = new Carrot();
-						purchasingAnimalFood(state, animalFood);
-						break;
-					case 5 :
-						animalFood = new Grain();
-						purchasingAnimalFood(state, animalFood);
-						break;
-					case 6 :
-						animalFood = new HighQualityGrain();
-						purchasingAnimalFood(state, animalFood);
-						break;
-				}
+				crop = new Corn();
+				purchasingCrop(state, crop);
+				break;
+			case 3 :
+				crop = new DragonFruit();
+				purchasingCrop(state, crop);
+				break;
+			case 4 :
+				crop = new Potato();
+				purchasingCrop(state, crop);
+				break;
+			case 5 :
+				crop = new Tomato();
+				purchasingCrop(state, crop);
+				break;
+			case 6 :
+				crop = new Wheat();
+				purchasingCrop(state, crop);
+				break;
+			case 7 :
+				item = new Fertiliser();
+				purchasingCropItem(state, item);
+				break;
+			case 8 :
+				item = new Pesticide();
+				purchasingCropItem(state, item);
+				break;
+			}
+			break;
+		case 2 :
+			switch (state.getOption(6, animalShopOptions)) {
+			case 1 : 
+				animal = new Cow();
+				purchasingAnimal(state, animal);
+				break;
+			case 2 :
+				animal = new Horse();
+				purchasingAnimal(state, animal);
+				break;
+			case 3 :
+				animal = new Sheep();
+				purchasingAnimal(state, animal);
+				break;
+			case 4 :
+				animalFood = new Carrot();
+				purchasingAnimalFood(state, animalFood);
+				break;
+			case 5 :
+				animalFood = new Grain();
+				purchasingAnimalFood(state, animalFood);
+				break;
+			case 6 :
+				animalFood = new HighQualityGrain();
+				purchasingAnimalFood(state, animalFood);
+				break;
+			}
 			break;
 		}
 	}

@@ -1,9 +1,9 @@
 package Action.StatusAction;
 
-//import Action.Action;
+import Action.Action;
 import GameEnvironment.GameState;
 
-public class FarmStatus {
+public class FarmStatus extends Action {
 
     public void perform(GameState state) {
         System.out.println("| Your farm has $" + state.totalMoney + " available");
@@ -12,9 +12,5 @@ public class FarmStatus {
         System.out.println("| Need for maintenance: " +  state.farm.getMaintenanceLevel());
 
         returnBack(state);
-    }
-
-    private void returnBack(GameState state) {
-//        super.perform(state);
     }
 }

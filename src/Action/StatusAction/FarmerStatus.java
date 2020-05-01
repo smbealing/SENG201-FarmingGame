@@ -13,8 +13,4 @@ public class FarmerStatus extends Action {
 
         returnBack(state);
     }
-
-    private void returnBack(GameState state) {
-//        super.perform(state);
-    }
 }

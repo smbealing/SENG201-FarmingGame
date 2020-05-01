@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 import Action.Action;
 import GameEnvironment.GameState;
-import Animal.Animal;
 
-public class AnimalStatus {
+public class AnimalStatus extends Action {
     protected Scanner s;
 
     public void perform(GameState state) {
@@ -41,9 +40,5 @@ public class AnimalStatus {
         System.out.println("| You have selected: " + state.animals.get(selection - 1).getName());
         System.out.println("| Health: " + state.animals.get(selection - 1).getHealth());
         System.out.println("| Happiness: " + state.animals.get(selection - 1).getHappiness());
-    }
-
-    private void returnBack(GameState state) {
-//        super.perform(state);
     }
 }

@@ -37,7 +37,7 @@ public class GameEnvironment {
 							  "                      |    |==|==|    |  |\r\n" + 
 							  "  |---|---|---|---|---|    |--|--|    |  |\r\n" + 
 							  "  |---|---|---|---|---|    |==|==|    |  |\r\n" + 
-							  " ^jgs^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^";
+							  " ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^";
 	public String fenceImage = "   ,   #                                                     _\r\n" + 
 							   "  (\\\\_(^>                            _.                    >(')__,\r\n" + 
 							   "  (_(__)           ||          _.||~~ {^--^}.-._._.---.__.-;(_~_/\r\n" + 
@@ -88,7 +88,7 @@ public class GameEnvironment {
 		setFarmer();
 		setFarm();
 		
-		state = new GameState(totalDays, farm);
+		state = new GameState(totalDays, farm, this);
 		gameLoop();
 	}
 	
@@ -152,7 +152,7 @@ public class GameEnvironment {
 		if (state.currentDay > totalDays) {endGame();}
 	}
 	
-	public void endGame() {
+	private void endGame() {
 		System.out.println("| Farmer: " + state.farmer.getName());
 		System.out.println("| Game duration: " + totalDays + " days.");
 		double profit = state.totalMoney - 50.00;
@@ -203,7 +203,7 @@ public class GameEnvironment {
 		System.out.println(fenceImage);
 	}
 	
-	public void setTotalDays() {
+	private void setTotalDays() {
 		s = new Scanner(System.in);
 		
 		while ((totalDays < 5 || totalDays > 10)) {
@@ -222,7 +222,7 @@ public class GameEnvironment {
 		System.out.println("| You have chosen " + totalDays + " days.");
 	}
 	
-	public void setFarmer() {
+	private void setFarmer() {
 		farmer = new Farmer();
 		s = new Scanner(System.in);
 		
@@ -235,14 +235,15 @@ public class GameEnvironment {
 			s = new Scanner(System.in);
 			System.out.println("|---------------------------------------------------|\r\n" +
 							   "| How old is your farmer? Please enter his/her age. |\r\n" +
+							   "| Please enter an age between 20 and 70 years old.  |\r\n" +
 							   "|---------------------------------------------------|");
 			
-		} while (!s.hasNextInt());
+		} while (!s.hasNextInt() || s.nextInt() < 20 || s.nextInt() > 70);
 		
 		farmer.setAge(s.nextInt());
 	}
 	
-	public void setFarm() {
+	private void setFarm() {
 		s = new Scanner(System.in);
 		int selection = 0;
 		String name;
@@ -265,19 +266,28 @@ public class GameEnvironment {
 		} while (selection < 1 || selection > 4);
 		
 		switch (selection) {
-		case 1:
-			farm = new CityFarm(name, farmer);
-			break;
-		case 2:
-			farm = new TropicalFarm(name, farmer);
-			break;
-		case 3:
-			farm = new NormalFarm(name, farmer);
-			break;
-		case 4:
-			farm = new HardcoreFarm(name, farmer);
-			break;
+			case 1:
+				farm = new CityFarm(name, farmer);
+				break;
+			case 2:
+				farm = new TropicalFarm(name, farmer);
+				break;
+			case 3:
+				farm = new NormalFarm(name, farmer);
+				break;
+			case 4:
+				farm = new HardcoreFarm(name, farmer);
+				break;
 		}
+	}
+	
+	public void setState(GameState tempState) {
+		state = tempState;
+	}
+	
+	public static void main(String[] args) {
+		new GameEnvironment();
+		
 	}
 
 }

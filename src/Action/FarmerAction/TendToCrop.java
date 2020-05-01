@@ -12,8 +12,8 @@ import Item.GenericItem;
 
 public class TendToCrop extends Action {
 	
-	private Set<Crop> plantedCropsSet;
-	private Crop selectedCrop;
+	private Set<String> plantedCropsSet;
+	private String selectedCrop;
 	
 	private String cropOptions = "";
 	private String cropItemOptions = "|---------------------------|\r\n" +
@@ -27,10 +27,10 @@ public class TendToCrop extends Action {
 	
     public void perform(GameState state) {
 
-    	if (state.checkFarmerAction()) {
+    	if (checkFarmerAction(state)) {
     		if(getOptions(state)) {
     			
-    			ArrayList<Crop> plantedCrops = new ArrayList<Crop>(plantedCropsSet);
+    			ArrayList<String> plantedCrops = new ArrayList<String>(plantedCropsSet);
     			
 	    		switch(state.getOption(plantedCropsSet.size()+1, cropOptions)) {
 		    		case 1:
@@ -72,22 +72,22 @@ public class TendToCrop extends Action {
 	    		}
     		}
     	}
-//        returnBack(state);
+        returnBack(state);
     }
     
     private boolean getOptions(GameState state) {
     	int index = 1;
     	String title = "| PLANTED CROPS |\r\n";
-    	plantedCropsSet = new HashSet<Crop>();
+    	plantedCropsSet = new HashSet<String>();
     	
     	for (Crop crop: state.crops) {
     		if (crop.planted) {
-    			plantedCropsSet.add(crop);
+    			plantedCropsSet.add(crop.getName());
     		}
     	}
     	
-    	for (Crop crop: plantedCropsSet) {
-    		cropOptions = cropOptions + "| " + index + " " + crop.getName() + "\r\n";
+    	for (String crop: plantedCropsSet) {
+    		cropOptions = cropOptions + "| " + index + " " + crop + "\r\n";
     		index++;
     	}
     	
@@ -155,7 +155,7 @@ public class TendToCrop extends Action {
     private void useItem(GameState state, int boost, int growthBoost) {
     	state.farmer.reduceActionCount();
     	for (Crop crop: state.crops) {
-    		if (crop.planted && crop.getName() == selectedCrop.getName()) {
+    		if (crop.planted && crop.getName() == selectedCrop) {
     			crop.increaseGrowthLevel(boost + growthBoost);
     		}
     	}
@@ -163,13 +163,9 @@ public class TendToCrop extends Action {
     
     private void waterCrops(GameState state) {
     	for (Crop crop: state.crops) {
-    		if (crop.planted && crop.getName() == selectedCrop.getName()) {
+    		if (crop.planted && crop.getName() == selectedCrop) {
     			crop.decreaseThirstLevel();
     		}
     	}
     }
-
-//    private void returnBack(GameState state) {
-//        super.perform(state);
-//    }
 }

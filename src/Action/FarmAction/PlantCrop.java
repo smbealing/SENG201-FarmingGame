@@ -44,8 +44,4 @@ public class PlantCrop extends Action {
         state.crops.get(selection - 1).setPlanted();
         System.out.println("| Your " + state.crops.get(selection - 1).getName() + " has been planted.");
     }
-
-    private void returnBack(GameState state) {
-//        super.perform(state);
-        }
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import Action.Action;
 import GameEnvironment.GameState;
 
-public class CropStatus {
+public class CropStatus extends Action {
     protected Scanner s;
 
     public void perform(GameState state) {
@@ -47,9 +47,5 @@ public class CropStatus {
             System.out.println("| This crop has not been planted yet.");
         }
 
-    }
-
-    private void returnBack(GameState state) {
-//        super.perform(state);
     }
 }

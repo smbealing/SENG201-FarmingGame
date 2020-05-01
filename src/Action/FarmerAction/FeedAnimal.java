@@ -4,7 +4,6 @@ import Action.Action;
 import Animal.Animal;
 import GameEnvironment.GameState;
 import Item.AnimalFood;
-import Item.GenericItem;
 
 public class FeedAnimal extends Action {
 	
@@ -13,11 +12,10 @@ public class FeedAnimal extends Action {
 			 						 "| 1. Use Carrot             |\r\n" +
 			 						 "| 2. Use Grain              |\r\n" +
 			 						 "| 3. Use High Quality Grain |\r\n" +
-			 						 "| 4. Use Heating  $20.00    |\r\n" +
 			 						 "|---------------------------|";
 
     public void perform(GameState state) {
-        if (state.checkFarmerAction()) {
+        if (checkFarmerAction(state)) {
         	switch(state.getOption(4, foodItemOptions)) {
 	        	case 1:
 	        		useFoodItem(state, "Carrot");
@@ -28,12 +26,9 @@ public class FeedAnimal extends Action {
 	        	case 3:
 	        		useFoodItem(state, "High Quality Grain");
 	        		break;
-	        	case 4:
-	        		useHeating(state, state.items.get(0));
-	        		break;
         	}
         }
-//        returnBack(state);
+        returnBack(state);
     }
     
     private void useFoodItem(GameState state, String itemName) {
@@ -57,19 +52,6 @@ public class FeedAnimal extends Action {
     	}
     }
     
-    private void useHeating(GameState state, GenericItem item) {
-    	if ((state.totalMoney - item.getPurchasingPrice()) > 0.00) {
-    		
-			state.totalMoney -= item.getPurchasingPrice();
-			useItem(state, 0 ,item.getGeneralBoost());
-			
-		} else {
-			System.out.println("|-----------------------------------------------------------|\r\n" +
-			   		   		   "| Oh no! You aren't able to afford heating for the animals! |\r\n" +
-			   		   		   "|-----------------------------------------------------------|");
-		}
-    }
-    
     private void useItem(GameState state, int healthBoost, int boost) {
     	state.farmer.reduceActionCount();
     	for (Animal animal: state.animals) {
@@ -77,8 +59,4 @@ public class FeedAnimal extends Action {
     		animal.increaseHealth(healthBoost);
     	}
     }
-
-//    private void returnBack(GameState state) {
-//        super.perform(state);
-//    }
 }

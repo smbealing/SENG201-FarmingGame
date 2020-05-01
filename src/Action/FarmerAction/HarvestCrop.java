@@ -1,15 +1,15 @@
 package Action.FarmerAction;
 
 
-import Action.Action;
 import GameEnvironment.GameState;
+import Action.Action;
 import Crop.Crop;
 
 
-public class HarvestCrop  {
+public class HarvestCrop extends Action {
 
     public void perform(GameState state) {
-        if (state.checkFarmerAction()) {
+        if (checkFarmerAction(state)) {
             state.farmer.reduceActionCount();
             harvestCrops(state);
             System.out.println();
@@ -26,9 +26,5 @@ public class HarvestCrop  {
                 state.crops.remove(crop);
             }
         }
-    }
-
-    private void returnBack(GameState state) {
-//        super.perform(state);
     }
 }

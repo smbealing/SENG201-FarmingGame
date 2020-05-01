@@ -1,22 +1,16 @@
 package Action.FarmerAction;
 
-//import Action.Action;
+import Action.Action;
 import GameEnvironment.GameState;
 
-public class TendToFarmLand  {
+public class TendToFarmLand extends Action {
 
     public void perform(GameState state) {
-        if (state.checkFarmerAction()) {
+        if (checkFarmerAction(state)) {
             state.farm.setMaintenanceLevel(0);
             state.farmer.reduceActionCount();
-
-
         }
 
         returnBack(state);
-    }
-
-    private void returnBack(GameState state) {
-//        super.perform(state);
     }
 }

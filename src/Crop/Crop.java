@@ -62,7 +62,7 @@ public abstract class Crop {
     }
 
     public void increaseThirstLevel() {   	
-    	if (thirstLevel != maxThirstLevel) { thirstLevel += 1;}
+    	if (thirstLevel != maxThirstLevel) { thirstLevel += 1; }
     }
     
     public void decreaseThirstLevel() {
@@ -72,7 +72,7 @@ public abstract class Crop {
     public void increaseGrowthLevel(int boost) {   	
     	currentGrowthLevel += boost;
     	
-    	if (currentGrowthLevel > daysUntilHarvest) { currentGrowthLevel = daysUntilHarvest;}
+    	if (currentGrowthLevel > daysUntilHarvest) { currentGrowthLevel = daysUntilHarvest; }
     }
 
 }

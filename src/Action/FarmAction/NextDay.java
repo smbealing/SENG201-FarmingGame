@@ -14,10 +14,11 @@ public class NextDay extends Action {
 	
 	public void perform(GameState state) {
 		state.currentDay += 1;
+		state.farmer.setActionCount();
 		
 		for (Crop crop: state.crops) {
 			if (crop.planted) {
-				if (crop.getThirstLevel() != 10) {
+				if (crop.getThirstLevel() != 10 && state.farm.getMaintenanceLevel() == state.farm.getMaxMaintenanceLevel()) {
 					crop.currentGrowthLevel += 1;
 				}
 				
@@ -30,6 +31,9 @@ public class NextDay extends Action {
 			
 			if (animal.getHappiness() >= requiredHappiness) {
 				state.totalMoney += animal.getIncome();
+			}
+			if (state.farm.getMaintenanceLevel() == state.farm.getMaxMaintenanceLevel()) {
+				animal.decreaseHappiness();
 			}
 			
 			animal.decreaseHappiness();
@@ -44,17 +48,20 @@ public class NextDay extends Action {
 			case 0: 
 				new Drought().apply(state);
 				break;
-			case 1: 
+			case 1:
+				state.farm.increaseMaintenanceLevel();
 				break;
 			case 2: 
 				new BrokenFence().apply(state);
 				break;
 			case 3:
+				state.farm.increaseMaintenanceLevel();
 				break;
 			case 4: 
 				new CountyFair().apply(state);
 				break;
 			case 5:
+				state.farm.increaseMaintenanceLevel();
 				break;
 		}
 	}

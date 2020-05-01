@@ -3,16 +3,15 @@ package Action.FarmerAction;
 import java.util.Scanner;
 
 import Action.Action;
-import Animal.Animal;
 import GameEnvironment.GameState;
 import Item.Speech;
 import Item.Warmth;
 
-public class PlayWithAnimal {
+public class PlayWithAnimal extends Action {
     protected Scanner s;
 
     public void perform(GameState state) {
-        if (state.checkFarmerAction()) {
+        if (checkFarmerAction(state)) {
             state.farmer.reduceActionCount();
             selectAnimal(state);
 
@@ -31,8 +30,8 @@ public class PlayWithAnimal {
         }
 
         System.out.println("|-------------------|\r\n" +
-                "| Select an animal. |\r\n" +
-                "|-------------------|");
+                		   "| Select an animal. |\r\n" +
+                		   "|-------------------|");
 
         do {
             System.out.println(animalOptions);
@@ -51,27 +50,33 @@ public class PlayWithAnimal {
     }
 
     public void selectPlayOption(int selection, GameState state) {
-        String animalPlayOptions = "|-----------------------------|\r\n" +
-                                   "|   ~ ANIMAL PLAY OPTIONS ~   |\r\n" +
-                                   "| 1. Speak to Animal          |\r\n" +
-                                   "| 2. Give Animal Warmth       |\r\n" +
-                                   "|-----------------------------|";
+        String animalPlayOptions = "|-------------------------------|\r\n" +
+                                   "|    ~ ANIMAL PLAY OPTIONS ~    |\r\n" +
+                                   "| 1. Speak to Animal            |\r\n" +
+                                   "| 2. Give Animal Warmth  $20.00 |\r\n" +
+                                   "|-------------------------------|";
 
         switch (state.getOption(2, animalPlayOptions)) {
             case 1:
                 state.animals.get(selection - 1).increaseHappiness(new Speech().getGeneralBoost());
                 break;
             case 2:
-                state.animals.get(selection - 1).increaseHappiness(new Warmth().getGeneralBoost());
+                useHeating(state, new Warmth(), selection-1);
                 break;
         }
-
     }
-
-
-
-    private void returnBack(GameState state) {
-//        super.perform(state);
+    
+    private void useHeating(GameState state, Warmth item, int selection) {
+    	if ((state.totalMoney - item.getPurchasingPrice()) > 0.00) {
+    		
+			state.totalMoney -= item.getPurchasingPrice();
+			state.animals.get(selection).increaseHappiness(new Warmth().getGeneralBoost());
+			
+		} else {
+			System.out.println("|-----------------------------------------------------------|\r\n" +
+			   		   		   "| Oh no! You aren't able to afford heating for the animals! |\r\n" +
+			   		   		   "|-----------------------------------------------------------|");
+		}
     }
 
 }

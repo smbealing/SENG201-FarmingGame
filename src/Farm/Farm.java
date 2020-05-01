@@ -10,7 +10,7 @@ public abstract class Farm {
 
     private final int maxCropCount;
     private final int maxAnimalCount;
-
+    private final int maxMaintenanceLevel = 3;
 
     public Farm(String tempName, Farmer tempFarmer, String tempType, int tempMaxCropCount, int tempMaxAnimalCount) {
         name = tempName;
@@ -40,9 +40,17 @@ public abstract class Farm {
     public int getMaintenanceLevel() {
         return maintenanceLevel;
     }
+    
+    public int getMaxMaintenanceLevel() {
+        return maxMaintenanceLevel;
+    }
 
     public void setMaintenanceLevel(int tempMaintenanceLevel) {
         maintenanceLevel = tempMaintenanceLevel;
+    }
+    
+    public void increaseMaintenanceLevel() {
+    	if (maintenanceLevel != maxMaintenanceLevel) { maintenanceLevel++; }
     }
     
     public int getMaxAnimalCount() {

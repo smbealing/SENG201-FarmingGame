@@ -18,6 +18,7 @@ public class GameState {
 	
 	public Farm farm;
 	public Farmer farmer;
+	public GameEnvironment main;
 	public ArrayList<Crop> crops;
 	public ArrayList<Animal> animals;
 	public ArrayList<CropItem> cropItems;
@@ -31,11 +32,12 @@ public class GameState {
 	
 	private Scanner s;
 	
-	public GameState(int tempTotalDays, Farm tempFarm) {
+	public GameState(int tempTotalDays, Farm tempFarm, GameEnvironment tempMain) {
 		totalDays = tempTotalDays;
 		currentDay = 1;
 		
 		farm = tempFarm;
+		main = tempMain;
 		farmer = farm.getFarmer();
 		crops = new ArrayList<Crop>();
 		animals = new ArrayList<Animal>();
@@ -57,18 +59,6 @@ public class GameState {
 		} while (selection < 1 || selection > num);
 		
 		return selection;
-	}
-	
-	 public boolean checkFarmerAction() {
-	    	if (farmer.getActionCount() == 0) {
-	    		System.out.println("|--------------------------------------------------------------------------------|\r\n" +
-				   		   		   "| Oh no! " + farmer.getName() + " does not have any energy left for today! |\r\n" +
-	    						   "|--------------------------------------------------------------------------------|");
-	    		return false;
-	    	} else {
-
-				return true;
-			}
 	}
 	
 }

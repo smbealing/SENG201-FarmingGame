@@ -47,19 +47,19 @@ public abstract class Animal {
 	public void increaseHappiness(int amount) {
 		happiness += amount;
 		
-		if (happiness > maxHappiness) {happiness = maxHappiness;}
+		if (happiness > maxHappiness) {happiness = maxHappiness; }
 	}
 	
 	public void increaseHealth(int amount) {
 		health += amount;
 		
-		if (health > maxHealth) {health = maxHealth;}
+		if (health > maxHealth) { health = maxHealth; }
 	}
 	
 	public void decreaseHappiness() {
 		happiness -= 20;
 		
-		if (happiness < 0) {happiness = 0;}
+		if (happiness < 0) { happiness = 0; }
 	}
 	
 	public void decreaseHeath() {
