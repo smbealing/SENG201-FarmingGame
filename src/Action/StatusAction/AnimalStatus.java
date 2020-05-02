@@ -23,22 +23,32 @@ public class AnimalStatus extends Action {
         for (int i = 1; i <= state.animals.size(); i ++) {
             animalOptions = animalOptions.concat("| " + i + ". " + state.animals.get(i-1).getName() + "\n");
         }
+        
+        if (animalOptions.length() == 0) {
+        	System.out.println("|----------------------|\r\n" +
+         		   			   "| You have no animals! |\r\n" +
+         		   			   "|----------------------|");
+        } else {
 
-        System.out.println("|-------------------|\r\n" +
-                           "| Select an animal. |\r\n" +
-                           "|-------------------|");
-
-        do {
-            System.out.println(animalOptions);
-            selection = s.nextInt();
-            showAnimalStatus(selection, state);
-
-        } while(selection < 1 || selection > state.animals.size());
+	        System.out.println("|-------------------|\r\n" +
+	                           "| Select an animal. |\r\n" +
+	                           "|-------------------|");
+	
+	        do {
+	            System.out.println(animalOptions);
+	            selection = s.nextInt();
+	            
+	
+	        } while(selection < 1 || selection > state.animals.size());
+	        
+	        showAnimalStatus(selection, state);
+	        
+        }
     }
 
     public void showAnimalStatus(int selection, GameState state) {
         System.out.println("| You have selected: " + state.animals.get(selection - 1).getName());
-        System.out.println("| Health: " + state.animals.get(selection - 1).getHealth());
-        System.out.println("| Happiness: " + state.animals.get(selection - 1).getHappiness());
+        System.out.println("| Health: " + state.animals.get(selection - 1).getHealth() + "/" + state.animals.get(selection - 1).getMaxHealth());
+        System.out.println("| Happiness: " + state.animals.get(selection - 1).getHappiness() + "/" + state.animals.get(selection - 1).getMaxHappiness());
     }
 }

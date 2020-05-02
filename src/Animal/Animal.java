@@ -36,6 +36,10 @@ public abstract class Animal {
 		return health;
 	}
 	
+	public int getMaxHealth() {
+		return maxHealth;
+	}
+	
 	public int getHappiness() {
 		return happiness;
 	}

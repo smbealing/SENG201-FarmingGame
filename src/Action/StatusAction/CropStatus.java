@@ -23,17 +23,27 @@ public class CropStatus extends Action {
         for (int i = 1; i <= state.crops.size(); i ++) {
             cropOptions = cropOptions.concat("| " + i + ". " + state.crops.get(i-1).getName() + "\n");
         }
+        
+        if (cropOptions.length() == 0) {
+        	System.out.println("|--------------------|\r\n" +
+         		   			   "| You have no crops! |\r\n" +
+         		   			   "|--------------------|");
+        } else {
 
-        System.out.println("|----------------|\r\n" +
-                           "| Select a crop. |\r\n" +
-                           "|----------------|");
-
-        do {
-            System.out.println(cropOptions);
-            selection = s.nextInt();
-            showCropStatus(selection, state);
-
-        } while(selection < 1 || selection > state.crops.size());
+	        System.out.println("|----------------|\r\n" +
+	                           "| Select a crop. |\r\n" +
+	                           "|----------------|");
+	
+	        do {
+	            System.out.println(cropOptions);
+	            selection = s.nextInt();
+	            
+	
+	        } while(selection < 1 || selection > state.crops.size());
+	        
+	        showCropStatus(selection, state);
+	        
+        }
     }
 
     public void showCropStatus(int selection, GameState state) {

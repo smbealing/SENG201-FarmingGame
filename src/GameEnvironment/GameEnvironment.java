@@ -231,16 +231,25 @@ public class GameEnvironment {
 				   		   "|--------------------------|");
 		farmer.setName(s.nextLine());
 		
-		do {
-			s = new Scanner(System.in);
-			System.out.println("|---------------------------------------------------|\r\n" +
-							   "| How old is your farmer? Please enter his/her age. |\r\n" +
-							   "| Please enter an age between 20 and 70 years old.  |\r\n" +
-							   "|---------------------------------------------------|");
-			
-		} while ( !s.hasNextInt() && (s.nextInt() < 70 && s.nextInt() > 20));
+		int farmerAge = 0;
 		
-		farmer.setAge(s.nextInt());
+		while (farmerAge < 20 || farmerAge > 70) {
+			s = new Scanner(System.in);
+			
+			System.out.println("|---------------------------------------------------|\r\n" +
+					   "| How old is your farmer? Please enter his/her age. |\r\n" +
+					   "| Please enter an age between 20 and 70 years old.  |\r\n" +
+					   "|---------------------------------------------------|");
+			
+			if (!s.hasNextInt()) {
+				farmerAge = 0;
+			} else {
+				farmerAge = s.nextInt();
+			}
+		}
+
+		
+		farmer.setAge(farmerAge);
 	}
 	
 	private void setFarm() {

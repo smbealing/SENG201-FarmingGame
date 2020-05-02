@@ -28,17 +28,27 @@ public class PlayWithAnimal extends Action {
         for (int i = 1; i <= state.animals.size(); i ++) {
             animalOptions = animalOptions.concat("| " + i + ". " + state.animals.get(i-1).getName() + "\n");
         }
+        
+        if (animalOptions.length() == 0) {
+        	System.out.println("|----------------------|\r\n" +
+         		   			   "| You have no animals! |\r\n" +
+         		   			   "|----------------------|");
+        } else {
+        
 
-        System.out.println("|-------------------|\r\n" +
-                		   "| Select an animal. |\r\n" +
-                		   "|-------------------|");
-
-        do {
-            System.out.println(animalOptions);
-            selection = s.nextInt();
-            showAnimalSelected(selection, state);
-
-        } while(selection < 1 || selection > state.animals.size());
+	        System.out.println("|-------------------|\r\n" +
+	                		   "| Select an animal. |\r\n" +
+	                		   "|-------------------|");
+	
+	        do {
+	            System.out.println(animalOptions);
+	            selection = s.nextInt();
+	            
+	
+	        } while(selection < 1 || selection > state.animals.size());
+	        
+	        showAnimalSelected(selection, state);
+        }
     }
 
     public void showAnimalSelected(int selection, GameState state) {

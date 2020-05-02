@@ -57,6 +57,7 @@ public class FeedAnimal extends Action {
     	for (Animal animal: state.animals) {
     		animal.increaseHappiness(boost);
     		animal.increaseHealth(healthBoost);
+    		System.out.println("| Your " + animal.getName() + " has been fed.");
     	}
     }
 }

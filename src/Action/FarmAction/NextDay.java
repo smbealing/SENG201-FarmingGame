@@ -18,7 +18,7 @@ public class NextDay extends Action {
 		
 		for (Crop crop: state.crops) {
 			if (crop.planted) {
-				if (crop.getThirstLevel() != 10 && state.farm.getMaintenanceLevel() == state.farm.getMaxMaintenanceLevel()) {
+				if (crop.getThirstLevel() != 10 && state.farm.getMaintenanceLevel() != state.farm.getMaxMaintenanceLevel()) {
 					crop.currentGrowthLevel += 1;
 				}
 				

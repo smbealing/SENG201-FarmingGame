@@ -27,17 +27,27 @@ public class PlantCrop extends Action {
                 cropOptions = cropOptions.concat("| " + i + ". " + state.crops.get(i-1).getName() + "\n");
             }
         }
+        
+        if (cropOptions.length() == 0) {
+        	System.out.println("|--------------------------------------|\r\n" +
+                    		   "| All of your crops have been planted! |\r\n" +
+                    		   "|--------------------------------------|");
+        } else {
 
-        System.out.println("|-------------------------|\r\n" +
-                           "| Select a crop to plant. |\r\n" +
-                           "|-------------------------|");
-
-        do {
-            System.out.println(cropOptions);
-            selection = s.nextInt();
-            plantCrop(selection, state);
-
-        } while(selection < 1 || selection > state.crops.size());
+	        System.out.println("|-------------------------|\r\n" +
+	                           "| Select a crop to plant. |\r\n" +
+	                           "|-------------------------|");
+	
+	        do {
+	            System.out.println(cropOptions);
+	            selection = s.nextInt();
+	       
+	
+	        } while(selection < 1 || selection > state.crops.size());
+	        
+	        plantCrop(selection, state);
+	        
+        }
     }
 
     public void plantCrop(int selection, GameState state) {
