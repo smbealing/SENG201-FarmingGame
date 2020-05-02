@@ -42,7 +42,7 @@ public class AnimalTest {
 		
 		Sheep testSheep = new Sheep();
 		assertEquals(30, testCow.getHappiness());
-		testSheep.decreaseHeath();
+		testSheep.decreaseHealth();
 		assertEquals(10, testCow.getHappiness());
 		
 	}

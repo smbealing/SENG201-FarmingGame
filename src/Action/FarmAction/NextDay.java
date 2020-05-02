@@ -37,7 +37,7 @@ public class NextDay extends Action {
 			}
 			
 			animal.decreaseHappiness();
-			animal.decreaseHeath();
+			animal.decreaseHealth();
 		}
 		
 		randomEvent(state);

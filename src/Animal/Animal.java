@@ -62,14 +62,14 @@ public abstract class Animal {
 		if (happiness < 0) { happiness = 0; }
 	}
 	
-	public void decreaseHeath() {
+	public void decreaseHealth() {
 		health -= 20;
 		
 		if (health < 0) {
 			decreaseHappiness();
 			decreaseHappiness();
 			
-			happiness = 0;
+			health = 0;
 		}
 	}
 	
