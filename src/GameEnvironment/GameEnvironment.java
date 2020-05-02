@@ -206,7 +206,7 @@ public class GameEnvironment {
 	private void setTotalDays() {
 		s = new Scanner(System.in);
 		
-		while ((totalDays < 5 || totalDays > 10)) {
+		while (totalDays < 5 || totalDays > 10) {
 			s = new Scanner(System.in);
 			
 			System.out.println("|-------------------------------------------------|\r\n" +
@@ -238,7 +238,7 @@ public class GameEnvironment {
 							   "| Please enter an age between 20 and 70 years old.  |\r\n" +
 							   "|---------------------------------------------------|");
 			
-		} while (!s.hasNextInt() || s.nextInt() < 20 || s.nextInt() > 70);
+		} while ( !s.hasNextInt() && (s.nextInt() < 70 && s.nextInt() > 20));
 		
 		farmer.setAge(s.nextInt());
 	}
