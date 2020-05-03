@@ -31,5 +31,9 @@ public class Farmer {
 
     public void reduceActionCount() {
         actionCount -= 1;
+        
+        if (actionCount < 0) {
+        	actionCount = 0;
+        }
     }
 }
