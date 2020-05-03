@@ -50,7 +50,8 @@ public abstract class Farm {
     }
     
     public void increaseMaintenanceLevel() {
-    	if (maintenanceLevel != maxMaintenanceLevel) { maintenanceLevel++; }
+    	maintenanceLevel++;
+    	if (maintenanceLevel > maxMaintenanceLevel) { maintenanceLevel = maxMaintenanceLevel; }
     }
     
     public int getMaxAnimalCount() {
