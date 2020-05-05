@@ -47,28 +47,32 @@ public class StartPanel {
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(10, 11, 46, 14);
-		frmFarmiza.getContentPane().add(lblNewLabel);
+		JLabel lblFarmiza = new JLabel("Farmiza");
+		lblFarmiza.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFarmiza.setFont(new Font("Gabbaland", Font.BOLD, 90));
+		lblFarmiza.setBounds(10, 21, 764, 155);
+		frmFarmiza.getContentPane().add(lblFarmiza);
 		
-		JLabel lblNewLabel_1 = new JLabel("Farmiza");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Gabbaland", Font.BOLD, 80));
-		lblNewLabel_1.setBounds(10, 21, 764, 104);
-		frmFarmiza.getContentPane().add(lblNewLabel_1);
-		
-		JButton btnNewButton = new JButton("Play");
-		btnNewButton.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		btnNewButton.setBounds(10, 172, 414, 32);
-		frmFarmiza.getContentPane().add(btnNewButton);
-		
-		JButton btnQuit = new JButton("Quit");
-		btnQuit.addActionListener(new ActionListener() {
+		JButton btnPlay = new JButton("Play");
+		btnPlay.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
+		btnPlay.setBounds(10, 362, 764, 64);
+		btnPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				SelectDaysPanel newPanel = new SelectDaysPanel();
+				frmFarmiza.dispose();
+				newPanel.ActivatePanel();
 			}
 		});
-		btnQuit.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		btnQuit.setBounds(10, 218, 414, 32);
+		frmFarmiza.getContentPane().add(btnPlay);
+		
+		JButton btnQuit = new JButton("Quit");
+		btnQuit.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
+		btnQuit.setBounds(10, 436, 764, 64);
+		btnQuit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmFarmiza.dispose();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnQuit);
 	}
 }
