@@ -15,6 +15,7 @@ public class CreateFarmerPanel {
 
 	private JFrame frmFarmiza;
 	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -45,7 +46,7 @@ public class CreateFarmerPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 450, 300);
+		frmFarmiza.setBounds(100, 100, 800, 550);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
@@ -64,19 +65,14 @@ public class CreateFarmerPanel {
 		lblHowOldIs.setBounds(10, 75, 234, 72);
 		frmFarmiza.getContentPane().add(lblHowOldIs);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"2", "3", "4", "5", "6", "7"}));
-		comboBox.setBounds(244, 103, 32, 22);
-		frmFarmiza.getContentPane().add(comboBox);
-		
 		JButton button = new JButton("Next");
 		button.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		button.setBounds(10, 218, 414, 32);
 		frmFarmiza.getContentPane().add(button);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}));
-		comboBox_1.setBounds(273, 103, 32, 22);
-		frmFarmiza.getContentPane().add(comboBox_1);
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(244, 90, 180, 36);
+		frmFarmiza.getContentPane().add(textField_1);
 	}
 }
