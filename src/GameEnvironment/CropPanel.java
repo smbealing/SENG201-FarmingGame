@@ -66,7 +66,7 @@ public class CropPanel {
 		btnCheckCropStatus.setBounds(10, 262, 176, 64);
 		frame.getContentPane().add(btnCheckCropStatus);
 		
-		JButton btnCropEnventory = new JButton("CROP ENVENTORY");
+		JButton btnCropEnventory = new JButton("CROP INVENTORY");
 		btnCropEnventory.setBounds(10, 337, 176, 64);
 		frame.getContentPane().add(btnCropEnventory);
 		

@@ -44,7 +44,7 @@ public class DroughtPanel {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNoticeOne = new JLabel("Oh no! A drought happened over night and it has effected you farm!");
+		JLabel lblNoticeOne = new JLabel("Oh no! A drought happened over night and it has affected you farm!");
 		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblNoticeOne.setBounds(10, 31, 707, 46);
