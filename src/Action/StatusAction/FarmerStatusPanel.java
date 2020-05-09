@@ -1,10 +1,10 @@
-package GameEnvironment;
+package Action.StatusAction;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class StatusPanel {
+public class FarmerStatusPanel {
 
 	private JFrame frmFarmiza;
 
@@ -15,7 +15,7 @@ public class StatusPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StatusPanel window = new StatusPanel();
+					FarmerStatusPanel window = new FarmerStatusPanel();
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class StatusPanel {
 	/**
 	 * Create the application.
 	 */
-	public StatusPanel() {
+	public FarmerStatusPanel() {
 		initialize();
 	}
 
