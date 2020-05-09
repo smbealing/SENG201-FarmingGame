@@ -43,7 +43,7 @@ public class StartPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 800, 550);
+		frmFarmiza.setBounds(100, 100, 814, 552);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
@@ -53,8 +53,8 @@ public class StartPanel {
 		
 		JLabel lblNewLabel_1 = new JLabel("Farmiza");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Gabbaland", Font.BOLD, 80));
-		lblNewLabel_1.setBounds(10, 21, 764, 104);
+		lblNewLabel_1.setFont(new Font("Gabbaland", Font.BOLD, 60));
+		lblNewLabel_1.setBounds(10, 21, 414, 78);
 		frmFarmiza.getContentPane().add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("Play");
