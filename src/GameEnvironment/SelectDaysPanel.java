@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JSlider;
 import javax.swing.JButton;
 
@@ -16,7 +19,7 @@ public class SelectDaysPanel {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -46,25 +49,33 @@ public class SelectDaysPanel {
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("How many days would you like to play for?");
-		lblNewLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(20, 25, 392, 72);
-		frmFarmiza.getContentPane().add(lblNewLabel);
+		JLabel lblDaysQuestion = new JLabel("How many days would you like to play for?");
+		lblDaysQuestion.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
+		lblDaysQuestion.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDaysQuestion.setBounds(72, 99, 632, 72);
+		frmFarmiza.getContentPane().add(lblDaysQuestion);
 		
-		JSlider slider = new JSlider();
-		slider.setValue(5);
-		slider.setPaintTicks(true);
-		slider.setPaintLabels(true);
-		slider.setMinimum(5);
-		slider.setMaximum(10);
-		slider.setMajorTickSpacing(1);
-		slider.setBounds(20, 130, 392, 45);
-		frmFarmiza.getContentPane().add(slider);
+		JSlider sldDaySelection = new JSlider();
+		sldDaySelection.setFont(new Font("Arial", Font.PLAIN, 14));
+		sldDaySelection.setValue(5);
+		sldDaySelection.setPaintTicks(true);
+		sldDaySelection.setPaintLabels(true);
+		sldDaySelection.setMinimum(5);
+		sldDaySelection.setMaximum(10);
+		sldDaySelection.setMajorTickSpacing(1);
+		sldDaySelection.setBounds(78, 285, 626, 45);
+		frmFarmiza.getContentPane().add(sldDaySelection);
 		
 		JButton btnNext = new JButton("Next");
-		btnNext.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		btnNext.setBounds(10, 218, 414, 32);
+		btnNext.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
+		btnNext.setBounds(10, 436, 764, 64);
+		btnNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CreateFarmerPanel newPanel = new CreateFarmerPanel();
+				frmFarmiza.dispose();
+				newPanel.ActivatePanel();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnNext);
 	}
 }

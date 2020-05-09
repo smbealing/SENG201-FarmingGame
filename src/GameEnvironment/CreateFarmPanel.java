@@ -5,20 +5,26 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
+import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class CreateFarmPanel {
 
 	private JFrame frmFarmiza;
-	private JTextField textField;
+	private JTextField tfFarmName;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -49,43 +55,37 @@ public class CreateFarmPanel {
 		frmFarmiza.getContentPane().setLayout(null);
 		
 		JButton btnStartFarmingAdventure = new JButton("Start My Farming Adventure!");
-		btnStartFarmingAdventure.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		btnStartFarmingAdventure.setBounds(10, 218, 414, 32);
+		btnStartFarmingAdventure.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
+		btnStartFarmingAdventure.setBounds(10, 435, 764, 65);
+		btnStartFarmingAdventure.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+//				GameEnvironmentPanel newPanel = new GameEnvironmentPanel();
+				frmFarmiza.dispose();
+//				newPanel.ActivatePanel();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnStartFarmingAdventure);
 		
-		JLabel lblGiveYourFarm = new JLabel("Give your farm a name:");
-		lblGiveYourFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		lblGiveYourFarm.setBounds(10, 19, 234, 36);
-		frmFarmiza.getContentPane().add(lblGiveYourFarm);
+		JLabel lblNameFarm = new JLabel("Give your farm a name:");
+		lblNameFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
+		lblNameFarm.setBounds(36, 47, 332, 41);
+		frmFarmiza.getContentPane().add(lblNameFarm);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(223, 19, 201, 36);
-		frmFarmiza.getContentPane().add(textField);
+		tfFarmName = new JTextField();
+		tfFarmName.setFont(new Font("Arial", Font.PLAIN, 16));
+		tfFarmName.setColumns(10);
+		tfFarmName.setBounds(378, 47, 383, 41);
+		frmFarmiza.getContentPane().add(tfFarmName);
 		
-		JLabel lblSelectAType = new JLabel("Select a type of farm:");
-		lblSelectAType.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		lblSelectAType.setBounds(10, 66, 414, 36);
-		frmFarmiza.getContentPane().add(lblSelectAType);
+		JLabel lblSelectFarmType = new JLabel("Select a type of farm:");
+		lblSelectFarmType.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
+		lblSelectFarmType.setBounds(36, 160, 414, 36);
+		frmFarmiza.getContentPane().add(lblSelectFarmType);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("City Farm");
-		chckbxNewCheckBox.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		chckbxNewCheckBox.setBounds(35, 123, 152, 23);
-		frmFarmiza.getContentPane().add(chckbxNewCheckBox);
-		
-		JCheckBox chckbxTropicalFarm = new JCheckBox("Tropical Farm");
-		chckbxTropicalFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		chckbxTropicalFarm.setBounds(221, 123, 152, 23);
-		frmFarmiza.getContentPane().add(chckbxTropicalFarm);
-		
-		JCheckBox chckbxNormalFarm = new JCheckBox("Normal Farm");
-		chckbxNormalFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		chckbxNormalFarm.setBounds(35, 166, 152, 23);
-		frmFarmiza.getContentPane().add(chckbxNormalFarm);
-		
-		JCheckBox chckbxHardcoreFarm = new JCheckBox("Hardcore Farm");
-		chckbxHardcoreFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		chckbxHardcoreFarm.setBounds(221, 166, 152, 23);
-		frmFarmiza.getContentPane().add(chckbxHardcoreFarm);
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"City Farm", "Tropical Farm", "Normal Farm", "Hardcore Farm"}));
+		comboBox.setFont(new Font("Arial", Font.PLAIN, 18));
+		comboBox.setBounds(36, 217, 276, 41);
+		frmFarmiza.getContentPane().add(comboBox);
 	}
 }
