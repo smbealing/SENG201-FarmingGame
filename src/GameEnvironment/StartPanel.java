@@ -43,7 +43,7 @@ public class StartPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 814, 552);
+		frmFarmiza.setBounds(100, 100, 800, 550);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
@@ -56,7 +56,7 @@ public class StartPanel {
 
 		JButton btnPlay = new JButton("Play");
 		btnPlay.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnPlay.setBounds(10, 362, 764, 64);
+		btnPlay.setBounds(129, 362, 525, 64);
 		btnPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SelectDaysPanel newPanel = new SelectDaysPanel();
@@ -69,7 +69,7 @@ public class StartPanel {
 		
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnQuit.setBounds(10, 436, 764, 64);
+		btnQuit.setBounds(129, 436, 525, 66);
 		btnQuit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frmFarmiza.dispose();

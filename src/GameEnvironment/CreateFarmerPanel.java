@@ -54,7 +54,7 @@ public class CreateFarmerPanel {
 		frmFarmiza.getContentPane().setLayout(null);
 		
 		tfFarmerName = new JTextField();
-		tfFarmerName.setFont(new Font("Arial", Font.PLAIN, 16));
+		tfFarmerName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		tfFarmerName.setBounds(394, 71, 365, 49);
 		frmFarmiza.getContentPane().add(tfFarmerName);
 		tfFarmerName.setColumns(10);
@@ -70,14 +70,14 @@ public class CreateFarmerPanel {
 		frmFarmiza.getContentPane().add(lblFarmerAgeQuestion);
 		
 		tfFarmerAge = new JTextField();
-		tfFarmerAge.setFont(new Font("Arial", Font.PLAIN, 16));
+		tfFarmerAge.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		tfFarmerAge.setColumns(10);
 		tfFarmerAge.setBounds(394, 222, 365, 49);
 		frmFarmiza.getContentPane().add(tfFarmerAge);
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnNext.setBounds(10, 436, 764, 64);
+		btnNext.setBounds(129, 436, 525, 64);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CreateFarmPanel newPanel = new CreateFarmPanel();

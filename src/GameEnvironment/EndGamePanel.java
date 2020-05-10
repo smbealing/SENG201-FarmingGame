@@ -76,12 +76,12 @@ public class EndGamePanel {
 		
 		JLabel lblMessageAboutScore = new JLabel("Message about score here");
 		lblMessageAboutScore.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		lblMessageAboutScore.setBounds(20, 148, 739, 83);
+		lblMessageAboutScore.setBounds(22, 148, 739, 83);
 		frmFarmiza.getContentPane().add(lblMessageAboutScore);
 		
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnQuit.setBounds(10, 435, 764, 65);
+		btnQuit.setBounds(129, 435, 525, 65);
 		btnQuit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frmFarmiza.dispose();
@@ -91,7 +91,7 @@ public class EndGamePanel {
 		
 		JButton btnPlayAgain = new JButton("Play Again");
 		btnPlayAgain.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnPlayAgain.setBounds(10, 359, 764, 65);
+		btnPlayAgain.setBounds(129, 359, 525, 65);
 		btnPlayAgain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SelectDaysPanel newPanel = new SelectDaysPanel();
@@ -119,7 +119,7 @@ public class EndGamePanel {
 		JLabel lblThankYou = new JLabel("Thank you for playing Farmiza!");
 		lblThankYou.setHorizontalAlignment(SwingConstants.CENTER);
 		lblThankYou.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		lblThankYou.setBounds(20, 277, 739, 71);
+		lblThankYou.setBounds(22, 277, 739, 71);
 		frmFarmiza.getContentPane().add(lblThankYou);
 	}
 }

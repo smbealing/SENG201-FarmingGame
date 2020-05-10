@@ -52,7 +52,7 @@ public class SelectDaysPanel {
 		JLabel lblDaysQuestion = new JLabel("How many days would you like to play for?");
 		lblDaysQuestion.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
 		lblDaysQuestion.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDaysQuestion.setBounds(72, 99, 632, 72);
+		lblDaysQuestion.setBounds(76, 99, 632, 72);
 		frmFarmiza.getContentPane().add(lblDaysQuestion);
 		
 		JSlider sldDaySelection = new JSlider();
@@ -63,12 +63,12 @@ public class SelectDaysPanel {
 		sldDaySelection.setMinimum(5);
 		sldDaySelection.setMaximum(10);
 		sldDaySelection.setMajorTickSpacing(1);
-		sldDaySelection.setBounds(78, 285, 626, 45);
+		sldDaySelection.setBounds(79, 285, 626, 45);
 		frmFarmiza.getContentPane().add(sldDaySelection);
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnNext.setBounds(10, 436, 764, 64);
+		btnNext.setBounds(129, 436, 525, 64);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CreateFarmerPanel newPanel = new CreateFarmerPanel();

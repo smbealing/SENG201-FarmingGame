@@ -56,12 +56,12 @@ public class CreateFarmPanel {
 		
 		JButton btnStartFarmingAdventure = new JButton("Start My Farming Adventure!");
 		btnStartFarmingAdventure.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnStartFarmingAdventure.setBounds(10, 435, 764, 65);
+		btnStartFarmingAdventure.setBounds(129, 435, 525, 65);
 		btnStartFarmingAdventure.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				GameEnvironmentPanel newPanel = new GameEnvironmentPanel();
+				GameEnvironmentPanel newPanel = new GameEnvironmentPanel();
 				frmFarmiza.dispose();
-//				newPanel.ActivatePanel();
+				newPanel.ActivatePanel();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnStartFarmingAdventure);
@@ -72,7 +72,7 @@ public class CreateFarmPanel {
 		frmFarmiza.getContentPane().add(lblNameFarm);
 		
 		tfFarmName = new JTextField();
-		tfFarmName.setFont(new Font("Arial", Font.PLAIN, 16));
+		tfFarmName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		tfFarmName.setColumns(10);
 		tfFarmName.setBounds(378, 47, 383, 41);
 		frmFarmiza.getContentPane().add(tfFarmName);
@@ -84,7 +84,7 @@ public class CreateFarmPanel {
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"City Farm", "Tropical Farm", "Normal Farm", "Hardcore Farm"}));
-		comboBox.setFont(new Font("Arial", Font.PLAIN, 18));
+		comboBox.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
 		comboBox.setBounds(36, 217, 276, 41);
 		frmFarmiza.getContentPane().add(comboBox);
 	}
