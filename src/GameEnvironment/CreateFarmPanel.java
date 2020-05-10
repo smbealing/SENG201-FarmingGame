@@ -19,7 +19,7 @@ import javax.swing.DefaultComboBoxModel;
 public class CreateFarmPanel {
 
 	private JFrame frmFarmiza;
-	private JTextField tfFarmName;
+	private JTextField txfFarmName;
 
 	/**
 	 * Launch the application.
@@ -71,11 +71,11 @@ public class CreateFarmPanel {
 		lblNameFarm.setBounds(36, 47, 332, 41);
 		frmFarmiza.getContentPane().add(lblNameFarm);
 		
-		tfFarmName = new JTextField();
-		tfFarmName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		tfFarmName.setColumns(10);
-		tfFarmName.setBounds(378, 47, 383, 41);
-		frmFarmiza.getContentPane().add(tfFarmName);
+		txfFarmName = new JTextField();
+		txfFarmName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		txfFarmName.setColumns(10);
+		txfFarmName.setBounds(378, 47, 383, 41);
+		frmFarmiza.getContentPane().add(txfFarmName);
 		
 		JLabel lblSelectFarmType = new JLabel("Select a type of farm:");
 		lblSelectFarmType.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));

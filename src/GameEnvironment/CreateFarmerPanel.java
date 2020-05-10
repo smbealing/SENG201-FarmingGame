@@ -17,8 +17,9 @@ import javax.swing.JButton;
 public class CreateFarmerPanel {
 
 	private JFrame frmFarmiza;
-	private JTextField tfFarmerName;
-	private JTextField tfFarmerAge;
+	private JTextField txfFarmerName;
+	private JTextField txfFarmerAge;
+	private static int numDays;
 
 	/**
 	 * Launch the application.
@@ -42,6 +43,12 @@ public class CreateFarmerPanel {
 	public CreateFarmerPanel() {
 		initialize();
 	}
+	
+	
+	public static void selections(int days) {
+		numDays = days;
+	}
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -53,11 +60,11 @@ public class CreateFarmerPanel {
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		tfFarmerName = new JTextField();
-		tfFarmerName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		tfFarmerName.setBounds(394, 71, 365, 49);
-		frmFarmiza.getContentPane().add(tfFarmerName);
-		tfFarmerName.setColumns(10);
+		txfFarmerName = new JTextField();
+		txfFarmerName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		txfFarmerName.setBounds(394, 71, 365, 49);
+		frmFarmiza.getContentPane().add(txfFarmerName);
+		txfFarmerName.setColumns(10);
 		
 		JLabel lblFarmerNameQuestion = new JLabel("Give your farmer a name:");
 		lblFarmerNameQuestion.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
@@ -69,17 +76,18 @@ public class CreateFarmerPanel {
 		lblFarmerAgeQuestion.setBounds(24, 205, 378, 72);
 		frmFarmiza.getContentPane().add(lblFarmerAgeQuestion);
 		
-		tfFarmerAge = new JTextField();
-		tfFarmerAge.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		tfFarmerAge.setColumns(10);
-		tfFarmerAge.setBounds(394, 222, 365, 49);
-		frmFarmiza.getContentPane().add(tfFarmerAge);
+		txfFarmerAge = new JTextField();
+		txfFarmerAge.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		txfFarmerAge.setColumns(10);
+		txfFarmerAge.setBounds(394, 222, 365, 49);
+		frmFarmiza.getContentPane().add(txfFarmerAge);
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		btnNext.setBounds(129, 436, 525, 64);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Check farmer's name and age
 				CreateFarmPanel newPanel = new CreateFarmPanel();
 				frmFarmiza.dispose();
 				newPanel.ActivatePanel();

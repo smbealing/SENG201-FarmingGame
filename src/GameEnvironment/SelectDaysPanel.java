@@ -15,6 +15,7 @@ import javax.swing.JButton;
 public class SelectDaysPanel {
 
 	private JFrame frmFarmiza;
+	private int totalNumDays;
 
 	/**
 	 * Launch the application.
@@ -63,6 +64,7 @@ public class SelectDaysPanel {
 		sldDaySelection.setMinimum(5);
 		sldDaySelection.setMaximum(10);
 		sldDaySelection.setMajorTickSpacing(1);
+		sldDaySelection.setToolTipText("");
 		sldDaySelection.setBounds(79, 285, 626, 45);
 		frmFarmiza.getContentPane().add(sldDaySelection);
 		
@@ -71,7 +73,11 @@ public class SelectDaysPanel {
 		btnNext.setBounds(129, 436, 525, 64);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				//Fix this!
+				totalNumDays = sldDaySelection.getValue();
 				CreateFarmerPanel newPanel = new CreateFarmerPanel();
+				CreateFarmerPanel.selections(totalNumDays);
 				frmFarmiza.dispose();
 				newPanel.ActivatePanel();
 			}
