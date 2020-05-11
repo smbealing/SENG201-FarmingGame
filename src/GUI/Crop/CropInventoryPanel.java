@@ -39,6 +39,7 @@ public class CropInventoryPanel {
 	 */
 	private void initialize() {
 		frmFarmiza = new JFrame();
+		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 629, 351);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);

@@ -44,6 +44,7 @@ public class GameEnvironmentPanel {
 	 */
 	private void initialize() {
 		frmFarmiza = new JFrame();
+		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 800, 550);
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 //		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

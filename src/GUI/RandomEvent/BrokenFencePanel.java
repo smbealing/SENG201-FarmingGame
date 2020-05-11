@@ -40,25 +40,26 @@ public class BrokenFencePanel {
 	 */
 	private void initialize() {
 		frmFarmiza = new JFrame();
+		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 450, 243);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
 		JButton btnClose = new JButton("CLOSE");
-		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		btnClose.setBounds(138, 139, 157, 54);
 		frmFarmiza.getContentPane().add(btnClose);
 		
 		JLabel lblNoticeOne = new JLabel("Oh no! Your fence broke!");
-		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblNoticeOne.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
 		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeOne.setBounds(55, 31, 324, 46);
 		frmFarmiza.getContentPane().add(lblNoticeOne);
 		
-		JLabel lblNoticeTwo = new JLabel("Some of you animals escaped!");
-		lblNoticeTwo.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		JLabel lblNoticeTwo = new JLabel("Some of your animals escaped!");
+		lblNoticeTwo.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
 		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNoticeTwo.setBounds(38, 70, 358, 46);
+		lblNoticeTwo.setBounds(10, 70, 408, 46);
 		frmFarmiza.getContentPane().add(lblNoticeTwo);
 	}
 

@@ -40,6 +40,7 @@ public class AnimalInventoryPanel {
 	 */
 	private void initialize() {
 		frmFarmiza = new JFrame();
+		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 529, 352);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);

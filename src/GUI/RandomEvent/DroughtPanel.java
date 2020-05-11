@@ -40,24 +40,25 @@ public class DroughtPanel {
 	 */
 	private void initialize() {
 		frmFarmiza = new JFrame();
+		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 743, 243);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JLabel lblNoticeOne = new JLabel("Oh no! A drought happened over night and it has affected you farm!");
+		JLabel lblNoticeOne = new JLabel("Oh no! A drought happened over night and it has affected your farm!");
 		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblNoticeOne.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 21));
 		lblNoticeOne.setBounds(10, 31, 707, 46);
 		frmFarmiza.getContentPane().add(lblNoticeOne);
 		
 		JLabel lblNoticeTwo = new JLabel("The wells have dried up, and the crops are thirsty!");
 		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNoticeTwo.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblNoticeTwo.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 21));
 		lblNoticeTwo.setBounds(89, 70, 548, 46);
 		frmFarmiza.getContentPane().add(lblNoticeTwo);
 		
 		JButton btnClose = new JButton("CLOSE");
-		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		btnClose.setBounds(285, 139, 157, 54);
 		frmFarmiza.getContentPane().add(btnClose);
 	}
