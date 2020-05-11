@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import java.awt.EventQueue;
 
@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
-import GUI.SetUp.SelectDaysPanel;
+import gui.setUp.SelectDaysPanel;
 
 public class StartPanel {
 

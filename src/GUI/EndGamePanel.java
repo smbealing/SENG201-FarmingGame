@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import java.awt.EventQueue;
 
@@ -8,11 +8,10 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JToggleButton;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
-import GUI.SetUp.SelectDaysPanel;
+import gui.setUp.SelectDaysPanel;
 
 public class EndGamePanel {
 

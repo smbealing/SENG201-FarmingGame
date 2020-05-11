@@ -1,22 +1,22 @@
-package GameEnvironment;
+package gameEnvironment;
 
 import java.util.Scanner;
 
-import Action.FarmAction.NextDay;
-import Action.FarmAction.PlantCrop;
-import Action.FarmAction.Shop;
-import Action.FarmerAction.*;
-import Farm.CityFarm;
-import Farm.Farm;
-import Farm.Farmer;
-import Farm.HardcoreFarm;
-import Farm.NormalFarm;
-import Farm.TropicalFarm;
-import Action.StatusAction.AnimalStatus;
-import Action.StatusAction.FarmStatus;
-import Action.StatusAction.FarmerStatus;
-import Action.StatusAction.CropStatus;
-import Animal.Animal;
+import animal.Animal;
+import farm.CityFarm;
+import farm.Farm;
+import farm.Farmer;
+import farm.HardcoreFarm;
+import farm.NormalFarm;
+import farm.TropicalFarm;
+import action.farmAction.NextDay;
+import action.farmAction.PlantCrop;
+import action.farmAction.Shop;
+import action.farmerAction.*;
+import action.statusAction.AnimalStatus;
+import action.statusAction.CropStatus;
+import action.statusAction.FarmStatus;
+import action.statusAction.FarmerStatus;
 
 
 public class GameEnvironment {
@@ -88,7 +88,7 @@ public class GameEnvironment {
 		setFarmer();
 		setFarm();
 		
-		state = new GameState(totalDays, farm, this);
+		state = new GameState(totalDays, farm); // add this to run the command lines
 		gameLoop();
 	}
 	

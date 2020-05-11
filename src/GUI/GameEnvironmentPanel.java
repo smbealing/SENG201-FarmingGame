@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import java.awt.EventQueue;
 
@@ -10,20 +10,22 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
-import javax.swing.SwingConstants;
+import gameEnvironment.GameState;
 
 public class GameEnvironmentPanel {
 
 	private JFrame frmFarmiza;
+	
+	public GameState state;
 
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel() {
+	public void ActivatePanel(final GameState state) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GameEnvironmentPanel window = new GameEnvironmentPanel();
+					GameEnvironmentPanel window = new GameEnvironmentPanel(state);
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +37,9 @@ public class GameEnvironmentPanel {
 	/**
 	 * Create the application.
 	 */
-	public GameEnvironmentPanel() {
+	public GameEnvironmentPanel(GameState tempState) {
+		state = tempState;
+		
 		initialize();
 	}
 
@@ -96,7 +100,7 @@ public class GameEnvironmentPanel {
 		frmFarmiza.getContentPane().add(btnShop);
 		
 		JLabel lblMoneyImage = new JLabel("$image");
-		lblMoneyImage.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
+		lblMoneyImage.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource("../images/money.png")));
 		lblMoneyImage.setBounds(426, 11, 47, 45);
 		frmFarmiza.getContentPane().add(lblMoneyImage);
 		

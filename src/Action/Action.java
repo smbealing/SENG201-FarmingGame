@@ -1,6 +1,6 @@
-package Action;
+package action;
 
-import GameEnvironment.GameState;
+import gameEnvironment.GameState;
 
 public abstract class Action {
 	
@@ -16,8 +16,8 @@ public abstract class Action {
 		}
 }
 	
-	public void returnBack(GameState state) {
-		state.main.gameLoop();
-	}
+//	public void returnBack(GameState state) { add back in for command lines
+//		state.main.gameLoop();
+//	}
 	
 }
