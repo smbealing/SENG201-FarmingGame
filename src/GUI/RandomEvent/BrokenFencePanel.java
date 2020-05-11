@@ -10,7 +10,7 @@ import java.awt.Font;
 
 public class BrokenFencePanel {
 
-	private JFrame frame;
+	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
@@ -20,7 +20,7 @@ public class BrokenFencePanel {
 			public void run() {
 				try {
 					BrokenFencePanel window = new BrokenFencePanel();
-					window.frame.setVisible(true);
+					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,27 +39,27 @@ public class BrokenFencePanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 243);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmFarmiza = new JFrame();
+		frmFarmiza.setBounds(100, 100, 450, 243);
+		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmFarmiza.getContentPane().setLayout(null);
 		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnClose.setBounds(138, 139, 157, 54);
-		frame.getContentPane().add(btnClose);
+		frmFarmiza.getContentPane().add(btnClose);
 		
 		JLabel lblNoticeOne = new JLabel("Oh no! Your fence broke!");
 		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeOne.setBounds(55, 31, 324, 46);
-		frame.getContentPane().add(lblNoticeOne);
+		frmFarmiza.getContentPane().add(lblNoticeOne);
 		
 		JLabel lblNoticeTwo = new JLabel("Some of you animals escaped!");
 		lblNoticeTwo.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeTwo.setBounds(38, 70, 358, 46);
-		frame.getContentPane().add(lblNoticeTwo);
+		frmFarmiza.getContentPane().add(lblNoticeTwo);
 	}
 
 }
