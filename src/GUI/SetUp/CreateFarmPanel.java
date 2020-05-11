@@ -23,6 +23,7 @@ public class CreateFarmPanel {
 
 	private JFrame frmFarmiza;
 	private JTextField txfFarmName;
+	private static int numDays;
 
 	/**
 	 * Launch the application.

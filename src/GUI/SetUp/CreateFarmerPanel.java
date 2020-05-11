@@ -88,9 +88,14 @@ public class CreateFarmerPanel {
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Check farmer's name and age
-				CreateFarmPanel newPanel = new CreateFarmPanel();
-				frmFarmiza.dispose();
-				newPanel.ActivatePanel();
+				if (txfFarmerName.getText().length() < 3 || txfFarmerName.getText().length() > 15) {
+					DisclaimerFarmerName newDisclaimerPanel = new DisclaimerFarmerName();
+					newDisclaimerPanel.ActivatePanel();
+				} else {
+					CreateFarmPanel newPanel = new CreateFarmPanel();
+					frmFarmiza.dispose();
+					newPanel.ActivatePanel();
+				}
 			}
 		});
 		frmFarmiza.getContentPane().add(btnNext);
