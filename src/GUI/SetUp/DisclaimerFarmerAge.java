@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -48,6 +51,11 @@ public class DisclaimerFarmerAge {
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		btnClose.setBounds(138, 139, 157, 54);
+		btnClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmFarmiza.dispose();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnClose);
 		
 		JLabel lblAgeRange = new JLabel("Please enter an age between 20 and 70.");

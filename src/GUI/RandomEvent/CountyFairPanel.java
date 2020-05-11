@@ -62,6 +62,7 @@ public class CountyFairPanel {
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frmFarmiza.dispose();
 			}
 		});
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
