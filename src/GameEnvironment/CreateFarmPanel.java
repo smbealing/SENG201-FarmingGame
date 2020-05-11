@@ -59,6 +59,8 @@ public class CreateFarmPanel {
 		btnStartFarmingAdventure.setBounds(129, 435, 525, 65);
 		btnStartFarmingAdventure.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//Check length of farm name
+				//Create new game state
 				GameEnvironmentPanel newPanel = new GameEnvironmentPanel();
 				frmFarmiza.dispose();
 				newPanel.ActivatePanel();
