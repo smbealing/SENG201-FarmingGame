@@ -1,18 +1,18 @@
-package GameEnvironment;
+package gameEnvironment;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Animal.Animal;
-import Crop.Crop;
-import Farm.Farm;
-import Farm.Farmer;
-import Item.AnimalFood;
-import Item.CropItem;
-import Item.GenericItem;
-import Item.Speech;
-import Item.Warmth;
-import Item.Water;
+import item.AnimalFood;
+import item.CropItem;
+import item.GenericItem;
+import item.Speech;
+import item.Warmth;
+import item.Water;
+import animal.Animal;
+import crop.Crop;
+import farm.Farm;
+import farm.Farmer;
 
 public class GameState {
 	
@@ -32,12 +32,12 @@ public class GameState {
 	
 	private Scanner s;
 	
-	public GameState(int tempTotalDays, Farm tempFarm, GameEnvironment tempMain) {
+	public GameState(int tempTotalDays, Farm tempFarm) { // add GameEnvironment tempMain for command lines
 		totalDays = tempTotalDays;
 		currentDay = 1;
 		
 		farm = tempFarm;
-		main = tempMain;
+//		main = tempMain; // add back in for command lines
 		farmer = farm.getFarmer();
 		crops = new ArrayList<Crop>();
 		animals = new ArrayList<Animal>();

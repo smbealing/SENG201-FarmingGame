@@ -1,29 +1,28 @@
-package gui;
+package gui.setUp;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class HelpPanel {
+public class DisclaimerFarmerAge {
 
 	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					HelpPanel window = new HelpPanel();
+					DisclaimerFarmerAge window = new DisclaimerFarmerAge();
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +34,7 @@ public class HelpPanel {
 	/**
 	 * Create the application.
 	 */
-	public HelpPanel() {
+	public DisclaimerFarmerAge() {
 		initialize();
 	}
 
@@ -45,13 +44,13 @@ public class HelpPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 800, 550);
+		frmFarmiza.setBounds(100, 100, 450, 243);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JButton btnClose = new JButton("Close");
+		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnClose.setBounds(336, 455, 111, 45);
+		btnClose.setBounds(138, 139, 157, 54);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
@@ -59,16 +58,11 @@ public class HelpPanel {
 		});
 		frmFarmiza.getContentPane().add(btnClose);
 		
-		JLabel lblHelpTitle = new JLabel("Help");
-		lblHelpTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHelpTitle.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 30));
-		lblHelpTitle.setBounds(318, 24, 148, 67);
-		frmFarmiza.getContentPane().add(lblHelpTitle);
-		
-		JLabel lblHelpText = new JLabel("Help text here");
-		lblHelpText.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHelpText.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		lblHelpText.setBounds(22, 97, 737, 331);
-		frmFarmiza.getContentPane().add(lblHelpText);
+		JLabel lblAgeRange = new JLabel("Please enter age as an integer between 20 and 70.");
+		lblAgeRange.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAgeRange.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		lblAgeRange.setBounds(10, 52, 414, 31);
+		frmFarmiza.getContentPane().add(lblAgeRange);
 	}
+
 }

@@ -1,18 +1,16 @@
-package gui;
+package gui.randomEvent;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.SwingConstants;
-
-public class HelpPanel {
+public class BrokenFencePanel {
 
 	private JFrame frmFarmiza;
 
@@ -23,7 +21,7 @@ public class HelpPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					HelpPanel window = new HelpPanel();
+					BrokenFencePanel window = new BrokenFencePanel();
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +33,7 @@ public class HelpPanel {
 	/**
 	 * Create the application.
 	 */
-	public HelpPanel() {
+	public BrokenFencePanel() {
 		initialize();
 	}
 
@@ -45,13 +43,13 @@ public class HelpPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 800, 550);
+		frmFarmiza.setBounds(100, 100, 450, 243);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JButton btnClose = new JButton("Close");
+		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnClose.setBounds(336, 455, 111, 45);
+		btnClose.setBounds(138, 139, 157, 54);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
@@ -59,16 +57,17 @@ public class HelpPanel {
 		});
 		frmFarmiza.getContentPane().add(btnClose);
 		
-		JLabel lblHelpTitle = new JLabel("Help");
-		lblHelpTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHelpTitle.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 30));
-		lblHelpTitle.setBounds(318, 24, 148, 67);
-		frmFarmiza.getContentPane().add(lblHelpTitle);
+		JLabel lblNoticeOne = new JLabel("Oh no! Your fence broke!");
+		lblNoticeOne.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
+		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNoticeOne.setBounds(55, 31, 324, 46);
+		frmFarmiza.getContentPane().add(lblNoticeOne);
 		
-		JLabel lblHelpText = new JLabel("Help text here");
-		lblHelpText.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHelpText.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		lblHelpText.setBounds(22, 97, 737, 331);
-		frmFarmiza.getContentPane().add(lblHelpText);
+		JLabel lblNoticeTwo = new JLabel("Some of your animals escaped!");
+		lblNoticeTwo.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
+		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNoticeTwo.setBounds(10, 70, 408, 46);
+		frmFarmiza.getContentPane().add(lblNoticeTwo);
 	}
+
 }
