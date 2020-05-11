@@ -64,7 +64,7 @@ public class DroughtPanel {
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		btnClose.setBounds(285, 139, 157, 54);
 		btnClose.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
 			}
 		});

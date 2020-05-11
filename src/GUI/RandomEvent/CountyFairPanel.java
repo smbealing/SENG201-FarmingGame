@@ -61,7 +61,7 @@ public class CountyFairPanel {
 		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
 			}
 		});

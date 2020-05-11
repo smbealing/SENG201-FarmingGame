@@ -60,7 +60,7 @@ public class StartPanel {
 		btnPlay.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		btnPlay.setBounds(129, 362, 525, 64);
 		btnPlay.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent event) {
 				SelectDaysPanel newPanel = new SelectDaysPanel();
 				frmFarmiza.dispose();
 				newPanel.ActivatePanel();
@@ -73,7 +73,7 @@ public class StartPanel {
 		btnQuit.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		btnQuit.setBounds(129, 436, 525, 66);
 		btnQuit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
 			}
 		});

@@ -53,7 +53,7 @@ public class FarmStatusPanel {
 		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		btnBackToFarm.setBounds(129, 436, 525, 64);
 		btnBackToFarm.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent event) {
 				GameEnvironmentPanel newPanel = new GameEnvironmentPanel();
 				frmFarmiza.dispose();
 				newPanel.ActivatePanel();

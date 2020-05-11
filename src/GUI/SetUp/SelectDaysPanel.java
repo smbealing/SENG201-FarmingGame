@@ -73,7 +73,7 @@ public class SelectDaysPanel {
 		btnNext.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		btnNext.setBounds(129, 436, 525, 64);
 		btnNext.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent event) {
 				totalNumDays = sldDaySelection.getValue();
 				CreateFarmerPanel newPanel = new CreateFarmerPanel();
 				CreateFarmerPanel.selections(totalNumDays);
