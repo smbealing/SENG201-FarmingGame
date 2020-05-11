@@ -1,4 +1,4 @@
-package GameEnvironment;
+package GUI.SetUp;
 
 import java.awt.EventQueue;
 
@@ -12,6 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
+
+import GUI.GameEnvironmentPanel;
+
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;

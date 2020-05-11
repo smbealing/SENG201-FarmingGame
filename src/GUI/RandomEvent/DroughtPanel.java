@@ -1,4 +1,4 @@
-package GameEnvironment;
+package GUI.RandomEvent;
 
 import java.awt.EventQueue;
 
@@ -8,7 +8,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
-public class CountyFairPanel {
+public class DroughtPanel {
 
 	private JFrame frame;
 
@@ -19,7 +19,7 @@ public class CountyFairPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CountyFairPanel window = new CountyFairPanel();
+					DroughtPanel window = new DroughtPanel();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +31,7 @@ public class CountyFairPanel {
 	/**
 	 * Create the application.
 	 */
-	public CountyFairPanel() {
+	public DroughtPanel() {
 		initialize();
 	}
 
@@ -40,25 +40,25 @@ public class CountyFairPanel {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 643, 243);
+		frame.setBounds(100, 100, 743, 243);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNoticeOne = new JLabel("Congratulations!");
+		JLabel lblNoticeOne = new JLabel("Oh no! A drought happened over night and it has affected you farm!");
 		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblNoticeOne.setBounds(151, 31, 324, 46);
+		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblNoticeOne.setBounds(10, 31, 707, 46);
 		frame.getContentPane().add(lblNoticeOne);
 		
-		JLabel lblNoticeTwo = new JLabel("Your farm has won the top award at the annual Country Fair!");
+		JLabel lblNoticeTwo = new JLabel("The wells have dried up, and the crops are thirsty!");
 		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeTwo.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		lblNoticeTwo.setBounds(10, 70, 607, 46);
+		lblNoticeTwo.setBounds(89, 70, 548, 46);
 		frame.getContentPane().add(lblNoticeTwo);
 		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnClose.setBounds(235, 139, 157, 54);
+		btnClose.setBounds(285, 139, 157, 54);
 		frame.getContentPane().add(btnClose);
 	}
 

@@ -1,4 +1,4 @@
-package GameEnvironment;
+package GUI;
 
 import java.awt.EventQueue;
 
@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+
+import GUI.SetUp.SelectDaysPanel;
 
 public class StartPanel {
 

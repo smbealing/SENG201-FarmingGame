@@ -1,14 +1,14 @@
-package GameEnvironment;
+package GUI.RandomEvent;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
-public class DroughtPanel {
+public class BrokenFencePanel {
 
 	private JFrame frame;
 
@@ -19,7 +19,7 @@ public class DroughtPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DroughtPanel window = new DroughtPanel();
+					BrokenFencePanel window = new BrokenFencePanel();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +31,7 @@ public class DroughtPanel {
 	/**
 	 * Create the application.
 	 */
-	public DroughtPanel() {
+	public BrokenFencePanel() {
 		initialize();
 	}
 
@@ -40,26 +40,26 @@ public class DroughtPanel {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 743, 243);
+		frame.setBounds(100, 100, 450, 243);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNoticeOne = new JLabel("Oh no! A drought happened over night and it has affected you farm!");
-		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		lblNoticeOne.setBounds(10, 31, 707, 46);
-		frame.getContentPane().add(lblNoticeOne);
-		
-		JLabel lblNoticeTwo = new JLabel("The wells have dried up, and the crops are thirsty!");
-		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNoticeTwo.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		lblNoticeTwo.setBounds(89, 70, 548, 46);
-		frame.getContentPane().add(lblNoticeTwo);
-		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnClose.setBounds(285, 139, 157, 54);
+		btnClose.setBounds(138, 139, 157, 54);
 		frame.getContentPane().add(btnClose);
+		
+		JLabel lblNoticeOne = new JLabel("Oh no! Your fence broke!");
+		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNoticeOne.setBounds(55, 31, 324, 46);
+		frame.getContentPane().add(lblNoticeOne);
+		
+		JLabel lblNoticeTwo = new JLabel("Some of you animals escaped!");
+		lblNoticeTwo.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNoticeTwo.setBounds(38, 70, 358, 46);
+		frame.getContentPane().add(lblNoticeTwo);
 	}
 
 }
