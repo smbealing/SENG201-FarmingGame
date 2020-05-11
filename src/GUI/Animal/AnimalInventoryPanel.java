@@ -1,4 +1,4 @@
-package GameEnvironment;
+package GUI.Animal;
 
 import java.awt.EventQueue;
 
@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 
-public class AnimalEnventory {
+public class AnimalInventoryPanel {
 
 	private JFrame frame;
 
@@ -18,7 +18,7 @@ public class AnimalEnventory {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AnimalEnventory window = new AnimalEnventory();
+					AnimalInventoryPanel window = new AnimalInventoryPanel();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +30,7 @@ public class AnimalEnventory {
 	/**
 	 * Create the application.
 	 */
-	public AnimalEnventory() {
+	public AnimalInventoryPanel() {
 		initialize();
 	}
 

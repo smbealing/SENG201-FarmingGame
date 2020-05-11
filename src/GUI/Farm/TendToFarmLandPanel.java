@@ -1,4 +1,4 @@
-package Action.FarmerAction;
+package GUI.Farm;
 
 import java.awt.EventQueue;
 
@@ -11,9 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import GameEnvironment.GameEnvironmentPanel;
-
-import GameEnvironment.GameEnvironmentPanel;
+import GUI.GameEnvironmentPanel;
 
 public class TendToFarmLandPanel {
 

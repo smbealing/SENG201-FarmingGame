@@ -1,4 +1,4 @@
-package GameEnvironment;
+package GUI.SetUp;
 
 import java.awt.EventQueue;
 

@@ -1,4 +1,4 @@
-package Action.StatusAction;
+package GUI.Farm;
 
 import java.awt.EventQueue;
 
@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 
-import GameEnvironment.GameEnvironmentPanel;
+import GUI.GameEnvironmentPanel;
 
 public class FarmStatusPanel {
 
