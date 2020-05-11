@@ -56,7 +56,7 @@ public class GameEnvironmentPanel {
 		frmFarmiza.getContentPane().add(btnNextDay);
 		
 		JButton btnFarm = new JButton("[farm name]");
-		btnFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		btnFarm.setBounds(10, 123, 176, 64);
 		frmFarmiza.getContentPane().add(btnFarm);
 		
