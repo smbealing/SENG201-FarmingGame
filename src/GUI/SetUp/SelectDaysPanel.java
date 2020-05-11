@@ -57,7 +57,7 @@ public class SelectDaysPanel {
 		lblDaysQuestion.setBounds(76, 99, 632, 72);
 		frmFarmiza.getContentPane().add(lblDaysQuestion);
 		
-		JSlider sldDaySelection = new JSlider();
+		final JSlider sldDaySelection = new JSlider();
 		sldDaySelection.setFont(new Font("Arial", Font.PLAIN, 14));
 		sldDaySelection.setValue(5);
 		sldDaySelection.setPaintTicks(true);
