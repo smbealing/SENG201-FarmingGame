@@ -74,8 +74,6 @@ public class SelectDaysPanel {
 		btnNext.setBounds(129, 436, 525, 64);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//Fix this!
 				totalNumDays = sldDaySelection.getValue();
 				CreateFarmerPanel newPanel = new CreateFarmerPanel();
 				CreateFarmerPanel.selections(totalNumDays);

@@ -45,34 +45,39 @@ public class AnimalPanel {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblFarmAnimals = new JLabel("FARM ANIMALS");
-		lblFarmAnimals.setFont(new Font("Tahoma", Font.BOLD, 35));
+		lblFarmAnimals.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 35));
 		lblFarmAnimals.setBounds(251, 11, 282, 52);
 		frame.getContentPane().add(lblFarmAnimals);
 		
 		JButton btnFeedAnimals = new JButton("FEED ANIMALS");
+		btnFeedAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		btnFeedAnimals.setBounds(10, 111, 176, 64);
 		frame.getContentPane().add(btnFeedAnimals);
 		
 		JButton btnPlayWithAnimals = new JButton("PLAY WITH ANIMALS");
+		btnPlayWithAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
 		btnPlayWithAnimals.setBounds(10, 186, 176, 64);
 		frame.getContentPane().add(btnPlayWithAnimals);
 		
 		JButton btnCheckAnimalStatus = new JButton("CHECK ANIMAL STATUS");
+		btnCheckAnimalStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
 		btnCheckAnimalStatus.setBounds(10, 262, 176, 64);
 		frame.getContentPane().add(btnCheckAnimalStatus);
 		
 		JButton btnAnimalInventory = new JButton("ANIMAL INVENTORY");
+		btnAnimalInventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
 		btnAnimalInventory.setBounds(10, 337, 176, 64);
 		frame.getContentPane().add(btnAnimalInventory);
 		
 		JButton btnBack = new JButton("BACK");
-		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		btnBack.setBounds(336, 455, 111, 45);
 		frame.getContentPane().add(btnBack);
 		
 		JLabel lblanimalImage = new JLabel("[animal image]");
+		lblanimalImage.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
 		lblanimalImage.setHorizontalAlignment(SwingConstants.CENTER);
-		lblanimalImage.setBounds(230, 81, 532, 353);
+		lblanimalImage.setBounds(220, 87, 532, 353);
 		frame.getContentPane().add(lblanimalImage);
 	}
 }

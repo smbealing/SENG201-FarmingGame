@@ -43,9 +43,9 @@ public class CropInventoryPanel {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblCropEnventory = new JLabel("CROP EVENTORY");
+		JLabel lblCropEnventory = new JLabel("CROP INVENTORY");
 		lblCropEnventory.setFont(new Font("Tahoma", Font.BOLD, 35));
-		lblCropEnventory.setBounds(151, 11, 311, 52);
+		lblCropEnventory.setBounds(131, 11, 351, 52);
 		frame.getContentPane().add(lblCropEnventory);
 		
 		JLabel lblCrop = new JLabel("Crops");
