@@ -10,7 +10,7 @@ import javax.swing.JButton;
 
 public class CountyFairPanel {
 
-	private JFrame frame;
+	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
@@ -20,7 +20,7 @@ public class CountyFairPanel {
 			public void run() {
 				try {
 					CountyFairPanel window = new CountyFairPanel();
-					window.frame.setVisible(true);
+					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,27 +39,27 @@ public class CountyFairPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 643, 243);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmFarmiza = new JFrame();
+		frmFarmiza.setBounds(100, 100, 643, 243);
+		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmFarmiza.getContentPane().setLayout(null);
 		
 		JLabel lblNoticeOne = new JLabel("Congratulations!");
 		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblNoticeOne.setBounds(151, 31, 324, 46);
-		frame.getContentPane().add(lblNoticeOne);
+		frmFarmiza.getContentPane().add(lblNoticeOne);
 		
 		JLabel lblNoticeTwo = new JLabel("Your farm has won the top award at the annual Country Fair!");
 		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeTwo.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblNoticeTwo.setBounds(10, 70, 607, 46);
-		frame.getContentPane().add(lblNoticeTwo);
+		frmFarmiza.getContentPane().add(lblNoticeTwo);
 		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnClose.setBounds(235, 139, 157, 54);
-		frame.getContentPane().add(btnClose);
+		frmFarmiza.getContentPane().add(btnClose);
 	}
 
 }

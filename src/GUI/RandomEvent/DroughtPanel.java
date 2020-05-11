@@ -10,7 +10,7 @@ import javax.swing.JButton;
 
 public class DroughtPanel {
 
-	private JFrame frame;
+	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
@@ -20,7 +20,7 @@ public class DroughtPanel {
 			public void run() {
 				try {
 					DroughtPanel window = new DroughtPanel();
-					window.frame.setVisible(true);
+					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,27 +39,27 @@ public class DroughtPanel {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 743, 243);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmFarmiza = new JFrame();
+		frmFarmiza.setBounds(100, 100, 743, 243);
+		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmFarmiza.getContentPane().setLayout(null);
 		
 		JLabel lblNoticeOne = new JLabel("Oh no! A drought happened over night and it has affected you farm!");
 		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeOne.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblNoticeOne.setBounds(10, 31, 707, 46);
-		frame.getContentPane().add(lblNoticeOne);
+		frmFarmiza.getContentPane().add(lblNoticeOne);
 		
 		JLabel lblNoticeTwo = new JLabel("The wells have dried up, and the crops are thirsty!");
 		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeTwo.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblNoticeTwo.setBounds(89, 70, 548, 46);
-		frame.getContentPane().add(lblNoticeTwo);
+		frmFarmiza.getContentPane().add(lblNoticeTwo);
 		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnClose.setBounds(285, 139, 157, 54);
-		frame.getContentPane().add(btnClose);
+		frmFarmiza.getContentPane().add(btnClose);
 	}
 
 }
