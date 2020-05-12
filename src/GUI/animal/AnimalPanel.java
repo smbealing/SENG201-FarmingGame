@@ -27,6 +27,7 @@ public class AnimalPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					state = tempState;
 					AnimalPanel window = new AnimalPanel();
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
