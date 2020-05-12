@@ -26,7 +26,7 @@ public class AnimalInventoryPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AnimalInventoryPanel window = new AnimalInventoryPanel(state);
+					AnimalInventoryPanel window = new AnimalInventoryPanel();
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,9 +38,8 @@ public class AnimalInventoryPanel {
 	/**
 	 * Create the application.
 	 */
-	public AnimalInventoryPanel(GameState tempState) {
+	public AnimalInventoryPanel() {
 		initialize();
-		state = tempState;
 	}
 
 	/**
@@ -59,7 +58,7 @@ public class AnimalInventoryPanel {
 		btnAnimal1.setBounds(41, 129, 111, 45);
 		btnAnimal1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
@@ -70,7 +69,7 @@ public class AnimalInventoryPanel {
 		btnAnimal2.setBounds(194, 129, 111, 45);
 		btnAnimal2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
@@ -81,7 +80,7 @@ public class AnimalInventoryPanel {
 		btnAnimal3.setBounds(338, 129, 111, 45);
 		btnAnimal3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
@@ -92,7 +91,7 @@ public class AnimalInventoryPanel {
 		btnAnimal4.setBounds(476, 129, 111, 45);
 		btnAnimal4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
@@ -103,7 +102,7 @@ public class AnimalInventoryPanel {
 		btnAnimal5.setBounds(613, 129, 111, 45);
 		btnAnimal5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
@@ -114,7 +113,7 @@ public class AnimalInventoryPanel {
 		btnAnimal6.setBounds(41, 281, 111, 45);
 		btnAnimal6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
@@ -125,7 +124,7 @@ public class AnimalInventoryPanel {
 		btnAnimal7.setBounds(194, 281, 111, 45);
 		btnAnimal7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
@@ -136,7 +135,7 @@ public class AnimalInventoryPanel {
 		btnAnimal8.setBounds(338, 281, 111, 45);
 		btnAnimal8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
@@ -147,7 +146,7 @@ public class AnimalInventoryPanel {
 		btnAnimal9.setBounds(476, 281, 111, 45);
 		btnAnimal9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
@@ -158,7 +157,7 @@ public class AnimalInventoryPanel {
 		btnAnimal10.setBounds(613, 281, 111, 45);
 		btnAnimal10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalStatusPanel newPanel = new AnimalStatusPanel(state);
+				AnimalStatusPanel newPanel = new AnimalStatusPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});

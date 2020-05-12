@@ -108,7 +108,7 @@ public class GameEnvironmentPanel {
 		btnAnimal.setBounds(10, 355, 176, 64);
 		btnAnimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalPanel animalPanel = new AnimalPanel(state);
+				AnimalPanel animalPanel = new AnimalPanel();
 				frmFarmiza.dispose();
 				animalPanel.ActivatePanel(state);
 			}

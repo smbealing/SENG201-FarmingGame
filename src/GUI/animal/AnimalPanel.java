@@ -27,7 +27,7 @@ public class AnimalPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AnimalPanel window = new AnimalPanel(state);
+					AnimalPanel window = new AnimalPanel();
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,9 +39,8 @@ public class AnimalPanel {
 	/**
 	 * Create the application.
 	 */
-	public AnimalPanel(GameState tempState) {
+	public AnimalPanel() {
 		
-		state = tempState;
 		initialize();
 
 	}
@@ -64,11 +63,23 @@ public class AnimalPanel {
 		JButton btnFeedAnimals = new JButton("FEED ANIMALS");
 		btnFeedAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		btnFeedAnimals.setBounds(10, 111, 176, 64);
+		btnFeedAnimals.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				FeedAnimalPanel newPanel = new FeedAnimalPanel();
+				newPanel.ActivatePanel(state);
+			}
+		});
 		frmFarmiza.getContentPane().add(btnFeedAnimals);
 		
 		JButton btnPlayWithAnimals = new JButton("PLAY WITH ANIMALS");
 		btnPlayWithAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
 		btnPlayWithAnimals.setBounds(10, 186, 176, 64);
+		btnPlayWithAnimals.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				PlayWithAnimalsPanel newPanel = new PlayWithAnimalsPanel();
+				newPanel.ActivatePanel(state);
+			}
+		});
 		frmFarmiza.getContentPane().add(btnPlayWithAnimals);
 		
 		JButton btnAnimalInventory = new JButton("ANIMAL INVENTORY");
@@ -76,7 +87,7 @@ public class AnimalPanel {
 		btnAnimalInventory.setBounds(10, 261, 176, 64);
 		btnAnimalInventory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalInventoryPanel newPanel = new AnimalInventoryPanel(state);
+				AnimalInventoryPanel newPanel = new AnimalInventoryPanel();
 				newPanel.ActivatePanel(state);
 			}
 		});
