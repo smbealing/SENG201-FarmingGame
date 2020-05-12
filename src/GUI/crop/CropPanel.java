@@ -13,7 +13,10 @@ import javax.swing.SwingConstants;
 
 import gameEnvironment.GameState;
 
+
 public class CropPanel {
+	
+	public GameState state;
 
 	private JFrame frmFarmiza;
 
@@ -24,7 +27,7 @@ public class CropPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CropPanel window = new CropPanel();
+					CropPanel window = new CropPanel(state);
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,8 +39,9 @@ public class CropPanel {
 	/**
 	 * Create the application.
 	 */
-	public CropPanel() {
+	public CropPanel(GameState tempState) {
 		initialize();
+		state = tempState;
 	}
 
 	/**
@@ -64,17 +68,24 @@ public class CropPanel {
 		JButton btnTendToCrops = new JButton("TEND TO CROPS");
 		btnTendToCrops.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
 		btnTendToCrops.setBounds(10, 186, 176, 64);
+		btnTendToCrops.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				TendToCropPanel newPanel = new TendToCropPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
 		frmFarmiza.getContentPane().add(btnTendToCrops);
 		
-		JButton btnCheckCropStatus = new JButton("CHECK CROP STATUS");
-		btnCheckCropStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
-		btnCheckCropStatus.setBounds(10, 262, 176, 64);
-		frmFarmiza.getContentPane().add(btnCheckCropStatus);
-		
-		JButton btnCropEnventory = new JButton("CROP INVENTORY");
-		btnCropEnventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
-		btnCropEnventory.setBounds(10, 337, 176, 64);
-		frmFarmiza.getContentPane().add(btnCropEnventory);
+		JButton btnCropInventory = new JButton("CROP INVENTORY");
+		btnCropInventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
+		btnCropInventory.setBounds(10, 261, 176, 64);
+		btnCropInventory.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropInventoryPanel newPanel = new CropInventoryPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCropInventory);
 		
 		JLabel lblFieldImage = new JLabel("[plants image]");
 		lblFieldImage.setHorizontalAlignment(SwingConstants.CENTER);

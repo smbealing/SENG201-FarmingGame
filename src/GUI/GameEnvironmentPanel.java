@@ -94,7 +94,7 @@ public class GameEnvironmentPanel {
 		btnCrop.setBounds(10, 273, 176, 64);
 		btnCrop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				CropPanel cropPanel = new CropPanel();
+				CropPanel cropPanel = new CropPanel(state);
 				cropPanel.ActivatePanel(state);
 			}
 		});

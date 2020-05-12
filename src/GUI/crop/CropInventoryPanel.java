@@ -4,21 +4,30 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import gameEnvironment.GameState;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
 
 public class CropInventoryPanel {
 
+	public GameState state;
+	
 	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void ActivatePanel(final GameState state) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CropInventoryPanel window = new CropInventoryPanel();
+					CropInventoryPanel window = new CropInventoryPanel(state);
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,8 +39,9 @@ public class CropInventoryPanel {
 	/**
 	 * Create the application.
 	 */
-	public CropInventoryPanel() {
+	public CropInventoryPanel(GameState tempState) {
 		initialize();
+		state = tempState;
 	}
 
 	/**
@@ -40,68 +50,153 @@ public class CropInventoryPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 629, 351);
+		frmFarmiza.setBounds(100, 100, 800, 550);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JLabel lblCropEnventory = new JLabel("CROP INVENTORY");
-		lblCropEnventory.setFont(new Font("Tahoma", Font.BOLD, 35));
-
+		JLabel lblCropInventory = new JLabel("CROP INVENTORY");
+		lblCropInventory.setFont(new Font("Tahoma", Font.BOLD, 35));
 		
-		JLabel lblCrop = new JLabel("Crops");
-		lblCrop.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 24));
-		lblCrop.setBounds(111, 69, 460, 35);
-		frmFarmiza.getContentPane().add(lblCrop);
 		
-		JLabel lblproductAmount = new JLabel("[PRODUCT AMOUNT]");
-		lblproductAmount.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		lblproductAmount.setBounds(26, 115, 577, 35);
-		frmFarmiza.getContentPane().add(lblproductAmount);
+		JLabel lblInstruction = new JLabel("Click on a crop to see its status");
+		lblInstruction.setHorizontalAlignment(SwingConstants.CENTER);
+		lblInstruction.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 24));
+		lblInstruction.setBounds(173, 11, 438, 35);
+		frmFarmiza.getContentPane().add(lblInstruction);
 		
-		JLabel label_1 = new JLabel("[PRODUCT AMOUNT]");
-		label_1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_1.setBounds(174, 115, 429, 35);
-		frmFarmiza.getContentPane().add(label_1);
+		JButton btncrop = new JButton("[Crop 1]");
+		btncrop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop.setBounds(39, 80, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop);
 		
-		JLabel label_2 = new JLabel("[PRODUCT AMOUNT]");
-		label_2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_2.setBounds(26, 161, 577, 35);
-		frmFarmiza.getContentPane().add(label_2);
+		JButton btncrop_1 = new JButton("[Crop 2]");
+		btncrop_1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_1.setBounds(192, 80, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_1);
 		
-		JLabel label_3 = new JLabel("[PRODUCT AMOUNT]");
-		label_3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_3.setBounds(174, 161, 429, 35);
-		frmFarmiza.getContentPane().add(label_3);
+		JButton btncrop_2 = new JButton("[Crop 3]");
+		btncrop_2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_2.setBounds(336, 80, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_2);
 		
-		JLabel label_4 = new JLabel("[PRODUCT AMOUNT]");
-		label_4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_4.setBounds(26, 210, 577, 35);
-		frmFarmiza.getContentPane().add(label_4);
+		JButton btncrop_3 = new JButton("[Crop 4]");
+		btncrop_3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_3.setBounds(474, 80, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_3);
 		
-		JLabel label_5 = new JLabel("[PRODUCT AMOUNT]");
-		label_5.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_5.setBounds(174, 207, 429, 35);
-		frmFarmiza.getContentPane().add(label_5);
+		JButton btncrop_5 = new JButton("[Crop 6]");
+		btncrop_5.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_5.setBounds(39, 150, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_5);
 		
-		JLabel lblCropItems = new JLabel("Crop Items");
-		lblCropItems.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 24));
-		lblCropItems.setBounds(399, 69, 172, 35);
-		frmFarmiza.getContentPane().add(lblCropItems);
+		JButton btncrop_4 = new JButton("[Crop 5]");
+		btncrop_4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_4.setBounds(611, 80, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_4);
 		
-		JLabel label_7 = new JLabel("[PRODUCT AMOUNT]");
-		label_7.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_7.setBounds(341, 115, 262, 35);
-		frmFarmiza.getContentPane().add(label_7);
+		JButton btncrop_6 = new JButton("[Crop 7]");
+		btncrop_6.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_6.setBounds(192, 150, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_6);
 		
-		JLabel label_8 = new JLabel("[PRODUCT AMOUNT]");
-		label_8.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_8.setBounds(482, 115, 121, 35);
-		frmFarmiza.getContentPane().add(label_8);
+		JButton btncrop_7 = new JButton("[Crop 8]");
+		btncrop_7.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_7.setBounds(336, 150, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_7);
+		
+		JButton btncrop_8 = new JButton("[Crop 9]");
+		btncrop_8.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_8.setBounds(474, 150, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_8);
+		
+		JButton btncrop_9 = new JButton("[Crop 10]");
+		btncrop_9.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_9.setBounds(611, 150, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_9);
+		
+		JButton btncrop_10 = new JButton("[Crop 11]");
+		btncrop_10.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_10.setBounds(39, 222, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_10);
+		
+		JButton btncrop_11 = new JButton("[Crop 12]");
+		btncrop_11.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_11.setBounds(192, 222, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_11);
+		
+		JButton btncrop_12 = new JButton("[Crop 13]");
+		btncrop_12.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_12.setBounds(336, 222, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_12);
+		
+		JButton btncrop_13 = new JButton("[Crop 14]");
+		btncrop_13.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_13.setBounds(474, 222, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_13);
+		
+		JButton btncrop_14 = new JButton("[Crop 15]");
+		btncrop_14.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_14.setBounds(611, 222, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_14);
+		
+		JButton btncrop_15 = new JButton("[Crop 16]");
+		btncrop_15.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_15.setBounds(39, 295, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_15);
+		
+		JButton btncrop_16 = new JButton("[Crop 17]");
+		btncrop_16.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_16.setBounds(192, 295, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_16);
+		
+		JButton btncrop_17 = new JButton("[Crop 18]");
+		btncrop_17.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_17.setBounds(336, 295, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_17);
+		
+		JButton btncrop_18 = new JButton("[Crop 19]");
+		btncrop_18.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_18.setBounds(474, 295, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_18);
+		
+		JButton btncrop_19 = new JButton("[Crop 20]");
+		btncrop_19.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_19.setBounds(611, 295, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_19);
+		
+		JButton btncrop_20 = new JButton("[Crop 21]");
+		btncrop_20.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_20.setBounds(39, 364, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_20);
+		
+		JButton btncrop_21 = new JButton("[Crop 22]");
+		btncrop_21.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_21.setBounds(192, 364, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_21);
+		
+		JButton btncrop_22 = new JButton("[Crop 23]");
+		btncrop_22.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_22.setBounds(336, 364, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_22);
+		
+		JButton btncrop_23 = new JButton("[Crop 24]");
+		btncrop_23.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_23.setBounds(474, 364, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_23);
+		
+		JButton btncrop_24 = new JButton("[Crop 25]");
+		btncrop_24.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btncrop_24.setBounds(611, 364, 111, 45);
+		frmFarmiza.getContentPane().add(btncrop_24);
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnBack.setBounds(251, 256, 111, 45);
+		btnBack.setBounds(336, 455, 111, 45);
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				frmFarmiza.dispose();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnBack);
 	}
-
 }
