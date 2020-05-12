@@ -112,15 +112,9 @@ public class GameEnvironmentPanel {
 		btnAnimal.setBounds(10, 355, 176, 64);
 		btnAnimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-<<<<<<< Updated upstream
-				AnimalPanel animalPanel = new AnimalPanel();
-				frmFarmiza.dispose();
-				animalPanel.ActivatePanel(state);
-=======
 //				AnimalPanel animalPanel = new AnimalPanel();
 //				frmFarmiza.dispose();
 //				animalPanel.ActivatePanel(state);
->>>>>>> Stashed changes
 			}
 		});
 		frmFarmiza.getContentPane().add(btnAnimal);

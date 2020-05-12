@@ -27,12 +27,7 @@ public class AnimalPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-<<<<<<< Updated upstream
 					AnimalPanel window = new AnimalPanel();
-=======
-					state = tempState;
-					AnimalPanel window = new AnimalPanel(state);
->>>>>>> Stashed changes
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,12 +39,7 @@ public class AnimalPanel {
 	/**
 	 * Create the application.
 	 */
-<<<<<<< Updated upstream
 	public AnimalPanel() {
-		
-=======
-	public AnimalPanel(GameState tempState) {
->>>>>>> Stashed changes
 		initialize();
 	}
 
