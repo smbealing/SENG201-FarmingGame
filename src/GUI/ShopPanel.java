@@ -16,14 +16,17 @@ import gameEnvironment.GameState;
 public class ShopPanel {
 
 	private JFrame frmFarmiza;
+	
+	public GameState state;
 
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState state) {
+	public void ActivatePanel(final GameState tempState) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					state = tempState;
 					ShopPanel window = new ShopPanel();
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
@@ -73,11 +76,6 @@ public class ShopPanel {
 		lblCropItems.setBounds(105, 313, 146, 35);
 		frmFarmiza.getContentPane().add(lblCropItems);
 		
-		JButton btnNewButton = new JButton("BUY");
-		btnNewButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		btnNewButton.setBounds(30, 145, 64, 23);
-		frmFarmiza.getContentPane().add(btnNewButton);
-		
 		JLabel lblCrops = new JLabel("Crops");
 		lblCrops.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 24));
 		lblCrops.setBounds(127, 85, 124, 35);
@@ -92,6 +90,8 @@ public class ShopPanel {
 		lblAnimalFood.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 24));
 		lblAnimalFood.setBounds(507, 313, 199, 35);
 		frmFarmiza.getContentPane().add(lblAnimalFood);
+		
+		
 		
 		JLabel lblNewLabel = new JLabel("[PRODUCT $COST]");
 		lblNewLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
@@ -132,6 +132,11 @@ public class ShopPanel {
 		label_5.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
 		label_5.setBounds(128, 224, 633, 35);
 		frmFarmiza.getContentPane().add(label_5);
+		
+		JButton btnNewButton = new JButton("BUY");
+		btnNewButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnNewButton.setBounds(30, 145, 64, 23);
+		frmFarmiza.getContentPane().add(btnNewButton);
 		
 		JButton button_3 = new JButton("BUY");
 		button_3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));

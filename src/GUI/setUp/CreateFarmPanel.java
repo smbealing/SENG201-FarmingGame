@@ -129,7 +129,7 @@ public class CreateFarmPanel {
 					}
 					
 					state = new GameState(numDays, newFarm);
-					GameEnvironmentPanel newPanel = new GameEnvironmentPanel(state);
+					GameEnvironmentPanel newPanel = new GameEnvironmentPanel();
 					frmFarmiza.dispose();
 					newPanel.ActivatePanel(state);
 				}

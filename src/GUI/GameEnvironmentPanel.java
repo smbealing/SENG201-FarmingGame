@@ -8,16 +8,23 @@ import javax.swing.JLabel;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import gameEnvironment.GameState;
+import gameEnvironment.randomEvent.BrokenFence;
+import gameEnvironment.randomEvent.CountyFair;
+import gameEnvironment.randomEvent.Drought;
 import action.farmAction.NextDay;
 import gui.animal.AnimalPanel;
 import gui.crop.CropPanel;
 import gui.farm.FarmStatusPanel;
 import gui.farmer.FarmerStatusPanel;
+import gui.randomEvent.BrokenFencePanel;
+import gui.randomEvent.CountyFairPanel;
+import gui.randomEvent.DroughtPanel;
 
 public class GameEnvironmentPanel {
 
@@ -28,11 +35,12 @@ public class GameEnvironmentPanel {
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState state) {
+	public void ActivatePanel(final GameState tempState) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GameEnvironmentPanel window = new GameEnvironmentPanel(state);
+					state = tempState;
+					GameEnvironmentPanel window = new GameEnvironmentPanel();
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,9 +52,7 @@ public class GameEnvironmentPanel {
 	/**
 	 * Create the application.
 	 */
-	public GameEnvironmentPanel(GameState tempState) {
-		state = tempState;
-		
+	public GameEnvironmentPanel() {
 		initialize();
 	}
 
@@ -67,6 +73,7 @@ public class GameEnvironmentPanel {
 		btnFarm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				FarmStatusPanel farmStatusPanel = new FarmStatusPanel();
+				frmFarmiza.dispose();
 				farmStatusPanel.ActivatePanel(state);
 			}
 		});
@@ -78,6 +85,7 @@ public class GameEnvironmentPanel {
 		btnFarmer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				FarmerStatusPanel farmerStatusPanel = new FarmerStatusPanel();
+				frmFarmiza.dispose();
 				farmerStatusPanel.ActivatePanel(state);
 			}
 		});
@@ -89,6 +97,7 @@ public class GameEnvironmentPanel {
 		btnCrop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				CropPanel cropPanel = new CropPanel(state);
+				frmFarmiza.dispose();
 				cropPanel.ActivatePanel(state);
 			}
 		});
@@ -100,6 +109,7 @@ public class GameEnvironmentPanel {
 		btnAnimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				AnimalPanel animalPanel = new AnimalPanel(state);
+				frmFarmiza.dispose();
 				animalPanel.ActivatePanel(state);
 			}
 		});
@@ -107,7 +117,7 @@ public class GameEnvironmentPanel {
 		
 		JLabel lblTotalMoney = new JLabel( "$" + Math.round(state.totalMoney));
 		lblTotalMoney.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblTotalMoney.setBounds(483, 43, 103, 45);
+		lblTotalMoney.setBounds(494, 43, 92, 45);
 		frmFarmiza.getContentPane().add(lblTotalMoney);
 		
 		JLabel lblCurrentDay = new JLabel("DAY : " + state.currentDay + "/" + state.totalDays);
@@ -121,6 +131,7 @@ public class GameEnvironmentPanel {
 		btnShop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				ShopPanel shopPanel = new ShopPanel();
+				frmFarmiza.dispose();
 				shopPanel.ActivatePanel(state);
 			}
 		});
@@ -128,7 +139,7 @@ public class GameEnvironmentPanel {
 		
 		JLabel lblMoneyImage = new JLabel("$image");
 		lblMoneyImage.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource("../images/money.png")));
-		lblMoneyImage.setBounds(426, 46, 47, 45);
+		lblMoneyImage.setBounds(437, 46, 47, 45);
 		frmFarmiza.getContentPane().add(lblMoneyImage);
 		
 		JLabel lblFarmiza = new JLabel("WELCOME TO FARMIZA!");
@@ -153,7 +164,9 @@ public class GameEnvironmentPanel {
 		btnNextDay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new NextDay().perform(state);
-				GameEnvironmentPanel refresh = new GameEnvironmentPanel(state);
+				randomEvent();
+				GameEnvironmentPanel refresh = new GameEnvironmentPanel();
+				frmFarmiza.dispose();
 				refresh.ActivatePanel(state);
 			}
 		});
@@ -179,5 +192,34 @@ public class GameEnvironmentPanel {
 		}
 		
 		return "../images/" + farmImage;
+	}
+	
+	private void randomEvent() {
+		switch(new Random().nextInt(5)) {
+			case 0: 
+				new Drought().apply(state);
+				DroughtPanel drought = new DroughtPanel();
+				drought.ActivatePanel();
+				break;
+			case 1:
+				state.farm.increaseMaintenanceLevel();
+				break;
+			case 2: 
+				new BrokenFence().apply(state);
+				BrokenFencePanel fence = new BrokenFencePanel();
+				fence.ActivatePanel();
+				break;
+			case 3:
+				state.farm.increaseMaintenanceLevel();
+				break;
+			case 4: 
+				new CountyFair().apply(state);
+				CountyFairPanel fair = new CountyFairPanel();
+				fair.ActivatePanel();
+				break;
+			case 5:
+				state.farm.increaseMaintenanceLevel();
+				break;
+		}
 	}
 }
