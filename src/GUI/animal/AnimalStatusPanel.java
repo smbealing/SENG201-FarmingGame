@@ -10,20 +10,23 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 
+import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
 
 public class AnimalStatusPanel {
+	
+	public GameState state;
 
 	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel() {
+	public void ActivatePanel(final GameState state) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AnimalStatusPanel window = new AnimalStatusPanel();
+					AnimalStatusPanel window = new AnimalStatusPanel(state);
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,8 +38,9 @@ public class AnimalStatusPanel {
 	/**
 	 * Create the application.
 	 */
-	public AnimalStatusPanel() {
+	public AnimalStatusPanel(GameState tempState) {
 		initialize();
+		state = tempState;
 	}
 
 	/**

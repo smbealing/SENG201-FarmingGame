@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
 import gameEnvironment.GameState;
+import gui.crop.CropInventoryPanel;
 
 public class AnimalPanel {
 	
@@ -39,8 +40,10 @@ public class AnimalPanel {
 	 * Create the application.
 	 */
 	public AnimalPanel(GameState tempState) {
-		initialize();
+		
 		state = tempState;
+		initialize();
+
 	}
 
 	/**
@@ -71,6 +74,12 @@ public class AnimalPanel {
 		JButton btnAnimalInventory = new JButton("ANIMAL INVENTORY");
 		btnAnimalInventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
 		btnAnimalInventory.setBounds(10, 261, 176, 64);
+		btnAnimalInventory.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				AnimalInventoryPanel newPanel = new AnimalInventoryPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
 		frmFarmiza.getContentPane().add(btnAnimalInventory);
 		
 		JLabel lblanimalImage = new JLabel("[animal image]");

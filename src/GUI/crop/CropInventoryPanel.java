@@ -65,130 +65,280 @@ public class CropInventoryPanel {
 		lblInstruction.setBounds(173, 11, 438, 35);
 		frmFarmiza.getContentPane().add(lblInstruction);
 		
-		JButton btncrop = new JButton("[Crop 1]");
-		btncrop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop.setBounds(39, 80, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop);
+		JButton btnCrop1 = new JButton("[Crop 1]");
+		btnCrop1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop1.setBounds(39, 80, 111, 45);
+		btnCrop1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop1);
 		
-		JButton btncrop_1 = new JButton("[Crop 2]");
-		btncrop_1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_1.setBounds(192, 80, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_1);
+		JButton btnCrop2 = new JButton("[Crop 2]");
+		btnCrop2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop2.setBounds(192, 80, 111, 45);
+		btnCrop2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop2);
 		
-		JButton btncrop_2 = new JButton("[Crop 3]");
-		btncrop_2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_2.setBounds(336, 80, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_2);
+		JButton btnCrop3 = new JButton("[Crop 3]");
+		btnCrop3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop3.setBounds(336, 80, 111, 45);
+		btnCrop3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop3);
 		
-		JButton btncrop_3 = new JButton("[Crop 4]");
-		btncrop_3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_3.setBounds(474, 80, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_3);
+		JButton btnCrop4 = new JButton("[Crop 4]");
+		btnCrop4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop4.setBounds(474, 80, 111, 45);
+		btnCrop4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop4);
 		
-		JButton btncrop_5 = new JButton("[Crop 6]");
-		btncrop_5.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_5.setBounds(39, 150, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_5);
+		JButton btnCrop6 = new JButton("[Crop 6]");
+		btnCrop6.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop6.setBounds(39, 150, 111, 45);
+		btnCrop6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop6);
 		
-		JButton btncrop_4 = new JButton("[Crop 5]");
-		btncrop_4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_4.setBounds(611, 80, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_4);
+		JButton btnCrop5 = new JButton("[Crop 5]");
+		btnCrop5.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop5.setBounds(611, 80, 111, 45);
+		btnCrop5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop5);
 		
-		JButton btncrop_6 = new JButton("[Crop 7]");
-		btncrop_6.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_6.setBounds(192, 150, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_6);
+		JButton btnCrop7 = new JButton("[Crop 7]");
+		btnCrop7.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop7.setBounds(192, 150, 111, 45);
+		btnCrop7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop7);
 		
-		JButton btncrop_7 = new JButton("[Crop 8]");
-		btncrop_7.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_7.setBounds(336, 150, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_7);
+		JButton btnCrop8 = new JButton("[Crop 8]");
+		btnCrop8.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop8.setBounds(336, 150, 111, 45);
+		btnCrop8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop8);
 		
-		JButton btncrop_8 = new JButton("[Crop 9]");
-		btncrop_8.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_8.setBounds(474, 150, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_8);
+		JButton btnCrop9 = new JButton("[Crop 9]");
+		btnCrop9.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop9.setBounds(474, 150, 111, 45);
+		btnCrop9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop9);
 		
-		JButton btncrop_9 = new JButton("[Crop 10]");
-		btncrop_9.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_9.setBounds(611, 150, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_9);
+		JButton btnCrop10 = new JButton("[Crop 10]");
+		btnCrop10.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop10.setBounds(611, 150, 111, 45);
+		btnCrop10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop10);
 		
-		JButton btncrop_10 = new JButton("[Crop 11]");
-		btncrop_10.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_10.setBounds(39, 222, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_10);
+		JButton btnCrop11 = new JButton("[Crop 11]");
+		btnCrop11.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop11.setBounds(39, 222, 111, 45);
+		btnCrop11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop11);
 		
-		JButton btncrop_11 = new JButton("[Crop 12]");
-		btncrop_11.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_11.setBounds(192, 222, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_11);
+		JButton btnCrop12 = new JButton("[Crop 12]");
+		btnCrop12.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop12.setBounds(192, 222, 111, 45);
+		btnCrop12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop12);
 		
-		JButton btncrop_12 = new JButton("[Crop 13]");
-		btncrop_12.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_12.setBounds(336, 222, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_12);
+		JButton btnCrop13 = new JButton("[Crop 13]");
+		btnCrop13.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop13.setBounds(336, 222, 111, 45);
+		btnCrop13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop13);
 		
-		JButton btncrop_13 = new JButton("[Crop 14]");
-		btncrop_13.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_13.setBounds(474, 222, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_13);
+		JButton btnCrop14 = new JButton("[Crop 14]");
+		btnCrop14.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop14.setBounds(474, 222, 111, 45);
+		btnCrop14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop14);
 		
-		JButton btncrop_14 = new JButton("[Crop 15]");
-		btncrop_14.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_14.setBounds(611, 222, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_14);
+		JButton btnCrop15 = new JButton("[Crop 15]");
+		btnCrop15.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop15.setBounds(611, 222, 111, 45);
+		btnCrop15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop15);
 		
-		JButton btncrop_15 = new JButton("[Crop 16]");
-		btncrop_15.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_15.setBounds(39, 295, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_15);
+		JButton btnCrop16 = new JButton("[Crop 16]");
+		btnCrop16.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop16.setBounds(39, 295, 111, 45);
+		btnCrop16.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop16);
 		
-		JButton btncrop_16 = new JButton("[Crop 17]");
-		btncrop_16.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_16.setBounds(192, 295, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_16);
+		JButton btnCrop17 = new JButton("[Crop 17]");
+		btnCrop17.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop17.setBounds(192, 295, 111, 45);
+		btnCrop17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop17);
 		
-		JButton btncrop_17 = new JButton("[Crop 18]");
-		btncrop_17.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_17.setBounds(336, 295, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_17);
+		JButton btnCrop18 = new JButton("[Crop 18]");
+		btnCrop18.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop18.setBounds(336, 295, 111, 45);
+		btnCrop18.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop18);
 		
-		JButton btncrop_18 = new JButton("[Crop 19]");
-		btncrop_18.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_18.setBounds(474, 295, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_18);
+		JButton btnCrop19 = new JButton("[Crop 19]");
+		btnCrop19.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop19.setBounds(474, 295, 111, 45);
+		btnCrop19.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop19);
 		
-		JButton btncrop_19 = new JButton("[Crop 20]");
-		btncrop_19.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_19.setBounds(611, 295, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_19);
+		JButton btnCrop20 = new JButton("[Crop 20]");
+		btnCrop20.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop20.setBounds(611, 295, 111, 45);
+		btnCrop20.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop20);
 		
-		JButton btncrop_20 = new JButton("[Crop 21]");
-		btncrop_20.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_20.setBounds(39, 364, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_20);
+		JButton btnCrop21 = new JButton("[Crop 21]");
+		btnCrop21.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop21.setBounds(39, 364, 111, 45);
+		btnCrop21.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop21);
 		
-		JButton btncrop_21 = new JButton("[Crop 22]");
-		btncrop_21.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_21.setBounds(192, 364, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_21);
+		JButton btnCrop22 = new JButton("[Crop 22]");
+		btnCrop22.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop22.setBounds(192, 364, 111, 45);
+		btnCrop22.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop22);
 		
-		JButton btncrop_22 = new JButton("[Crop 23]");
-		btncrop_22.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_22.setBounds(336, 364, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_22);
+		JButton btnCrop23 = new JButton("[Crop 23]");
+		btnCrop23.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop23.setBounds(336, 364, 111, 45);
+		btnCrop23.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop23);
 		
-		JButton btncrop_23 = new JButton("[Crop 24]");
-		btncrop_23.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_23.setBounds(474, 364, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_23);
+		JButton btnCrop24 = new JButton("[Crop 24]");
+		btnCrop24.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop24.setBounds(474, 364, 111, 45);
+		btnCrop24.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop24);
 		
-		JButton btncrop_24 = new JButton("[Crop 25]");
-		btncrop_24.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btncrop_24.setBounds(611, 364, 111, 45);
-		frmFarmiza.getContentPane().add(btncrop_24);
+		JButton btnCrop25 = new JButton("[Crop 25]");
+		btnCrop25.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnCrop25.setBounds(611, 364, 111, 45);
+		btnCrop25.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropStatusPanel newPanel = new CropStatusPanel(state);
+				newPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnCrop25);
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
