@@ -35,13 +35,13 @@ public class GameEnvironmentPanel {
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState tempState) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					state = tempState;
-					GameEnvironmentPanel window = new GameEnvironmentPanel();
-					window.frmFarmiza.setVisible(true);
+					
+//					GameEnvironmentPanel window = new GameEnvironmentPanel();
+					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -52,8 +52,12 @@ public class GameEnvironmentPanel {
 	/**
 	 * Create the application.
 	 */
-	public GameEnvironmentPanel() {
+	public GameEnvironmentPanel(final GameState tempState) {
+		state = tempState;
 		initialize();
+		ActivatePanel();
+		
+		if (state.currentDay != 1) { randomEvent(); }
 	}
 
 	/**
@@ -108,9 +112,15 @@ public class GameEnvironmentPanel {
 		btnAnimal.setBounds(10, 355, 176, 64);
 		btnAnimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+<<<<<<< Updated upstream
 				AnimalPanel animalPanel = new AnimalPanel();
 				frmFarmiza.dispose();
 				animalPanel.ActivatePanel(state);
+=======
+//				AnimalPanel animalPanel = new AnimalPanel();
+//				frmFarmiza.dispose();
+//				animalPanel.ActivatePanel(state);
+>>>>>>> Stashed changes
 			}
 		});
 		frmFarmiza.getContentPane().add(btnAnimal);
@@ -164,10 +174,8 @@ public class GameEnvironmentPanel {
 		btnNextDay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new NextDay().perform(state);
-				randomEvent();
-				GameEnvironmentPanel refresh = new GameEnvironmentPanel();
+				new GameEnvironmentPanel(state);
 				frmFarmiza.dispose();
-				refresh.ActivatePanel(state);
 			}
 		});
 		frmFarmiza.getContentPane().add(btnNextDay);

@@ -11,23 +11,25 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import crop.Crop;
 import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
 
 public class CropStatusPanel {
 	
-	public GameState state;
+	public Crop crop;
 
 	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState state){
+	public void ActivatePanel(final Crop tempCrop){
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CropStatusPanel window = new CropStatusPanel(state);
+					crop = tempCrop;
+					CropStatusPanel window = new CropStatusPanel();
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,8 +41,7 @@ public class CropStatusPanel {
 	/**
 	 * Create the application.
 	 */
-	public CropStatusPanel(GameState tempState) {
-		state = tempState;
+	public CropStatusPanel() {
 		initialize();
 	}
 
@@ -50,79 +51,53 @@ public class CropStatusPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 800, 550);
+		frmFarmiza.setBounds(100, 100, 422, 411);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
+		JLabel lblCropStatus = new JLabel("Crop Status");
+		lblCropStatus.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCropStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
+		lblCropStatus.setBounds(109, 11, 188, 48);
+		frmFarmiza.getContentPane().add(lblCropStatus);
 		
-		JLabel lblCropSelected = new JLabel("Crop selected:");
-		lblCropSelected.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblCropSelected.setBounds(129, 23, 193, 48);
+		JLabel lblCropSelected = new JLabel("Crop selected: [name]");
+		lblCropSelected.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		lblCropSelected.setBounds(29, 67, 225, 46);
 		frmFarmiza.getContentPane().add(lblCropSelected);
 		
-		JLabel lblThirst = new JLabel("Thirst level:");
-		lblThirst.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblThirst.setBounds(129, 99, 156, 48);
+		JLabel lblThirst = new JLabel("Thirst level: []/10");
+		lblThirst.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		lblThirst.setBounds(29, 107, 179, 48);
 		frmFarmiza.getContentPane().add(lblThirst);
 		
-		JLabel lblGrownFor = new JLabel("Grown for:");
-		lblGrownFor.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblGrownFor.setBounds(129, 158, 135, 48);
-		frmFarmiza.getContentPane().add(lblGrownFor);
-		
-		JLabel lblDays = new JLabel("day(s)");
-		lblDays.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblDays.setBounds(323, 158, 93, 48);
-		frmFarmiza.getContentPane().add(lblDays);
-		
-		JLabel lblDaysGrown = new JLabel("00");
-		lblDaysGrown.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblDaysGrown.setBounds(274, 158, 39, 48);
-		frmFarmiza.getContentPane().add(lblDaysGrown);
+		JLabel lblGrown = new JLabel("Grown for: [] day(s)");
+		lblGrown.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		lblGrown.setBounds(29, 152, 205, 48);
+		frmFarmiza.getContentPane().add(lblGrown);
 		
 		JLabel lblDaysTilHarvest = new JLabel("Day(s) left until harvest:");
-		lblDaysTilHarvest.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblDaysTilHarvest.setBounds(129, 217, 324, 48);
+		lblDaysTilHarvest.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		lblDaysTilHarvest.setBounds(29, 197, 324, 48);
 		frmFarmiza.getContentPane().add(lblDaysTilHarvest);
 		
-		JLabel lblDaysUntilHarvest = new JLabel("00");
-		lblDaysUntilHarvest.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblDaysUntilHarvest.setBounds(444, 217, 46, 48);
-		frmFarmiza.getContentPane().add(lblDaysUntilHarvest);
-		
-		JLabel lblNotPlantedMessage = new JLabel("This crop has not been planted");
-		lblNotPlantedMessage.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNotPlantedMessage.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblNotPlantedMessage.setBounds(129, 299, 525, 48);
-		frmFarmiza.getContentPane().add(lblNotPlantedMessage);
-		
-		JLabel lblCropName = new JLabel("[Crop Name]");
-		lblCropName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblCropName.setBounds(337, 23, 205, 48);
-		frmFarmiza.getContentPane().add(lblCropName);
-		
-		JLabel lblThirstLevel = new JLabel("00");
-		lblThirstLevel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblThirstLevel.setBounds(285, 99, 39, 48);
-		frmFarmiza.getContentPane().add(lblThirstLevel);
-		
-		JLabel label = new JLabel("/10");
-		label.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		label.setBounds(323, 99, 55, 48);
-		frmFarmiza.getContentPane().add(label);
+		JLabel lblPlanted = new JLabel("This crop has not been planted");
+		lblPlanted.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPlanted.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
+		lblPlanted.setBounds(9, 245, 387, 48);
+		frmFarmiza.getContentPane().add(lblPlanted);
 		
 		
-		JButton btnBackToFarm = new JButton("BACK");
-		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnBackToFarm.setBounds(129, 436, 525, 64);
-		btnBackToFarm.addActionListener(new ActionListener() {
+		JButton btnClose = new JButton("CLOSE");
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		btnClose.setBounds(144, 315, 118, 46);
+		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-//				GameEnvironmentPanel newPanel = new GameEnvironmentPanel();
 				frmFarmiza.dispose();
-//				newPanel.ActivatePanel();
 			}
 		});
-		frmFarmiza.getContentPane().add(btnBackToFarm);
+		frmFarmiza.getContentPane().add(btnClose);
+		
+		
 	}
-
 }
