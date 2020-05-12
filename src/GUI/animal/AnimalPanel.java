@@ -14,6 +14,8 @@ import javax.swing.SwingConstants;
 import gameEnvironment.GameState;
 
 public class AnimalPanel {
+	
+	public GameState state;
 
 	private JFrame frmFarmiza;
 
@@ -24,7 +26,7 @@ public class AnimalPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AnimalPanel window = new AnimalPanel();
+					AnimalPanel window = new AnimalPanel(state);
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,8 +38,9 @@ public class AnimalPanel {
 	/**
 	 * Create the application.
 	 */
-	public AnimalPanel() {
+	public AnimalPanel(GameState tempState) {
 		initialize();
+		state = tempState;
 	}
 
 	/**
@@ -65,14 +68,9 @@ public class AnimalPanel {
 		btnPlayWithAnimals.setBounds(10, 186, 176, 64);
 		frmFarmiza.getContentPane().add(btnPlayWithAnimals);
 		
-		JButton btnCheckAnimalStatus = new JButton("CHECK ANIMAL STATUS");
-		btnCheckAnimalStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		btnCheckAnimalStatus.setBounds(10, 262, 176, 64);
-		frmFarmiza.getContentPane().add(btnCheckAnimalStatus);
-		
 		JButton btnAnimalInventory = new JButton("ANIMAL INVENTORY");
 		btnAnimalInventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		btnAnimalInventory.setBounds(10, 337, 176, 64);
+		btnAnimalInventory.setBounds(10, 261, 176, 64);
 		frmFarmiza.getContentPane().add(btnAnimalInventory);
 		
 		JLabel lblanimalImage = new JLabel("[animal image]");

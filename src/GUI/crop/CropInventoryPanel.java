@@ -40,8 +40,9 @@ public class CropInventoryPanel {
 	 * Create the application.
 	 */
 	public CropInventoryPanel(GameState tempState) {
-		initialize();
 		state = tempState;
+		initialize();
+		
 	}
 
 	/**

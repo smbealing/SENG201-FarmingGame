@@ -40,8 +40,9 @@ public class CropPanel {
 	 * Create the application.
 	 */
 	public CropPanel(GameState tempState) {
-		initialize();
 		state = tempState;
+		initialize();
+		
 	}
 
 	/**

@@ -8,18 +8,22 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
+import gameEnvironment.GameState;
+
 public class AnimalInventoryPanel {
+	
+	public GameState state;
 
 	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void ActivatePanel(final GameState state) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AnimalInventoryPanel window = new AnimalInventoryPanel();
+					AnimalInventoryPanel window = new AnimalInventoryPanel(state);
 					window.frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,8 +35,9 @@ public class AnimalInventoryPanel {
 	/**
 	 * Create the application.
 	 */
-	public AnimalInventoryPanel() {
+	public AnimalInventoryPanel(GameState tempState) {
 		initialize();
+		state = tempState;
 	}
 
 	/**

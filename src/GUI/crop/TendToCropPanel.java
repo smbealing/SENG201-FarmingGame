@@ -42,8 +42,9 @@ public class TendToCropPanel {
 	 * Create the application.
 	 */
 	public TendToCropPanel(GameState tempState) {
-		initialize();
 		state = tempState;
+		initialize();
+
 	}
 
 	/**

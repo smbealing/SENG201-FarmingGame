@@ -99,7 +99,7 @@ public class GameEnvironmentPanel {
 		btnAnimal.setBounds(10, 355, 176, 64);
 		btnAnimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalPanel animalPanel = new AnimalPanel();
+				AnimalPanel animalPanel = new AnimalPanel(state);
 				animalPanel.ActivatePanel(state);
 			}
 		});
@@ -138,7 +138,7 @@ public class GameEnvironmentPanel {
 		
 		JButton btnHelp = new JButton("HELP");
 		btnHelp.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
-		btnHelp.setBounds(709, 9, 65, 28);
+		btnHelp.setBounds(697, 9, 77, 28);
 		btnHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				HelpPanel helpPanel = new HelpPanel();
