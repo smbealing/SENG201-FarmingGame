@@ -92,7 +92,7 @@ public class FarmStatusPanel {
 		
 		JButton btnBackToFarm = new JButton("BACK");
 		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnBackToFarm.setBounds(129, 436, 525, 64);
+		btnBackToFarm.setBounds(362, 421, 221, 79);
 		btnBackToFarm.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent event) {
@@ -100,6 +100,10 @@ public class FarmStatusPanel {
 			}
 		});
 		frmFarmiza.getContentPane().add(btnBackToFarm);
+		
+		JButton btnTendToFarmLand = new JButton("TEND TO FARM LAND");
+		btnTendToFarmLand.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
+		btnTendToFarmLand.setBounds(129, 421, 221, 79);
+		frmFarmiza.getContentPane().add(btnTendToFarmLand);
 	}
-
 }

@@ -40,7 +40,7 @@ public class NextDay extends Action {
 			animal.decreaseHealth();
 		}
 		
-		randomEvent(state);
+//		randomEvent(state); // add back in for command lines
 	}
 	
 	private void randomEvent(GameState state) {
