@@ -6,11 +6,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import gameEnvironment.GameState;
+import gui.animal.AnimalPanel;
+import gui.crop.CropPanel;
+import gui.farm.FarmStatusPanel;
+import gui.farm.TendToFarmLandPanel;
+import gui.farmer.FarmerStatusPanel;
+import gui.setUp.SelectDaysPanel;
 
 public class GameEnvironmentPanel {
 
@@ -62,21 +70,45 @@ public class GameEnvironmentPanel {
 		JButton btnFarm = new JButton("[farm name]");
 		btnFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		btnFarm.setBounds(10, 123, 176, 64);
+		btnFarm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				FarmStatusPanel farmStatusPanel = new FarmStatusPanel();
+				farmStatusPanel.ActivatePanel(state);
+			}
+		});
 		frmFarmiza.getContentPane().add(btnFarm);
 		
 		JButton btnFarmer = new JButton("[farmer name]");
-		btnFarmer.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnFarmer.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		btnFarmer.setBounds(10, 198, 176, 64);
+		btnFarmer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				FarmerStatusPanel farmerStatusPanel = new FarmerStatusPanel();
+				farmerStatusPanel.ActivatePanel(state);
+			}
+		});
 		frmFarmiza.getContentPane().add(btnFarmer);
 		
 		JButton btnCrop = new JButton("LOOK AFTER CROPS");
 		btnCrop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
 		btnCrop.setBounds(10, 273, 176, 64);
+		btnCrop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				CropPanel cropPanel = new CropPanel();
+				cropPanel.ActivatePanel(state);
+			}
+		});
 		frmFarmiza.getContentPane().add(btnCrop);
 		
 		JButton btnAnimal = new JButton("LOOK AFTER ANIMALS");
 		btnAnimal.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
 		btnAnimal.setBounds(10, 348, 176, 64);
+		btnAnimal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				AnimalPanel animalPanel = new AnimalPanel();
+				animalPanel.ActivatePanel(state);
+			}
+		});
 		frmFarmiza.getContentPane().add(btnAnimal);
 		
 //		JLabel lblBackground = new JLabel("");
@@ -97,6 +129,12 @@ public class GameEnvironmentPanel {
 		JButton btnShop = new JButton("SHOP");
 		btnShop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		btnShop.setBounds(10, 423, 176, 64);
+		btnShop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				ShopPanel shopPanel = new ShopPanel();
+				shopPanel.ActivatePanel(state);
+			}
+		});
 		frmFarmiza.getContentPane().add(btnShop);
 		
 		JLabel lblMoneyImage = new JLabel("$image");
@@ -108,5 +146,27 @@ public class GameEnvironmentPanel {
 		lblFarmiza.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		lblFarmiza.setBounds(10, 11, 406, 101);
 		frmFarmiza.getContentPane().add(lblFarmiza);
+		
+		JButton btnTendToFarmland = new JButton("TEND TO FARM LAND");
+		btnTendToFarmland.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 13));
+		btnTendToFarmland.setBounds(196, 424, 176, 64);
+		btnTendToFarmland.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				TendToFarmLandPanel tendToFarmLandPanel = new TendToFarmLandPanel();
+				tendToFarmLandPanel.ActivatePanel(state);
+			}
+		});
+		frmFarmiza.getContentPane().add(btnTendToFarmland);
+		
+		JButton btnHelp = new JButton("HELP");
+		btnHelp.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		btnHelp.setBounds(398, 423, 176, 64);
+		btnHelp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				HelpPanel helpPanel = new HelpPanel();
+				helpPanel.ActivatePanel();
+			}
+		});
+		frmFarmiza.getContentPane().add(btnHelp);
 	}
 }

@@ -5,8 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import gameEnvironment.GameState;
 
 public class CropPanel {
 
@@ -15,7 +20,7 @@ public class CropPanel {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void ActivatePanel(final GameState state) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -44,11 +49,6 @@ public class CropPanel {
 		frmFarmiza.setBounds(100, 100, 800, 550);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
-		
-		JButton button = new JButton("BACK");
-		button.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		button.setBounds(336, 455, 111, 45);
-		frmFarmiza.getContentPane().add(button);
 		
 		JLabel lblFarmCrops = new JLabel("FARM CROPS");
 		lblFarmCrops.setHorizontalAlignment(SwingConstants.CENTER);
@@ -80,6 +80,17 @@ public class CropPanel {
 		lblFieldImage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblFieldImage.setBounds(230, 81, 532, 353);
 		frmFarmiza.getContentPane().add(lblFieldImage);
+		
+		JButton btnBack = new JButton("BACK");
+		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		btnBack.setBounds(336, 455, 111, 45);
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				frmFarmiza.dispose();
+			}
+		});
+		frmFarmiza.getContentPane().add(btnBack);
+		
 	}
 
 }

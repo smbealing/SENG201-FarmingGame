@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 
+import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
 
 public class FarmStatusPanel {
@@ -19,7 +20,7 @@ public class FarmStatusPanel {
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel() {
+	public void ActivatePanel(final GameState state) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -48,20 +49,6 @@ public class FarmStatusPanel {
 		frmFarmiza.setBounds(100, 100, 800, 550);
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
-		
-		JButton btnBackToFarm = new JButton("BACK");
-		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnBackToFarm.setBounds(129, 436, 525, 64);
-		btnBackToFarm.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent event) {
-
-//				GameEnvironmentPanel newPanel = new GameEnvironmentPanel();
-				frmFarmiza.dispose();
-//				newPanel.ActivatePanel();
-			}
-		});
-		frmFarmiza.getContentPane().add(btnBackToFarm);
 		
 		JLabel lblFarmMoney = new JLabel("Your farm has: $");
 		lblFarmMoney.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
@@ -102,6 +89,17 @@ public class FarmStatusPanel {
 		lblMaintenanceLevel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
 		lblMaintenanceLevel.setBounds(415, 329, 296, 48);
 		frmFarmiza.getContentPane().add(lblMaintenanceLevel);
+		
+		JButton btnBackToFarm = new JButton("BACK");
+		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
+		btnBackToFarm.setBounds(129, 436, 525, 64);
+		btnBackToFarm.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent event) {
+				frmFarmiza.dispose();
+			}
+		});
+		frmFarmiza.getContentPane().add(btnBackToFarm);
 	}
 
 }

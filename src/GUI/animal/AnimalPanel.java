@@ -5,8 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+
+import gameEnvironment.GameState;
 
 public class AnimalPanel {
 
@@ -15,7 +20,7 @@ public class AnimalPanel {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void ActivatePanel(final GameState state) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -70,11 +75,6 @@ public class AnimalPanel {
 		btnAnimalInventory.setBounds(10, 337, 176, 64);
 		frmFarmiza.getContentPane().add(btnAnimalInventory);
 		
-		JButton btnBack = new JButton("BACK");
-		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnBack.setBounds(336, 455, 111, 45);
-		frmFarmiza.getContentPane().add(btnBack);
-		
 		JLabel lblanimalImage = new JLabel("[animal image]");
 		lblanimalImage.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
 		lblanimalImage.setHorizontalAlignment(SwingConstants.CENTER);
@@ -84,6 +84,16 @@ public class AnimalPanel {
 
 		lblanimalImage.setBounds(230, 81, 532, 353);
 		frmFarmiza.getContentPane().add(lblanimalImage);
+		
+		JButton btnBack = new JButton("BACK");
+		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		btnBack.setBounds(336, 455, 111, 45);
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				frmFarmiza.dispose();
+			}
+		});
+		frmFarmiza.getContentPane().add(btnBack);
 
 	}
 }

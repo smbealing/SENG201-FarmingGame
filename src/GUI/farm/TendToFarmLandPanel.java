@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
 
 public class TendToFarmLandPanel {
@@ -20,7 +21,7 @@ public class TendToFarmLandPanel {
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel() {
+	public void ActivatePanel(final GameState state) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -54,12 +55,8 @@ public class TendToFarmLandPanel {
 		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		btnBackToFarm.setBounds(129, 436, 525, 64);
 		btnBackToFarm.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent event) {
-
-//				GameEnvironmentPanel newPanel = new GameEnvironmentPanel();
 				frmFarmiza.dispose();
-//				newPanel.ActivatePanel();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnBackToFarm);

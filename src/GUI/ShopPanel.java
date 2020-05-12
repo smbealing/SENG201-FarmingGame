@@ -6,7 +6,12 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
+
+import gameEnvironment.GameState;
 
 public class ShopPanel {
 
@@ -15,7 +20,7 @@ public class ShopPanel {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void ActivatePanel(final GameState state) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -46,10 +51,6 @@ public class ShopPanel {
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JButton btnBack = new JButton("BACK");
-		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnBack.setBounds(336, 455, 111, 45);
-		frmFarmiza.getContentPane().add(btnBack);
 		
 		JLabel lblShop = new JLabel("MARKET");
 		lblShop.setHorizontalAlignment(SwingConstants.CENTER);
@@ -226,6 +227,16 @@ public class ShopPanel {
 		button_12.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
 		button_12.setBounds(656, 388, 64, 23);
 		frmFarmiza.getContentPane().add(button_12);
+		
+		JButton btnBack = new JButton("BACK");
+		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		btnBack.setBounds(336, 455, 111, 45);
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				frmFarmiza.dispose();
+			}
+		});
+		frmFarmiza.getContentPane().add(btnBack);
 	}
 
 }
