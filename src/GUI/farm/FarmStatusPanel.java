@@ -12,20 +12,22 @@ import javax.swing.JLabel;
 
 import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
+import gui.farmer.FarmerStatusPanel;
 
 public class FarmStatusPanel {
+	
+	public GameState state;
 
 	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState state) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					FarmStatusPanel window = new FarmStatusPanel();
-					window.frmFarmiza.setVisible(true);
+				try {					
+					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,8 +38,10 @@ public class FarmStatusPanel {
 	/**
 	 * Create the application.
 	 */
-	public FarmStatusPanel() {
+	public FarmStatusPanel(final GameState tempState) {
+		state = tempState;
 		initialize();
+		ActivatePanel();
 	}
 
 	/**
@@ -96,6 +100,7 @@ public class FarmStatusPanel {
 		btnBackToFarm.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent event) {
+				new GameEnvironmentPanel(state);
 				frmFarmiza.dispose();
 			}
 		});
@@ -104,6 +109,13 @@ public class FarmStatusPanel {
 		JButton btnTendToFarmLand = new JButton("TEND TO FARM LAND");
 		btnTendToFarmLand.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
 		btnTendToFarmLand.setBounds(129, 421, 221, 79);
+		btnTendToFarmLand.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				new TendToFarmLandPanel(state);
+				frmFarmiza.dispose();
+
+			}
+		});
 		frmFarmiza.getContentPane().add(btnTendToFarmLand);
 	}
 }

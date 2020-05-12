@@ -15,18 +15,19 @@ import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
 
 public class TendToFarmLandPanel {
+	
+	public GameState state;
 
 	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState state) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TendToFarmLandPanel window = new TendToFarmLandPanel();
-					window.frmFarmiza.setVisible(true);
+					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,8 +38,10 @@ public class TendToFarmLandPanel {
 	/**
 	 * Create the application.
 	 */
-	public TendToFarmLandPanel() {
+	public TendToFarmLandPanel(final GameState tempState) {
+		state = tempState;
 		initialize();
+		ActivatePanel();
 	}
 
 	/**
@@ -56,6 +59,7 @@ public class TendToFarmLandPanel {
 		btnBackToFarm.setBounds(129, 436, 525, 64);
 		btnBackToFarm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				new FarmStatusPanel(state);
 				frmFarmiza.dispose();
 			}
 		});

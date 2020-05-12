@@ -12,7 +12,8 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
 import gameEnvironment.GameState;
-import gui.crop.CropInventoryPanel;
+import gui.GameEnvironmentPanel;
+
 
 public class AnimalPanel {
 	
@@ -23,13 +24,11 @@ public class AnimalPanel {
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState tempState) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					state = tempState;
-					AnimalPanel window = new AnimalPanel();
-					window.frmFarmiza.setVisible(true);
+					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,8 +39,10 @@ public class AnimalPanel {
 	/**
 	 * Create the application.
 	 */
-	public AnimalPanel() {
+	public AnimalPanel(final GameState tempState) {
+		state = tempState;
 		initialize();
+		ActivatePanel();
 	}
 
 	/**
@@ -107,6 +108,7 @@ public class AnimalPanel {
 		btnBack.setBounds(336, 455, 111, 45);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				new GameEnvironmentPanel(state);
 				frmFarmiza.dispose();
 			}
 		});

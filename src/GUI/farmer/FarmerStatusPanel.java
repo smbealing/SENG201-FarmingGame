@@ -14,18 +14,19 @@ import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
 
 public class FarmerStatusPanel {
+	
+	public GameState state;
 
 	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState state) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FarmerStatusPanel window = new FarmerStatusPanel();
-					window.frmFarmiza.setVisible(true);
+					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,8 +37,10 @@ public class FarmerStatusPanel {
 	/**
 	 * Create the application.
 	 */
-	public FarmerStatusPanel() {
+	public FarmerStatusPanel(final GameState tempState) {
+		state = tempState;
 		initialize();
+		ActivatePanel();
 	}
 
 	/**
@@ -88,6 +91,7 @@ public class FarmerStatusPanel {
 		btnBackToFarm.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent event) {
+				new GameEnvironmentPanel(state);
 				frmFarmiza.dispose();
 
 			}

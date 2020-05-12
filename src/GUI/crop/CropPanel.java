@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import gameEnvironment.GameState;
+import gui.GameEnvironmentPanel;
 
 
 public class CropPanel {
@@ -23,12 +24,11 @@ public class CropPanel {
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState state) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CropPanel window = new CropPanel(state);
-					window.frmFarmiza.setVisible(true);
+					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,6 +42,7 @@ public class CropPanel {
 	public CropPanel(GameState tempState) {
 		state = tempState;
 		initialize();
+		ActivatePanel();
 		
 	}
 
@@ -98,6 +99,7 @@ public class CropPanel {
 		btnBack.setBounds(336, 455, 111, 45);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				new GameEnvironmentPanel(state);
 				frmFarmiza.dispose();
 			}
 		});

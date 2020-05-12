@@ -58,13 +58,13 @@ public class DisclaimerFarmName {
 		});
 		frmFarmiza.getContentPane().add(btnClose);
 		
-		JLabel lblNameFarm = new JLabel("Please give your farm a name with less than");
+		JLabel lblNameFarm = new JLabel("Please give your farm a name with between");
 		lblNameFarm.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNameFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
 		lblNameFarm.setBounds(10, 51, 414, 31);
 		frmFarmiza.getContentPane().add(lblNameFarm);
 		
-		JLabel lblMaxCharNum = new JLabel("16 characters.");
+		JLabel lblMaxCharNum = new JLabel("1 and 15 characters.");
 		lblMaxCharNum.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMaxCharNum.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
 		lblMaxCharNum.setBounds(10, 83, 414, 31);

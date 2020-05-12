@@ -108,7 +108,7 @@ public class CreateFarmPanel {
 			public void actionPerformed(ActionEvent event) {
 				//Check length of farm name
 				String name = txfFarmName.getText().trim();
-				if (name.length() > 15) {
+				if (name.length() < 1 || name.length() > 15) {
 					DisclaimerFarmName newDisclaimerPanel = new DisclaimerFarmName();
 					newDisclaimerPanel.ActivatePanel();
 				} else {

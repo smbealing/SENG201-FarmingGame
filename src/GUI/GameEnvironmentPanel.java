@@ -76,9 +76,9 @@ public class GameEnvironmentPanel {
 		btnFarm.setBounds(10, 118, 176, 64);
 		btnFarm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				FarmStatusPanel farmStatusPanel = new FarmStatusPanel();
+				new FarmStatusPanel(state);
 				frmFarmiza.dispose();
-				farmStatusPanel.ActivatePanel(state);
+
 			}
 		});
 		frmFarmiza.getContentPane().add(btnFarm);
@@ -88,9 +88,9 @@ public class GameEnvironmentPanel {
 		btnFarmer.setBounds(10, 197, 176, 64);
 		btnFarmer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				FarmerStatusPanel farmerStatusPanel = new FarmerStatusPanel();
+				new FarmerStatusPanel(state);
 				frmFarmiza.dispose();
-				farmerStatusPanel.ActivatePanel(state);
+
 			}
 		});
 		frmFarmiza.getContentPane().add(btnFarmer);
@@ -100,9 +100,8 @@ public class GameEnvironmentPanel {
 		btnCrop.setBounds(10, 275, 176, 64);
 		btnCrop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				CropPanel cropPanel = new CropPanel(state);
+				new CropPanel(state);
 				frmFarmiza.dispose();
-				cropPanel.ActivatePanel(state);
 			}
 		});
 		frmFarmiza.getContentPane().add(btnCrop);
@@ -112,9 +111,9 @@ public class GameEnvironmentPanel {
 		btnAnimal.setBounds(10, 355, 176, 64);
 		btnAnimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-//				AnimalPanel animalPanel = new AnimalPanel();
-//				frmFarmiza.dispose();
-//				animalPanel.ActivatePanel(state);
+				new AnimalPanel(state);
+				frmFarmiza.dispose();
+
 			}
 		});
 		frmFarmiza.getContentPane().add(btnAnimal);
