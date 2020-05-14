@@ -39,8 +39,6 @@ public class GameEnvironmentPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					
-//					GameEnvironmentPanel window = new GameEnvironmentPanel();
 					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,12 +50,32 @@ public class GameEnvironmentPanel {
 	/**
 	 * Create the application.
 	 */
-	public GameEnvironmentPanel(final GameState tempState) {
+	public GameEnvironmentPanel(GameState tempState) {
+		int event = 0;
 		state = tempState;
+		
+		if (state.currentDay != 1 && state.currentDay != state.totalDays) { 
+			event = randomEvent(); 
+		}
+		
 		initialize();
 		ActivatePanel();
-		
-		if (state.currentDay != 1) { randomEvent(); }
+		switch(event) {
+			case 1: 
+				DroughtPanel drought = new DroughtPanel();
+				drought.ActivatePanel();
+				break;
+			case 2: 
+				BrokenFencePanel fence = new BrokenFencePanel();
+				fence.ActivatePanel();
+				break;
+			case 3: 
+				CountyFairPanel fair = new CountyFairPanel();
+				fair.ActivatePanel();
+				break;
+			case 0:
+				break;
+		}
 	}
 
 	/**
@@ -167,7 +185,13 @@ public class GameEnvironmentPanel {
 		btnNextDay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new NextDay().perform(state);
-				new GameEnvironmentPanel(state);
+				
+				if (state.currentDay == state.totalDays) {
+					new EndGamePanel(state);
+				} else {
+					new GameEnvironmentPanel(state);
+				}
+				
 				frmFarmiza.dispose();
 			}
 		});
@@ -195,32 +219,31 @@ public class GameEnvironmentPanel {
 		return "../images/" + farmImage;
 	}
 	
-	private void randomEvent() {
+	private int randomEvent() {
+		int event = 0;
 		switch(new Random().nextInt(5)) {
 			case 0: 
 				new Drought().apply(state);
-				DroughtPanel drought = new DroughtPanel();
-				drought.ActivatePanel();
+				event = 1;
 				break;
 			case 1:
 				state.farm.increaseMaintenanceLevel();
 				break;
 			case 2: 
 				new BrokenFence().apply(state);
-				BrokenFencePanel fence = new BrokenFencePanel();
-				fence.ActivatePanel();
+				event = 2;
 				break;
 			case 3:
 				state.farm.increaseMaintenanceLevel();
 				break;
 			case 4: 
 				new CountyFair().apply(state);
-				CountyFairPanel fair = new CountyFairPanel();
-				fair.ActivatePanel();
+				event = 3;
 				break;
 			case 5:
 				state.farm.increaseMaintenanceLevel();
 				break;
 		}
+		return event;
 	}
 }

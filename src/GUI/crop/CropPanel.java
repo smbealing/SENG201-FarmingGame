@@ -72,8 +72,7 @@ public class CropPanel {
 		btnTendToCrops.setBounds(10, 186, 176, 64);
 		btnTendToCrops.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				TendToCropPanel newPanel = new TendToCropPanel(state);
-				newPanel.ActivatePanel(state);
+				new TendToCropPanel(state);
 			}
 		});
 		frmFarmiza.getContentPane().add(btnTendToCrops);

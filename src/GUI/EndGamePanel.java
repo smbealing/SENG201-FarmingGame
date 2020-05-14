@@ -11,11 +11,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
+import gameEnvironment.GameState;
 import gui.setUp.SelectDaysPanel;
 
 public class EndGamePanel {
 
 	private JFrame frmFarmiza;
+	
+	public GameState state;
 
 	/**
 	 * Launch the application.
@@ -24,8 +27,7 @@ public class EndGamePanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EndGamePanel window = new EndGamePanel();
-					window.frmFarmiza.setVisible(true);
+					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,8 +38,10 @@ public class EndGamePanel {
 	/**
 	 * Create the application.
 	 */
-	public EndGamePanel() {
+	public EndGamePanel(GameState tempState) {
+		state = tempState;
 		initialize();
+		ActivatePanel();
 	}
 
 	/**
