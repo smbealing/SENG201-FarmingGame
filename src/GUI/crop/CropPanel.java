@@ -73,6 +73,7 @@ public class CropPanel {
 		btnTendToCrops.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new TendToCropPanel(state);
+				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnTendToCrops);
@@ -83,6 +84,7 @@ public class CropPanel {
 		btnCropInventory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new CropInventoryPanel(state);
+				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnCropInventory);

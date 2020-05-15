@@ -206,6 +206,7 @@ public class CropInventoryPanel {
 		btnBack.setBounds(469, 455, 111, 45);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				new CropPanel(state);
 				frmFarmiza.dispose();
 			}
 		});
