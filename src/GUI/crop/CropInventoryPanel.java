@@ -112,7 +112,7 @@ public class CropInventoryPanel {
 		JLabel lblPotatoes = new JLabel("Potatoes");
 		lblPotatoes.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPotatoes.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblPotatoes.setBounds(196, 181, 88, 35);
+		lblPotatoes.setBounds(196, 181, 105, 35);
 		frmFarmiza.getContentPane().add(lblPotatoes);
 		
 		JLabel lblDragonFruit = new JLabel("Dragon Fruit");
@@ -143,7 +143,7 @@ public class CropInventoryPanel {
 		
 		btnSelectPotato = new JRadioButton("SELECT");
 		btnSelectPotato.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		btnSelectPotato.setBounds(200, 217, 89, 25);
+		btnSelectPotato.setBounds(206, 217, 89, 25);
 		frmFarmiza.getContentPane().add(btnSelectPotato);
 		
 		btnSelectDragonFruit = new JRadioButton("SELECT");
