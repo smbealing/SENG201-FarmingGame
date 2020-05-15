@@ -54,45 +54,30 @@ public class FarmStatusPanel {
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JLabel lblFarmMoney = new JLabel("Your farm has: $");
+		JLabel lblFarmMoney = new JLabel("Your farm has: $" + state.totalMoney);
 		lblFarmMoney.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblFarmMoney.setBounds(129, 48, 205, 48);
+		lblFarmMoney.setBounds(129, 48, 428, 48);
 		frmFarmiza.getContentPane().add(lblFarmMoney);
 		
-		JLabel lblTotalCrops = new JLabel("Total crops:");
+		JLabel lblTotalCrops = new JLabel("Total crops: " + state.crops.size());
 		lblTotalCrops.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblTotalCrops.setBounds(129, 138, 156, 48);
+		lblTotalCrops.setBounds(129, 138, 385, 48);
 		frmFarmiza.getContentPane().add(lblTotalCrops);
 		
-		JLabel lblTotalAnimals = new JLabel("Total animals:");
+		JLabel lblTotalAnimals = new JLabel("Total animals: " + state.animals.size());
 		lblTotalAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblTotalAnimals.setBounds(129, 229, 179, 48);
+		lblTotalAnimals.setBounds(129, 229, 385, 48);
 		frmFarmiza.getContentPane().add(lblTotalAnimals);
 		
-		JLabel lblNeedForMaintenance = new JLabel("Need for maintenance:");
+		JLabel lblNeedForMaintenance = new JLabel("Need for maintenance: " + state.farm.getMaintenanceLevel());
 		lblNeedForMaintenance.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblNeedForMaintenance.setBounds(129, 329, 286, 48);
+		lblNeedForMaintenance.setBounds(129, 329, 536, 48);
 		frmFarmiza.getContentPane().add(lblNeedForMaintenance);
 		
-		JLabel lblTotalMoney = new JLabel("[Total Money]");
+		JLabel lblTotalMoney = new JLabel("");
 		lblTotalMoney.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
 		lblTotalMoney.setBounds(344, 48, 239, 48);
 		frmFarmiza.getContentPane().add(lblTotalMoney);
-		
-		JLabel lblCropCount = new JLabel("[Crop Count]");
-		lblCropCount.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblCropCount.setBounds(295, 138, 239, 48);
-		frmFarmiza.getContentPane().add(lblCropCount);
-		
-		JLabel lblAnimalCount = new JLabel("[Animal Count]");
-		lblAnimalCount.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblAnimalCount.setBounds(318, 229, 239, 48);
-		frmFarmiza.getContentPane().add(lblAnimalCount);
-		
-		JLabel lblMaintenanceLevel = new JLabel("[Maintenance Level]");
-		lblMaintenanceLevel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblMaintenanceLevel.setBounds(415, 329, 296, 48);
-		frmFarmiza.getContentPane().add(lblMaintenanceLevel);
 		
 		JButton btnBackToFarm = new JButton("BACK");
 		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));

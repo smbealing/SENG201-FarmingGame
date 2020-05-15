@@ -100,17 +100,17 @@ public class CropInventoryPanel {
 		lblWheat.setBounds(252, 81, 80, 35);
 		frmFarmiza.getContentPane().add(lblWheat);
 		
-		JLabel lblTomatos = new JLabel("Tomatos");
-		lblTomatos.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTomatos.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblTomatos.setBounds(62, 181, 111, 35);
-		frmFarmiza.getContentPane().add(lblTomatos);
+		JLabel lblTomatoes = new JLabel("Tomatoes");
+		lblTomatoes.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTomatoes.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		lblTomatoes.setBounds(62, 181, 111, 35);
+		frmFarmiza.getContentPane().add(lblTomatoes);
 		
-		JLabel lblPotatos = new JLabel("Potatos");
-		lblPotatos.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPotatos.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblPotatos.setBounds(196, 181, 88, 35);
-		frmFarmiza.getContentPane().add(lblPotatos);
+		JLabel lblPotatoes = new JLabel("Potatoes");
+		lblPotatoes.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPotatoes.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		lblPotatoes.setBounds(196, 181, 88, 35);
+		frmFarmiza.getContentPane().add(lblPotatoes);
 		
 		JLabel lblDragonFruit = new JLabel("Dragon Fruit");
 		lblDragonFruit.setHorizontalAlignment(SwingConstants.CENTER);
@@ -129,10 +129,6 @@ public class CropInventoryPanel {
 		frmFarmiza.getContentPane().add(btnSelectCorn);
 		
 		btnSelectWheat = new JRadioButton("SELECT");
-		btnSelectWheat.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnSelectWheat.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectWheat.setBounds(248, 117, 89, 25);
 		frmFarmiza.getContentPane().add(btnSelectWheat);

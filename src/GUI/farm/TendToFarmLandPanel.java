@@ -40,6 +40,7 @@ public class TendToFarmLandPanel {
 	 */
 	public TendToFarmLandPanel(final GameState tempState) {
 		state = tempState;
+		state.farm.setMaintenanceLevel(0);
 		initialize();
 		ActivatePanel();
 	}

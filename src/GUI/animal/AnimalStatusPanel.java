@@ -10,25 +10,25 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 
-import gameEnvironment.GameState;
-import gui.GameEnvironmentPanel;
+
 import javax.swing.SwingConstants;
+
+import animal.Animal;
 
 public class AnimalStatusPanel {
 	
-	public GameState state;
+	public Animal animal;
 
 	private JFrame frmFarmiza;
 
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState state) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AnimalStatusPanel window = new AnimalStatusPanel();
-					window.frmFarmiza.setVisible(true);
+					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,8 +39,10 @@ public class AnimalStatusPanel {
 	/**
 	 * Create the application.
 	 */
-	public AnimalStatusPanel() {
+	public AnimalStatusPanel(Animal tempAnimal) {
+		animal = tempAnimal;
 		initialize();
+		ActivatePanel();
 
 	}
 
@@ -54,6 +56,29 @@ public class AnimalStatusPanel {
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
+		JLabel lblAnimalStatus = new JLabel("Animal Status");
+		lblAnimalStatus.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAnimalStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
+		lblAnimalStatus.setBounds(54, 0, 304, 33);
+		frmFarmiza.getContentPane().add(lblAnimalStatus);
+		
+		JLabel lblAnimalSelected = new JLabel("Animal selected: " + animal.getName());
+		lblAnimalSelected.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		lblAnimalSelected.setBounds(64, 44, 304, 33);
+		frmFarmiza.getContentPane().add(lblAnimalSelected);
+		
+		JLabel lblHealth = new JLabel("Health: "+ animal.getHealth() + "/" + animal.getMaxHealth());
+		lblHealth.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		lblHealth.setBounds(62, 75, 273, 33);
+		frmFarmiza.getContentPane().add(lblHealth);
+		
+		JLabel lblHappiness = new JLabel("Happiness: " + animal.getHappiness() + "/" + animal.getMaxHappiness());
+		lblHappiness.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		lblHappiness.setBounds(64, 107, 304, 33);
+		frmFarmiza.getContentPane().add(lblHappiness);
+		
+		
+		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 14));
 		btnClose.setBounds(160, 160, 111, 33);
@@ -66,27 +91,6 @@ public class AnimalStatusPanel {
 			}
 		});
 		frmFarmiza.getContentPane().add(btnClose);
-		
-		JLabel lblAnimalSelected = new JLabel("Animal selected: [Animal Name]");
-		lblAnimalSelected.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		lblAnimalSelected.setBounds(64, 44, 304, 33);
-		frmFarmiza.getContentPane().add(lblAnimalSelected);
-		
-		JLabel lblHealth = new JLabel("Health: 000 / [Max Health]");
-		lblHealth.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		lblHealth.setBounds(62, 75, 273, 33);
-		frmFarmiza.getContentPane().add(lblHealth);
-		
-		JLabel lblHappiness = new JLabel("Happiness: 000 / [Max Happiness]");
-		lblHappiness.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		lblHappiness.setBounds(64, 107, 304, 33);
-		frmFarmiza.getContentPane().add(lblHappiness);
-		
-		JLabel lblAnimalStatus = new JLabel("Animal Status");
-		lblAnimalStatus.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAnimalStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		lblAnimalStatus.setBounds(54, 0, 304, 33);
-		frmFarmiza.getContentPane().add(lblAnimalStatus);
 	}
 
 }
