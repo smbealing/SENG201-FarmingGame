@@ -29,6 +29,7 @@ public class GameState {
 	public int currentDay = 1;
 	
 	public double totalMoney = 50.00;
+
 	
 	private Scanner s;
 	

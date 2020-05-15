@@ -1,5 +1,6 @@
 package gameEnvironment;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import animal.Animal;
@@ -153,11 +154,11 @@ public class GameEnvironment {
 	}
 	
 	private void endGame() {
+		
 		System.out.println("| Farmer: " + state.farmer.getName());
 		System.out.println("| Game duration: " + totalDays + " days.");
 		double profit = state.totalMoney - 50.00;
 		System.out.println("| Profit made: $" + profit);
-		
 		
 		
 		//Score = game duration + number of crops + (sum of animal statuses) + money earned
@@ -168,8 +169,9 @@ public class GameEnvironment {
 		}
 		score += state.totalMoney;
 		System.out.println("| Your final score is: " + score);
+
 		
-		//Box these
+
 		if (score < 60) {
 			
 			System.out.println("|--------------------------------------------------------|\r\n" +
@@ -195,12 +197,16 @@ public class GameEnvironment {
 	   		   		   		   "|---------------------------------|");
 
 		}
+
 		
 		
 		System.out.println("|--------------------------------|\r\n" +
 		   		   		   "| Thank you for playing Farmiza. |\r\n" +
 		   		   		   "|--------------------------------|");
 		System.out.println(fenceImage);
+		
+		
+
 	}
 	
 	private void setTotalDays() {

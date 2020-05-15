@@ -186,7 +186,7 @@ public class GameEnvironmentPanel {
 			public void actionPerformed(ActionEvent event) {
 				new NextDay().perform(state);
 				
-				if (state.currentDay == state.totalDays) {
+				if (state.currentDay > state.totalDays) {
 					new EndGamePanel(state);
 				} else {
 					new GameEnvironmentPanel(state);
