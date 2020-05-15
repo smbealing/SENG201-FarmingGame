@@ -6,7 +6,11 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import gui.GameEnvironmentPanel;
+
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -44,6 +48,7 @@ public class BrokenFencePanel {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 450, 243);
+		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		

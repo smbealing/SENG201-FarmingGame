@@ -2,6 +2,7 @@ package gui.crop;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
@@ -13,6 +14,8 @@ import javax.swing.SwingConstants;
 
 import crop.Crop;
 import gameEnvironment.GameState;
+import gui.GameEnvironmentPanel;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -64,6 +67,7 @@ public class PlantCropPanel {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 800, 550);
+		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel lblCropInventory = new JLabel("CROP INVENTORY");

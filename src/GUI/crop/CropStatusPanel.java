@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import crop.Crop;
+import gui.GameEnvironmentPanel;
 
 public class CropStatusPanel {
 	
@@ -50,6 +52,7 @@ public class CropStatusPanel {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 422, 411);
+		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		

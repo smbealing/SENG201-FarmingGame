@@ -7,9 +7,11 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
 import gameEnvironment.GameState;
+import gui.GameEnvironmentPanel;
 import item.CropItem;
 
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -69,6 +71,7 @@ public class CropInventoryPanel {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 800, 550);
+		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		

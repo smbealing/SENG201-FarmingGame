@@ -2,6 +2,7 @@ package gui.crop;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import gui.GameEnvironmentPanel;
 
 public class CropWarningPanel {
 
@@ -44,6 +47,7 @@ public class CropWarningPanel {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 501, 214);
+		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
