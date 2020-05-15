@@ -47,7 +47,7 @@ public class CropPanel {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialise the contents of the frame.
 	 */
 	private void initialize() {
 		frmFarmiza = new JFrame();
@@ -64,12 +64,12 @@ public class CropPanel {
 		
 		JButton btnPlantCrops = new JButton("PLANT CROPS");
 		btnPlantCrops.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
-		btnPlantCrops.setBounds(10, 111, 176, 64);
+		btnPlantCrops.setBounds(62, 204, 176, 64);
 		frmFarmiza.getContentPane().add(btnPlantCrops);
 		
 		JButton btnTendToCrops = new JButton("TEND TO CROPS");
 		btnTendToCrops.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
-		btnTendToCrops.setBounds(10, 186, 176, 64);
+		btnTendToCrops.setBounds(302, 204, 176, 64);
 		btnTendToCrops.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new TendToCropPanel(state);
@@ -79,19 +79,13 @@ public class CropPanel {
 		
 		JButton btnCropInventory = new JButton("CROP INVENTORY");
 		btnCropInventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
-		btnCropInventory.setBounds(10, 261, 176, 64);
+		btnCropInventory.setBounds(541, 204, 176, 64);
 		btnCropInventory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				CropInventoryPanel newPanel = new CropInventoryPanel(state);
-				newPanel.ActivatePanel(state);
+				new CropInventoryPanel(state);
 			}
 		});
 		frmFarmiza.getContentPane().add(btnCropInventory);
-		
-		JLabel lblFieldImage = new JLabel("[plants image]");
-		lblFieldImage.setHorizontalAlignment(SwingConstants.CENTER);
-		lblFieldImage.setBounds(230, 81, 532, 353);
-		frmFarmiza.getContentPane().add(lblFieldImage);
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
@@ -104,6 +98,10 @@ public class CropPanel {
 		});
 		frmFarmiza.getContentPane().add(btnBack);
 		
+		JLabel lblFieldImage = new JLabel("[plants image]");
+		lblFieldImage.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFieldImage.setBounds(20, 59, 742, 385);
+		frmFarmiza.getContentPane().add(lblFieldImage);
 	}
 
 }

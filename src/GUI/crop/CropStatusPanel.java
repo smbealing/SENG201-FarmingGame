@@ -44,7 +44,7 @@ public class CropStatusPanel {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialise the contents of the frame.
 	 */
 	private void initialize() {
 		frmFarmiza = new JFrame();

@@ -21,10 +21,8 @@ import javax.swing.SwingConstants;
 
 import crop.Crop;
 
-import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JCheckBoxMenuItem;
 
 public class TendToCropPanel {
 	
