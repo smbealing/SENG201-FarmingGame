@@ -5,12 +5,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.SwingConstants;
 
 import gameEnvironment.GameState;
+import gui.GameEnvironmentPanel;
 
 import javax.swing.JComboBox;
 import javax.swing.JButton;
@@ -25,12 +27,11 @@ public class PlayWithAnimalsPanel {
 	/**
 	 * Launch the application.
 	 */
-	public void ActivatePanel(final GameState state) {
+	public void ActivatePanel() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PlayWithAnimalsPanel window = new PlayWithAnimalsPanel();
-					window.frmFarmiza.setVisible(true);
+					frmFarmiza.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -41,8 +42,10 @@ public class PlayWithAnimalsPanel {
 	/**
 	 * Create the application.
 	 */
-	public PlayWithAnimalsPanel() {
+	public PlayWithAnimalsPanel(GameState tempState) {
+		state = tempState;
 		initialize();
+		ActivatePanel();
 	}
 
 	/**
@@ -52,6 +55,7 @@ public class PlayWithAnimalsPanel {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 576, 335);
+		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
@@ -70,14 +74,26 @@ public class PlayWithAnimalsPanel {
 		
 		JButton btnPlayWithAnimals = new JButton("PLAY WITH ANIMALS");
 		btnPlayWithAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		btnPlayWithAnimals.setBounds(182, 240, 195, 45);
+		btnPlayWithAnimals.setBounds(77, 240, 195, 45);
 		btnPlayWithAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				//TODO: use selected item to increase animal happiness
+				new AnimalPanel(state);
 				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnPlayWithAnimals);
+		
+		JButton btnClose = new JButton("CLOSE");
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
+		btnClose.setBounds(287, 240, 195, 45);
+		btnClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				new AnimalPanel(state);
+				frmFarmiza.dispose();
+			}
+		});
+		frmFarmiza.getContentPane().add(btnClose);
 	}
 
 }

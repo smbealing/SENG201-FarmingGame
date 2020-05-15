@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -50,39 +51,25 @@ public class FarmerStatusPanel {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 800, 550);
+		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
 		
-		JLabel lblFarmer = new JLabel("Farmer:");
+		JLabel lblFarmer = new JLabel("Farmer: " + state.farmer.getName());
 		lblFarmer.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblFarmer.setBounds(129, 35, 108, 48);
+		lblFarmer.setBounds(129, 35, 360, 48);
 		frmFarmiza.getContentPane().add(lblFarmer);
 		
-		JLabel lblfarmerName = new JLabel("[Farmer Name]");
-		lblfarmerName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblfarmerName.setBounds(247, 35, 332, 48);
-		frmFarmiza.getContentPane().add(lblfarmerName);
-		
-		JLabel lblAge = new JLabel("Age:");
+		JLabel lblAge = new JLabel("Age: " + state.farmer.getAge());
 		lblAge.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblAge.setBounds(129, 118, 69, 48);
+		lblAge.setBounds(129, 118, 290, 48);
 		frmFarmiza.getContentPane().add(lblAge);
 		
-		JLabel lblFarmerAge = new JLabel("[Farmer Age]");
-		lblFarmerAge.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblFarmerAge.setBounds(208, 118, 197, 48);
-		frmFarmiza.getContentPane().add(lblFarmerAge);
-		
-		JLabel lblActionsLeftToday = new JLabel("Actions left today:");
+		JLabel lblActionsLeftToday = new JLabel("Actions left today: " + state.farmer.getActionCount());
 		lblActionsLeftToday.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblActionsLeftToday.setBounds(129, 264, 234, 48);
+		lblActionsLeftToday.setBounds(129, 264, 430, 48);
 		frmFarmiza.getContentPane().add(lblActionsLeftToday);
-		
-		JLabel lblActionCount = new JLabel("[Action Count]");
-		lblActionCount.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblActionCount.setBounds(373, 264, 183, 48);
-		frmFarmiza.getContentPane().add(lblActionCount);
 		
 		
 		JButton btnBackToFarm = new JButton("BACK");

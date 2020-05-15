@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,6 +14,7 @@ import javax.swing.SwingConstants;
 
 import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
+import gui.crop.TendToCropPanel;
 
 
 public class AnimalPanel {
@@ -39,7 +41,7 @@ public class AnimalPanel {
 	/**
 	 * Create the application.
 	 */
-	public AnimalPanel(final GameState tempState) {
+	public AnimalPanel(GameState tempState) {
 		state = tempState;
 		initialize();
 		ActivatePanel();
@@ -52,6 +54,7 @@ public class AnimalPanel {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 800, 550);
+		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
@@ -62,46 +65,36 @@ public class AnimalPanel {
 		
 		JButton btnFeedAnimals = new JButton("FEED ANIMALS");
 		btnFeedAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btnFeedAnimals.setBounds(10, 111, 176, 64);
+		btnFeedAnimals.setBounds(58, 203, 176, 64);
 		btnFeedAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				FeedAnimalPanel newPanel = new FeedAnimalPanel();
-				newPanel.ActivatePanel(state);
+				new FeedAnimalPanel(state);
+				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnFeedAnimals);
 		
 		JButton btnPlayWithAnimals = new JButton("PLAY WITH ANIMALS");
 		btnPlayWithAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		btnPlayWithAnimals.setBounds(10, 186, 176, 64);
+		btnPlayWithAnimals.setBounds(298, 205, 176, 64);
 		btnPlayWithAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				PlayWithAnimalsPanel newPanel = new PlayWithAnimalsPanel();
-				newPanel.ActivatePanel(state);
+				new PlayWithAnimalsPanel(state);
+				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnPlayWithAnimals);
 		
 		JButton btnAnimalInventory = new JButton("ANIMAL INVENTORY");
 		btnAnimalInventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		btnAnimalInventory.setBounds(10, 261, 176, 64);
+		btnAnimalInventory.setBounds(537, 205, 176, 64);
 		btnAnimalInventory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				AnimalInventoryPanel newPanel = new AnimalInventoryPanel();
-				newPanel.ActivatePanel(state);
+				new AnimalInventoryPanel(state);
+				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnAnimalInventory);
-		
-		JLabel lblanimalImage = new JLabel("[animal image]");
-		lblanimalImage.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		lblanimalImage.setHorizontalAlignment(SwingConstants.CENTER);
-
-		lblanimalImage.setBounds(220, 87, 532, 353);
-		frmFarmiza.getContentPane().add(lblanimalImage);
-
-		lblanimalImage.setBounds(230, 81, 532, 353);
-		frmFarmiza.getContentPane().add(lblanimalImage);
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
