@@ -129,10 +129,6 @@ public class CropInventoryPanel {
 		frmFarmiza.getContentPane().add(btnSelectCorn);
 		
 		btnSelectWheat = new JRadioButton("SELECT");
-		btnSelectWheat.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnSelectWheat.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectWheat.setBounds(248, 117, 89, 25);
 		frmFarmiza.getContentPane().add(btnSelectWheat);
