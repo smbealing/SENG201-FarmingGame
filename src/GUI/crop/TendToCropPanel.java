@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import gameEnvironment.GameState;
+import gui.FarmerWarningPanel;
 import item.CropItem;
 import item.GenericItem;
 
@@ -108,13 +109,22 @@ public class TendToCropPanel {
 		btnUseItem.setBounds(83, 178, 141, 45);
 		btnUseItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				ArrayList<String> selectedCrops = new ArrayList<String>(plantedCropsSet);
-				ArrayList<String> selectedItems = new ArrayList<String>(cropItemsSet);
-				
-				selectedCrop = selectedCrops.get(cmbCropSelection.getSelectedIndex());
-				String selectedItem = selectedItems.get(cmbItemSelection.getSelectedIndex());
-				
-				useSelectedItem(selectedItem);
+				if (state.farmer.getActionCount() != 0) {
+					if (state.crops.isEmpty()) {
+						new CropWarningPanel();
+					} else {
+						ArrayList<String> selectedCrops = new ArrayList<String>(plantedCropsSet);
+						ArrayList<String> selectedItems = new ArrayList<String>(cropItemsSet);
+						
+						selectedCrop = selectedCrops.get(cmbCropSelection.getSelectedIndex());
+						String selectedItem = selectedItems.get(cmbItemSelection.getSelectedIndex());
+						
+						useSelectedItem(selectedItem);
+						state.farmer.reduceActionCount();
+					}
+				} else {
+					new FarmerWarningPanel(state);
+				}				
 			}
 		});
 		frmFarmiza.getContentPane().add(btnUseItem);
