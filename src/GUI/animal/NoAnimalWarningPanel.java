@@ -13,7 +13,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 
-public class AnimalWarmthWarningPanel {
+public class NoAnimalWarningPanel {
 
 	private JFrame frmFarmiza;
 
@@ -35,7 +35,7 @@ public class AnimalWarmthWarningPanel {
 	/**
 	 * Create the application.
 	 */
-	public AnimalWarmthWarningPanel() {
+	public NoAnimalWarningPanel() {
 		initialize();
 		ActivatePanel();
 	}
@@ -57,9 +57,9 @@ public class AnimalWarmthWarningPanel {
 		lblWarning.setBounds(197, 25, 91, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
 		
-		JLabel lblError = new JLabel("You aren't able to afford heating for the animals!");
+		JLabel lblError = new JLabel("You don't have any animals!");
 		lblError.setHorizontalAlignment(SwingConstants.CENTER);
-		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 19));
+		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 23));
 		lblError.setBounds(10, 58, 465, 47);
 		frmFarmiza.getContentPane().add(lblError);
 		
@@ -73,5 +73,4 @@ public class AnimalWarmthWarningPanel {
 		});
 		frmFarmiza.getContentPane().add(btnClose);
 	}
-
 }

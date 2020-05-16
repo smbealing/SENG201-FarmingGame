@@ -66,8 +66,12 @@ public class AnimalPanel {
 		btnFeedAnimals.setBounds(58, 203, 176, 64);
 		btnFeedAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				new FeedAnimalPanel(state);
-				frmFarmiza.dispose();
+				if (state.animals.size() == 0) {
+					new NoAnimalWarningPanel();
+				} else {
+					new FeedAnimalPanel(state);
+					frmFarmiza.dispose();
+				}
 			}
 		});
 		frmFarmiza.getContentPane().add(btnFeedAnimals);
@@ -77,8 +81,12 @@ public class AnimalPanel {
 		btnPlayWithAnimals.setBounds(298, 205, 176, 64);
 		btnPlayWithAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				new PlayWithAnimalsPanel(state);
-				frmFarmiza.dispose();
+				if (state.animals.size() == 0) {
+					new NoAnimalWarningPanel();
+				} else {
+					new PlayWithAnimalsPanel(state);
+					frmFarmiza.dispose();
+				}
 			}
 		});
 		frmFarmiza.getContentPane().add(btnPlayWithAnimals);

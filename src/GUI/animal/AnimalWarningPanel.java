@@ -56,18 +56,18 @@ public class AnimalWarningPanel {
 		JLabel lblWarning = new JLabel("Oh no!");
 		lblWarning.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 21));
-		lblWarning.setBounds(197, 11, 91, 34);
+		lblWarning.setBounds(197, 25, 91, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
 		
 		JLabel lblError = new JLabel("Looks like you do not have an animal selected!");
 		lblError.setHorizontalAlignment(SwingConstants.CENTER);
 		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		lblError.setBounds(10, 44, 465, 47);
+		lblError.setBounds(10, 58, 465, 47);
 		frmFarmiza.getContentPane().add(lblError);
 		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnClose.setBounds(164, 96, 157, 54);
+		btnClose.setBounds(164, 110, 157, 54);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
