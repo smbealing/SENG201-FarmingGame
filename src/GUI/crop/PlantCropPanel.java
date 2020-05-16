@@ -158,11 +158,11 @@ public class PlantCropPanel {
 		cmbSelectedCrop = new JComboBox<String>();
 		cmbSelectedCrop.setModel(new DefaultComboBoxModel<String>(getOptions().split(",")));
 		cmbSelectedCrop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		cmbSelectedCrop.setBounds(483, 201, 192, 41);
+		cmbSelectedCrop.setBounds(483, 180, 192, 41);
 		frmFarmiza.getContentPane().add(cmbSelectedCrop);
 		
 		JLabel lblInstruction1 = new JLabel("Select the crop that you want");
-		lblInstruction1.setBounds(398, 124, 356, 35);
+		lblInstruction1.setBounds(398, 103, 356, 35);
 		lblInstruction1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblInstruction1.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		frmFarmiza.getContentPane().add(lblInstruction1);
@@ -170,21 +170,33 @@ public class PlantCropPanel {
 		JLabel lblInstruction2 = new JLabel("to plant from options bellow:");
 		lblInstruction2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblInstruction2.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblInstruction2.setBounds(408, 155, 346, 35);
+		lblInstruction2.setBounds(408, 134, 346, 35);
 		frmFarmiza.getContentPane().add(lblInstruction2);
 		
 		JButton btnPlant = new JButton("PLANT CROP");
 		btnPlant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if (crops != "") {
+					getCrop(cmbSelectedCrop.getSelectedIndex());
+					selectedCrop.setPlanted();
+				} else {
+					new CropWarningPanel();
+				}
 			}
 		});
 		btnPlant.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		btnPlant.setBounds(508, 253, 151, 35);
+		btnPlant.setBounds(508, 232, 151, 35);
 		frmFarmiza.getContentPane().add(btnPlant);
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		btnBack.setBounds(336, 455, 111, 45);
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				new CropPanel(state);
+				frmFarmiza.dispose();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnBack);
 	}
 	
@@ -224,6 +236,20 @@ public class PlantCropPanel {
 			}
 		}
 		return cropsString;
+	}
+	
+	private void getCrop(int selection) {
+		int count = 0;
+		
+		for (Crop crop: state.crops) {
+			if (crop.getName() == cropName && !crop.getPlanted()) {
+				if (count == selection) {
+					selectedCrop = crop;
+					break;
+				}
+				count++;
+			}
+		}
 	}
 
 }

@@ -174,24 +174,24 @@ public class CropInventoryPanel {
 		JLabel lblCropItems = new JLabel("Crop Items Available");
 		lblCropItems.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCropItems.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblCropItems.setBounds(468, 251, 242, 35);
+		lblCropItems.setBounds(468, 260, 242, 35);
 		frmFarmiza.getContentPane().add(lblCropItems);
 		
 		JLabel lblFertiliserLeft = new JLabel("Fertiliser : " + getFertiliserCount());
 		lblFertiliserLeft.setHorizontalAlignment(SwingConstants.LEFT);
 		lblFertiliserLeft.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
-		lblFertiliserLeft.setBounds(535, 282, 140, 35);
+		lblFertiliserLeft.setBounds(535, 291, 140, 35);
 		frmFarmiza.getContentPane().add(lblFertiliserLeft);
 		
 		JLabel lblPesticideLeft = new JLabel("Pesticide : " + getPesticideCount());
 		lblPesticideLeft.setHorizontalAlignment(SwingConstants.LEFT);
 		lblPesticideLeft.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
-		lblPesticideLeft.setBounds(535, 318, 140, 35);
+		lblPesticideLeft.setBounds(535, 327, 140, 35);
 		frmFarmiza.getContentPane().add(lblPesticideLeft);
 		
 		JButton btnCheckStatus = new JButton("CHECK STATUS");
-		btnCheckStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnCheckStatus.setBounds(238, 455, 197, 45);
+		btnCheckStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
+		btnCheckStatus.setBounds(493, 173, 175, 35);
 		btnCheckStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if (crops != "") {
@@ -206,7 +206,7 @@ public class CropInventoryPanel {
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnBack.setBounds(469, 455, 111, 45);
+		btnBack.setBounds(336, 455, 111, 45);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new CropPanel(state);
@@ -258,11 +258,13 @@ public class CropInventoryPanel {
 		int count = 0;
 		
 		for (Crop crop: state.crops) {
-			if (crop.getName() == cropName && count == selection) {
-				selectedCrop = crop;
-				break;
+			if (crop.getName() == cropName) {
+				if (count == selection) {
+					selectedCrop = crop;
+					break;
+				}
+				count++;
 			}
-			count++;
 		}
 	}
 	
