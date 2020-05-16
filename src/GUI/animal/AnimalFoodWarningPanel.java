@@ -1,4 +1,4 @@
-package gui;
+package gui.animal;
 
 import java.awt.EventQueue;
 
@@ -11,13 +11,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.SwingConstants;
 
-import gameEnvironment.GameState;
+import gui.GameEnvironmentPanel;
 
 import javax.swing.JButton;
 
-public class FarmerWarningPanel {
-	
-	public GameState state;
+public class AnimalFoodWarningPanel {
+
+	public String foodItem;
 	
 	private JFrame frmFarmiza;
 
@@ -39,14 +39,14 @@ public class FarmerWarningPanel {
 	/**
 	 * Create the application.
 	 */
-	public FarmerWarningPanel(GameState tempState) {
-		state = tempState;
+	public AnimalFoodWarningPanel(String tempFoodItem) {
+		foodItem = tempFoodItem;
 		initialize();
 		ActivatePanel();
 	}
 
 	/**
-	 * Initialise the contents of the frame.
+	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
 		frmFarmiza = new JFrame();
@@ -56,21 +56,21 @@ public class FarmerWarningPanel {
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JLabel lblError = new JLabel("Looks like " + state.farmer.getName() + " is too tired!");
-		lblError.setHorizontalAlignment(SwingConstants.CENTER);
-		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 21));
-		lblError.setBounds(10, 58, 465, 47);
-		frmFarmiza.getContentPane().add(lblError);
-		
 		JLabel lblWarning = new JLabel("Oh no!");
 		lblWarning.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 21));
-		lblWarning.setBounds(197, 25, 91, 34);
+		lblWarning.setBounds(197, 11, 91, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
+		
+		JLabel lblError = new JLabel("Looks like you do not have any " + foodItem + " left!");
+		lblError.setHorizontalAlignment(SwingConstants.CENTER);
+		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
+		lblError.setBounds(10, 44, 465, 47);
+		frmFarmiza.getContentPane().add(lblError);
 		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnClose.setBounds(164, 110, 157, 54);
+		btnClose.setBounds(164, 96, 157, 54);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
@@ -78,4 +78,5 @@ public class FarmerWarningPanel {
 		});
 		frmFarmiza.getContentPane().add(btnClose);
 	}
+
 }

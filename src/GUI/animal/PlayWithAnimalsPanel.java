@@ -9,10 +9,15 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 import javax.swing.SwingConstants;
 
+import animal.Animal;
 import gameEnvironment.GameState;
+import gui.FarmerWarningPanel;
 import gui.GameEnvironmentPanel;
+import item.Speech;
+import item.Warmth;
 
 import javax.swing.JComboBox;
 import javax.swing.JButton;
@@ -65,8 +70,8 @@ public class PlayWithAnimalsPanel {
 		lblPrompt.setBounds(25, 23, 510, 35);
 		frmFarmiza.getContentPane().add(lblPrompt);
 		
-		JComboBox<String> cmbAnimalPlaySelection = new JComboBox<String>();
-		cmbAnimalPlaySelection.setModel(new DefaultComboBoxModel<String>(new String[] {"Speak to Animal", "Give Animal Warmth"}));
+		final JComboBox<String> cmbAnimalPlaySelection = new JComboBox<String>();
+		cmbAnimalPlaySelection.setModel(new DefaultComboBoxModel<String>(new String[] {"Speak to Animal", "Give Animal Warmth $20.00"}));
 		cmbAnimalPlaySelection.setSelectedIndex(0);
 		cmbAnimalPlaySelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		cmbAnimalPlaySelection.setBounds(77, 98, 405, 41);
@@ -77,9 +82,38 @@ public class PlayWithAnimalsPanel {
 		btnPlayWithAnimals.setBounds(77, 240, 195, 45);
 		btnPlayWithAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				//TODO: use selected item to increase animal happiness
-				new AnimalPanel(state);
-				frmFarmiza.dispose();
+				if (state.farmer.getActionCount() != 0) {
+					switch (cmbAnimalPlaySelection.getSelectedIndex()) {
+					case 0:
+						//Speech
+						for (Animal animal : state.animals) {
+							animal.increaseHappiness(new Speech().getGeneralBoost());
+						}
+						state.farmer.reduceActionCount();
+						new AnimalPanel(state);
+						frmFarmiza.dispose();
+						break;
+					case 1:
+						//Warmth
+						double warmthCost = new Warmth().getPurchasingPrice();
+						if ((state.totalMoney - warmthCost) > 0.00) {
+							state.totalMoney -= warmthCost;
+							for (Animal animal : state.animals) {
+								animal.increaseHappiness(new Warmth().getGeneralBoost());
+							}
+							state.farmer.reduceActionCount();
+							new AnimalPanel(state);
+							frmFarmiza.dispose();
+							
+						} else {
+							new AnimalWarmthWarningPanel();
+						}
+						
+					}
+				} else {
+					new FarmerWarningPanel(state);
+				}
+				
 			}
 		});
 		frmFarmiza.getContentPane().add(btnPlayWithAnimals);

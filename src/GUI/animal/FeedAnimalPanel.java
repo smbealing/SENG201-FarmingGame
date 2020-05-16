@@ -5,8 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import gameEnvironment.GameState;
+import gui.FarmerWarningPanel;
 import gui.GameEnvironmentPanel;
-import gui.crop.CropPanel;
+
 import item.AnimalFood;
 
 import javax.swing.JLabel;
@@ -14,17 +15,12 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Set;
+
 
 import javax.swing.SwingConstants;
 
 import animal.Animal;
-import farm.CityFarm;
-import farm.HardcoreFarm;
-import farm.NormalFarm;
-import farm.TropicalFarm;
 
-import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.DefaultComboBoxModel;
@@ -88,20 +84,29 @@ public class FeedAnimalPanel {
 		btnUseItem.setBounds(77, 230, 141, 45);
 		btnUseItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				switch (cmbAnimalFoodSelection.getSelectedIndex()) {
-				case 0:
-					useFoodItem(state, "Carrot");
-					break;
-				case 1:
-					useFoodItem(state, "Grain");
-					break;
-				case 2:
-					useFoodItem(state, "High Quality Grain");
-					break;
+				if (state.farmer.getActionCount() != 0) {
+					boolean foodItemAvailable = false;
+					switch (cmbAnimalFoodSelection.getSelectedIndex()) {
+					case 0:
+						foodItemAvailable = useFoodItem(state, "Carrot");
+						break;
+					case 1:
+						foodItemAvailable = useFoodItem(state, "Grain");
+						break;
+					case 2:
+						foodItemAvailable = useFoodItem(state, "High Quality Grain");
+						break;
+					}
+					
+					if (foodItemAvailable) {
+						state.farmer.reduceActionCount();
+						new AnimalPanel(state);
+						frmFarmiza.dispose();
+					}
+				} else {
+					new FarmerWarningPanel(state);
 				}
 				
-				new AnimalPanel(state);
-				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnUseItem);
@@ -118,7 +123,7 @@ public class FeedAnimalPanel {
 		frmFarmiza.getContentPane().add(btnClose);
 	}
 	
-	private void useFoodItem(GameState state, String itemName) {
+	private boolean useFoodItem(GameState state, String itemName) {
     	boolean found = false;
     	
     	for (AnimalFood item: state.animalFood) {
@@ -132,12 +137,12 @@ public class FeedAnimalPanel {
     		}
     	}
     	
-    	//Change to show message in GUI
     	if (!found) {
-    		System.out.println("|---------------------------------------------------|\r\n" +
-    						   "| Oh no! You don't have any more of that food item. |\r\n" +
- 		   		   	  		   "|---------------------------------------------------|");
+    		new AnimalFoodWarningPanel(itemName);
+    		return false;
     	}
+    	
+    	return true;
     }
 	
 	private void useItem(GameState state, int healthBoost, int boost) {

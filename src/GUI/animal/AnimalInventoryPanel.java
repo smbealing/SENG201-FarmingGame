@@ -17,10 +17,9 @@ import javax.swing.SwingConstants;
 
 import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
-import gui.crop.CropStatusPanel;
 import item.AnimalFood;
 import animal.Animal;
-import crop.Crop;
+
 
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
@@ -130,11 +129,11 @@ public class AnimalInventoryPanel {
 		cmbSelectedAnimal.setBounds(485, 122, 192, 41);
 		frmFarmiza.getContentPane().add(cmbSelectedAnimal);
 		
-		JLabel lblAnimalItems = new JLabel("Animal Items Available");
-		lblAnimalItems.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAnimalItems.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblAnimalItems.setBounds(462, 250, 242, 35);
-		frmFarmiza.getContentPane().add(lblAnimalItems);
+		JLabel lblAnimalFood = new JLabel("Animal Food Available");
+		lblAnimalFood.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAnimalFood.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		lblAnimalFood.setBounds(462, 250, 242, 35);
+		frmFarmiza.getContentPane().add(lblAnimalFood);
 		
 		JLabel lblCarrotsLeft = new JLabel("Carrots : " + getCarrotCount());
 		lblCarrotsLeft.setHorizontalAlignment(SwingConstants.LEFT);
@@ -160,8 +159,12 @@ public class AnimalInventoryPanel {
 		btnCheckStatus.setBounds(230, 455, 197, 45);
 		btnCheckStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				getAnimal(cmbSelectedAnimal.getSelectedIndex());
-				new AnimalStatusPanel(selectedAnimal);
+				if (animals != "") {
+					getAnimal(cmbSelectedAnimal.getSelectedIndex());
+					new AnimalStatusPanel(selectedAnimal);
+				} else {
+					new AnimalWarningPanel();
+				}
 			}
 		});
 		frmFarmiza.getContentPane().add(btnCheckStatus);

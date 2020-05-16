@@ -10,11 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
 
 import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
-import gui.crop.TendToCropPanel;
 
 
 public class AnimalPanel {
