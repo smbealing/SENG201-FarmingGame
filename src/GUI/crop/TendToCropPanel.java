@@ -137,7 +137,6 @@ public class TendToCropPanel {
 		btnClose.setBounds(253, 177, 118, 46);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				new CropPanel(state);
 				frmFarmiza.dispose();
 			}
 		});

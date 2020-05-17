@@ -2,6 +2,8 @@ package gui.crop;
 
 import java.awt.EventQueue;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Set;
 
 import javax.swing.JFrame;
@@ -13,6 +15,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
 public class HarvestCropPanel {
@@ -66,26 +69,31 @@ public class HarvestCropPanel {
 		lblHarvestCrops.setBounds(111, 11, 249, 35);
 		frmFarmiza.getContentPane().add(lblHarvestCrops);
 		
-		JLabel label_1 = new JLabel("Crops");
-		label_1.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 24));
-		label_1.setBounds(187, 52, 89, 35);
-		frmFarmiza.getContentPane().add(label_1);
+		JLabel lblCrops = new JLabel("Crops");
+		lblCrops.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 24));
+		lblCrops.setBounds(187, 52, 89, 35);
+		frmFarmiza.getContentPane().add(lblCrops);
 		
-		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setSelectedIndex(0);
-		comboBox.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		comboBox.setBounds(136, 98, 192, 41);
-		frmFarmiza.getContentPane().add(comboBox);
+		JComboBox<String> cmbCropSelection = new JComboBox<String>();
+		cmbCropSelection.setModel(new DefaultComboBoxModel<String>(cropsList));
+		cmbCropSelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
+		cmbCropSelection.setBounds(136, 98, 192, 41);
+		frmFarmiza.getContentPane().add(cmbCropSelection);
 		
-		JButton button = new JButton("USE ITEM");
-		button.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		button.setBounds(84, 178, 141, 45);
-		frmFarmiza.getContentPane().add(button);
+		JButton btnHarvest = new JButton("HARVEST");
+		btnHarvest.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		btnHarvest.setBounds(84, 178, 141, 45);
+		frmFarmiza.getContentPane().add(btnHarvest);
 		
-		JButton button_1 = new JButton("CLOSE");
-		button_1.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		button_1.setBounds(254, 177, 118, 46);
-		frmFarmiza.getContentPane().add(button_1);
+		JButton btnClose = new JButton("CLOSE");
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		btnClose.setBounds(254, 177, 118, 46);
+		btnClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				frmFarmiza.dispose();
+			}
+		});
+		frmFarmiza.getContentPane().add(btnClose);
 	}
 	
 	private void getCrops() {

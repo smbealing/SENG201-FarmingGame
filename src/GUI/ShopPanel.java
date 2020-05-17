@@ -65,7 +65,7 @@ public class ShopPanel {
 		
 		JLabel lblMoneyImage = new JLabel("$image");
 		lblMoneyImage.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		lblMoneyImage.setBounds(10, 29, 751, 45);
+		lblMoneyImage.setBounds(10, 29, 53, 45);
 		frmFarmiza.getContentPane().add(lblMoneyImage);
 		
 		JLabel lblTotalMoney = new JLabel("[money]");
@@ -95,145 +95,147 @@ public class ShopPanel {
 		
 		
 		
-		JLabel lblNewLabel = new JLabel("[PRODUCT $COST]");
-		lblNewLabel.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		lblNewLabel.setBounds(20, 116, 741, 35);
-		frmFarmiza.getContentPane().add(lblNewLabel);
+		JLabel lblBanana = new JLabel();
+		lblBanana.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBanana.setText("<html><body>Banana<br>Cost:<br>Days to havest:</body></html>");
+		lblBanana.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
+		lblBanana.setBounds(10, 116, 107, 45);
+		frmFarmiza.getContentPane().add(lblBanana);
 		
-		JLabel label_2 = new JLabel("[PRODUCT $COST]");
-		label_2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_2.setBounds(128, 116, 633, 35);
-		frmFarmiza.getContentPane().add(label_2);
+		JLabel lblCorn = new JLabel("[PRODUCT $COST]");
+		lblCorn.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblCorn.setBounds(128, 116, 107, 35);
+		frmFarmiza.getContentPane().add(lblCorn);
 		
-		JButton button = new JButton("BUY");
-		button.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button.setBounds(138, 145, 64, 23);
-		frmFarmiza.getContentPane().add(button);
+		JButton btnBuyCorn = new JButton("BUY");
+		btnBuyCorn.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyCorn.setBounds(138, 169, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyCorn);
 		
-		JLabel label_3 = new JLabel("[PRODUCT $COST]");
-		label_3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_3.setBounds(240, 116, 521, 35);
-		frmFarmiza.getContentPane().add(label_3);
+		JLabel lblPotato = new JLabel("[PRODUCT $COST]");
+		lblPotato.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblPotato.setBounds(240, 116, 115, 35);
+		frmFarmiza.getContentPane().add(lblPotato);
 		
-		JButton button_1 = new JButton("BUY");
-		button_1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_1.setBounds(250, 145, 64, 23);
-		frmFarmiza.getContentPane().add(button_1);
+		JButton btnBuyPotato = new JButton("BUY");
+		btnBuyPotato.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyPotato.setBounds(250, 169, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyPotato);
 		
-		JLabel label_4 = new JLabel("[PRODUCT $COST]");
-		label_4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_4.setBounds(20, 224, 741, 35);
-		frmFarmiza.getContentPane().add(label_4);
+		JLabel lblTomato = new JLabel("[PRODUCT $COST]");
+		lblTomato.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblTomato.setBounds(10, 224, 107, 35);
+		frmFarmiza.getContentPane().add(lblTomato);
 		
-		JButton button_2 = new JButton("BUY");
-		button_2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_2.setBounds(30, 253, 64, 23);
-		frmFarmiza.getContentPane().add(button_2);
+		JButton btnBuyTomato = new JButton("BUY");
+		btnBuyTomato.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyTomato.setBounds(30, 253, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyTomato);
 		
-		JLabel label_5 = new JLabel("[PRODUCT $COST]");
-		label_5.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_5.setBounds(128, 224, 633, 35);
-		frmFarmiza.getContentPane().add(label_5);
+		JLabel lblWheat = new JLabel("[PRODUCT $COST]");
+		lblWheat.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblWheat.setBounds(128, 224, 107, 35);
+		frmFarmiza.getContentPane().add(lblWheat);
 		
-		JButton btnNewButton = new JButton("BUY");
-		btnNewButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		btnNewButton.setBounds(30, 145, 64, 23);
-		frmFarmiza.getContentPane().add(btnNewButton);
+		JButton btnBuyBanana = new JButton("BUY");
+		btnBuyBanana.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyBanana.setBounds(30, 169, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyBanana);
 		
-		JButton button_3 = new JButton("BUY");
-		button_3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_3.setBounds(138, 253, 64, 23);
-		frmFarmiza.getContentPane().add(button_3);
+		JButton btnBuyWheat = new JButton("BUY");
+		btnBuyWheat.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyWheat.setBounds(138, 253, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyWheat);
 		
-		JLabel label_6 = new JLabel("[PRODUCT $COST]");
-		label_6.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_6.setBounds(240, 224, 521, 35);
-		frmFarmiza.getContentPane().add(label_6);
+		JLabel lblDragonFruit = new JLabel("[PRODUCT $COST]");
+		lblDragonFruit.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblDragonFruit.setBounds(240, 224, 115, 35);
+		frmFarmiza.getContentPane().add(lblDragonFruit);
 		
-		JButton button_4 = new JButton("BUY");
-		button_4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_4.setBounds(250, 253, 64, 23);
-		frmFarmiza.getContentPane().add(button_4);
+		JButton btnBuyDragonFruit = new JButton("BUY");
+		btnBuyDragonFruit.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyDragonFruit.setBounds(250, 253, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyDragonFruit);
 		
-		JLabel label_7 = new JLabel("[PRODUCT $COST]");
-		label_7.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_7.setBounds(466, 126, 295, 35);
-		frmFarmiza.getContentPane().add(label_7);
+		JLabel lblCow = new JLabel("[PRODUCT $COST]");
+		lblCow.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblCow.setBounds(466, 126, 119, 35);
+		frmFarmiza.getContentPane().add(lblCow);
 		
-		JButton button_5 = new JButton("BUY");
-		button_5.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_5.setBounds(476, 155, 64, 23);
-		frmFarmiza.getContentPane().add(button_5);
+		JButton btnBuyCow = new JButton("BUY");
+		btnBuyCow.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyCow.setBounds(476, 155, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyCow);
 		
-		JLabel label_8 = new JLabel("[PRODUCT $COST]");
-		label_8.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_8.setBounds(595, 126, 166, 35);
-		frmFarmiza.getContentPane().add(label_8);
+		JLabel lblHorse = new JLabel("[PRODUCT $COST]");
+		lblHorse.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblHorse.setBounds(595, 126, 115, 35);
+		frmFarmiza.getContentPane().add(lblHorse);
 		
-		JButton button_6 = new JButton("BUY");
-		button_6.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_6.setBounds(605, 155, 64, 23);
-		frmFarmiza.getContentPane().add(button_6);
+		JButton btnBuyHorse = new JButton("BUY");
+		btnBuyHorse.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyHorse.setBounds(605, 155, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyHorse);
 		
-		JLabel label_9 = new JLabel("[PRODUCT $COST]");
-		label_9.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_9.setBounds(534, 224, 227, 35);
-		frmFarmiza.getContentPane().add(label_9);
+		JLabel lblSheep = new JLabel("[PRODUCT $COST]");
+		lblSheep.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblSheep.setBounds(534, 224, 115, 35);
+		frmFarmiza.getContentPane().add(lblSheep);
 		
-		JButton button_7 = new JButton("BUY");
-		button_7.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_7.setBounds(544, 253, 64, 23);
-		frmFarmiza.getContentPane().add(button_7);
+		JButton btnBuySheep = new JButton("BUY");
+		btnBuySheep.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuySheep.setBounds(544, 253, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuySheep);
 		
-		JLabel label_10 = new JLabel("[PRODUCT $COST]");
-		label_10.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_10.setBounds(67, 359, 694, 35);
-		frmFarmiza.getContentPane().add(label_10);
+		JLabel lblFertiliser = new JLabel("[PRODUCT $COST]");
+		lblFertiliser.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblFertiliser.setBounds(67, 359, 108, 35);
+		frmFarmiza.getContentPane().add(lblFertiliser);
 		
-		JButton button_8 = new JButton("BUY");
-		button_8.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_8.setBounds(77, 388, 64, 23);
-		frmFarmiza.getContentPane().add(button_8);
+		JButton btnBuyFertiliser = new JButton("BUY");
+		btnBuyFertiliser.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyFertiliser.setBounds(77, 388, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyFertiliser);
 		
-		JLabel label_11 = new JLabel("[PRODUCT $COST]");
-		label_11.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_11.setBounds(185, 359, 576, 35);
-		frmFarmiza.getContentPane().add(label_11);
+		JLabel lblPesticide = new JLabel("[PRODUCT $COST]");
+		lblPesticide.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblPesticide.setBounds(185, 359, 115, 35);
+		frmFarmiza.getContentPane().add(lblPesticide);
 		
-		JButton button_9 = new JButton("BUY");
-		button_9.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_9.setBounds(195, 388, 64, 23);
-		frmFarmiza.getContentPane().add(button_9);
+		JButton btnBuyPesticide = new JButton("BUY");
+		btnBuyPesticide.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyPesticide.setBounds(195, 388, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyPesticide);
 		
-		JLabel label_12 = new JLabel("[PRODUCT $COST]");
-		label_12.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_12.setBounds(421, 359, 340, 35);
-		frmFarmiza.getContentPane().add(label_12);
+		JLabel lblCarrot = new JLabel("[PRODUCT $COST]");
+		lblCarrot.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblCarrot.setBounds(421, 359, 115, 35);
+		frmFarmiza.getContentPane().add(lblCarrot);
 		
-		JButton button_10 = new JButton("BUY");
-		button_10.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_10.setBounds(431, 388, 64, 23);
-		frmFarmiza.getContentPane().add(button_10);
+		JButton btnBuyCarrot = new JButton("BUY");
+		btnBuyCarrot.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyCarrot.setBounds(431, 388, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyCarrot);
 		
-		JLabel label_13 = new JLabel("[PRODUCT $COST]");
-		label_13.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_13.setBounds(537, 359, 224, 35);
-		frmFarmiza.getContentPane().add(label_13);
+		JLabel lblGrain = new JLabel("[PRODUCT $COST]");
+		lblGrain.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblGrain.setBounds(537, 359, 115, 35);
+		frmFarmiza.getContentPane().add(lblGrain);
 		
-		JButton button_11 = new JButton("BUY");
-		button_11.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_11.setBounds(547, 388, 64, 23);
-		frmFarmiza.getContentPane().add(button_11);
+		JButton btnBuyGrain = new JButton("BUY");
+		btnBuyGrain.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyGrain.setBounds(547, 388, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyGrain);
 		
-		JLabel label_14 = new JLabel("[PRODUCT $COST]");
-		label_14.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		label_14.setBounds(646, 359, 115, 35);
-		frmFarmiza.getContentPane().add(label_14);
+		JLabel lblHighQualityGrain = new JLabel("[PRODUCT $COST]");
+		lblHighQualityGrain.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		lblHighQualityGrain.setBounds(646, 359, 115, 35);
+		frmFarmiza.getContentPane().add(lblHighQualityGrain);
 		
-		JButton button_12 = new JButton("BUY");
-		button_12.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		button_12.setBounds(656, 388, 64, 23);
-		frmFarmiza.getContentPane().add(button_12);
+		JButton btnBuyHighQualityGrain = new JButton("BUY");
+		btnBuyHighQualityGrain.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
+		btnBuyHighQualityGrain.setBounds(656, 388, 64, 23);
+		frmFarmiza.getContentPane().add(btnBuyHighQualityGrain);
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));

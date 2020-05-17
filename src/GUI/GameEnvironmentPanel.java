@@ -146,7 +146,7 @@ public class GameEnvironmentPanel {
 		lblCurrentDay.setBounds(598, 43, 176, 45);
 		frmFarmiza.getContentPane().add(lblCurrentDay);
 		
-		JButton btnShop = new JButton("SHOP");
+		JButton btnShop = new JButton("MARKET");
 		btnShop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		btnShop.setBounds(10, 436, 176, 64);
 		btnShop.addActionListener(new ActionListener() {
