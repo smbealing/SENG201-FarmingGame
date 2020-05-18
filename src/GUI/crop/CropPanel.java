@@ -106,7 +106,9 @@ public class CropPanel {
 		btnHarvestCrops.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if (state.farmer.getActionCount() != 0) {
+					System.out.println(state.crops);
 					new HarvestCrop().perform(state);
+					System.out.println(state.crops);
 					checkHarvest();
 				} else {
 					new FarmerWarningPanel(state);

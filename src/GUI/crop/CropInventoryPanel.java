@@ -220,7 +220,7 @@ public class CropInventoryPanel {
 		
 		JButton btnCheckStatus = new JButton("CHECK STATUS");
 		btnCheckStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		btnCheckStatus.setBounds(493, 173, 175, 35);
+		btnCheckStatus.setBounds(483, 173, 192, 35);
 		btnCheckStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if (crops != "") {

@@ -99,17 +99,17 @@ public class PlantCropPanel {
 		lblWheat.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		frmFarmiza.getContentPane().add(lblWheat);
 		
-		JLabel lblTomatos = new JLabel("Tomatos");
-		lblTomatos.setBounds(62, 203, 111, 35);
-		lblTomatos.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTomatos.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		frmFarmiza.getContentPane().add(lblTomatos);
+		JLabel lblTomatoes = new JLabel("Tomatoes");
+		lblTomatoes.setBounds(62, 203, 111, 35);
+		lblTomatoes.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTomatoes.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		frmFarmiza.getContentPane().add(lblTomatoes);
 		
-		JLabel lblPotatos = new JLabel("Potatos");
-		lblPotatos.setBounds(196, 203, 88, 35);
-		lblPotatos.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPotatos.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		frmFarmiza.getContentPane().add(lblPotatos);
+		JLabel lblPotatoes = new JLabel("Potatoes");
+		lblPotatoes.setBounds(196, 203, 88, 35);
+		lblPotatoes.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPotatoes.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		frmFarmiza.getContentPane().add(lblPotatoes);
 		
 		JLabel lblDragonFruit = new JLabel("Dragon Fruit");
 		lblDragonFruit.setBounds(113, 303, 140, 35);

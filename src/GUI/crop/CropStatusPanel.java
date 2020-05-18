@@ -77,7 +77,7 @@ public class CropStatusPanel {
 		lblGrown.setBounds(29, 152, 205, 48);
 		frmFarmiza.getContentPane().add(lblGrown);
 		
-		JLabel lblDaysTilHarvest = new JLabel("Day(s) left until harvest: " + crop.getDaysUntilHarvest() + " day(s)");
+		JLabel lblDaysTilHarvest = new JLabel("Day(s) left until harvest: " + (crop.getDaysUntilHarvest() - crop.getCurrentGrowthLevel())  + " day(s)");
 		lblDaysTilHarvest.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		lblDaysTilHarvest.setBounds(29, 197, 324, 48);
 		frmFarmiza.getContentPane().add(lblDaysTilHarvest);

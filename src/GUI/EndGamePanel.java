@@ -59,9 +59,9 @@ public class EndGamePanel {
 		
 		if (score < 60) {
 				scoreMessage = "You've done a terrible job of looking after your farm.";
-			} else if (score < 120) {
+			} else if (score < 150) {
 				scoreMessage = "Next time you should try to do a better job of looking after your farm.";
-			} else if (score < 200) {
+			} else if (score < 250) {
 				scoreMessage = "Well done! You've looked after your farm well.";
 			} else {
 				scoreMessage = "Wow! You're a fantastic farmer.";
@@ -89,12 +89,12 @@ public class EndGamePanel {
 		
 		JLabel lblGameDuration = new JLabel("Game duration: " + state.totalDays + " days");
 		lblGameDuration.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		lblGameDuration.setBounds(282, 11, 256, 35);
+		lblGameDuration.setBounds(264, 11, 239, 35);
 		frmFarmiza.getContentPane().add(lblGameDuration);
 		
-		JLabel lblProfitMade = new JLabel("Profit made: $" + profit);
+		JLabel lblProfitMade = new JLabel("Profit made: $" + String.format("%.2f", profit));
 		lblProfitMade.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		lblProfitMade.setBounds(548, 11, 183, 35);
+		lblProfitMade.setBounds(536, 11, 225, 35);
 		frmFarmiza.getContentPane().add(lblProfitMade);
 		
 		JLabel lblYourFinalScore = new JLabel("Your final score is: " + score);

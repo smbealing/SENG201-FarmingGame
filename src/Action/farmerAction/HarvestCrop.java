@@ -2,6 +2,9 @@ package action.farmerAction;
 
 
 import gameEnvironment.GameState;
+
+import java.util.ArrayList;
+
 import action.Action;
 import crop.Crop;
 
@@ -20,11 +23,16 @@ public class HarvestCrop extends Action {
     }
 
     public void harvestCrops(GameState state) {
+    	ArrayList<Crop> harvestedCrops = new ArrayList<Crop>();
         for (Crop crop : state.crops) {
-            if (crop.getDaysUntilHarvest() == 0) {
+            if (crop.getCurrentGrowthLevel() == crop.getDaysUntilHarvest()) {
                 state.totalMoney += crop.getSellingPrice();
-                state.crops.remove(crop);
+                harvestedCrops.add(crop);
             }
+        }
+        
+        for (Crop crop : harvestedCrops) {
+            state.crops.remove(crop);
         }
     }
 }
