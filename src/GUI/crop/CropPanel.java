@@ -137,7 +137,7 @@ public class CropPanel {
 		int count = 0;
 		
 		for (Crop crop: state.crops) {
-			if (crop.getPlanted()) {
+			if (crop.getPlanted() && crop.getCurrentGrowthLevel() == crop.getDaysUntilHarvest()) {
 				count++;
 			}
 		}
