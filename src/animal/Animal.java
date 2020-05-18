@@ -50,6 +50,7 @@ public abstract class Animal {
 
 	public void increaseHappiness(int amount) {
 		happiness += amount;
+		happiness += 30;
 		
 		if (happiness > maxHappiness) {happiness = maxHappiness; }
 	}

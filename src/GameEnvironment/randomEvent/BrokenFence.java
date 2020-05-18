@@ -15,9 +15,10 @@ public class BrokenFence extends RandomEvent {
 						   "| Some of your animals escaped!  |\r\n" +
 						   "|--------------------------------|");
 		
+		
+		state.animals.remove(0);
 		if (state.animals.size() > 0) {
 			
-			state.animals.remove(0);
 			animalsLost = randomGenerator.nextInt(state.animals.size());
 			
 			for (Animal animal: state.animals) {
