@@ -5,9 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import gameEnvironment.GameState;
-import gui.FarmerWarningPanel;
 import gui.GameEnvironmentPanel;
-
+import gui.farmer.FarmerWarningPanel;
 import item.AnimalFood;
 
 import javax.swing.JLabel;
@@ -61,14 +60,14 @@ public class FeedAnimalPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 576, 335);
+		frmFarmiza.setBounds(100, 100, 576, 248);
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
 		JLabel lblInstruction = new JLabel("Select an Item to Feed all of your Animals");
 		lblInstruction.setHorizontalAlignment(SwingConstants.CENTER);
-		lblInstruction.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		lblInstruction.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 22));
 		lblInstruction.setBounds(25, 21, 510, 35);
 		frmFarmiza.getContentPane().add(lblInstruction);
 		
@@ -76,12 +75,12 @@ public class FeedAnimalPanel {
 		cmbAnimalFoodSelection.setModel(new DefaultComboBoxModel<String>(new String[] {"Use Carrot", "Use Grain", "Use High Quality Grain"}));
 		cmbAnimalFoodSelection.setSelectedIndex(0);
 		cmbAnimalFoodSelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		cmbAnimalFoodSelection.setBounds(77, 100, 405, 41);
+		cmbAnimalFoodSelection.setBounds(77, 84, 405, 41);
 		frmFarmiza.getContentPane().add(cmbAnimalFoodSelection);
 		
 		JButton btnUseItem = new JButton("USE ITEM");
 		btnUseItem.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnUseItem.setBounds(77, 230, 141, 45);
+		btnUseItem.setBounds(137, 153, 141, 45);
 		btnUseItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if (state.farmer.getActionCount() != 0) {
@@ -112,11 +111,10 @@ public class FeedAnimalPanel {
 		frmFarmiza.getContentPane().add(btnUseItem);
 		
 		JButton btnClose = new JButton("CLOSE");
-		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		btnClose.setBounds(287, 231, 195, 45);
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		btnClose.setBounds(304, 153, 106, 45);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				new AnimalPanel(state);
 				frmFarmiza.dispose();
 			}
 		});
@@ -146,11 +144,9 @@ public class FeedAnimalPanel {
     }
 	
 	private void useItem(GameState state, int healthBoost, int boost) {
-    	state.farmer.reduceActionCount();
     	for (Animal animal: state.animals) {
     		animal.increaseHappiness(boost);
     		animal.increaseHealth(healthBoost);
-    		System.out.println("| Your " + animal.getName() + " has been fed.");
     	}
     }
 

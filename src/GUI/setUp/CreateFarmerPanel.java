@@ -13,14 +13,8 @@ import java.awt.event.ActionListener;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-import javax.swing.SwingConstants;
-
 import farm.Farmer;
 import gui.GameEnvironmentPanel;
-
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 
 import javax.swing.JButton;
 

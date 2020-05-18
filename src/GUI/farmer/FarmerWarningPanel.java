@@ -1,4 +1,4 @@
-package gui;
+package gui.farmer;
 
 import java.awt.EventQueue;
 
@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.SwingConstants;
 
 import gameEnvironment.GameState;
+import gui.GameEnvironmentPanel;
 
 import javax.swing.JButton;
 

@@ -8,13 +8,11 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
 import animal.Animal;
-import gameEnvironment.GameEnvironment;
 import gameEnvironment.GameState;
 import gui.setUp.SelectDaysPanel;
 

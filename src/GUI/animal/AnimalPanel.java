@@ -13,6 +13,7 @@ import javax.swing.JButton;
 
 import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
+import javax.swing.SwingConstants;
 
 
 public class AnimalPanel {
@@ -58,7 +59,7 @@ public class AnimalPanel {
 		
 		JLabel lblFarmAnimals = new JLabel("FARM ANIMALS");
 		lblFarmAnimals.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 35));
-		lblFarmAnimals.setBounds(251, 11, 282, 52);
+		lblFarmAnimals.setBounds(233, 11, 318, 52);
 		frmFarmiza.getContentPane().add(lblFarmAnimals);
 		
 		JButton btnFeedAnimals = new JButton("FEED ANIMALS");
@@ -70,30 +71,28 @@ public class AnimalPanel {
 					new NoAnimalWarningPanel();
 				} else {
 					new FeedAnimalPanel(state);
-					frmFarmiza.dispose();
 				}
 			}
 		});
 		frmFarmiza.getContentPane().add(btnFeedAnimals);
 		
 		JButton btnPlayWithAnimals = new JButton("PLAY WITH ANIMALS");
-		btnPlayWithAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		btnPlayWithAnimals.setBounds(298, 205, 176, 64);
+		btnPlayWithAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
+		btnPlayWithAnimals.setBounds(283, 203, 195, 64);
 		btnPlayWithAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if (state.animals.size() == 0) {
 					new NoAnimalWarningPanel();
 				} else {
 					new PlayWithAnimalsPanel(state);
-					frmFarmiza.dispose();
 				}
 			}
 		});
 		frmFarmiza.getContentPane().add(btnPlayWithAnimals);
 		
 		JButton btnAnimalInventory = new JButton("ANIMAL INVENTORY");
-		btnAnimalInventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 11));
-		btnAnimalInventory.setBounds(537, 205, 176, 64);
+		btnAnimalInventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
+		btnAnimalInventory.setBounds(522, 203, 195, 64);
 		btnAnimalInventory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new AnimalInventoryPanel(state);
@@ -112,6 +111,11 @@ public class AnimalPanel {
 			}
 		});
 		frmFarmiza.getContentPane().add(btnBack);
+		
+		JLabel lblFenceImage = new JLabel("[plants image]");
+		lblFenceImage.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFenceImage.setBounds(21, 61, 742, 385);
+		frmFarmiza.getContentPane().add(lblFenceImage);
 
 	}
 }

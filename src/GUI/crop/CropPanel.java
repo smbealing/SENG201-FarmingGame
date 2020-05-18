@@ -12,8 +12,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import action.farmerAction.HarvestCrop;
+import crop.Crop;
 import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
+import gui.farmer.FarmerWarningPanel;
 
 
 public class CropPanel {
@@ -21,6 +24,7 @@ public class CropPanel {
 	public GameState state;
 
 	private JFrame frmFarmiza;
+	private JButton btnHarvestCrops;
 
 	/**
 	 * Launch the application.
@@ -66,12 +70,18 @@ public class CropPanel {
 		
 		JButton btnPlantCrops = new JButton("PLANT CROPS");
 		btnPlantCrops.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
-		btnPlantCrops.setBounds(62, 204, 176, 64);
+		btnPlantCrops.setBounds(62, 164, 176, 64);
+		btnPlantCrops.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				new PlantCropPanel(state);
+				frmFarmiza.dispose();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnPlantCrops);
 		
 		JButton btnTendToCrops = new JButton("TEND TO CROPS");
 		btnTendToCrops.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
-		btnTendToCrops.setBounds(302, 204, 176, 64);
+		btnTendToCrops.setBounds(302, 164, 176, 64);
 		btnTendToCrops.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new TendToCropPanel(state);
@@ -81,7 +91,7 @@ public class CropPanel {
 		
 		JButton btnCropInventory = new JButton("CROP INVENTORY");
 		btnCropInventory.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
-		btnCropInventory.setBounds(541, 204, 176, 64);
+		btnCropInventory.setBounds(541, 164, 176, 64);
 		btnCropInventory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new CropInventoryPanel(state);
@@ -89,6 +99,22 @@ public class CropPanel {
 			}
 		});
 		frmFarmiza.getContentPane().add(btnCropInventory);
+		
+		btnHarvestCrops = new JButton("HARVEST CROPS");
+		btnHarvestCrops.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
+		btnHarvestCrops.setBounds(302, 273, 176, 64);
+		btnHarvestCrops.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				if (state.farmer.getActionCount() != 0) {
+					new HarvestCrop().perform(state);
+					checkHarvest();
+				} else {
+					new FarmerWarningPanel(state);
+				}
+			}
+		});
+		frmFarmiza.getContentPane().add(btnHarvestCrops);
+		checkHarvest();
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
@@ -106,5 +132,21 @@ public class CropPanel {
 		lblFieldImage.setBounds(20, 59, 742, 385);
 		frmFarmiza.getContentPane().add(lblFieldImage);
 	}
-
+	
+	private void checkHarvest() {
+		int count = 0;
+		
+		for (Crop crop: state.crops) {
+			if (crop.getPlanted()) {
+				count++;
+			}
+		}
+		
+		if (count == 0) {
+			btnHarvestCrops.setEnabled(false);
+		} else {
+			btnHarvestCrops.setEnabled(true);
+		}
+	}
+	
 }

@@ -52,17 +52,16 @@ public class TendToFarmLandPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 800, 550);
+		frmFarmiza.setBounds(100, 100, 615, 239);
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
 		JButton btnBackToFarm = new JButton("BACK");
-		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnBackToFarm.setBounds(129, 436, 525, 64);
+		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		btnBackToFarm.setBounds(242, 148, 115, 41);
 		btnBackToFarm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				new FarmStatusPanel(state);
 				frmFarmiza.dispose();
 			}
 		});
@@ -71,13 +70,13 @@ public class TendToFarmLandPanel {
 		JLabel lblFarmLandTendedTo = new JLabel("Your farm land has been tended to.");
 		lblFarmLandTendedTo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblFarmLandTendedTo.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblFarmLandTendedTo.setBounds(76, 71, 632, 72);
+		lblFarmLandTendedTo.setBounds(82, 29, 437, 54);
 		frmFarmiza.getContentPane().add(lblFarmLandTendedTo);
 		
 		JLabel lblYourFarmsNeed = new JLabel("Your farm's need for maintenance is now 0.");
 		lblYourFarmsNeed.setHorizontalAlignment(SwingConstants.CENTER);
 		lblYourFarmsNeed.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblYourFarmsNeed.setBounds(76, 242, 632, 72);
+		lblYourFarmsNeed.setBounds(20, 76, 558, 54);
 		frmFarmiza.getContentPane().add(lblYourFarmsNeed);
 	}
 }

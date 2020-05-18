@@ -5,8 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import gameEnvironment.GameState;
-import gui.FarmerWarningPanel;
 import gui.GameEnvironmentPanel;
+import gui.farmer.FarmerWarningPanel;
 import item.CropItem;
 import item.GenericItem;
 
@@ -37,6 +37,8 @@ public class TendToCropPanel {
 	private String selectedCrop;
 
 	private JFrame frmFarmiza;
+	private static JComboBox<String> cmbItemSelection;
+	private static JComboBox<String> cmbCropSelection;
 
 	/**
 	 * Launch the application.
@@ -58,7 +60,6 @@ public class TendToCropPanel {
 	 */
 	public TendToCropPanel(GameState tempState) {
 		state = tempState;
-		getCropsItems();
 		
 		initialize();
 		ActivatePanel();
@@ -93,16 +94,12 @@ public class TendToCropPanel {
 		frmFarmiza.getContentPane().add(lblSelectACrop);
 		
 		
-		final JComboBox<String> cmbCropSelection = new JComboBox<String>();
-		cmbCropSelection.setModel(new DefaultComboBoxModel<String>(plantedCropsList));
-		cmbCropSelection.setSelectedIndex(0);
+		cmbCropSelection = new JComboBox<String>();
 		cmbCropSelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		cmbCropSelection.setBounds(32, 103, 192, 41);
 		frmFarmiza.getContentPane().add(cmbCropSelection);
 		
-		final JComboBox<String> cmbItemSelection = new JComboBox<String>();
-		cmbItemSelection.setModel(new DefaultComboBoxModel<String>(cropItemsList));
-		cmbItemSelection.setSelectedIndex(0);
+		cmbItemSelection = new JComboBox<String>();
 		cmbItemSelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		cmbItemSelection.setBounds(253, 103, 192, 41);
 		frmFarmiza.getContentPane().add(cmbItemSelection);
@@ -124,6 +121,7 @@ public class TendToCropPanel {
 						
 						useSelectedItem(selectedItem);
 						state.farmer.reduceActionCount();
+						getCropsItems();
 					}
 				} else {
 					new FarmerWarningPanel(state);
@@ -141,6 +139,8 @@ public class TendToCropPanel {
 			}
 		});
 		frmFarmiza.getContentPane().add(btnClose);
+		
+		getCropsItems();
 	}
 	
 	private void getCropsItems() {
@@ -158,6 +158,8 @@ public class TendToCropPanel {
 		
 		plantedCropsList = crops.split(",");
 		cropItemsList = items.split(",");
+		cmbCropSelection.setModel(new DefaultComboBoxModel<String>(plantedCropsList));
+		cmbItemSelection.setModel(new DefaultComboBoxModel<String>(cropItemsList));
 	}
 	
 	private void getCropsItemsSets() {
@@ -231,7 +233,6 @@ public class TendToCropPanel {
     }
 	
 	private void useItem(int boost, int growthBoost) {
-    	state.farmer.reduceActionCount();
     	for (Crop crop: state.crops) {
     		if (crop.planted && crop.getName() == selectedCrop) {
     			crop.increaseGrowthLevel(boost + growthBoost);

@@ -81,35 +81,50 @@ public class AnimalInventoryPanel {
 		JLabel lblCows = new JLabel("Cows");
 		lblCows.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCows.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblCows.setBounds(100, 83, 111, 35);
+		lblCows.setBounds(33, 84, 111, 35);
 		frmFarmiza.getContentPane().add(lblCows);
 		
 		JLabel lblHorses = new JLabel("Horses");
 		lblHorses.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHorses.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblHorses.setBounds(110, 184, 85, 35);
+		lblHorses.setBounds(179, 84, 85, 35);
 		frmFarmiza.getContentPane().add(lblHorses);
 		
 		JLabel lblSheep = new JLabel("Sheep");
 		lblSheep.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSheep.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblSheep.setBounds(114, 282, 80, 35);
+		lblSheep.setBounds(115, 163, 80, 35);
 		frmFarmiza.getContentPane().add(lblSheep);
 		
 		btnSelectCow = new JRadioButton("SELECT");
 		btnSelectCow.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		btnSelectCow.setBounds(110, 119, 89, 25);
+		btnSelectCow.setBounds(51, 121, 89, 25);
+		btnSelectCow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				getOptions();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnSelectCow);
 		
 		
 		btnSelectHorse = new JRadioButton("SELECT");
 		btnSelectHorse.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		btnSelectHorse.setBounds(110, 220, 89, 25);
+		btnSelectHorse.setBounds(179, 120, 89, 25);
+		btnSelectHorse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				getOptions();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnSelectHorse);	
 		
 		btnSelectSheep = new JRadioButton("SELECT");
 		btnSelectSheep.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		btnSelectSheep.setBounds(110, 318, 89, 25);
+		btnSelectSheep.setBounds(115, 197, 89, 25);
+		btnSelectSheep.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				getOptions();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnSelectSheep);
 		
 		JLabel lblSelect = new JLabel("Select an animal to view its status");
@@ -124,7 +139,6 @@ public class AnimalInventoryPanel {
 		animalGroupButton.add(btnSelectSheep);
 
 		cmbSelectedAnimal = new JComboBox<String>();
-		cmbSelectedAnimal.setModel(new DefaultComboBoxModel<String>(getOptions().split(",")));
 		cmbSelectedAnimal.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		cmbSelectedAnimal.setBounds(485, 122, 192, 41);
 		frmFarmiza.getContentPane().add(cmbSelectedAnimal);
@@ -155,8 +169,8 @@ public class AnimalInventoryPanel {
 		frmFarmiza.getContentPane().add(lblHighQualityGrainLeft);
 		
 		JButton btnCheckStatus = new JButton("CHECK STATUS");
-		btnCheckStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnCheckStatus.setBounds(230, 455, 197, 45);
+		btnCheckStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
+		btnCheckStatus.setBounds(491, 174, 182, 35);
 		btnCheckStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if (animals != "") {
@@ -171,7 +185,7 @@ public class AnimalInventoryPanel {
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnBack.setBounds(461, 455, 111, 45);
+		btnBack.setBounds(336, 455, 111, 45);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new AnimalPanel(state);
@@ -182,25 +196,25 @@ public class AnimalInventoryPanel {
 		
 	}
 	
-	private String getOptions() {
+	private void getOptions() {
 		animals = "";
 		
 		if (btnSelectCow.isSelected()) {
-			animalName = "Banana";
+			animalName = "Cow";
 			animals = getAnimalString();
 		} else if (btnSelectHorse.isSelected()) {
-			animalName = "Corn";
+			animalName = "Horse";
 			animals = getAnimalString();
 		} else if (btnSelectSheep.isSelected()) {
-			animalName = "Wheat";
+			animalName = "Sheep";
 			animals = getAnimalString();
 		} 
-		return animals;
+		cmbSelectedAnimal.setModel(new DefaultComboBoxModel<String>(animals.split(",")));
 	}
 	
 	private String getAnimalString() {
 		String animalString = "";
-		int count = 0;
+		int count = 1;
 		
 		for (Animal animal: state.animals) {
 			if (animal.getName() == animalName) {

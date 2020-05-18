@@ -14,8 +14,8 @@ import javax.swing.SwingConstants;
 
 import animal.Animal;
 import gameEnvironment.GameState;
-import gui.FarmerWarningPanel;
 import gui.GameEnvironmentPanel;
+import gui.farmer.FarmerWarningPanel;
 import item.Speech;
 import item.Warmth;
 
@@ -59,14 +59,14 @@ public class PlayWithAnimalsPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 576, 335);
+		frmFarmiza.setBounds(100, 100, 576, 234);
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
 		JLabel lblPrompt = new JLabel("How would you like to play with your animals?");
 		lblPrompt.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPrompt.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		lblPrompt.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 22));
 		lblPrompt.setBounds(25, 23, 510, 35);
 		frmFarmiza.getContentPane().add(lblPrompt);
 		
@@ -74,12 +74,12 @@ public class PlayWithAnimalsPanel {
 		cmbAnimalPlaySelection.setModel(new DefaultComboBoxModel<String>(new String[] {"Speak to Animal", "Give Animal Warmth $20.00"}));
 		cmbAnimalPlaySelection.setSelectedIndex(0);
 		cmbAnimalPlaySelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		cmbAnimalPlaySelection.setBounds(77, 98, 405, 41);
+		cmbAnimalPlaySelection.setBounds(77, 77, 405, 41);
 		frmFarmiza.getContentPane().add(cmbAnimalPlaySelection);
 		
 		JButton btnPlayWithAnimals = new JButton("PLAY WITH ANIMALS");
-		btnPlayWithAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		btnPlayWithAnimals.setBounds(77, 240, 195, 45);
+		btnPlayWithAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
+		btnPlayWithAnimals.setBounds(104, 139, 195, 45);
 		btnPlayWithAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if (state.farmer.getActionCount() != 0) {
@@ -119,11 +119,10 @@ public class PlayWithAnimalsPanel {
 		frmFarmiza.getContentPane().add(btnPlayWithAnimals);
 		
 		JButton btnClose = new JButton("CLOSE");
-		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
-		btnClose.setBounds(287, 240, 195, 45);
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		btnClose.setBounds(314, 139, 118, 45);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				new AnimalPanel(state);
 				frmFarmiza.dispose();
 			}
 		});

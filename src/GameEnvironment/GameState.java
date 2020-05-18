@@ -24,6 +24,7 @@ public class GameState {
 	public ArrayList<CropItem> cropItems;
 	public ArrayList<AnimalFood> animalFood;
 	public ArrayList<GenericItem> items;
+	public boolean nextDay = false; 
 
 	public int totalDays;
 	public int currentDay = 1;

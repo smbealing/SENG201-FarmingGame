@@ -54,7 +54,7 @@ public class GameEnvironmentPanel {
 		int event = 0;
 		state = tempState;
 		
-		if (state.currentDay != 1 && state.currentDay != state.totalDays) { 
+		if (state.currentDay != 1 && state.currentDay != state.totalDays && state.nextDay) { 
 			event = randomEvent(); 
 		}
 		
@@ -76,6 +76,7 @@ public class GameEnvironmentPanel {
 			case 0:
 				break;
 		}
+		state.nextDay = false;
 	}
 
 	/**
@@ -86,7 +87,7 @@ public class GameEnvironmentPanel {
 		frmFarmiza.setTitle("Farmiza");
 		frmFarmiza.setBounds(100, 100, 800, 550);
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
-//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
 		JButton btnFarm = new JButton(state.farm.getName());
@@ -136,7 +137,12 @@ public class GameEnvironmentPanel {
 		});
 		frmFarmiza.getContentPane().add(btnAnimal);
 		
-		JLabel lblTotalMoney = new JLabel( "$" + Math.round(state.totalMoney));
+		JLabel lblMoneyImage = new JLabel();
+		lblMoneyImage.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource("../images/money.png")));
+		lblMoneyImage.setBounds(437, 46, 47, 45);
+		frmFarmiza.getContentPane().add(lblMoneyImage);
+		
+		JLabel lblTotalMoney = new JLabel("$" + String.format("%.2f", state.totalMoney));
 		lblTotalMoney.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		lblTotalMoney.setBounds(494, 43, 92, 45);
 		frmFarmiza.getContentPane().add(lblTotalMoney);
@@ -151,17 +157,11 @@ public class GameEnvironmentPanel {
 		btnShop.setBounds(10, 436, 176, 64);
 		btnShop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				ShopPanel shopPanel = new ShopPanel();
+				new ShopPanel(state);
 				frmFarmiza.dispose();
-				shopPanel.ActivatePanel(state);
 			}
 		});
 		frmFarmiza.getContentPane().add(btnShop);
-		
-		JLabel lblMoneyImage = new JLabel("$image");
-		lblMoneyImage.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource("../images/money.png")));
-		lblMoneyImage.setBounds(437, 46, 47, 45);
-		frmFarmiza.getContentPane().add(lblMoneyImage);
 		
 		JLabel lblFarmiza = new JLabel("WELCOME TO FARMIZA!");
 		lblFarmiza.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
@@ -185,7 +185,7 @@ public class GameEnvironmentPanel {
 		btnNextDay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new NextDay().perform(state);
-				
+				state.nextDay = true;
 				if (state.currentDay > state.totalDays) {
 					new EndGamePanel(state);
 				} else {
@@ -201,6 +201,11 @@ public class GameEnvironmentPanel {
 		lblBackground.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource(getFarmImage())));
 		lblBackground.setBounds(192, 88, 582, 337);
 		frmFarmiza.getContentPane().add(lblBackground);
+		
+		JLabel lblWoodBackgr = new JLabel("");
+//		lblWoodBackgr.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource("../images/wood.jpg")));
+		lblWoodBackgr.setBounds(0, 0, 192, 511);
+		frmFarmiza.getContentPane().add(lblWoodBackgr);
 	}
 	
 	private String getFarmImage() {

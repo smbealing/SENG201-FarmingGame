@@ -124,31 +124,61 @@ public class CropInventoryPanel {
 		btnSelectBanana = new JRadioButton("SELECT");
 		btnSelectBanana.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectBanana.setBounds(20, 117, 89, 25);
+		btnSelectBanana.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				getOptions();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnSelectBanana);
 		
 		btnSelectCorn = new JRadioButton("SELECT");
 		btnSelectCorn.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectCorn.setBounds(136, 117, 89, 25);
+		btnSelectCorn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				getOptions();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnSelectCorn);
 		
 		btnSelectWheat = new JRadioButton("SELECT");
 		btnSelectWheat.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectWheat.setBounds(248, 117, 89, 25);
+		btnSelectWheat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				getOptions();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnSelectWheat);
 		
 		btnSelectTomato = new JRadioButton("SELECT");
 		btnSelectTomato.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectTomato.setBounds(72, 217, 89, 25);
+		btnSelectTomato.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				getOptions();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnSelectTomato);
 		
 		btnSelectPotato = new JRadioButton("SELECT");
 		btnSelectPotato.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectPotato.setBounds(206, 217, 89, 25);
+		btnSelectPotato.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				getOptions();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnSelectPotato);
 		
 		btnSelectDragonFruit = new JRadioButton("SELECT");
 		btnSelectDragonFruit.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectDragonFruit.setBounds(146, 317, 89, 25);
+		btnSelectDragonFruit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				getOptions();
+			}
+		});
 		frmFarmiza.getContentPane().add(btnSelectDragonFruit);
 		
 		JLabel lblSelect = new JLabel("Select a crop to view its status");
@@ -166,7 +196,6 @@ public class CropInventoryPanel {
 		cropGroupButton.add(btnSelectDragonFruit);
 		
 		cmbSelectedCrop = new JComboBox<String>();
-		cmbSelectedCrop.setModel(new DefaultComboBoxModel<String>(getOptions().split(",")));
 		cmbSelectedCrop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		cmbSelectedCrop.setBounds(483, 121, 192, 41);
 		frmFarmiza.getContentPane().add(cmbSelectedCrop);
@@ -216,7 +245,7 @@ public class CropInventoryPanel {
 		frmFarmiza.getContentPane().add(btnBack);
 	}
 	
-	private String getOptions() {
+	private void getOptions() {
 		crops = "";
 		
 		if (btnSelectBanana.isSelected()) {
@@ -238,12 +267,12 @@ public class CropInventoryPanel {
 			cropName = "Dragon Fruit";
 			crops = getCropString();
 		}
-		return crops;
+		cmbSelectedCrop.setModel(new DefaultComboBoxModel<String>(crops.split(",")));
 	}
 	
 	private String getCropString() {
 		String cropsString = "";
-		int count = 0;
+		int count = 1;
 		
 		for (Crop crop: state.crops) {
 			if (crop.getName() == cropName) {
