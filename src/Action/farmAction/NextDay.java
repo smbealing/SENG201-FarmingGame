@@ -12,6 +12,12 @@ import crop.Crop;
 
 public class NextDay extends Action {
 	
+	/**
+	 * Performs the next day action.
+	 * Increases day count, resets farmer action count, crops grow and become more thirsty,
+	 * money is gained from animals and animal health & happiness decreases.
+	 * Takes the current GameState as a parameter.
+	 */
 	public void perform(GameState state) {
 		state.currentDay += 1;
 		state.farmer.setActionCount();
@@ -43,6 +49,11 @@ public class NextDay extends Action {
 //		randomEvent(state); // add back in for command lines
 	}
 	
+	
+	/**
+	 * Handles random events.
+	 * Takes the current GameState as a parameter.
+	 */
 	private void randomEvent(GameState state) {
 		switch(new Random().nextInt(5)) {
 			case 0: 
