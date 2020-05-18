@@ -99,7 +99,6 @@ public class FeedAnimalPanel {
 					
 					if (foodItemAvailable) {
 						state.farmer.reduceActionCount();
-						new AnimalPanel(state);
 						frmFarmiza.dispose();
 					}
 				} else {

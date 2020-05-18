@@ -28,6 +28,7 @@ public class PlantCropPanel {
 	private String crops;
 
 	private JFrame frmFarmiza;
+	private JButton btnPlant;
 	private JRadioButton btnSelectBanana;
 	private JRadioButton btnSelectCorn;
 	private JRadioButton btnSelectWheat;
@@ -202,13 +203,14 @@ public class PlantCropPanel {
 		lblInstruction2.setBounds(408, 134, 346, 35);
 		frmFarmiza.getContentPane().add(lblInstruction2);
 		
-		JButton btnPlant = new JButton("PLANT CROP");
+		btnPlant = new JButton("PLANT CROP");
 		btnPlant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (crops != "") {
 					getCrop(cmbSelectedCrop.getSelectedIndex());
 					selectedCrop.setPlanted();
 					getOptions();
+					checkPlantBtn();
 				} else {
 					new CropWarningPanel();
 				}
@@ -217,6 +219,7 @@ public class PlantCropPanel {
 		btnPlant.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
 		btnPlant.setBounds(497, 233, 166, 35);
 		frmFarmiza.getContentPane().add(btnPlant);
+		checkPlantBtn();
 		
 		JButton btnBack = new JButton("BACK");
 		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
@@ -254,6 +257,22 @@ public class PlantCropPanel {
 		}
 		
 		cmbSelectedCrop.setModel(new DefaultComboBoxModel<String>(crops.split(",")));
+	}
+	
+	private void checkPlantBtn() {
+		int plantedCrops = 0;
+		
+		for (Crop crop: state.crops) {
+			if (crop.getPlanted()) {
+				plantedCrops++;
+			}
+		}
+		
+		if (plantedCrops == state.farm.getMaxCropCount()) {
+			btnPlant.setEnabled(false);
+		} else {
+			btnPlant.setEnabled(true);
+		}
 	}
 	
 	private String getCropString() {

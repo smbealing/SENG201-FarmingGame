@@ -46,7 +46,7 @@ public class CropWarningPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 607, 214);
+		frmFarmiza.setBounds(100, 100, 607, 199);
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
@@ -59,13 +59,13 @@ public class CropWarningPanel {
 		
 		JLabel lblWarning = new JLabel("Oh no!");
 		lblWarning.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 21));
-		lblWarning.setBounds(250, 25, 91, 34);
+		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
+		lblWarning.setBounds(231, 25, 128, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
 		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		btnClose.setBounds(236, 118, 118, 46);
+		btnClose.setBounds(242, 107, 107, 42);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();

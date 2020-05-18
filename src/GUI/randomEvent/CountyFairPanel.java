@@ -48,7 +48,7 @@ public class CountyFairPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 643, 243);
+		frmFarmiza.setBounds(100, 100, 643, 210);
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
@@ -72,7 +72,7 @@ public class CountyFairPanel {
 			}
 		});
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnClose.setBounds(235, 139, 157, 54);
+		btnClose.setBounds(260, 118, 107, 42);
 		frmFarmiza.getContentPane().add(btnClose);
 	}
 

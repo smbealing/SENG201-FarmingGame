@@ -52,16 +52,6 @@ public class BrokenFencePanel {
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
 		
-		JButton btnClose = new JButton("CLOSE");
-		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnClose.setBounds(138, 139, 157, 54);
-		btnClose.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				frmFarmiza.dispose();
-			}
-		});
-		frmFarmiza.getContentPane().add(btnClose);
-		
 		JLabel lblNoticeOne = new JLabel("Oh no! Your fence broke!");
 		lblNoticeOne.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
 		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
@@ -73,6 +63,16 @@ public class BrokenFencePanel {
 		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNoticeTwo.setBounds(10, 70, 408, 46);
 		frmFarmiza.getContentPane().add(lblNoticeTwo);
+		
+		JButton btnClose = new JButton("CLOSE");
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		btnClose.setBounds(138, 139, 107, 42);
+		btnClose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				frmFarmiza.dispose();
+			}
+		});
+		frmFarmiza.getContentPane().add(btnClose);
 	}
 
 }

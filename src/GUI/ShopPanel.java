@@ -271,10 +271,14 @@ public class ShopPanel {
 		btnBuyCow.setBounds(30, 386, 64, 23);
 		btnBuyCow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				animal = new Cow();
-				state.totalMoney -= animal.getPurchasingPrice();
-				state.animals.add(animal);
-				refresh();
+				if (state.animals.size() != state.farm.getMaxAnimalCount()) {
+					animal = new Cow();
+					state.totalMoney -= animal.getPurchasingPrice();
+					state.animals.add(animal);
+					refresh();
+				} else {
+					new AnimalCapacityWarningPanel();
+				}
 			}
 		});
 		frmFarmiza.getContentPane().add(btnBuyCow);
@@ -292,10 +296,14 @@ public class ShopPanel {
 		btnBuyHorse.setBounds(136, 386, 64, 23);
 		btnBuyHorse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				animal = new Horse();
-				state.totalMoney -= animal.getPurchasingPrice();
-				state.animals.add(animal);
-				refresh();
+				if (state.animals.size() != state.farm.getMaxAnimalCount()) {
+					animal = new Horse();
+					state.totalMoney -= animal.getPurchasingPrice();
+					state.animals.add(animal);
+					refresh();
+				} else {
+					new AnimalCapacityWarningPanel();
+				}
 			}
 		});
 		frmFarmiza.getContentPane().add(btnBuyHorse);
@@ -313,10 +321,14 @@ public class ShopPanel {
 		btnBuySheep.setBounds(245, 386, 64, 23);
 		btnBuySheep.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				animal = new Sheep();
-				state.totalMoney -= animal.getPurchasingPrice();
-				state.animals.add(animal);
-				refresh();
+				if (state.animals.size() != state.farm.getMaxAnimalCount()) {
+					animal = new Sheep();
+					state.totalMoney -= animal.getPurchasingPrice();
+					state.animals.add(animal);
+					refresh();
+				} else {
+					new AnimalCapacityWarningPanel();
+				}
 			}
 		});
 		frmFarmiza.getContentPane().add(btnBuySheep);

@@ -48,7 +48,7 @@ public class DroughtPanel {
 	private void initialize() {
 		frmFarmiza = new JFrame();
 		frmFarmiza.setTitle("Farmiza");
-		frmFarmiza.setBounds(100, 100, 743, 243);
+		frmFarmiza.setBounds(100, 100, 743, 208);
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
@@ -67,7 +67,7 @@ public class DroughtPanel {
 		
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnClose.setBounds(285, 139, 157, 54);
+		btnClose.setBounds(310, 116, 107, 42);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();

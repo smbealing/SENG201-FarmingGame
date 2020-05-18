@@ -21,6 +21,7 @@ public class FarmStatusPanel {
 
 	private JFrame frmFarmiza;
 	private JLabel lblNeedForMaintenance;
+	private JButton btnTendToFarmLand;
 
 	/**
 	 * Launch the application.
@@ -89,31 +90,40 @@ public class FarmStatusPanel {
 		lblTotalMoney.setBounds(344, 48, 239, 48);
 		frmFarmiza.getContentPane().add(lblTotalMoney);
 		
-		JButton btnBackToFarm = new JButton("BACK");
-		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		btnBackToFarm.setBounds(435, 452, 111, 48);
-		btnBackToFarm.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent event) {
-				new GameEnvironmentPanel(state);
-				frmFarmiza.dispose();
-			}
-		});
-		frmFarmiza.getContentPane().add(btnBackToFarm);
-		
-		JButton btnTendToFarmLand = new JButton("TEND TO FARM LAND");
+		btnTendToFarmLand = new JButton("TEND TO FARM LAND");
 		btnTendToFarmLand.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
 		btnTendToFarmLand.setBounds(202, 452, 221, 48);
 		btnTendToFarmLand.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new TendToFarmLandPanel(state);
 				checkMaintenece();
+				checkFarm();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnTendToFarmLand);
+		checkFarm();
+		
+		JButton btnBackToFarm = new JButton("BACK");
+		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		btnBackToFarm.setBounds(435, 452, 111, 48);
+		btnBackToFarm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				new GameEnvironmentPanel(state);
+				frmFarmiza.dispose();
+			}
+		});
+		frmFarmiza.getContentPane().add(btnBackToFarm);
 	}
 	
 	private void checkMaintenece() {
 		lblNeedForMaintenance.setText("Need for maintenance: " + state.farm.getMaintenanceLevel());
+	}
+	
+	private void checkFarm() {
+		if (state.farm.getMaintenanceLevel() > 0) {
+			btnTendToFarmLand.setEnabled(true);
+		} else {
+			btnTendToFarmLand.setEnabled(false);
+		}
 	}
 }
