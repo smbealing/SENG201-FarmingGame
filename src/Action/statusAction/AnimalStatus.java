@@ -15,7 +15,7 @@ public class AnimalStatus extends Action {
     /**
 	 * Performs the animal status action. 
 	 * Calls method for player to select an animal.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void perform(GameState state) {
 
@@ -27,7 +27,7 @@ public class AnimalStatus extends Action {
     /**
 	 * Prompts player to select an animal.
 	 * Prints a warning if player has no animals.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void selectAnimal(GameState state) {
         s = new Scanner(System.in);
@@ -62,7 +62,8 @@ public class AnimalStatus extends Action {
 
     /**
 	 * Displays status information about selected animal.
-	 * Takes the animal selection (integer) and the current GameState as parameters.
+	 * @param selection  the animal selection (integer)
+	 * @param state  the current GameState
 	 */
     public void showAnimalStatus(int selection, GameState state) {
         System.out.println("| You have selected: " + state.animals.get(selection - 1).getName());

@@ -86,7 +86,7 @@ public class Shop extends Action {
 	
 	/**
 	 * Performs the shop functionality.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
 	public void perform(GameState state) {
 		
@@ -161,7 +161,9 @@ public class Shop extends Action {
 	
 	/**
 	 * Checks whether player can afford an item.
-	 * Takes player's money available (double) and cost of item (double) as parameters.
+	 * @param totalMoney  player's money available (double) 
+	 * @param cost  cost of item (double)
+	 * @return true if player can afford an item, false otherwise
 	 */
 	private boolean affordable(double totalMoney, double cost) {
 		if ((totalMoney - cost) < 0.00) {
@@ -180,7 +182,8 @@ public class Shop extends Action {
 	
 	/**
 	 * Performs the purchase of a crop.
-	 * Takes the current GameState and selected Crop as parameters.
+	 * @param state  the current GameState 
+	 * @param crop  the selected Crop
 	 */
 	private void purchasingCrop(GameState state, Crop crop) {
 		if (affordable(state.totalMoney, crop.getPurchasingPrice())) {
@@ -189,9 +192,11 @@ public class Shop extends Action {
 		}
 	}
 	
+	
 	/**
 	 * Performs the purchase of an animal.
-	 * Takes the current GameState and selected Animal as parameters.
+	 * @param state  the current GameState
+	 * @param animal  the selected Animal
 	 */
 	private void purchasingAnimal(GameState state, Animal animal) {
 		boolean enoughSpace = true;
@@ -211,7 +216,8 @@ public class Shop extends Action {
 	
 	/**
 	 * Performs the purchase of a crop item.
-	 * Takes the current GameState and selected CropItem as parameters.
+	 * @param state  the current GameState 
+	 * @param item  the selected CropItem
 	 */
 	private void purchasingCropItem(GameState state, CropItem item) {
 		if (affordable(state.totalMoney, item.getPurchasingPrice())) {
@@ -222,7 +228,8 @@ public class Shop extends Action {
 	
 	/**
 	 * Performs the purchase of an animal food item.
-	 * Takes the current GameState and selected AnimalFood as parameters.
+	 * @param state  the current GameState 
+	 * @param animalFood  the selected AnimalFood
 	 */
 	private void purchasingAnimalFood(GameState state, AnimalFood animalFood) {
 		if (affordable(state.totalMoney, animalFood.getPurchasingPrice())) {

@@ -17,7 +17,7 @@ public class PlayWithAnimal extends Action {
     
     /**
 	 * Performs the play with animal action.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void perform(GameState state) {
         if (checkFarmerAction(state)) {
@@ -31,7 +31,7 @@ public class PlayWithAnimal extends Action {
     
     /**
 	 * Prompts player to select an animal to play with.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void selectAnimal(GameState state) {
         s = new Scanner(System.in);
@@ -66,7 +66,7 @@ public class PlayWithAnimal extends Action {
     
     /**
 	 * Displays information about player's selected animal.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void showAnimalSelected(int selection, GameState state) {
         System.out.println("| You have selected: " + state.animals.get(selection - 1).getName());
@@ -79,7 +79,8 @@ public class PlayWithAnimal extends Action {
     /**
 	 * Prompts the player to select a play option.
 	 * Increases selected animal's happiness accordingly.
-	 * Takes animal selection (integer) and the current GameState as parameters.
+	 * @param selection  the animal selection (integer)
+	 * @param state  the current GameState
 	 */
     public void selectPlayOption(int selection, GameState state) {
         String animalPlayOptions = "|-------------------------------|\r\n" +
@@ -102,7 +103,9 @@ public class PlayWithAnimal extends Action {
 	 * Handles the choice of giving the animal warmth.
 	 * Removes money from player if they can afford heating.
 	 * Prints a warning message if the player can't afford heating.
-	 * Takes animal selection (integer), a Warmth object and the current GameState as parameters.
+	 * @param state  the current GameState
+	 * @param item   a Warmth object
+	 * @param selection  the animal selection (integer)
 	 */
     private void useHeating(GameState state, Warmth item, int selection) {
     	if ((state.totalMoney - item.getPurchasingPrice()) > 0.00) {

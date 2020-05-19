@@ -42,7 +42,7 @@ public class TendToCrop extends Action {
 	
 	/**
 	 * Performs the tend to crop action.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void perform(GameState state) {
 
@@ -98,7 +98,7 @@ public class TendToCrop extends Action {
     /**
 	 * Fills the plantedCropsSet with player's planted crops (no repetition of crop types). 
 	 * Uses plantedCropsSet to fill cropOptions string.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     private boolean getOptions(GameState state) {
     	int index = 1;
@@ -135,7 +135,8 @@ public class TendToCrop extends Action {
 	 * If item is available, item boosts are applied to crops 
 	 * and item is removed from player's cropItems list.
 	 * If item is unavailable, a warning message is printed.
-	 * Takes the current GameState and selected item (String) as parameters.
+	 * @param state  the current GameState
+	 * @param itemName  the selected item (String)
 	 */
     private void useCropItem(GameState state, String itemName) {
     	boolean found = false;
@@ -161,7 +162,8 @@ public class TendToCrop extends Action {
     
     /**
 	 * Handles use of selected item if it is a generic item (not sold at Shop).
-	 * Takes the current GameState and selected item (String) as parameters.
+	 * @param state  the current GameState
+	 * @param itemName  the selected item (String)
 	 */
     private void useGenericItem(GameState state, String itemName) {    	
     	for (GenericItem item: state.items) {
@@ -193,7 +195,9 @@ public class TendToCrop extends Action {
     
     /**
 	 * Handles use of selected item if it is a crop item.
-	 * Takes the current GameState, and selected item's boost values (integers) as parameters.
+	 * @param state  the current GameState
+	 * @param boost  the selected item's general boost
+	 * @param growthBoost  the selected item's growth boost
 	 */
     private void useItem(GameState state, int boost, int growthBoost) {
     	state.farmer.reduceActionCount();
@@ -206,7 +210,7 @@ public class TendToCrop extends Action {
     
     /**
 	 * Handles use of selected item if it is a crop item.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     private void waterCrops(GameState state) {
     	for (Crop crop: state.crops) {

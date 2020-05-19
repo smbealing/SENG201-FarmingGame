@@ -15,7 +15,7 @@ public class PlantCrop extends Action {
     /**
 	 * Performs the plant crop action. 
 	 * Calls method for player to select a crop.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void perform(GameState state) {
 
@@ -28,7 +28,7 @@ public class PlantCrop extends Action {
     /**
 	 * Prompts player to select a crop to plant.
 	 * Calls method to plant selected crop.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void selectCrop(GameState state) {
         s = new Scanner(System.in);
@@ -66,7 +66,8 @@ public class PlantCrop extends Action {
     
     /**
 	 * Sets selected crop to planted.
-	 * Takes an integer selection and current GameState as parameters.
+	 * @param selection  crop selection as an integer 
+	 * @param state  the current GameState
 	 */
     public void plantCrop(int selection, GameState state) {
         state.crops.get(selection - 1).setPlanted();

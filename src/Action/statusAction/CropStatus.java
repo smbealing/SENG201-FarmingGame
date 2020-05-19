@@ -14,7 +14,7 @@ public class CropStatus extends Action {
     /**
 	 * Performs the crop status action. 
 	 * Calls method for player to select a crop.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void perform(GameState state) {
 
@@ -26,7 +26,7 @@ public class CropStatus extends Action {
     /**
 	 * Prompts user to select a crop.
 	 * Prints warning if player has no crops.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void selectCrop(GameState state) {
         s = new Scanner(System.in);
@@ -61,7 +61,8 @@ public class CropStatus extends Action {
 
     /**
 	 * Displays status information about selected crop.
-	 * Takes the crop selection (integer) and the current GameState as parameters.
+	 * @param selection  the crop selection (integer)
+	 * @param state  the current GameState
 	 */
     public void showCropStatus(int selection, GameState state) {
         System.out.println("| You have selected: " + state.crops.get(selection - 1).getName());

@@ -16,7 +16,7 @@ public abstract class Action {
 	 * Checks whether the farmer has actions left in the day.
 	 * Returns true if farmer has actions left, false otherwise.
 	 * @param state  the current GameState
-	 * @return whether the farmer has actions left in the day
+	 * @return true if the farmer has actions left in the day, false otherwise
 	 */
 	public boolean checkFarmerAction(GameState state) {
     	if (state.farmer.getActionCount() == 0) {

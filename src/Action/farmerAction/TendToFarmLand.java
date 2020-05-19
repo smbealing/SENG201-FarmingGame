@@ -7,7 +7,7 @@ public class TendToFarmLand extends Action {
 
 	/**
 	 * Performs the tend to farm land action.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void perform(GameState state) {
         if (checkFarmerAction(state)) {

@@ -20,7 +20,7 @@ public class FeedAnimal extends Action {
 	
 	/**
 	 * Performs the feed animal action.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void perform(GameState state) {
         if (checkFarmerAction(state)) {
@@ -42,7 +42,8 @@ public class FeedAnimal extends Action {
     /**
 	 * Uses the selected food item to feed animals.
 	 * Prints a warning if the player doesn't have the item available.
-	 * Takes the current GameState and selected food item (String) as a parameters.
+	 * @param state  the current GameState
+	 * @param itemName  the selected food item (String)
 	 */
     private void useFoodItem(GameState state, String itemName) {
     	boolean found = false;
@@ -68,8 +69,9 @@ public class FeedAnimal extends Action {
     
     /**
 	 * Loops through animals in the farm to feed them.
-	 * Takes the current GameState as well as the selected item's 
-	 * health boost (integer) and happiness boost (integer) as parameters.
+	 * @param state  the current GameState
+	 * @param healthBoost  the selected item's health boost (integer)
+	 * @param boost  the selected item's happiness boost (integer)
 	 */
     private void useItem(GameState state, int healthBoost, int boost) {
     	state.farmer.reduceActionCount();

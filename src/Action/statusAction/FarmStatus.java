@@ -7,7 +7,7 @@ public class FarmStatus extends Action {
 
 	/**
 	 * Displays status information about farm.
-	 * Takes current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void perform(GameState state) {
         System.out.println("| Your farm has $" + state.totalMoney + " available");

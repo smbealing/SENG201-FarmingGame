@@ -8,7 +8,7 @@ public class FarmerStatus extends Action {
 
 	/**
 	 * Displays status information about farmer.
-	 * Takes current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
     public void perform(GameState state) {
     	System.out.println("| Farmer: " +  state.farmer.getName());
