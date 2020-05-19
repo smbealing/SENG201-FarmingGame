@@ -57,7 +57,7 @@ public class GameState {
 	public ArrayList<GenericItem> items;
 	
 	/**
-	 * TODO: What's this?
+	 * True if a next day action is happening. For use in GameEnvironmentPanel to handle random events.
 	 */
 	public boolean nextDay = false; 
 
