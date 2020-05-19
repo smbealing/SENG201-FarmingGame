@@ -6,7 +6,7 @@ import gameEnvironment.randomEvent.RandomEvent;
 public class CountyFair extends RandomEvent {
 	
 	/**
-	 * Amount of money gained in county fair event
+	 * Amount of money gained in county fair event.
 	 */
 	private double moneyWon;
 	

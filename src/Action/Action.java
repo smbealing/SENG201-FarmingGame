@@ -7,7 +7,7 @@ public abstract class Action {
 	
 	/**
 	 * An abstract method to perform an action. 
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
 	public abstract void perform(GameState state);
 	
@@ -15,7 +15,8 @@ public abstract class Action {
 	/**
 	 * Checks whether the farmer has actions left in the day.
 	 * Returns true if farmer has actions left, false otherwise.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
+	 * @return whether the farmer has actions left in the day
 	 */
 	public boolean checkFarmerAction(GameState state) {
     	if (state.farmer.getActionCount() == 0) {

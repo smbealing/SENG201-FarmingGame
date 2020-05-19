@@ -7,7 +7,7 @@ import animal.Animal;
 public class BrokenFence extends RandomEvent {
 	
 	/**
-	 * Number of animals lost in broken fence event
+	 * Number of animals lost in broken fence event.
 	 */
 	private int animalsLost;
 	
