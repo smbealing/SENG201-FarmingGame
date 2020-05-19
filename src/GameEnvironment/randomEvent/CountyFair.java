@@ -12,7 +12,7 @@ public class CountyFair extends RandomEvent {
 	
 	/**
 	 * Performs the county fair random event.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
 	public void apply(GameState state) {
 		

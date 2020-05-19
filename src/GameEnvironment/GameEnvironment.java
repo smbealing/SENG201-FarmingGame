@@ -368,7 +368,7 @@ public class GameEnvironment {
 	
 	/**
 	 * Sets a GameState for the game.
-	 * Takes a GameState as a parameter.
+	 * @param tempState  a GameState for the game
 	 */
 	public void setState(GameState tempState) {
 		state = tempState;

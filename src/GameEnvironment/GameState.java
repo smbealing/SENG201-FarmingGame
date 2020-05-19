@@ -85,7 +85,8 @@ public class GameState {
 	
 	/**
 	 * The constructor method for a GameState.
-	 * Takes game duration (integer) and the game's farm (Farm) as parameters.
+	 * @param tempTotalDays  game duration (integer)
+	 * @param tempFarm  the game's farm (Farm)
 	 */
 	public GameState(int tempTotalDays, Farm tempFarm) { // add GameEnvironment tempMain for command lines
 		totalDays = tempTotalDays;
@@ -107,7 +108,8 @@ public class GameState {
 	
 	/**
 	 * Uses Scanner to handle a player's selection.
-	 * Takes the selection number (integer) and the options (String) as parameters.
+	 * @param num  the selection number (integer)
+	 * @param options  the options being selected from (String)
 	 */
 	public int getOption(int num, String options) {
 		s = new Scanner(System.in);

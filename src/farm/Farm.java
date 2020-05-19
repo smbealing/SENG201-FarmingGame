@@ -40,8 +40,11 @@ public abstract class Farm {
 
     /**
 	 * The constructor method for a Farm.
-	 * Takes farm name (String), farmer (Farmer), farm type (String), 
-	 * maximum crop capacity (integer) and maximum animal capacity (integer) as parameters.
+	 * @param tempName  farm's name (String)
+	 * @param tempFarmer  farm's farmer (Farmer)
+	 * @param tempType   farm's type (String)
+	 * @param tempMaxCropCount  farm's maximum crop capacity (integer)
+	 * @param tempMaxAnimalCount  farm's maximum animal capacity (integer)
 	 */
     public Farm(String tempName, Farmer tempFarmer, String tempType, int tempMaxCropCount, int tempMaxAnimalCount) {
         name = tempName;
@@ -54,7 +57,7 @@ public abstract class Farm {
     
     /**
 	 * Setter for farm's name.
-	 * Takes name (String) as a parameter.
+	 * @param tempName  a name for the farm (String)
 	 */
     public void setName(String tempName) {
         name = tempName;
@@ -97,7 +100,7 @@ public abstract class Farm {
 
     /**
 	 * Setter for farm's current need for maintenance.
-	 * Takes a level (integer) as a parameter.
+	 * @param tempMaintenanceLevel  a level to set maintenanceLevel to (integer)
 	 */
     public void setMaintenanceLevel(int tempMaintenanceLevel) {
         maintenanceLevel = tempMaintenanceLevel;

@@ -39,8 +39,11 @@ public abstract class Animal {
 	
 	/**
 	 * The constructor method for an Animal.
-	 * Takes animal name (String), purchasing price (double), daily income (double), 
-	 * health level (integer) and happiness level (integer) as parameters.
+	 * @param tempName  animal name (String)
+	 * @param tempPurchasingPrice  animal's purchasing price (double)
+	 * @param tempIncome  animal's daily income (double)
+	 * @param tempHealth  animal's health level (integer)
+	 * @param tempHappiness  animal's happiness level (integer)
 	 */
 	public Animal(String tempName, double tempPurchasingPrice, double tempIncome, int tempHealth, int tempHappiness) {
 		name = tempName;
@@ -104,7 +107,7 @@ public abstract class Animal {
 	
 	/**
 	 * Increase animal's current happiness level.
-	 * Takes an amount (integer) as a parameter.
+	 * @param amount  an amount to increase happiness by (integer)
 	 */
 	public void increaseHappiness(int amount) {
 		happiness += amount;
@@ -115,7 +118,7 @@ public abstract class Animal {
 	
 	/**
 	 * Increase animal's current health level.
-	 * Takes an amount (integer) as a parameter.
+	 * @param amount  an amount to increase health by (integer)
 	 */
 	public void increaseHealth(int amount) {
 		health += amount;

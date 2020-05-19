@@ -18,7 +18,7 @@ public class Farmer {
 
     /**
 	 * Setter for farmer's name.
-	 * Takes name (String) as a parameter.
+	 * @param tempName  the farmer name (String)
 	 */
     public void setName(String tempName) {
         name = tempName;
@@ -26,7 +26,7 @@ public class Farmer {
 
     /**
 	 * Setter for farmer's age.
-	 * Takes age (integer) as a parameter.
+	 * @param tempAge  the farmer's age (integer)
 	 */
     public void setAge(int tempAge) {
         age = tempAge;

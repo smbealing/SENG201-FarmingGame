@@ -8,7 +8,7 @@ public class Drought extends RandomEvent {
 	
 	/**
 	 * Performs the drought random event.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
 	public void apply(GameState state) {
 		

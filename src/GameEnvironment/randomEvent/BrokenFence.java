@@ -13,7 +13,7 @@ public class BrokenFence extends RandomEvent {
 	
 	/**
 	 * Performs the broken fence random event.
-	 * Takes the current GameState as a parameter.
+	 * @param state  the current GameState
 	 */
 	public void apply(GameState state) {
 		

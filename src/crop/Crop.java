@@ -45,8 +45,11 @@ public abstract class Crop {
 
     /**
 	 * The constructor method for a Crop.
-	 * Takes crop name (String), purchasing price (double), selling price (double), 
-	 * days until harvest (integer) and thirst level (integer) as parameters.
+	 * @param tempName  crop's name (String)
+	 * @param tempPurchasingPrice  crop's purchasing price (double)
+	 * @param tempSellingPrice  crop's selling price (double)
+	 * @param tempDaysUntilHarvest  crop's days until harvest (integer)
+	 * @param tempThirstLevel crop's thirst level (integer)
 	 */
     public Crop(String tempName, double tempPurchasingPrice, double tempSellingPrice, int tempDaysUntilHarvest, int tempThirstLevel) {
         name = tempName;
@@ -121,7 +124,7 @@ public abstract class Crop {
     
     /**
    	 * Sets crop's thirst level.
-   	 * Takes a thirst level (integer) as a parameter.
+   	 * @param tempThirstLevel  a thirst level (integer)
    	 */
     public void setThirstLevel(int tempThirstLevel) {
     	thirstLevel = tempThirstLevel;
@@ -143,7 +146,7 @@ public abstract class Crop {
     
     /**
    	 * Increases the crop's growth level by a boost.
-   	 * Takes a boost (integer) as a parameter.
+   	 * @param boost  an amount to increase the growth level by (integer)
    	 */
     public void increaseGrowthLevel(int boost) {   	
     	currentGrowthLevel += boost;
