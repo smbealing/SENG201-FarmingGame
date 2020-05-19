@@ -6,15 +6,30 @@ import action.Action;
 import java.util.Scanner;
 
 public class PlantCrop extends Action {
+	/**
+	 * Declare scanner for player input.
+	 */
     protected Scanner s;
-
+    
+    
+    /**
+	 * Performs the plant crop action. 
+	 * Calls method for player to select a crop.
+	 * Takes the current GameState as a parameter.
+	 */
     public void perform(GameState state) {
 
         selectCrop(state);
 
 //        returnBack(state); // add back in for command lines
     }
-
+    
+    
+    /**
+	 * Prompts player to select a crop to plant.
+	 * Calls method to plant selected crop.
+	 * Takes the current GameState as a parameter.
+	 */
     public void selectCrop(GameState state) {
         s = new Scanner(System.in);
         int selection = 0;
@@ -41,14 +56,18 @@ public class PlantCrop extends Action {
 	            System.out.println(cropOptions);
 	            selection = s.nextInt();
 	       
-	
 	        } while(selection < 1 || selection > state.crops.size());
 	        
 	        plantCrop(selection, state);
 	        
         }
     }
-
+     
+    
+    /**
+	 * Sets selected crop to planted.
+	 * Takes an integer selection and current GameState as parameters.
+	 */
     public void plantCrop(int selection, GameState state) {
         state.crops.get(selection - 1).setPlanted();
         System.out.println("| Your " + state.crops.get(selection - 1).getName() + " has been planted.");

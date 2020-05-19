@@ -21,13 +21,40 @@ import action.statusAction.FarmerStatus;
 
 public class GameEnvironment {
 	
+	/**
+	 * The current GameState.
+	 */
 	private GameState state;
+	
+	/**
+	 * The game's farmer.
+	 */
 	private Farmer farmer;
+	
+	/**
+	 * The game's farm.
+	 */
 	private Farm farm;
+	
+	/**
+	 * The game's duration.
+	 */
 	private int totalDays = 0;
+	
+	/**
+	 * Declare scanner for player input.
+	 */
 	private Scanner s;
 	
+	
+	/**
+	 * Game title displayed to player.
+	 */
 	public String farmTitle = "|=|=|=| WELCOME TO FARMIZA |=|=|=|";
+	
+	/**
+	 * Picture of a farm displayed to player.
+	 */
 	public String farmImage = "                             +&-\r\n" + 
 							  "                           _.-^-._    .--.\r\n" + 
 							  "                        .-'   _   '-. |__|\r\n" + 
@@ -38,6 +65,10 @@ public class GameEnvironment {
 							  "  |---|---|---|---|---|    |--|--|    |  |\r\n" + 
 							  "  |---|---|---|---|---|    |==|==|    |  |\r\n" + 
 							  " ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^";
+	
+	/**
+	 * Picture of a fence displayed to player.
+	 */
 	public String fenceImage = "   ,   #                                                     _\r\n" + 
 							   "  (\\\\_(^>                            _.                    >(')__,\r\n" + 
 							   "  (_(__)           ||          _.||~~ {^--^}.-._._.---.__.-;(_~_/\r\n" + 
@@ -48,6 +79,10 @@ public class GameEnvironment {
 							   "   --||----\"--\"----||----`--'----||-------'\\_.).(_.). )------||--\r\n" + 
 							   "     ||            ||       `||~|||~~|\"\"||  `W W    W W      ||\r\n" + 
 							   "   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^";
+	
+	/**
+	 * Game's main options displayed to player.
+	 */
 	public String mainOptions = "|---------------------------|\r\n" +
 								"|     ~ MAIN OPTIONS ~      |\r\n" +
 							    "| 1. Shop                   |\r\n" +
@@ -55,6 +90,10 @@ public class GameEnvironment {
 							    "| 3. Check Status           |\r\n" +
 							    "| 4. Advance to Next Day    |\r\n" +
 							    "|---------------------------|";
+	
+	/**
+	 * Farm options displayed to player.
+	 */
 	public String farmOptions = "|---------------------------|\r\n" +
 								"|     ~ FARM OPTIONS ~      |\r\n" +
 								"| 1. Tend To Farm Land      |\r\n" +
@@ -66,6 +105,10 @@ public class GameEnvironment {
 		    					"| 5. Feed Animals           |\r\n" +
 		    					"| 6. Play With Animals      |\r\n" +
 		    					"|---------------------------|\r\n";
+	
+	/**
+	 * Status options displayed to player.
+	 */
 	public String statusOptions = "|---------------------------|\r\n" +
 								  "|    ~ STATUS OPTIONS ~     |\r\n" +
 								  "| 1. Farmer Status          |\r\n" +
@@ -73,6 +116,10 @@ public class GameEnvironment {
 								  "| 3. Crops Status           |\r\n" +
 								  "| 4. Animals Status         |\r\n" +
 								  "|---------------------------|";
+	
+	/**
+	 * Farm type options displayed to player.
+	 */
 	public String farmTypes = "|----------------------------------------------------------------|\r\n" +
 	   		   				  "| Please enter a number of the type of farm you want to play on. |\r\n" +
 	   		   				  "| 1. City Farm                                                   |\r\n" +
@@ -81,6 +128,10 @@ public class GameEnvironment {
 	   		   				  "| 4. Hard Core Farm                                              |\r\n" +
 	   		   				  "|----------------------------------------------------------------|";
 	
+	
+	/**
+	 * The constructor method for a GameEnvironment.
+	 */
 	public GameEnvironment() {
 		System.out.println(farmTitle);
 		
@@ -92,6 +143,10 @@ public class GameEnvironment {
 		gameLoop();
 	}
 	
+	
+	/**
+	 * Runs the game loop.
+	 */
 	public void gameLoop() {
 		while (state.currentDay <= totalDays) {
 			System.out.println(farmImage);
@@ -152,6 +207,10 @@ public class GameEnvironment {
 		if (state.currentDay > totalDays) {endGame();}
 	}
 	
+	
+	/**
+	 * Handles the end of the game.
+	 */
 	private void endGame() {
 		
 		System.out.println("| Farmer: " + state.farmer.getName());
@@ -208,6 +267,10 @@ public class GameEnvironment {
 
 	}
 	
+	
+	/**
+	 * Prompts player to select a game duration.
+	 */
 	private void setTotalDays() {
 		s = new Scanner(System.in);
 		
@@ -226,7 +289,11 @@ public class GameEnvironment {
 		
 		System.out.println("| You have chosen " + totalDays + " days.");
 	}
+
 	
+	/**
+	 * Prompts player to create a farmer.
+	 */
 	private void setFarmer() {
 		farmer = new Farmer();
 		s = new Scanner(System.in);
@@ -257,6 +324,10 @@ public class GameEnvironment {
 		farmer.setAge(farmerAge);
 	}
 	
+	
+	/**
+	 * Prompts player to create a farm.
+	 */
 	private void setFarm() {
 		s = new Scanner(System.in);
 		int selection = 0;
@@ -295,10 +366,18 @@ public class GameEnvironment {
 		}
 	}
 	
+	/**
+	 * Sets a GameState for the game.
+	 * Takes a GameState as a parameter.
+	 */
 	public void setState(GameState tempState) {
 		state = tempState;
 	}
 	
+	
+	/**
+	 * Main function to run the game.
+	 */
 	public static void main(String[] args) {
 		new GameEnvironment();
 		

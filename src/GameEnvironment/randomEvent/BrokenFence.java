@@ -6,8 +6,15 @@ import animal.Animal;
 
 public class BrokenFence extends RandomEvent {
 	
+	/**
+	 * Number of animals lost in broken fence event
+	 */
 	private int animalsLost;
 	
+	/**
+	 * Performs the broken fence random event.
+	 * Takes the current GameState as a parameter.
+	 */
 	public void apply(GameState state) {
 		
 		System.out.println("|--------------------------------|\r\n" +

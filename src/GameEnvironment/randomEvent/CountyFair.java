@@ -5,8 +5,15 @@ import gameEnvironment.randomEvent.RandomEvent;
 
 public class CountyFair extends RandomEvent {
 	
+	/**
+	 * Amount of money gained in county fair event
+	 */
 	private double moneyWon;
 	
+	/**
+	 * Performs the county fair random event.
+	 * Takes the current GameState as a parameter.
+	 */
 	public void apply(GameState state) {
 		
 		System.out.println("|--------------------------------------------------------------|\r\n" +

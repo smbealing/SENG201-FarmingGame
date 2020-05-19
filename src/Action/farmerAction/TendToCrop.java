@@ -12,10 +12,25 @@ import crop.Crop;
 
 public class TendToCrop extends Action {
 	
+	/**
+	 * Stores a set of the crops that are planted.
+	 */
 	private Set<String> plantedCropsSet;
+	
+	/**
+	 * Stores the crop selected by player.
+	 */
 	private String selectedCrop;
 	
+	
+	/**
+	 * Crop options shown to player.
+	 */
 	private String cropOptions = "";
+	
+	/**
+	 * Crop item options shown to player.
+	 */
 	private String cropItemOptions = "|---------------------------|\r\n" +
 									 "|   ~ CROP ITEM OPTIONS ~   |\r\n" +
 									 "| 1. Use Fertiliser         |\r\n" +
@@ -25,6 +40,10 @@ public class TendToCrop extends Action {
 									 "| 5. Use Speech             |\r\n" +
 									 "|---------------------------|";
 	
+	/**
+	 * Performs the tend to crop action.
+	 * Takes the current GameState as a parameter.
+	 */
     public void perform(GameState state) {
 
     	if (checkFarmerAction(state)) {
@@ -75,6 +94,12 @@ public class TendToCrop extends Action {
 //        returnBack(state); // add back in for command lines
     }
     
+    
+    /**
+	 * Fills the plantedCropsSet with player's planted crops (no repetition of crop types). 
+	 * Uses plantedCropsSet to fill cropOptions string.
+	 * Takes the current GameState as a parameter.
+	 */
     private boolean getOptions(GameState state) {
     	int index = 1;
     	String title = "| PLANTED CROPS |\r\n";
@@ -103,6 +128,15 @@ public class TendToCrop extends Action {
     	return true;
     }
     
+    
+    
+    /**
+	 * Checks whether selected crop item is available.
+	 * If item is available, item boosts are applied to crops 
+	 * and item is removed from player's cropItems list.
+	 * If item is unavailable, a warning message is printed.
+	 * Takes the current GameState and selected item (String) as parameters.
+	 */
     private void useCropItem(GameState state, String itemName) {
     	boolean found = false;
     	
@@ -124,6 +158,11 @@ public class TendToCrop extends Action {
     	}
     }
     
+    
+    /**
+	 * Handles use of selected item if it is a generic item (not sold at Shop).
+	 * Takes the current GameState and selected item (String) as parameters.
+	 */
     private void useGenericItem(GameState state, String itemName) {    	
     	for (GenericItem item: state.items) {
     		if (item.getName() == itemName) {
@@ -152,6 +191,10 @@ public class TendToCrop extends Action {
     	}
     }
     
+    /**
+	 * Handles use of selected item if it is a crop item.
+	 * Takes the current GameState, and selected item's boost values (integers) as parameters.
+	 */
     private void useItem(GameState state, int boost, int growthBoost) {
     	state.farmer.reduceActionCount();
     	for (Crop crop: state.crops) {
@@ -161,6 +204,10 @@ public class TendToCrop extends Action {
     	}
     }
     
+    /**
+	 * Handles use of selected item if it is a crop item.
+	 * Takes the current GameState as a parameter.
+	 */
     private void waterCrops(GameState state) {
     	for (Crop crop: state.crops) {
     		if (crop.planted && crop.getName() == selectedCrop) {

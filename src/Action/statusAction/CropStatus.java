@@ -6,8 +6,16 @@ import gameEnvironment.GameState;
 import action.Action;
 
 public class CropStatus extends Action {
+	/**
+	 * Declare scanner for player input.
+	 */
     protected Scanner s;
 
+    /**
+	 * Performs the crop status action. 
+	 * Calls method for player to select a crop.
+	 * Takes the current GameState as a parameter.
+	 */
     public void perform(GameState state) {
 
         selectCrop(state);
@@ -15,6 +23,11 @@ public class CropStatus extends Action {
 //        returnBack(state); // add back in for command lines
     }
 
+    /**
+	 * Prompts user to select a crop.
+	 * Prints warning if player has no crops.
+	 * Takes the current GameState as a parameter.
+	 */
     public void selectCrop(GameState state) {
         s = new Scanner(System.in);
         int selection = 0;
@@ -46,6 +59,10 @@ public class CropStatus extends Action {
         }
     }
 
+    /**
+	 * Displays status information about selected crop.
+	 * Takes the crop selection (integer) and the current GameState as parameters.
+	 */
     public void showCropStatus(int selection, GameState state) {
         System.out.println("| You have selected: " + state.crops.get(selection - 1).getName());
         if (state.crops.get(selection - 1).getPlanted()) {

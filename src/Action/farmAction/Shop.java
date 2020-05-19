@@ -23,16 +23,39 @@ import crop.Wheat;
 
 public class Shop extends Action {
 	
+	/**
+	 * Stores a crop the player wishes to buy.
+	 */
 	private Crop crop;
+	
+	/**
+	 * Stores an animal the player wishes to buy.
+	 */
 	private Animal animal;
+	
+	/**
+	 * Stores a crop item the player wishes to buy.
+	 */
 	private CropItem item;
+	
+	/**
+	 * Stores an animal food item the player wishes to buy.
+	 */
 	private AnimalFood animalFood;
 	
+	
+	/**
+	 * Main shop options shown to player.
+	 */
 	private String mainShopOptions = "|---------------------------|\r\n" +
 									 "|     ~ SHOP OPTIONS ~      |\r\n" +
 									 "| 1. Crops + Crop Items     |\r\n" +
 									 "| 2. Animals + Animal Food  |\r\n" +
 									 "|---------------------------|";
+	
+	/**
+	 * Crop options shown to player.
+	 */
 	private String cropShopOptions = "|---------------------------|\r\n" +
 			 						 "|     ~ CROP OPTIONS ~      |\r\n" +
 			 						 "| 1. Banana          $1.00  |\r\n" +
@@ -45,6 +68,10 @@ public class Shop extends Action {
 			 						 "| 7. Fertiliser      $31.60 |\r\n" +
 			 						 "| 8. Pesticide       $20.00 |\r\n" +
 			 						 "|---------------------------|";
+	
+	/**
+	 * Animal options shown to player.
+	 */
 	private String animalShopOptions = "|------------------------------|\r\n" +
 			 						   "|      ~ ANIMAL OPTIONS ~      |\r\n" +
 			 						   "| 1. Cow           $40.00      |\r\n" +
@@ -56,6 +83,11 @@ public class Shop extends Action {
 			 						   "| 6. High Quality Grain $49.99 |\r\n" +
 			 						   "|------------------------------|";
 	
+	
+	/**
+	 * Performs the shop functionality.
+	 * Takes the current GameState as a parameter.
+	 */
 	public void perform(GameState state) {
 		
 		switch (state.getOption(2, mainShopOptions)) {
@@ -126,6 +158,11 @@ public class Shop extends Action {
 		}
 	}
 	
+	
+	/**
+	 * Checks whether player can afford an item.
+	 * Takes player's money available (double) and cost of item (double) as parameters.
+	 */
 	private boolean affordable(double totalMoney, double cost) {
 		if ((totalMoney - cost) < 0.00) {
 			System.out.println("|-------------------------------------------------|\r\n" +
@@ -140,6 +177,11 @@ public class Shop extends Action {
 		return true;
 	}
 	
+	
+	/**
+	 * Performs the purchase of a crop.
+	 * Takes the current GameState and selected Crop as parameters.
+	 */
 	private void purchasingCrop(GameState state, Crop crop) {
 		if (affordable(state.totalMoney, crop.getPurchasingPrice())) {
 			state.totalMoney -= crop.getPurchasingPrice();
@@ -147,6 +189,10 @@ public class Shop extends Action {
 		}
 	}
 	
+	/**
+	 * Performs the purchase of an animal.
+	 * Takes the current GameState and selected Animal as parameters.
+	 */
 	private void purchasingAnimal(GameState state, Animal animal) {
 		boolean enoughSpace = true;
 		if (state.animals.size() == state.farm.getMaxAnimalCount()) {
@@ -163,6 +209,10 @@ public class Shop extends Action {
 		}
 	}
 	
+	/**
+	 * Performs the purchase of a crop item.
+	 * Takes the current GameState and selected CropItem as parameters.
+	 */
 	private void purchasingCropItem(GameState state, CropItem item) {
 		if (affordable(state.totalMoney, item.getPurchasingPrice())) {
 			state.totalMoney -= item.getPurchasingPrice();
@@ -170,6 +220,10 @@ public class Shop extends Action {
 		}
 	}
 	
+	/**
+	 * Performs the purchase of an animal food item.
+	 * Takes the current GameState and selected AnimalFood as parameters.
+	 */
 	private void purchasingAnimalFood(GameState state, AnimalFood animalFood) {
 		if (affordable(state.totalMoney, animalFood.getPurchasingPrice())) {
 			state.totalMoney -= animalFood.getPurchasingPrice();

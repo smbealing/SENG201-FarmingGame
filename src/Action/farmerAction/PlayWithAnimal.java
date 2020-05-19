@@ -8,8 +8,17 @@ import item.Warmth;
 import action.Action;
 
 public class PlayWithAnimal extends Action {
+	
+	/**
+	 * Declare scanner for player input.
+	 */
     protected Scanner s;
-
+    
+    
+    /**
+	 * Performs the play with animal action.
+	 * Takes the current GameState as a parameter.
+	 */
     public void perform(GameState state) {
         if (checkFarmerAction(state)) {
             state.farmer.reduceActionCount();
@@ -19,7 +28,11 @@ public class PlayWithAnimal extends Action {
 
 //        returnBack(state); // add back in for command lines
     }
-
+    
+    /**
+	 * Prompts player to select an animal to play with.
+	 * Takes the current GameState as a parameter.
+	 */
     public void selectAnimal(GameState state) {
         s = new Scanner(System.in);
         int selection = 0;
@@ -50,7 +63,11 @@ public class PlayWithAnimal extends Action {
 	        showAnimalSelected(selection, state);
         }
     }
-
+    
+    /**
+	 * Displays information about player's selected animal.
+	 * Takes the current GameState as a parameter.
+	 */
     public void showAnimalSelected(int selection, GameState state) {
         System.out.println("| You have selected: " + state.animals.get(selection - 1).getName());
         selectPlayOption(selection, state);
@@ -58,7 +75,12 @@ public class PlayWithAnimal extends Action {
 
 
     }
-
+    
+    /**
+	 * Prompts the player to select a play option.
+	 * Increases selected animal's happiness accordingly.
+	 * Takes animal selection (integer) and the current GameState as parameters.
+	 */
     public void selectPlayOption(int selection, GameState state) {
         String animalPlayOptions = "|-------------------------------|\r\n" +
                                    "|    ~ ANIMAL PLAY OPTIONS ~    |\r\n" +
@@ -76,6 +98,12 @@ public class PlayWithAnimal extends Action {
         }
     }
     
+    /**
+	 * Handles the choice of giving the animal warmth.
+	 * Removes money from player if they can afford heating.
+	 * Prints a warning message if the player can't afford heating.
+	 * Takes animal selection (integer), a Warmth object and the current GameState as parameters.
+	 */
     private void useHeating(GameState state, Warmth item, int selection) {
     	if ((state.totalMoney - item.getPurchasingPrice()) > 0.00) {
     		

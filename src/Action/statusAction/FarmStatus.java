@@ -5,6 +5,10 @@ import action.Action;
 
 public class FarmStatus extends Action {
 
+	/**
+	 * Displays status information about farm.
+	 * Takes current GameState as a parameter.
+	 */
     public void perform(GameState state) {
         System.out.println("| Your farm has $" + state.totalMoney + " available");
         System.out.println("| Total crops: " + state.crops.size() + "/" + state.farm.getMaxCropCount());
