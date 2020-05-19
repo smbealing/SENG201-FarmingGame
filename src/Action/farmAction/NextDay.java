@@ -15,7 +15,7 @@ public class NextDay extends Action {
 	/**
 	 * Performs the next day action.
 	 * Increases day count, resets farmer action count, crops grow and become more thirsty,
-	 * money is gained from animals and animal health & happiness decreases.
+	 * money is gained from animals, animal health and happiness decreases.
 	 * @param state  the current GameState
 	 */
 	public void perform(GameState state) {

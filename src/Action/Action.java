@@ -6,7 +6,7 @@ public abstract class Action {
 	
 	
 	/**
-	 * An abstract method to perform an action. 
+	 * An abstract method to perform an action.
 	 * @param state  the current GameState
 	 */
 	public abstract void perform(GameState state);
