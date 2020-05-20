@@ -67,14 +67,18 @@ public class FarmerWarningPanel {
 		frmFarmiza.setResizable(false);
 		
 		JLabel lblError = new JLabel("Looks like " + state.farmer.getName() + " is too tired!");
+		lblError.setBackground(new Color(204, 204, 102));
 		lblError.setHorizontalAlignment(SwingConstants.CENTER);
 		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 21));
-		lblError.setBounds(15, 44, 465, 47);
+		lblError.setOpaque(true);
+		lblError.setBounds(15, 44, 465, 34);
 		frmFarmiza.getContentPane().add(lblError);
 		
 		JLabel lblWarning = new JLabel("Oh no!");
+		lblWarning.setBackground(new Color(204, 204, 102));
 		lblWarning.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
+		lblWarning.setOpaque(true);
 		lblWarning.setBounds(187, 11, 121, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
 		
