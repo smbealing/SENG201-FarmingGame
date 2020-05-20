@@ -21,6 +21,9 @@ import gui.farmer.FarmerWarningPanel;
 
 public class CropPanel {
 	
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
 
 	private JFrame frmFarmiza;
@@ -43,6 +46,7 @@ public class CropPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public CropPanel(GameState tempState) {
 		state = tempState;
@@ -135,6 +139,11 @@ public class CropPanel {
 		frmFarmiza.getContentPane().add(lblFieldImage);
 	}
 	
+	
+	/**
+	 * Checks whether farm has crops ready to harvest and
+	 * disables or enables btnHarvestCrops accordingly.
+	 */
 	private void checkHarvest() {
 		int count = 0;
 		

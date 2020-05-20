@@ -26,9 +26,25 @@ import javax.swing.JComboBox;
 
 public class CropInventoryPanel {
 
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
+	
+	/**
+	 * The crop the player selects to view the status of.
+	 */
 	public Crop selectedCrop;
+	
+	/**
+	 * The crop name (type) of the crop the player selects to view the status of.
+	 */
 	public String cropName;
+	
+	/**
+	 * The options displayed to the player 
+	 * containing all the crops available of a selected type.
+	 */
 	private String crops;
 	
 	private JFrame frmFarmiza;
@@ -57,6 +73,7 @@ public class CropInventoryPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public CropInventoryPanel(GameState tempState) {
 		state = tempState;
@@ -245,6 +262,10 @@ public class CropInventoryPanel {
 		frmFarmiza.getContentPane().add(btnBack);
 	}
 	
+	
+	/**
+	 * Handles the selection of a type of crop
+	 */
 	private void getOptions() {
 		crops = "";
 		
@@ -270,6 +291,10 @@ public class CropInventoryPanel {
 		cmbSelectedCrop.setModel(new DefaultComboBoxModel<String>(crops.split(",")));
 	}
 	
+	
+	/**
+	 * Fills the String of options displayed to player with crops of their selected type.
+	 */
 	private String getCropString() {
 		String cropsString = "";
 		int count = 1;
@@ -283,6 +308,10 @@ public class CropInventoryPanel {
 		return cropsString;
 	}
 	
+	/**
+	 * Handles the selection of a specific crop.
+	 * @param selection  an integer representing the specific crop the player has selected from the list of crops of selected type
+	 */
 	private void getCrop(int selection) {
 		int count = 0;
 		
@@ -297,6 +326,10 @@ public class CropInventoryPanel {
 		}
 	}
 	
+	
+	/**
+	 * Returns the amount of fertiliser the player has available
+	 */
 	private int getFertiliserCount() {
 		int count = 0;
 		
@@ -308,6 +341,10 @@ public class CropInventoryPanel {
 		return count;
 	}
 	
+	
+	/**
+	 * Returns the amount of pesticide the player has available
+	 */
 	private int getPesticideCount() {
 		int count = 0;
 		

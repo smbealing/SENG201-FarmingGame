@@ -26,9 +26,26 @@ import javax.swing.JComboBox;
 
 public class AnimalInventoryPanel {
 	
+	
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
+	
+	/**
+	 * The animal the player selects to view the status of.
+	 */
 	public Animal selectedAnimal;
+	
+	/**
+	 * The animal name (type) of the animal the player selects to view the status of.
+	 */
 	public String animalName;
+	
+	/**
+	 * The options displayed to the player 
+	 * containing all the animals available of a selected type.
+	 */
 	private String animals;
 
 	private JFrame frmFarmiza;
@@ -54,6 +71,7 @@ public class AnimalInventoryPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public AnimalInventoryPanel(GameState tempState) {
 		state = tempState;
@@ -196,6 +214,9 @@ public class AnimalInventoryPanel {
 		
 	}
 	
+	/**
+	 * Handles the selection of a type of animal
+	 */
 	private void getOptions() {
 		animals = "";
 		
@@ -212,6 +233,10 @@ public class AnimalInventoryPanel {
 		cmbSelectedAnimal.setModel(new DefaultComboBoxModel<String>(animals.split(",")));
 	}
 	
+	
+	/**
+	 * Fills the String of options displayed to player with animals of their selected type.
+	 */
 	private String getAnimalString() {
 		String animalString = "";
 		int count = 1;
@@ -225,6 +250,10 @@ public class AnimalInventoryPanel {
 		return animalString;
 	}
 	
+	/**
+	 * Handles the selection of a specific animal.
+	 * @param selection  an integer representing the specific animal the player has selected from the list of animals of selected type
+	 */
 	private void getAnimal(int selection) {
 		int count = 0;
 		
@@ -237,6 +266,9 @@ public class AnimalInventoryPanel {
 		}
 	}
 	
+	/**
+	 * Returns the amount of carrots the player has available
+	 */
 	private int getCarrotCount() {
 		int count = 0;
 		
@@ -248,6 +280,10 @@ public class AnimalInventoryPanel {
 		return count;
 	}
 	
+	
+	/**
+	 * Returns the amount of grain the player has available
+	 */
 	private int getGrainCount() {
 		int count = 0;
 		
@@ -259,6 +295,10 @@ public class AnimalInventoryPanel {
 		return count;
 	}
 	
+	
+	/**
+	 * Returns the amount of high quality grain the player has available
+	 */
 	private int getHighQualityGrainCount() {
 		int count = 0;
 		

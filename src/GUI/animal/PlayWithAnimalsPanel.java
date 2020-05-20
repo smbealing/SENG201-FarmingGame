@@ -25,6 +25,9 @@ import javax.swing.DefaultComboBoxModel;
 
 public class PlayWithAnimalsPanel {
 	
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
 
 	private JFrame frmFarmiza;
@@ -46,6 +49,7 @@ public class PlayWithAnimalsPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public PlayWithAnimalsPanel(GameState tempState) {
 		state = tempState;

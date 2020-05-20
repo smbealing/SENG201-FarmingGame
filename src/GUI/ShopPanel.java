@@ -52,10 +52,30 @@ public class ShopPanel {
 	private static JButton btnBuyGrain;
 	private static JButton btnBuyHighQualityGrain;
 	
+	
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
+	
+	/**
+	 * Stores a crop the player wishes to buy.
+	 */
 	public Crop crop;
+	
+	/**
+	 * Stores an animal the player wishes to buy.
+	 */
 	public Animal animal;
+	
+	/**
+	 * Stores a crop item the player wishes to buy.
+	 */
 	public CropItem item;
+	
+	/**
+	 * Stores an animal food item the player wishes to buy.
+	 */
 	public AnimalFood animalFood;
 
 	/**
@@ -75,6 +95,7 @@ public class ShopPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public ShopPanel(GameState tempState) {
 		state = tempState;
@@ -453,6 +474,9 @@ public class ShopPanel {
 		refresh();
 	}
 	
+	/**
+	 * Refreshes the shop after player has made a purchase.
+	 */
 	private void refresh() {
 		lblTotalMoney.setText("$" + String.format("%.2f", state.totalMoney));
 		
@@ -472,6 +496,11 @@ public class ShopPanel {
 		checkButton(btnBuyHighQualityGrain, 49.99);
 	}
 	
+	/**
+	 * Enables or disables buttons based on whether player can afford the item.
+	 * @param button  the button for the item in the shop
+	 * @param cost  the cost of the item associated with the button
+	 */
 	private void checkButton(JButton button, double cost) {
 		if (state.totalMoney >= cost) {
 			button.setEnabled(true);

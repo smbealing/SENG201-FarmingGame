@@ -20,9 +20,26 @@ public class EndGamePanel {
 
 	private JFrame frmFarmiza;
 	
+	
+	/**
+	 * Stores the game's GameState
+	 */
 	public GameState state;
+	
+	/**
+	 * Stores the profit made by the player
+	 */
 	private double profit;
+	
+	/**
+	 * Stores the player's score
+	 */
 	private int score;
+	
+	/**
+	 * Stores a message about the score to 
+	 * tell the player how well they did
+	 */
 	private String scoreMessage;
 	
 	
@@ -44,6 +61,7 @@ public class EndGamePanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public EndGamePanel(GameState tempState) {
 		state = tempState;

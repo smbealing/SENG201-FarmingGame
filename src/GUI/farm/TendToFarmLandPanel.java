@@ -17,6 +17,9 @@ import gui.GameEnvironmentPanel;
 
 public class TendToFarmLandPanel {
 	
+	/**
+	 * The game's GameState.
+	 */
 	public GameState state;
 
 	private JFrame frmFarmiza;
@@ -38,6 +41,7 @@ public class TendToFarmLandPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public TendToFarmLandPanel(final GameState tempState) {
 		state = tempState;

@@ -29,11 +29,36 @@ import javax.swing.DefaultComboBoxModel;
 
 public class TendToCropPanel {
 	
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
+	
+	/**
+	 * Stores a set of the crops that are planted.
+	 */
 	private Set<String> plantedCropsSet;
+	
+	/**
+	 * Stores a set of the crop items available to player.
+	 */
 	private Set<String> cropItemsSet;
+	
+	/**
+	 * Stores an array of the crops that are planted. 
+	 * For use in combo box.
+	 */
 	private String[] plantedCropsList;
+	
+	/**
+	 * Stores an array of the crop items available to player. 
+	 * For use in combo box.
+	 */
 	private String[] cropItemsList;
+	
+	/**
+	 * Stores the crop selected by player.
+	 */
 	private String selectedCrop;
 
 	private JFrame frmFarmiza;
@@ -57,6 +82,7 @@ public class TendToCropPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public TendToCropPanel(GameState tempState) {
 		state = tempState;
@@ -143,6 +169,12 @@ public class TendToCropPanel {
 		getCropsItems();
 	}
 	
+	
+	/**
+	 * Uses plantedCropsSet to fill plantedCropsList.
+	 * Uses cropItemsSet to fill cropItemsList.
+	 * Uses plantedCropsList and cropItemsList to fill their respective combo boxes.
+	 */
 	private void getCropsItems() {
 		String crops = "";
 		String items = "";
@@ -162,6 +194,10 @@ public class TendToCropPanel {
 		cmbItemSelection.setModel(new DefaultComboBoxModel<String>(cropItemsList));
 	}
 	
+	/**
+	 * Fills the plantedCropsSet with player's planted crops (no repetition of crop types). 
+	 * Fills the cropItemsSet with player's available crop items (no repetition of item types). 
+	 */
 	private void getCropsItemsSets() {
 		plantedCropsSet = new HashSet<String>();
 		cropItemsSet = new HashSet<String>();
@@ -181,6 +217,11 @@ public class TendToCropPanel {
 		
 	}
 	
+	/**
+	 * Handles choice of item to use for crops.
+	 * Calls helper methods depending on the type of item.
+	 * @param itemName  the selected item (String)
+	 */
 	private void useSelectedItem(String selectedItem) {
 		
 		if (selectedItem == "Fertiliser") {
@@ -193,6 +234,12 @@ public class TendToCropPanel {
 		
 	}
 	
+	/**
+	 * Checks whether selected crop item is available.
+	 * If item is available, item boosts are applied to crops 
+	 * and item is removed from player's cropItems list.
+	 * @param itemName  the selected item (String)
+	 */
 	private void useCropItem(String itemName) {
 		
     	for (CropItem item: state.cropItems) {
@@ -206,6 +253,11 @@ public class TendToCropPanel {
     	
     }
 	
+	
+	/**
+	 * Handles use of selected item if it is a generic item (not sold at Shop).
+	 * @param itemName  the selected item (String)
+	 */
 	private void useGenericItem(String itemName) { 
 		if (itemName == "Heating  $20.00") { itemName = "Warmth"; }
 		
@@ -232,6 +284,11 @@ public class TendToCropPanel {
     	}
     }
 	
+	/**
+	 * Handles use of selected item if it is a crop item.
+	 * @param boost  the selected item's general boost
+	 * @param growthBoost  the selected item's growth boost
+	 */
 	private void useItem(int boost, int growthBoost) {
     	for (Crop crop: state.crops) {
     		if (crop.planted && crop.getName() == selectedCrop) {
@@ -240,6 +297,10 @@ public class TendToCropPanel {
     	}
     }
     
+	/**
+	 * Handles case that water is selected item.
+	 * Waters all crops.
+	 */
     private void waterCrops() {
     	for (Crop crop: state.crops) {
     		if (crop.planted && crop.getName() == selectedCrop) {

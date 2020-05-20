@@ -19,6 +19,10 @@ import javax.swing.JButton;
 public class SelectDaysPanel {
 
 	private JFrame frmFarmiza;
+	
+	/**
+	 * Stores the number of days the player chooses for game duration.
+	 */
 	private int totalNumDays;
 
 	/**

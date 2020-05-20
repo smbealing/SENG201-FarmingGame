@@ -17,6 +17,9 @@ import javax.swing.SwingConstants;
 
 public class FarmStatusPanel {
 	
+	/**
+	 * The game's GameState.
+	 */
 	public GameState state;
 
 	private JFrame frmFarmiza;
@@ -40,6 +43,7 @@ public class FarmStatusPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public FarmStatusPanel(final GameState tempState) {
 		state = tempState;
@@ -115,10 +119,19 @@ public class FarmStatusPanel {
 		frmFarmiza.getContentPane().add(btnBackToFarm);
 	}
 	
+	
+	/**
+	 * Gets farm's maintenance level and updates label in panel accordingly.
+	 */
 	private void checkMaintenece() {
 		lblNeedForMaintenance.setText("Need for maintenance: " + state.farm.getMaintenanceLevel());
 	}
 	
+	
+	/**
+	 * Gets farm's maintenance level and disables or enables btnTendToFarmLand 
+	 * based on whether the farm land needs tending to.
+	 */
 	private void checkFarm() {
 		if (state.farm.getMaintenanceLevel() > 0) {
 			btnTendToFarmLand.setEnabled(true);

@@ -23,6 +23,10 @@ public class CreateFarmerPanel {
 	private JFrame frmFarmiza;
 	private JTextField txfFarmerName;
 	private JTextField txfFarmerAge;
+	
+	/**
+	 * The game's duration in days
+	 */
 	public static int numDays;
 
 	/**
@@ -49,11 +53,23 @@ public class CreateFarmerPanel {
 	}
 	
 	
+	/**
+	 * Sets attribute for game duration based on the player's 
+	 * selection in SelectDaysPanel.
+	 * @param days  the game duration chosen by the player (integer)
+	 */
 	public static void selections(int days) {
 		numDays = days;
 	}
 	
-	//Checks farmer name is valid
+
+
+	/**
+	 * Checks whether farmer's name is valid.
+	 * Returns false if any numbers or special characters found,
+	 * otherwise name is valid and true is returned.
+	 * @param name  the name entered by the player (String)
+	 */
 	private boolean farmerNameIsValid(String name) {
 		Pattern p = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);
 		Matcher m = p.matcher(name);

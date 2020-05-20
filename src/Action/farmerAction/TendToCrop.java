@@ -209,7 +209,8 @@ public class TendToCrop extends Action {
     }
     
     /**
-	 * Handles use of selected item if it is a crop item.
+	 * Handles case that water is selected item.
+	 * Waters all crops.
 	 * @param state  the current GameState
 	 */
     private void waterCrops(GameState state) {

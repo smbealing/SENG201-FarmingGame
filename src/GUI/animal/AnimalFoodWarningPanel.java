@@ -17,6 +17,9 @@ import javax.swing.JButton;
 
 public class AnimalFoodWarningPanel {
 
+	/**
+	 * The animal food item that the player doesn't have available
+	 */
 	public String foodItem;
 	
 	private JFrame frmFarmiza;
@@ -38,6 +41,7 @@ public class AnimalFoodWarningPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempFoodItem  the animal food item that the player doesn't have available
 	 */
 	public AnimalFoodWarningPanel(String tempFoodItem) {
 		foodItem = tempFoodItem;

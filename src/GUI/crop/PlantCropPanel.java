@@ -22,9 +22,25 @@ import java.awt.event.ActionEvent;
 
 public class PlantCropPanel {
 	
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
+	
+	/**
+	 * The crop the player selects to plant.
+	 */
 	public Crop selectedCrop;
+	
+	/**
+	 * The crop name (type) of the crop the player selects to plant.
+	 */
 	public String cropName;
+	
+	/**
+	 * The options displayed to the player 
+	 * containing all the unplanted crops available of a selected type.
+	 */
 	private String crops;
 
 	private JFrame frmFarmiza;
@@ -54,6 +70,7 @@ public class PlantCropPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public PlantCropPanel(GameState tempState) {
 		state = tempState;
@@ -233,6 +250,10 @@ public class PlantCropPanel {
 		frmFarmiza.getContentPane().add(btnBack);
 	}
 	
+	
+	/**
+	 * Handles the selection of a type of crop
+	 */
 	private void getOptions() {
 		crops = "";
 		
@@ -259,6 +280,10 @@ public class PlantCropPanel {
 		cmbSelectedCrop.setModel(new DefaultComboBoxModel<String>(crops.split(",")));
 	}
 	
+	/**
+	 * Checks whether the player has reached the maximum crop capacity for their farm.
+	 * Disables or enables btnPlant accordingly.
+	 */
 	private void checkPlantBtn() {
 		int plantedCrops = 0;
 		
@@ -275,6 +300,9 @@ public class PlantCropPanel {
 		}
 	}
 	
+	/**
+	 * Fills the String of options displayed to player with unplanted crops of their selected type.
+	 */
 	private String getCropString() {
 		String cropsString = "";
 		int count = 1;
@@ -288,6 +316,10 @@ public class PlantCropPanel {
 		return cropsString;
 	}
 	
+	/**
+	 * Handles the selection of a specific crop.
+	 * @param selection  an integer representing the specific crop the player has selected from the list of crops of selected type
+	 */
 	private void getCrop(int selection) {
 		int count = 0;
 		

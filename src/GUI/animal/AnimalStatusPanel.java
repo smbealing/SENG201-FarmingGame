@@ -19,6 +19,9 @@ import gui.GameEnvironmentPanel;
 
 public class AnimalStatusPanel {
 	
+	/**
+	 * The animal the player has selected to view the status of
+	 */
 	public Animal animal;
 
 	private JFrame frmFarmiza;
@@ -40,6 +43,7 @@ public class AnimalStatusPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempAnimal  the selected animal (Animal)
 	 */
 	public AnimalStatusPanel(Animal tempAnimal) {
 		animal = tempAnimal;

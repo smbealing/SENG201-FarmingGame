@@ -30,6 +30,9 @@ public class GameEnvironmentPanel {
 
 	private JFrame frmFarmiza;
 	
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
 
 	/**
@@ -49,6 +52,7 @@ public class GameEnvironmentPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public GameEnvironmentPanel(GameState tempState) {
 		int event = 0;
@@ -208,6 +212,11 @@ public class GameEnvironmentPanel {
 		frmFarmiza.getContentPane().add(lblWoodBackgr);
 	}
 	
+	
+	/**
+	 * Uses the player's choice of farm type to 
+	 * set the corresponding background image.
+	 */
 	private String getFarmImage() {
 		String farmImage = "";
 		
@@ -224,6 +233,10 @@ public class GameEnvironmentPanel {
 		return "../images/" + farmImage;
 	}
 	
+	
+	/**
+	 * Handles random events.
+	 */
 	private int randomEvent() {
 		int event = 0;
 		switch(new Random().nextInt(5)) {

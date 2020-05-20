@@ -19,7 +19,8 @@ public class StartPanel {
 	private JFrame frmFarmiza;
 
 	/**
-	 * Launch the application.
+	 * Launch the application. 
+	 * Starts the game.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

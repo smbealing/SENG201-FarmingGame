@@ -17,6 +17,9 @@ import gui.GameEnvironmentPanel;
 
 public class CropStatusPanel {
 	
+	/**
+	 * The crop the player has selected to view the status of
+	 */
 	public Crop crop;
 
 	private JFrame frmFarmiza;
@@ -38,6 +41,7 @@ public class CropStatusPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempCrop  the selected crop (Crop)
 	 */
 	public CropStatusPanel(Crop tempCrop) {
 		crop = tempCrop;
@@ -99,6 +103,10 @@ public class CropStatusPanel {
 		frmFarmiza.getContentPane().add(btnClose);
 	}
 	
+	
+	/**
+	 * Returns a string to say whether the crop has been planted
+	 */
 	private String planted() {
 		String planted = "This crop has not been planted";
 		

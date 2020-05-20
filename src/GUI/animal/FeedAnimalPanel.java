@@ -26,6 +26,9 @@ import javax.swing.DefaultComboBoxModel;
 
 public class FeedAnimalPanel {
 	
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
 
 	private JFrame frmFarmiza;
@@ -47,6 +50,7 @@ public class FeedAnimalPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState  
 	 */
 	public FeedAnimalPanel(GameState tempState) {
 		state = tempState;
@@ -120,6 +124,13 @@ public class FeedAnimalPanel {
 		frmFarmiza.getContentPane().add(btnClose);
 	}
 	
+	
+	/**
+	 * Handles use of a chosen food item.
+	 * A warning is produced if food item isn't available
+	 * @param state  the current GameState
+	 * @param itemName  the chosen food item as a String
+	 */
 	private boolean useFoodItem(GameState state, String itemName) {
     	boolean found = false;
     	
@@ -142,6 +153,12 @@ public class FeedAnimalPanel {
     	return true;
     }
 	
+	/**
+	 * Implements use of a food item to feed all animals.
+	 * @param state  the current GameState
+	 * @param healthBoost  the health boost given by the chosen food item
+	 * @param boost  the happiness boost given by the chosen food item
+	 */
 	private void useItem(GameState state, int healthBoost, int boost) {
     	for (Animal animal: state.animals) {
     		animal.increaseHappiness(boost);

@@ -18,6 +18,9 @@ import javax.swing.JButton;
 
 public class FarmerWarningPanel {
 	
+	/**
+	 * The game's GameState.
+	 */
 	public GameState state;
 	
 	private JFrame frmFarmiza;
@@ -39,6 +42,7 @@ public class FarmerWarningPanel {
 
 	/**
 	 * Create the application.
+	 * @param tempState  the current GameState
 	 */
 	public FarmerWarningPanel(GameState tempState) {
 		state = tempState;

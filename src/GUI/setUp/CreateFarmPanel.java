@@ -29,11 +29,26 @@ import javax.swing.DefaultComboBoxModel;
 
 public class CreateFarmPanel {
 	
+	/**
+	 * The game's GameState
+	 */
 	public GameState state;
 	private JFrame frmFarmiza;
 	private JTextField txfFarmName;
+	
+	/**
+	 * The game's duration in days
+	 */
 	private static int numDays;
+	
+	/**
+	 * The game's farmer
+	 */
 	private static Farmer farmer;
+	
+	/**
+	 * The game's farm
+	 */
 	private Farm newFarm;
 
 
@@ -60,6 +75,13 @@ public class CreateFarmPanel {
 		initialize();
 	}
 	
+	
+	/**
+	 * Sets attributes for game duration and farmer based on the player's 
+	 * selections in SelectDaysPanel and CreateFarmerPanel.
+	 * @param days  the game duration chosen by the player (integer)
+	 * @param tempFarmer  the farmer created by the player (Farmer)
+	 */
 	public static void selections(int days, Farmer tempFarmer) {
 		numDays = days;
 		farmer = tempFarmer;
