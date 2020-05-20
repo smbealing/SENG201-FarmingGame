@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,17 +17,24 @@ import java.util.regex.Pattern;
 import farm.Farmer;
 import gui.GameEnvironmentPanel;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class CreateFarmerPanel {
 
 	private JFrame frmFarmiza;
 	private JTextField txfFarmerName;
 	private JTextField txfFarmerAge;
+<<<<<<< Updated upstream
 	
 	/**
 	 * The game's duration in days
 	 */
+=======
+	private JLabel lblBackgr;
+	
+>>>>>>> Stashed changes
 	public static int numDays;
 
 	/**
@@ -93,6 +101,7 @@ public class CreateFarmerPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		txfFarmerName = new JTextField();
 		txfFarmerName.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
@@ -118,8 +127,9 @@ public class CreateFarmerPanel {
 		
 		
 		JButton btnNext = new JButton("Next");
+		btnNext.setBackground(new Color(153, 204, 0));
 		btnNext.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnNext.setBounds(129, 436, 525, 64);
+		btnNext.setBounds(134, 436, 525, 64);
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				// Check farmer's name and age
@@ -152,5 +162,18 @@ public class CreateFarmerPanel {
 			}
 		});
 		frmFarmiza.getContentPane().add(btnNext);
+		
+		lblBackgr = new JLabel("");
+		lblBackgr.setBounds(0, 0, 794, 521);
+		frmFarmiza.getContentPane().add(lblBackgr);
+		setBackgr();
+	}
+	
+	private void setBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/set_up.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblBackgr.getWidth(), lblBackgr.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblBackgr.setIcon(image);
 	}
 }

@@ -5,12 +5,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
@@ -23,6 +25,7 @@ import animal.Animal;
 
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
+import java.awt.Color;
 
 public class AnimalInventoryPanel {
 	
@@ -41,14 +44,19 @@ public class AnimalInventoryPanel {
 	 * The animal name (type) of the animal the player selects to view the status of.
 	 */
 	public String animalName;
+<<<<<<< Updated upstream
 	
 	/**
 	 * The options displayed to the player 
 	 * containing all the animals available of a selected type.
 	 */
 	private String animals;
+=======
+	private String animals = "";
+>>>>>>> Stashed changes
 
 	private JFrame frmFarmiza;
+	private JLabel lblFieldImage;
 	private JRadioButton btnSelectCow;
 	private JRadioButton btnSelectHorse;
 	private JRadioButton btnSelectSheep;
@@ -89,11 +97,12 @@ public class AnimalInventoryPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		JLabel lblAnimalInventory = new JLabel("ANIMAL INVENTORY");
 		lblAnimalInventory.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAnimalInventory.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 25));
-		lblAnimalInventory.setBounds(246, 11, 291, 35);
+		lblAnimalInventory.setBounds(251, 11, 291, 35);
 		frmFarmiza.getContentPane().add(lblAnimalInventory);
 		
 		JLabel lblCows = new JLabel("Cows");
@@ -115,6 +124,7 @@ public class AnimalInventoryPanel {
 		frmFarmiza.getContentPane().add(lblSheep);
 		
 		btnSelectCow = new JRadioButton("SELECT");
+		btnSelectCow.setBackground(new Color(153, 204, 51));
 		btnSelectCow.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectCow.setBounds(51, 121, 89, 25);
 		btnSelectCow.addActionListener(new ActionListener() {
@@ -126,6 +136,7 @@ public class AnimalInventoryPanel {
 		
 		
 		btnSelectHorse = new JRadioButton("SELECT");
+		btnSelectHorse.setBackground(new Color(153, 204, 51));
 		btnSelectHorse.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectHorse.setBounds(179, 120, 89, 25);
 		btnSelectHorse.addActionListener(new ActionListener() {
@@ -136,6 +147,7 @@ public class AnimalInventoryPanel {
 		frmFarmiza.getContentPane().add(btnSelectHorse);	
 		
 		btnSelectSheep = new JRadioButton("SELECT");
+		btnSelectSheep.setBackground(new Color(153, 204, 51));
 		btnSelectSheep.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectSheep.setBounds(115, 197, 89, 25);
 		btnSelectSheep.addActionListener(new ActionListener() {
@@ -148,7 +160,7 @@ public class AnimalInventoryPanel {
 		JLabel lblSelect = new JLabel("Select an animal to view its status");
 		lblSelect.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSelect.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblSelect.setBounds(399, 82, 356, 35);
+		lblSelect.setBounds(364, 84, 403, 35);
 		frmFarmiza.getContentPane().add(lblSelect);
 		
 		ButtonGroup animalGroupButton = new ButtonGroup();
@@ -157,6 +169,7 @@ public class AnimalInventoryPanel {
 		animalGroupButton.add(btnSelectSheep);
 
 		cmbSelectedAnimal = new JComboBox<String>();
+		cmbSelectedAnimal.setBackground(new Color(153, 204, 51));
 		cmbSelectedAnimal.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		cmbSelectedAnimal.setBounds(485, 122, 192, 41);
 		frmFarmiza.getContentPane().add(cmbSelectedAnimal);
@@ -164,29 +177,30 @@ public class AnimalInventoryPanel {
 		JLabel lblAnimalFood = new JLabel("Animal Food Available");
 		lblAnimalFood.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAnimalFood.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblAnimalFood.setBounds(462, 250, 242, 35);
+		lblAnimalFood.setBounds(472, 254, 242, 35);
 		frmFarmiza.getContentPane().add(lblAnimalFood);
 		
 		JLabel lblCarrotsLeft = new JLabel("Carrots : " + getCarrotCount());
 		lblCarrotsLeft.setHorizontalAlignment(SwingConstants.LEFT);
 		lblCarrotsLeft.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
-		lblCarrotsLeft.setBounds(537, 283, 140, 35);
+		lblCarrotsLeft.setBounds(494, 289, 140, 35);
 		frmFarmiza.getContentPane().add(lblCarrotsLeft);
 		
 		JLabel lblGrainLeft = new JLabel("Grain : "  + getGrainCount());
 		lblGrainLeft.setHorizontalAlignment(SwingConstants.LEFT);
 		lblGrainLeft.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
-		lblGrainLeft.setBounds(537, 319, 140, 35);
+		lblGrainLeft.setBounds(494, 325, 140, 35);
 		frmFarmiza.getContentPane().add(lblGrainLeft);
 
 		
 		JLabel lblHighQualityGrainLeft = new JLabel("High Quality Grain : "  + getHighQualityGrainCount());
 		lblHighQualityGrainLeft.setHorizontalAlignment(SwingConstants.LEFT);
 		lblHighQualityGrainLeft.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
-		lblHighQualityGrainLeft.setBounds(485, 356, 192, 35);
+		lblHighQualityGrainLeft.setBounds(495, 360, 192, 35);
 		frmFarmiza.getContentPane().add(lblHighQualityGrainLeft);
 		
 		JButton btnCheckStatus = new JButton("CHECK STATUS");
+		btnCheckStatus.setBackground(new Color(153, 204, 51));
 		btnCheckStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
 		btnCheckStatus.setBounds(491, 174, 182, 35);
 		btnCheckStatus.addActionListener(new ActionListener() {
@@ -201,9 +215,16 @@ public class AnimalInventoryPanel {
 		});
 		frmFarmiza.getContentPane().add(btnCheckStatus);
 		
+		JLabel lblBackDrop = new JLabel("");
+		lblBackDrop.setOpaque(true);
+		lblBackDrop.setBackground(new Color(153, 204, 51));
+		lblBackDrop.setBounds(456, 254, 280, 141);
+		frmFarmiza.getContentPane().add(lblBackDrop);
+		
 		JButton btnBack = new JButton("BACK");
-		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnBack.setBounds(336, 455, 111, 45);
+		btnBack.setBackground(new Color(153, 204, 51));
+		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		btnBack.setBounds(341, 455, 111, 45);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new AnimalPanel(state);
@@ -212,6 +233,18 @@ public class AnimalInventoryPanel {
 		});
 		frmFarmiza.getContentPane().add(btnBack);
 		
+		lblFieldImage = new JLabel("");
+		lblFieldImage.setBounds(-56, 0, 888, 584);
+		frmFarmiza.getContentPane().add(lblFieldImage);
+		setBackgr();
+	}
+	
+	private void setBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/animals.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblFieldImage.getWidth(), lblFieldImage.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblFieldImage.setIcon(image);
 	}
 	
 	/**

@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,8 @@ import item.Warmth;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class PlayWithAnimalsPanel {
 	
@@ -31,6 +34,7 @@ public class PlayWithAnimalsPanel {
 	public GameState state;
 
 	private JFrame frmFarmiza;
+	private JLabel lblFieldImage;
 
 	/**
 	 * Launch the application.
@@ -67,6 +71,7 @@ public class PlayWithAnimalsPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		JLabel lblPrompt = new JLabel("How would you like to play with your animals?");
 		lblPrompt.setHorizontalAlignment(SwingConstants.CENTER);
@@ -75,6 +80,7 @@ public class PlayWithAnimalsPanel {
 		frmFarmiza.getContentPane().add(lblPrompt);
 		
 		final JComboBox<String> cmbAnimalPlaySelection = new JComboBox<String>();
+		cmbAnimalPlaySelection.setBackground(new Color(153, 204, 51));
 		cmbAnimalPlaySelection.setModel(new DefaultComboBoxModel<String>(new String[] {"Speak to Animal", "Give Animal Warmth $20.00"}));
 		cmbAnimalPlaySelection.setSelectedIndex(0);
 		cmbAnimalPlaySelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
@@ -82,6 +88,7 @@ public class PlayWithAnimalsPanel {
 		frmFarmiza.getContentPane().add(cmbAnimalPlaySelection);
 		
 		JButton btnPlayWithAnimals = new JButton("PLAY WITH ANIMALS");
+		btnPlayWithAnimals.setBackground(new Color(153, 204, 51));
 		btnPlayWithAnimals.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		btnPlayWithAnimals.setBounds(104, 139, 195, 45);
 		btnPlayWithAnimals.addActionListener(new ActionListener() {
@@ -94,7 +101,6 @@ public class PlayWithAnimalsPanel {
 							animal.increaseHappiness(new Speech().getGeneralBoost());
 						}
 						state.farmer.reduceActionCount();
-						new AnimalPanel(state);
 						frmFarmiza.dispose();
 						break;
 					case 1:
@@ -106,7 +112,6 @@ public class PlayWithAnimalsPanel {
 								animal.increaseHappiness(new Warmth().getGeneralBoost());
 							}
 							state.farmer.reduceActionCount();
-							new AnimalPanel(state);
 							frmFarmiza.dispose();
 							
 						} else {
@@ -123,7 +128,8 @@ public class PlayWithAnimalsPanel {
 		frmFarmiza.getContentPane().add(btnPlayWithAnimals);
 		
 		JButton btnClose = new JButton("CLOSE");
-		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		btnClose.setBackground(new Color(153, 204, 51));
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		btnClose.setBounds(314, 139, 118, 45);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
@@ -131,6 +137,19 @@ public class PlayWithAnimalsPanel {
 			}
 		});
 		frmFarmiza.getContentPane().add(btnClose);
+		
+		lblFieldImage = new JLabel("");
+		lblFieldImage.setBounds(-2, -3, 572, 323);
+		frmFarmiza.getContentPane().add(lblFieldImage);
+		setBackgr();
+	}
+	
+	private void setBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/animals.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblFieldImage.getWidth(), lblFieldImage.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblFieldImage.setIcon(image);
 	}
 
 }

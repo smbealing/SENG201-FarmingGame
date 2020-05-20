@@ -5,18 +5,22 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
 import gui.setUp.SelectDaysPanel;
+import java.awt.Color;
 
 public class StartPanel {
 
 	private JFrame frmFarmiza;
+	private JLabel lblBackgr;
 
 	/**
 	 * Launch the application. 
@@ -52,17 +56,19 @@ public class StartPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		JLabel lblFarmiza = new JLabel("Farmiza");
 		lblFarmiza.setHorizontalAlignment(SwingConstants.CENTER);
-		lblFarmiza.setFont(new Font("Gabbaland", Font.BOLD, 90));
-		lblFarmiza.setBounds(10, 21, 764, 155);
+		lblFarmiza.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 90));
+		lblFarmiza.setBounds(15, 21, 764, 155);
 		frmFarmiza.getContentPane().add(lblFarmiza);
 		
 
 		JButton btnPlay = new JButton("Play");
+		btnPlay.setBackground(new Color(153, 204, 0));
 		btnPlay.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnPlay.setBounds(129, 362, 525, 64);
+		btnPlay.setBounds(134, 362, 525, 64);
 		btnPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				SelectDaysPanel newPanel = new SelectDaysPanel();
@@ -74,13 +80,27 @@ public class StartPanel {
 
 		
 		JButton btnQuit = new JButton("Quit");
+		btnQuit.setBackground(new Color(153, 204, 0));
 		btnQuit.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnQuit.setBounds(129, 436, 525, 66);
+		btnQuit.setBounds(134, 436, 525, 66);
 		btnQuit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnQuit);
+		
+		lblBackgr = new JLabel("");
+		lblBackgr.setBounds(0, 0, 794, 521);
+		frmFarmiza.getContentPane().add(lblBackgr);
+		setBackgr();
+	}
+	
+	private void setBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/set_up.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblBackgr.getWidth(), lblBackgr.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblBackgr.setIcon(image);
 	}
 }

@@ -3,8 +3,10 @@ package gui.farm;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +16,7 @@ import javax.swing.JLabel;
 import gameEnvironment.GameState;
 import gui.GameEnvironmentPanel;
 import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class FarmStatusPanel {
 	
@@ -25,6 +28,7 @@ public class FarmStatusPanel {
 	private JFrame frmFarmiza;
 	private JLabel lblNeedForMaintenance;
 	private JButton btnTendToFarmLand;
+	private JLabel lblBackground;
 
 	/**
 	 * Launch the application.
@@ -61,6 +65,7 @@ public class FarmStatusPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		JLabel lblFarmName = new JLabel(state.farm.getName() + " STATUS");
 		lblFarmName.setHorizontalAlignment(SwingConstants.CENTER);
@@ -95,6 +100,7 @@ public class FarmStatusPanel {
 		frmFarmiza.getContentPane().add(lblTotalMoney);
 		
 		btnTendToFarmLand = new JButton("TEND TO FARM LAND");
+		btnTendToFarmLand.setBackground(new Color(153, 204, 51));
 		btnTendToFarmLand.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
 		btnTendToFarmLand.setBounds(202, 452, 221, 48);
 		btnTendToFarmLand.addActionListener(new ActionListener() {
@@ -108,6 +114,7 @@ public class FarmStatusPanel {
 		checkFarm();
 		
 		JButton btnBackToFarm = new JButton("BACK");
+		btnBackToFarm.setBackground(new Color(153, 204, 51));
 		btnBackToFarm.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		btnBackToFarm.setBounds(435, 452, 111, 48);
 		btnBackToFarm.addActionListener(new ActionListener() {
@@ -117,6 +124,19 @@ public class FarmStatusPanel {
 			}
 		});
 		frmFarmiza.getContentPane().add(btnBackToFarm);
+		
+		lblBackground = new JLabel("");
+		lblBackground.setBounds(0, 0, 794, 521);
+		frmFarmiza.getContentPane().add(lblBackground);
+		setWoodBackgr();
+	}
+	
+	private void setWoodBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/farm_land.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblBackground.getWidth(), lblBackground.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblBackground.setIcon(image);
 	}
 	
 	

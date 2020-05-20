@@ -5,20 +5,21 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
 import animal.Animal;
 import gameEnvironment.GameState;
 import gui.setUp.SelectDaysPanel;
+import java.awt.Color;
 
 public class EndGamePanel {
-
-	private JFrame frmFarmiza;
 	
 	
 	/**
@@ -41,6 +42,9 @@ public class EndGamePanel {
 	 * tell the player how well they did
 	 */
 	private String scoreMessage;
+
+	private JFrame frmFarmiza;
+	private JLabel lblBackground;
 	
 	
 
@@ -99,6 +103,7 @@ public class EndGamePanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		JLabel lblFarmer = new JLabel("Farmer: " + state.farmer.getName());
 		lblFarmer.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
@@ -126,6 +131,7 @@ public class EndGamePanel {
 		frmFarmiza.getContentPane().add(lblMessageAboutScore);
 		
 		JButton btnQuit = new JButton("Quit");
+		btnQuit.setBackground(new Color(153, 204, 51));
 		btnQuit.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		btnQuit.setBounds(129, 435, 525, 65);
 		btnQuit.addActionListener(new ActionListener() {
@@ -136,6 +142,7 @@ public class EndGamePanel {
 		frmFarmiza.getContentPane().add(btnQuit);
 		
 		JButton btnPlayAgain = new JButton("Play Again");
+		btnPlayAgain.setBackground(new Color(153, 204, 51));
 		btnPlayAgain.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
 		btnPlayAgain.setBounds(129, 359, 525, 65);
 		btnPlayAgain.addActionListener(new ActionListener() {
@@ -149,8 +156,21 @@ public class EndGamePanel {
 		
 		JLabel lblThankYou = new JLabel("Thank you for playing Farmiza!");
 		lblThankYou.setHorizontalAlignment(SwingConstants.CENTER);
-		lblThankYou.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
-		lblThankYou.setBounds(22, 277, 739, 71);
+		lblThankYou.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 24));
+		lblThankYou.setBounds(22, 203, 739, 71);
 		frmFarmiza.getContentPane().add(lblThankYou);
+		
+		lblBackground = new JLabel("");
+		lblBackground.setBounds(0, 0, 794, 521);
+		frmFarmiza.getContentPane().add(lblBackground);
+		setWoodBackgr();
+	}
+	
+	private void setWoodBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/set_up.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblBackground.getWidth(), lblBackground.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblBackground.setIcon(image);
 	}
 }

@@ -2,10 +2,12 @@ package gui.crop;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,6 +21,7 @@ import gui.GameEnvironmentPanel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class PlantCropPanel {
 	
@@ -36,15 +39,20 @@ public class PlantCropPanel {
 	 * The crop name (type) of the crop the player selects to plant.
 	 */
 	public String cropName;
+<<<<<<< Updated upstream
 	
 	/**
 	 * The options displayed to the player 
 	 * containing all the unplanted crops available of a selected type.
 	 */
 	private String crops;
+=======
+	private String crops = "";
+>>>>>>> Stashed changes
 
 	private JFrame frmFarmiza;
 	private JButton btnPlant;
+	private JLabel lblFieldImage;
 	private JRadioButton btnSelectBanana;
 	private JRadioButton btnSelectCorn;
 	private JRadioButton btnSelectWheat;
@@ -87,6 +95,7 @@ public class PlantCropPanel {
 		frmFarmiza.setBounds(100, 100, 800, 550);
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmFarmiza.setResizable(false);
 		
 		JLabel lblCropInventory = new JLabel("CROP INVENTORY");
 		lblCropInventory.setFont(new Font("Tahoma", Font.BOLD, 35));
@@ -124,7 +133,7 @@ public class PlantCropPanel {
 		frmFarmiza.getContentPane().add(lblTomatoes);
 		
 		JLabel lblPotatoes = new JLabel("Potatoes");
-		lblPotatoes.setBounds(196, 203, 88, 35);
+		lblPotatoes.setBounds(192, 203, 111, 35);
 		lblPotatoes.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPotatoes.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		frmFarmiza.getContentPane().add(lblPotatoes);
@@ -136,6 +145,7 @@ public class PlantCropPanel {
 		frmFarmiza.getContentPane().add(lblDragonFruit);
 		
 		btnSelectBanana = new JRadioButton("SELECT");
+		btnSelectBanana.setBackground(new Color(204, 204, 51));
 		btnSelectBanana.setBounds(20, 139, 89, 25);
 		btnSelectBanana.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectBanana.addActionListener(new ActionListener() {
@@ -146,6 +156,7 @@ public class PlantCropPanel {
 		frmFarmiza.getContentPane().add(btnSelectBanana);
 		
 		btnSelectCorn = new JRadioButton("SELECT");
+		btnSelectCorn.setBackground(new Color(204, 204, 51));
 		btnSelectCorn.setBounds(136, 139, 89, 25);
 		btnSelectCorn.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectCorn.addActionListener(new ActionListener() {
@@ -156,6 +167,7 @@ public class PlantCropPanel {
 		frmFarmiza.getContentPane().add(btnSelectCorn);
 		
 		btnSelectWheat = new JRadioButton("SELECT");
+		btnSelectWheat.setBackground(new Color(204, 204, 51));
 		btnSelectWheat.setBounds(248, 139, 89, 25);
 		btnSelectWheat.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectWheat.addActionListener(new ActionListener() {
@@ -166,6 +178,7 @@ public class PlantCropPanel {
 		frmFarmiza.getContentPane().add(btnSelectWheat);
 		
 		btnSelectTomato = new JRadioButton("SELECT");
+		btnSelectTomato.setBackground(new Color(204, 204, 51));
 		btnSelectTomato.setBounds(72, 239, 89, 25);
 		btnSelectTomato.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectTomato.addActionListener(new ActionListener() {
@@ -176,6 +189,7 @@ public class PlantCropPanel {
 		frmFarmiza.getContentPane().add(btnSelectTomato);
 		
 		btnSelectPotato = new JRadioButton("SELECT");
+		btnSelectPotato.setBackground(new Color(204, 204, 51));
 		btnSelectPotato.setBounds(200, 239, 89, 25);
 		btnSelectPotato.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectPotato.addActionListener(new ActionListener() {
@@ -186,6 +200,7 @@ public class PlantCropPanel {
 		frmFarmiza.getContentPane().add(btnSelectPotato);
 		
 		btnSelectDragonFruit = new JRadioButton("SELECT");
+		btnSelectDragonFruit.setBackground(new Color(204, 204, 51));
 		btnSelectDragonFruit.setBounds(146, 339, 89, 25);
 		btnSelectDragonFruit.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
 		btnSelectDragonFruit.addActionListener(new ActionListener() {
@@ -204,6 +219,7 @@ public class PlantCropPanel {
 		cropGroupButton.add(btnSelectDragonFruit);
 		
 		cmbSelectedCrop = new JComboBox<String>();
+		cmbSelectedCrop.setBackground(new Color(204, 204, 51));
 		cmbSelectedCrop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		cmbSelectedCrop.setBounds(483, 180, 192, 41);
 		frmFarmiza.getContentPane().add(cmbSelectedCrop);
@@ -221,6 +237,7 @@ public class PlantCropPanel {
 		frmFarmiza.getContentPane().add(lblInstruction2);
 		
 		btnPlant = new JButton("PLANT CROP");
+		btnPlant.setBackground(new Color(204, 204, 51));
 		btnPlant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (crops != "") {
@@ -239,7 +256,8 @@ public class PlantCropPanel {
 		checkPlantBtn();
 		
 		JButton btnBack = new JButton("BACK");
-		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+		btnBack.setBackground(new Color(102, 102, 51));
+		btnBack.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		btnBack.setBounds(336, 455, 111, 45);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
@@ -248,6 +266,19 @@ public class PlantCropPanel {
 			}
 		});
 		frmFarmiza.getContentPane().add(btnBack);
+		
+		lblFieldImage = new JLabel("");
+		lblFieldImage.setBounds(-21, 0, 884, 625);
+		frmFarmiza.getContentPane().add(lblFieldImage);
+		setBackgr();
+	}
+	
+	private void setBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/crops.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblFieldImage.getWidth(), lblFieldImage.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblFieldImage.setIcon(image);
 	}
 	
 	

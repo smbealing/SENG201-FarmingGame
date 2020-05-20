@@ -13,6 +13,8 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Image;
+
 import gameEnvironment.GameState;
 import gameEnvironment.randomEvent.BrokenFence;
 import gameEnvironment.randomEvent.CountyFair;
@@ -25,15 +27,20 @@ import gui.farmer.FarmerStatusPanel;
 import gui.randomEvent.BrokenFencePanel;
 import gui.randomEvent.CountyFairPanel;
 import gui.randomEvent.DroughtPanel;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class GameEnvironmentPanel {
-
-	private JFrame frmFarmiza;
 	
 	/**
 	 * The game's GameState
 	 */
 	public GameState state;
+
+	private JFrame frmFarmiza;
+	private JLabel lblBackground;
+	private JLabel lblWoodBackgr;
+	private JLabel lblMoneyImage;
 
 	/**
 	 * Launch the application.
@@ -93,8 +100,11 @@ public class GameEnvironmentPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		JButton btnFarm = new JButton(state.farm.getName());
+		btnFarm.setBackground(new Color(153, 204, 0));
+		btnFarm.setForeground(new Color(0, 0, 0));
 		btnFarm.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		btnFarm.setBounds(10, 118, 176, 64);
 		btnFarm.addActionListener(new ActionListener() {
@@ -107,6 +117,7 @@ public class GameEnvironmentPanel {
 		frmFarmiza.getContentPane().add(btnFarm);
 		
 		JButton btnFarmer = new JButton(state.farmer.getName());
+		btnFarmer.setBackground(new Color(153, 204, 0));
 		btnFarmer.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		btnFarmer.setBounds(10, 197, 176, 64);
 		btnFarmer.addActionListener(new ActionListener() {
@@ -119,6 +130,7 @@ public class GameEnvironmentPanel {
 		frmFarmiza.getContentPane().add(btnFarmer);
 		
 		JButton btnCrop = new JButton("LOOK AFTER CROPS");
+		btnCrop.setBackground(new Color(153, 204, 0));
 		btnCrop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
 		btnCrop.setBounds(10, 275, 176, 64);
 		btnCrop.addActionListener(new ActionListener() {
@@ -130,6 +142,7 @@ public class GameEnvironmentPanel {
 		frmFarmiza.getContentPane().add(btnCrop);
 		
 		JButton btnAnimal = new JButton("LOOK AFTER ANIMALS");
+		btnAnimal.setBackground(new Color(153, 204, 0));
 		btnAnimal.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
 		btnAnimal.setBounds(10, 355, 176, 64);
 		btnAnimal.addActionListener(new ActionListener() {
@@ -141,22 +154,25 @@ public class GameEnvironmentPanel {
 		});
 		frmFarmiza.getContentPane().add(btnAnimal);
 		
-		JLabel lblMoneyImage = new JLabel();
-		lblMoneyImage.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource("../images/money.png")));
-		lblMoneyImage.setBounds(437, 46, 47, 45);
+		lblMoneyImage = new JLabel();
+		lblMoneyImage.setBounds(483, 35, 47, 45);
 		frmFarmiza.getContentPane().add(lblMoneyImage);
+		setMoneyImage();
 		
 		JLabel lblTotalMoney = new JLabel("$" + String.format("%.2f", state.totalMoney));
+		lblTotalMoney.setForeground(new Color(153, 204, 0));
 		lblTotalMoney.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblTotalMoney.setBounds(494, 43, 92, 45);
+		lblTotalMoney.setBounds(540, 43, 92, 45);
 		frmFarmiza.getContentPane().add(lblTotalMoney);
 		
 		JLabel lblCurrentDay = new JLabel("DAY : " + state.currentDay + "/" + state.totalDays);
+		lblCurrentDay.setForeground(new Color(153, 204, 0));
 		lblCurrentDay.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		lblCurrentDay.setBounds(598, 43, 176, 45);
+		lblCurrentDay.setBounds(644, 43, 130, 45);
 		frmFarmiza.getContentPane().add(lblCurrentDay);
 		
 		JButton btnShop = new JButton("MARKET");
+		btnShop.setBackground(new Color(153, 204, 0));
 		btnShop.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		btnShop.setBounds(10, 436, 176, 64);
 		btnShop.addActionListener(new ActionListener() {
@@ -168,11 +184,14 @@ public class GameEnvironmentPanel {
 		frmFarmiza.getContentPane().add(btnShop);
 		
 		JLabel lblFarmiza = new JLabel("WELCOME TO FARMIZA!");
-		lblFarmiza.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		lblFarmiza.setBounds(10, 35, 406, 53);
+		lblFarmiza.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFarmiza.setForeground(new Color(153, 204, 0));
+		lblFarmiza.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 35));
+		lblFarmiza.setBounds(10, 24, 477, 71);
 		frmFarmiza.getContentPane().add(lblFarmiza);
 		
 		JButton btnHelp = new JButton("HELP");
+		btnHelp.setBackground(new Color(153, 204, 0));
 		btnHelp.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 12));
 		btnHelp.setBounds(697, 9, 77, 28);
 		btnHelp.addActionListener(new ActionListener() {
@@ -184,8 +203,9 @@ public class GameEnvironmentPanel {
 		frmFarmiza.getContentPane().add(btnHelp);
 		
 		JButton btnNextDay = new JButton("NEXT DAY");
+		btnNextDay.setBackground(new Color(153, 204, 0));
 		btnNextDay.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
-		btnNextDay.setBounds(598, 436, 176, 64);
+		btnNextDay.setBounds(598, 446, 176, 64);
 		btnNextDay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				new NextDay().perform(state);
@@ -201,23 +221,34 @@ public class GameEnvironmentPanel {
 		});
 		frmFarmiza.getContentPane().add(btnNextDay);
 		
-		JLabel lblBackground = new JLabel("");
-		lblBackground.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource(getFarmImage())));
-		lblBackground.setBounds(192, 88, 582, 337);
+		lblBackground = new JLabel("");
+		lblBackground.setBounds(202, 99, 582, 337);
 		frmFarmiza.getContentPane().add(lblBackground);
+		getFarmImage();
 		
-		JLabel lblWoodBackgr = new JLabel("");
-//		lblWoodBackgr.setIcon(new ImageIcon(GameEnvironmentPanel.class.getResource("../images/wood.jpg")));
-		lblWoodBackgr.setBounds(0, 0, 192, 511);
+		JLabel lblFrame = new JLabel("");
+		lblFrame.setForeground(Color.BLACK);
+		lblFrame.setBackground(Color.BLACK);
+		lblFrame.setOpaque(true);
+		lblFrame.setBounds(190, 92, 604, 351);
+		frmFarmiza.getContentPane().add(lblFrame);
+		
+		lblWoodBackgr = new JLabel("");
+		lblWoodBackgr.setBounds(0, 0, 794, 521);
 		frmFarmiza.getContentPane().add(lblWoodBackgr);
+		setWoodBackgr();
 	}
 	
+<<<<<<< Updated upstream
 	
 	/**
 	 * Uses the player's choice of farm type to 
 	 * set the corresponding background image.
 	 */
 	private String getFarmImage() {
+=======
+	private void getFarmImage() {
+>>>>>>> Stashed changes
 		String farmImage = "";
 		
 		if (state.farm.getType() == "City Farm") {
@@ -225,12 +256,31 @@ public class GameEnvironmentPanel {
 		} else if (state.farm.getType() == "Tropical Farm") {
 			farmImage = "tropical_farm.jpg";
 		} else if (state.farm.getType() == "Normal Farm") {
-			farmImage = "normal_farm.jfif";
+			farmImage = "normal_farm.jpg";
 		} else if (state.farm.getType() == "Hardcore Farm") {
 			farmImage = "hardcore_farm.jpg";
 		}
-		
-		return "../images/" + farmImage;
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/" + farmImage));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblBackground.getWidth(), lblBackground.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblBackground.setIcon(image);
+	}
+	
+	private void setWoodBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/wood_bckgr.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblWoodBackgr.getWidth(), lblWoodBackgr.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblWoodBackgr.setIcon(image);
+	}
+	
+	private void setMoneyImage() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/money.png"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblMoneyImage.getWidth(), lblMoneyImage.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblMoneyImage.setIcon(image);
 	}
 	
 	

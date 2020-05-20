@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,6 +27,8 @@ import gui.GameEnvironmentPanel;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class CreateFarmPanel {
 	
@@ -35,10 +38,15 @@ public class CreateFarmPanel {
 	public GameState state;
 	private JFrame frmFarmiza;
 	private JTextField txfFarmName;
+<<<<<<< Updated upstream
 	
 	/**
 	 * The game's duration in days
 	 */
+=======
+	private JLabel lblBackgr;
+	
+>>>>>>> Stashed changes
 	private static int numDays;
 	
 	/**
@@ -99,6 +107,7 @@ public class CreateFarmPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		
 		
@@ -119,6 +128,7 @@ public class CreateFarmPanel {
 		frmFarmiza.getContentPane().add(lblSelectFarmType);
 		
 		final JComboBox<String> cmbFarmSelection = new JComboBox<String>();
+		cmbFarmSelection.setBackground(new Color(153, 204, 0));
 		cmbFarmSelection.setModel(new DefaultComboBoxModel<String>(new String[] {"City Farm", "Tropical Farm", "Normal Farm", "Hardcore Farm"}));
 		cmbFarmSelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
 		cmbFarmSelection.setBounds(36, 217, 276, 41);
@@ -126,8 +136,9 @@ public class CreateFarmPanel {
 		
 		
 		JButton btnStartFarmingAdventure = new JButton("Start My Farming Adventure!");
+		btnStartFarmingAdventure.setBackground(new Color(153, 204, 0));
 		btnStartFarmingAdventure.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 30));
-		btnStartFarmingAdventure.setBounds(129, 435, 525, 65);
+		btnStartFarmingAdventure.setBounds(134, 435, 525, 65);
 		btnStartFarmingAdventure.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				//Check length of farm name
@@ -163,5 +174,17 @@ public class CreateFarmPanel {
 		});
 		frmFarmiza.getContentPane().add(btnStartFarmingAdventure);
 		
+		lblBackgr = new JLabel("");
+		lblBackgr.setBounds(0, 0, 794, 521);
+		frmFarmiza.getContentPane().add(lblBackgr);
+		setBackgr();
+	}
+	
+	private void setBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/set_up.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblBackgr.getWidth(), lblBackgr.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblBackgr.setIcon(image);
 	}
 }

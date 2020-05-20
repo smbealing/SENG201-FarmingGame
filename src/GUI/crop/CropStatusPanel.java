@@ -3,8 +3,10 @@ package gui.crop;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +16,7 @@ import javax.swing.SwingConstants;
 
 import crop.Crop;
 import gui.GameEnvironmentPanel;
+import java.awt.Color;
 
 public class CropStatusPanel {
 	
@@ -23,6 +26,7 @@ public class CropStatusPanel {
 	public Crop crop;
 
 	private JFrame frmFarmiza;
+	private JLabel lblFieldImage;
 
 	/**
 	 * Launch the application.
@@ -59,11 +63,12 @@ public class CropStatusPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		JLabel lblCropStatus = new JLabel("Crop Status");
 		lblCropStatus.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCropStatus.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
-		lblCropStatus.setBounds(109, 11, 188, 48);
+		lblCropStatus.setBounds(114, 11, 188, 48);
 		frmFarmiza.getContentPane().add(lblCropStatus);
 		
 		JLabel lblCropSelected = new JLabel("Crop selected: " + crop.getName());
@@ -93,14 +98,28 @@ public class CropStatusPanel {
 		frmFarmiza.getContentPane().add(lblPlanted);
 		
 		JButton btnClose = new JButton("CLOSE");
+		btnClose.setBackground(new Color(102, 102, 51));
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
-		btnClose.setBounds(144, 315, 118, 46);
+		btnClose.setBounds(149, 315, 118, 46);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnClose);
+		
+		lblFieldImage = new JLabel("");
+		lblFieldImage.setBounds(-21, 0, 884, 625);
+		frmFarmiza.getContentPane().add(lblFieldImage);
+		setBackgr();
+	}
+	
+	private void setBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/crops.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblFieldImage.getWidth(), lblFieldImage.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblFieldImage.setIcon(image);
 	}
 	
 	

@@ -12,6 +12,7 @@ import item.GenericItem;
 
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,6 +27,8 @@ import crop.Crop;
 
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class TendToCropPanel {
 	
@@ -62,6 +65,7 @@ public class TendToCropPanel {
 	private String selectedCrop;
 
 	private JFrame frmFarmiza;
+	private JLabel lblFieldImage;
 	private static JComboBox<String> cmbItemSelection;
 	private static JComboBox<String> cmbCropSelection;
 
@@ -101,6 +105,7 @@ public class TendToCropPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		JLabel lblCrops = new JLabel("Crops");
 		lblCrops.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 24));
@@ -116,21 +121,24 @@ public class TendToCropPanel {
 		JLabel lblSelectACrop = new JLabel("TEND TO CROPS");
 		lblSelectACrop.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSelectACrop.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 26));
-		lblSelectACrop.setBounds(110, 11, 249, 35);
+		lblSelectACrop.setBounds(115, 11, 249, 35);
 		frmFarmiza.getContentPane().add(lblSelectACrop);
 		
 		
 		cmbCropSelection = new JComboBox<String>();
+		cmbCropSelection.setBackground(new Color(204, 204, 51));
 		cmbCropSelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		cmbCropSelection.setBounds(32, 103, 192, 41);
 		frmFarmiza.getContentPane().add(cmbCropSelection);
 		
 		cmbItemSelection = new JComboBox<String>();
+		cmbItemSelection.setBackground(new Color(204, 204, 51));
 		cmbItemSelection.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 16));
 		cmbItemSelection.setBounds(253, 103, 192, 41);
 		frmFarmiza.getContentPane().add(cmbItemSelection);
 		
 		JButton btnUseItem = new JButton("USE ITEM");
+		btnUseItem.setBackground(new Color(102, 102, 51));
 		btnUseItem.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		btnUseItem.setBounds(83, 178, 141, 45);
 		btnUseItem.addActionListener(new ActionListener() {
@@ -157,6 +165,7 @@ public class TendToCropPanel {
 		frmFarmiza.getContentPane().add(btnUseItem);
 		
 		JButton btnClose = new JButton("CLOSE");
+		btnClose.setBackground(new Color(102, 102, 51));
 		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		btnClose.setBounds(253, 177, 118, 46);
 		btnClose.addActionListener(new ActionListener() {
@@ -167,6 +176,19 @@ public class TendToCropPanel {
 		frmFarmiza.getContentPane().add(btnClose);
 		
 		getCropsItems();
+		
+		lblFieldImage = new JLabel("");
+		lblFieldImage.setBounds(-14, 0, 494, 301);
+		frmFarmiza.getContentPane().add(lblFieldImage);
+		setBackgr();
+	}
+	
+	private void setBackgr() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/crops.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblFieldImage.getWidth(), lblFieldImage.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblFieldImage.setIcon(image);
 	}
 	
 	

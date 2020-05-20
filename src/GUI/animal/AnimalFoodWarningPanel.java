@@ -1,10 +1,12 @@
 package gui.animal;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,6 +15,7 @@ import javax.swing.SwingConstants;
 
 import gui.GameEnvironmentPanel;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class AnimalFoodWarningPanel {
@@ -23,6 +26,7 @@ public class AnimalFoodWarningPanel {
 	public String foodItem;
 	
 	private JFrame frmFarmiza;
+	private JLabel lblBackground;
 
 	/**
 	 * Launch the application.
@@ -59,28 +63,43 @@ public class AnimalFoodWarningPanel {
 		frmFarmiza.setIconImage(Toolkit.getDefaultToolkit().getImage(GameEnvironmentPanel.class.getResource("../images/logo.jpg")));
 		frmFarmiza.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmFarmiza.getContentPane().setLayout(null);
+		frmFarmiza.setResizable(false);
 		
 		JLabel lblWarning = new JLabel("Oh no!");
 		lblWarning.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
-		lblWarning.setBounds(185, 11, 115, 34);
+		lblWarning.setBounds(190, 11, 115, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
 		
 		JLabel lblError = new JLabel("Looks like you do not have any " + foodItem + " left!");
 		lblError.setHorizontalAlignment(SwingConstants.CENTER);
 		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
-		lblError.setBounds(10, 44, 465, 47);
+		lblError.setBounds(15, 44, 465, 47);
 		frmFarmiza.getContentPane().add(lblError);
 		
 		JButton btnClose = new JButton("CLOSE");
-		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-		btnClose.setBounds(189, 96, 107, 42);
+		btnClose.setBackground(new Color(255, 204, 51));
+		btnClose.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
+		btnClose.setBounds(187, 96, 121, 42);
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				frmFarmiza.dispose();
 			}
 		});
 		frmFarmiza.getContentPane().add(btnClose);
+		
+		lblBackground = new JLabel("");
+		lblBackground.setBounds(0, 0, 495, 193);
+		frmFarmiza.getContentPane().add(lblBackground);
+		setBackground();
+	}
+	
+	private void setBackground() {
+		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/warning.jpg"));
+		Image imageGet = path.getImage();
+		Image imageSize = imageGet.getScaledInstance(lblBackground.getWidth(), lblBackground.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon image = new ImageIcon(imageSize);
+		lblBackground.setIcon(image);
 	}
 
 }
