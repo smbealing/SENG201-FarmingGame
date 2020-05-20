@@ -138,6 +138,10 @@ public class HelpPanel {
 		setWoodBackgr();
 	}
 	
+	
+	/**
+	 * Sets the background image for the frame.
+	 */
 	private void setWoodBackgr() {
 		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/wood_bckgr.jpg"));
 		Image imageGet = path.getImage();

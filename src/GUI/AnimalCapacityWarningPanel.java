@@ -88,6 +88,10 @@ public class AnimalCapacityWarningPanel {
 		setBackground();
 	}
 	
+	
+	/**
+	 * Sets the background image for the frame.
+	 */
 	private void setBackground() {
 		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/warning.jpg"));
 		Image imageGet = path.getImage();

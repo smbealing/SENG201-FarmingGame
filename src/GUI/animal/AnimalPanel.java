@@ -130,6 +130,10 @@ public class AnimalPanel {
 		setBackgr();
 	}
 	
+	
+	/**
+	 * Sets the background image for the frame.
+	 */
 	private void setBackgr() {
 		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/animals.jpg"));
 		Image imageGet = path.getImage();

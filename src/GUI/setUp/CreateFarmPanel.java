@@ -177,6 +177,10 @@ public class CreateFarmPanel {
 		setBackgr();
 	}
 	
+	
+	/**
+	 * Sets the background image for the frame.
+	 */
 	private void setBackgr() {
 		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/set_up.jpg"));
 		Image imageGet = path.getImage();

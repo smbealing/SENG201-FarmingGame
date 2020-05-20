@@ -107,6 +107,9 @@ public class FarmerStatusPanel {
 		setWoodBackgr();
 	}
 	
+	/**
+	 * Sets the background image for the frame.
+	 */
 	private void setWoodBackgr() {
 		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/farmer.jpg"));
 		Image imageGet = path.getImage();

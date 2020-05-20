@@ -183,6 +183,10 @@ public class TendToCropPanel {
 		setBackgr();
 	}
 	
+	
+	/**
+	 * Sets the background image for the frame.
+	 */
 	private void setBackgr() {
 		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/crops.jpg"));
 		Image imageGet = path.getImage();

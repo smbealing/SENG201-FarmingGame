@@ -262,6 +262,10 @@ public class GameEnvironmentPanel {
 		lblBackground.setIcon(image);
 	}
 	
+	
+	/**
+	 * Sets the background image for the frame.
+	 */
 	private void setWoodBackgr() {
 		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/wood_bckgr.jpg"));
 		Image imageGet = path.getImage();
@@ -270,6 +274,9 @@ public class GameEnvironmentPanel {
 		lblWoodBackgr.setIcon(image);
 	}
 	
+	/**
+	 * Sets the money bag image for the player's money available.
+	 */
 	private void setMoneyImage() {
 		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/money.png"));
 		Image imageGet = path.getImage();

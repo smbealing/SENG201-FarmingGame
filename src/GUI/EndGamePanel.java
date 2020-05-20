@@ -166,6 +166,9 @@ public class EndGamePanel {
 		setWoodBackgr();
 	}
 	
+	/**
+	 * Sets the background image for the frame.
+	 */
 	private void setWoodBackgr() {
 		ImageIcon path = new ImageIcon(GameEnvironmentPanel.class.getResource("../images/set_up.jpg"));
 		Image imageGet = path.getImage();
