@@ -56,14 +56,18 @@ public class AnimalCapacityWarningPanel {
 		frmFarmiza.setResizable(false);
 		
 		JLabel lblError = new JLabel("Looks like your farm has reached its animal capacity!");
+		lblError.setBackground(new Color(204, 204, 102));
 		lblError.setHorizontalAlignment(SwingConstants.CENTER);
 		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 21));
-		lblError.setBounds(12, 44, 592, 47);
+		lblError.setOpaque(true);
+		lblError.setBounds(12, 44, 592, 34);
 		frmFarmiza.getContentPane().add(lblError);
 		
 		JLabel lblWarning = new JLabel("Oh no!");
+		lblWarning.setBackground(new Color(204, 204, 102));
 		lblWarning.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
+		lblWarning.setOpaque(true);
 		lblWarning.setBounds(254, 11, 107, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
 		

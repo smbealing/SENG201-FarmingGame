@@ -57,14 +57,18 @@ public class CropWarningPanel {
 		frmFarmiza.setResizable(false);
 		
 		JLabel lblError = new JLabel("Looks like you do not have a crop selected or planted!");
+		lblError.setBackground(new Color(204, 204, 102));
 		lblError.setHorizontalAlignment(SwingConstants.CENTER);
 		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 21));
-		lblError.setBounds(6, 58, 589, 47);
+		lblError.setOpaque(true);
+		lblError.setBounds(6, 58, 589, 34);
 		frmFarmiza.getContentPane().add(lblError);
 		
 		JLabel lblWarning = new JLabel("Oh no!");
+		lblWarning.setBackground(new Color(204, 204, 102));
 		lblWarning.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
+		lblWarning.setOpaque(true);
 		lblWarning.setBounds(236, 25, 128, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
 		

@@ -66,14 +66,18 @@ public class AnimalFoodWarningPanel {
 		frmFarmiza.setResizable(false);
 		
 		JLabel lblWarning = new JLabel("Oh no!");
+		lblWarning.setBackground(new Color(204, 204, 102));
 		lblWarning.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
+		lblWarning.setOpaque(true);
 		lblWarning.setBounds(190, 11, 115, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
 		
 		JLabel lblError = new JLabel("Looks like you do not have any " + foodItem + " left!");
+		lblError.setBackground(new Color(204, 204, 102));
 		lblError.setHorizontalAlignment(SwingConstants.CENTER);
 		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 17));
+		lblError.setOpaque(true);
 		lblError.setBounds(15, 44, 465, 47);
 		frmFarmiza.getContentPane().add(lblError);
 		

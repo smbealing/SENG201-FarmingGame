@@ -58,15 +58,19 @@ public class AnimalWarmthWarningPanel {
 		frmFarmiza.setResizable(false);
 		
 		JLabel lblWarning = new JLabel("Oh no!");
+		lblWarning.setBackground(new Color(204, 204, 102));
 		lblWarning.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWarning.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 28));
+		lblWarning.setOpaque(true);
 		lblWarning.setBounds(191, 11, 113, 34);
 		frmFarmiza.getContentPane().add(lblWarning);
 		
 		JLabel lblError = new JLabel("You aren't able to afford heating for the animals!");
+		lblError.setBackground(new Color(204, 204, 102));
 		lblError.setHorizontalAlignment(SwingConstants.CENTER);
 		lblError.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 19));
-		lblError.setBounds(15, 44, 465, 47);
+		lblError.setOpaque(true);
+		lblError.setBounds(15, 44, 465, 34);
 		frmFarmiza.getContentPane().add(lblError);
 		
 		JButton btnClose = new JButton("CLOSE");

@@ -226,7 +226,7 @@ public class PlantCropPanel {
 		lblInstruction1.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		frmFarmiza.getContentPane().add(lblInstruction1);
 		
-		JLabel lblInstruction2 = new JLabel("to plant from options bellow:");
+		JLabel lblInstruction2 = new JLabel("to plant from options below:");
 		lblInstruction2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblInstruction2.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20));
 		lblInstruction2.setBounds(408, 134, 346, 35);
