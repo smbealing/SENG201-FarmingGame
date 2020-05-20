@@ -1,5 +1,5 @@
 package item;
-public abstract class Item {
+public class Item {
 	
 	
 	/**

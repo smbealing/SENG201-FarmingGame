@@ -1,6 +1,6 @@
 package item;
 
-public abstract class AnimalFood extends Item {
+public class AnimalFood extends Item {
 	
 	/**
 	 * The boost in animal health provided by the animal food.

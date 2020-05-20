@@ -1,7 +1,7 @@
 package farm;
 
 
-public abstract class Farm {
+public class Farm {
 
 	/**
 	 * The name of the farm.

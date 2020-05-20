@@ -1,5 +1,5 @@
 package animal;
-public abstract class Animal {
+public class Animal {
 	
 	/**
 	 * The name of the animal.

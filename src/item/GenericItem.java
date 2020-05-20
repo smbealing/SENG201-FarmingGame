@@ -1,6 +1,6 @@
 package item;
 
-public abstract class GenericItem extends Item {
+public class GenericItem extends Item {
 	
 	
 	/**

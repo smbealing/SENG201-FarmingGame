@@ -1,6 +1,6 @@
 package crop;
 
-public abstract class Crop {
+public class Crop {
 
 	/**
 	 * The name of the crop.

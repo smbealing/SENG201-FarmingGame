@@ -1,5 +1,5 @@
 package item;
-public abstract class CropItem extends Item {
+public class CropItem extends Item {
 	
 	/**
 	 * The boost in crop growth level provided by the crop item.
