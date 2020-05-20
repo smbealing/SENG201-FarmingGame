@@ -43,16 +43,12 @@ public class CropInventoryPanel {
 	 * The crop name (type) of the crop the player selects to view the status of.
 	 */
 	public String cropName;
-<<<<<<< Updated upstream
 	
 	/**
 	 * The options displayed to the player 
 	 * containing all the crops available of a selected type.
 	 */
-	private String crops;
-=======
 	private String crops = "";
->>>>>>> Stashed changes
 	
 	private JFrame frmFarmiza;
 	private JLabel lblFieldImage;

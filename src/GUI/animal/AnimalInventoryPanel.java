@@ -44,16 +44,12 @@ public class AnimalInventoryPanel {
 	 * The animal name (type) of the animal the player selects to view the status of.
 	 */
 	public String animalName;
-<<<<<<< Updated upstream
 	
 	/**
 	 * The options displayed to the player 
 	 * containing all the animals available of a selected type.
 	 */
-	private String animals;
-=======
 	private String animals = "";
->>>>>>> Stashed changes
 
 	private JFrame frmFarmiza;
 	private JLabel lblFieldImage;

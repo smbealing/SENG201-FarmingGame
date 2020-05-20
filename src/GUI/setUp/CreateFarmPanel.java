@@ -33,21 +33,18 @@ import java.awt.Color;
 public class CreateFarmPanel {
 	
 	/**
+	 * The game's duration in days
+	 */
+	private static int numDays;
+	
+	/**
 	 * The game's GameState
 	 */
 	public GameState state;
 	private JFrame frmFarmiza;
 	private JTextField txfFarmName;
-<<<<<<< Updated upstream
-	
-	/**
-	 * The game's duration in days
-	 */
-=======
 	private JLabel lblBackgr;
 	
->>>>>>> Stashed changes
-	private static int numDays;
 	
 	/**
 	 * The game's farmer

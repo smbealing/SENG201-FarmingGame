@@ -22,20 +22,17 @@ import javax.swing.JButton;
 import java.awt.Color;
 
 public class CreateFarmerPanel {
-
-	private JFrame frmFarmiza;
-	private JTextField txfFarmerName;
-	private JTextField txfFarmerAge;
-<<<<<<< Updated upstream
 	
 	/**
 	 * The game's duration in days
 	 */
-=======
+	public static int numDays;
+
+	private JFrame frmFarmiza;
+	private JTextField txfFarmerName;
+	private JTextField txfFarmerAge;
 	private JLabel lblBackgr;
 	
->>>>>>> Stashed changes
-	public static int numDays;
 
 	/**
 	 * Launch the application.

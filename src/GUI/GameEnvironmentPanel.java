@@ -239,16 +239,11 @@ public class GameEnvironmentPanel {
 		setWoodBackgr();
 	}
 	
-<<<<<<< Updated upstream
-	
 	/**
 	 * Uses the player's choice of farm type to 
 	 * set the corresponding background image.
 	 */
-	private String getFarmImage() {
-=======
 	private void getFarmImage() {
->>>>>>> Stashed changes
 		String farmImage = "";
 		
 		if (state.farm.getType() == "City Farm") {

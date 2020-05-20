@@ -39,16 +39,12 @@ public class PlantCropPanel {
 	 * The crop name (type) of the crop the player selects to plant.
 	 */
 	public String cropName;
-<<<<<<< Updated upstream
 	
 	/**
 	 * The options displayed to the player 
 	 * containing all the unplanted crops available of a selected type.
 	 */
-	private String crops;
-=======
 	private String crops = "";
->>>>>>> Stashed changes
 
 	private JFrame frmFarmiza;
 	private JButton btnPlant;
