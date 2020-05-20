@@ -60,13 +60,13 @@ public class BrokenFencePanel {
 		JLabel lblNoticeOne = new JLabel("Oh no! Your fence broke!");
 		lblNoticeOne.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
 		lblNoticeOne.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNoticeOne.setBounds(60, 0, 324, 46);
+		lblNoticeOne.setBounds(60, 0, 324, 37);
 		frmFarmiza.getContentPane().add(lblNoticeOne);
 		
 		JLabel lblNoticeTwo = new JLabel("Some of your animals escaped!");
 		lblNoticeTwo.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 25));
 		lblNoticeTwo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNoticeTwo.setBounds(18, 39, 408, 46);
+		lblNoticeTwo.setBounds(18, 30, 408, 46);
 		frmFarmiza.getContentPane().add(lblNoticeTwo);
 		
 		JButton btnClose = new JButton("CLOSE");
