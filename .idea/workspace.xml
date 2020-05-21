@@ -14,7 +14,6 @@
       <change beforePath="$PROJECT_DIR$/src/farm/FarmTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/farm/Farmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/farm/Farmer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/farm/FarmerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/GameEnvironmentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GameEnvironmentPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/item/AnimalFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/item/AnimalFood.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/item/CropItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/item/CropItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/item/Item.java" afterDir="false" />
@@ -124,22 +123,22 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="387" y="131" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.777@0.23.1280.777" timestamp="1590020589538" />
-    <state width="1218" height="184" key="GridCell.Tab.0.bottom" timestamp="1590020590195">
+    <state width="1218" height="184" key="GridCell.Tab.0.bottom" timestamp="1590026732445">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="184" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1590020590195" />
-    <state width="1218" height="184" key="GridCell.Tab.0.center" timestamp="1590020590194">
+    <state width="1218" height="184" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1590026732445" />
+    <state width="1218" height="184" key="GridCell.Tab.0.center" timestamp="1590026732444">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="184" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1590020590194" />
-    <state width="1218" height="184" key="GridCell.Tab.0.left" timestamp="1590020590193">
+    <state width="1218" height="184" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1590026732444" />
+    <state width="1218" height="184" key="GridCell.Tab.0.left" timestamp="1590026732443">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="184" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1590020590193" />
-    <state width="1218" height="184" key="GridCell.Tab.0.right" timestamp="1590020590194">
+    <state width="1218" height="184" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1590026732443" />
+    <state width="1218" height="184" key="GridCell.Tab.0.right" timestamp="1590026732445">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1218" height="184" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1590020590194" />
+    <state width="1218" height="184" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1590026732445" />
     <state width="1218" height="229" key="GridCell.Tab.1.bottom" timestamp="1587100825669">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
