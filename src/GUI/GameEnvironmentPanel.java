@@ -288,6 +288,7 @@ public class GameEnvironmentPanel {
 	
 	/**
 	 * Handles random events.
+	 * @return an integer to represent which random event should occur
 	 */
 	private int randomEvent() {
 		int event = 0;

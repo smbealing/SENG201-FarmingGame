@@ -128,7 +128,7 @@ public class CropStatusPanel {
 	
 	
 	/**
-	 * Returns a string to say whether the crop has been planted
+	 * @return a string to say whether the crop has been planted
 	 */
 	private String planted() {
 		String planted = "This crop has not been planted";

@@ -246,7 +246,7 @@ public class TendToCropPanel {
 	/**
 	 * Handles choice of item to use for crops.
 	 * Calls helper methods depending on the type of item.
-	 * @param itemName  the selected item (String)
+	 * @param selectedItem  the selected item (String)
 	 */
 	private void useSelectedItem(String selectedItem) {
 		

@@ -267,7 +267,7 @@ public class AnimalInventoryPanel {
 	
 	
 	/**
-	 * Fills the String of options displayed to player with animals of their selected type.
+	 * @return the String of options displayed to player with animals of their selected type.
 	 */
 	private String getAnimalString() {
 		String animalString = "";
@@ -299,7 +299,7 @@ public class AnimalInventoryPanel {
 	}
 	
 	/**
-	 * Returns the amount of carrots the player has available
+	 * @return the amount of carrots the player has available
 	 */
 	private int getCarrotCount() {
 		int count = 0;
@@ -314,7 +314,7 @@ public class AnimalInventoryPanel {
 	
 	
 	/**
-	 * Returns the amount of grain the player has available
+	 * @return the amount of grain the player has available
 	 */
 	private int getGrainCount() {
 		int count = 0;
@@ -329,7 +329,7 @@ public class AnimalInventoryPanel {
 	
 	
 	/**
-	 * Returns the amount of high quality grain the player has available
+	 * @return the amount of high quality grain the player has available
 	 */
 	private int getHighQualityGrainCount() {
 		int count = 0;

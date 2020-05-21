@@ -139,7 +139,7 @@ public class GameEnvironment {
 		setFarmer();
 		setFarm();
 		
-		state = new GameState(totalDays, farm); // add this to run the command lines
+		state = new GameState(totalDays, farm);
 		gameLoop();
 	}
 	
@@ -376,7 +376,8 @@ public class GameEnvironment {
 	
 	
 	/**
-	 * Main function to run the game.
+	 * Main method to run the game.
+	 * @param args the default parameter for a main method
 	 */
 	public static void main(String[] args) {
 		new GameEnvironment();

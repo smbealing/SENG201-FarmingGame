@@ -60,56 +60,56 @@ public class Crop {
     }
     
     /**
-	 * Getter for crop's name.
+	 * @return the crop's name.
 	 */
     public String getName() {
     	return name;
     }
     
     /**
-	 * Getter for crop's purchasing price.
+	 * @return the crop's purchasing price.
 	 */
     public double getPurchasingPrice() {
     	return purchasingPrice;
     }
     
     /**
-	 * Getter for crop's selling price.
+	 * @return the crop's selling price.
 	 */
     public double getSellingPrice() {
     	return sellingPrice;
     }
     
     /**
-   	 * Getter for amount of days a new crop needs to grow before it can be harvested.
+   	 * @return the amount of days a new crop needs to grow before it can be harvested.
    	 */
     public int getDaysUntilHarvest() {
     	return daysUntilHarvest;
     }
     
     /**
-	 * Getter for crop's current thirst level.
+	 * @return the crop's current thirst level.
 	 */
     public int getThirstLevel() {
     	return thirstLevel;
     }
 
     /**
-	 * Getter for crop's maximum thirst level.
+	 * @return the crop's maximum thirst level.
 	 */
     public int getMaxThirstLevel() {
         return maxThirstLevel;
     }
 
     /**
-   	 * Getter for number of days the crop has grown for.
+   	 * @return the number of days the crop has grown for.
    	 */
     public int getCurrentGrowthLevel() {
         return currentGrowthLevel;
     }
 
     /**
-   	 * Getter for whether crop is planted.
+   	 * @return whether crop is planted.
    	 */
     public boolean getPlanted() {
         return planted;

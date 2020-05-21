@@ -66,6 +66,7 @@ public class PlayWithAnimal extends Action {
     
     /**
 	 * Displays information about player's selected animal.
+	 * @param selection  the player's selection on animal (integer)
 	 * @param state  the current GameState
 	 */
     public void showAnimalSelected(int selection, GameState state) {

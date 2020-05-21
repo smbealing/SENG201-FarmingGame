@@ -99,6 +99,7 @@ public class TendToCrop extends Action {
 	 * Fills the plantedCropsSet with player's planted crops (no repetition of crop types). 
 	 * Uses plantedCropsSet to fill cropOptions string.
 	 * @param state  the current GameState
+	 * @return whether player has planted crops
 	 */
     private boolean getOptions(GameState state) {
     	int index = 1;

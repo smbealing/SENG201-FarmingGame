@@ -332,7 +332,7 @@ public class PlantCropPanel {
 	}
 	
 	/**
-	 * Fills the String of options displayed to player with unplanted crops of their selected type.
+	 * @return the String of options displayed to player with unplanted crops of their selected type.
 	 */
 	private String getCropString() {
 		String cropsString = "";

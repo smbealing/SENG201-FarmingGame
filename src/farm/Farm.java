@@ -64,35 +64,35 @@ public class Farm {
     }
 
     /**
-	 * Getter for farm's name.
+	 * @return the farm's name.
 	 */
     public String getName() {
         return name;
     }
     
     /**
-	 * Getter for farm's type.
+	 * @return the farm's type.
 	 */
     public String getType() {
     	return type;
     }
     
     /**
-	 * Getter for farm's farmer.
+	 * @return the farm's farmer.
 	 */
     public Farmer getFarmer() {
     	return farmer;
     }
 
     /**
-	 * Getter for farm's current need for maintenance.
+	 * @return the farm's current need for maintenance.
 	 */
     public int getMaintenanceLevel() {
         return maintenanceLevel;
     }
     
     /**
-	 * Getter for farm's maximum need for maintenance.
+	 * @return the farm's maximum need for maintenance.
 	 */
     public int getMaxMaintenanceLevel() {
         return maxMaintenanceLevel;
@@ -115,14 +115,14 @@ public class Farm {
     }
     
     /**
-	 * Getter for farm's maximum animal capacity.
+	 * @return the farm's maximum animal capacity.
 	 */
     public int getMaxAnimalCount() {
     	return maxAnimalCount;
     }
     
     /**
-	 * Getter for farm's maximum crop capacity.
+	 * @return the farm's maximum crop capacity.
 	 */
     public int getMaxCropCount() {
     	return maxCropCount;

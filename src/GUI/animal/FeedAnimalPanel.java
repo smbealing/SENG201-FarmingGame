@@ -152,9 +152,10 @@ public class FeedAnimalPanel {
 	
 	/**
 	 * Handles use of a chosen food item.
-	 * A warning is produced if food item isn't available
+	 * A warning is produced if food item isn't available.
 	 * @param state  the current GameState
 	 * @param itemName  the chosen food item as a String
+	 * @return whether the food item is available
 	 */
 	private boolean useFoodItem(GameState state, String itemName) {
     	boolean found = false;

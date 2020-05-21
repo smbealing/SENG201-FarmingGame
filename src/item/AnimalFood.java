@@ -23,7 +23,7 @@ public class AnimalFood extends Item {
 	
 	
 	/**
-	 * Getter for animal food's health boost.
+	 * @return the animal food's health boost.
 	 */
 	public int getHealthBoost() {
 		return healthBoost;

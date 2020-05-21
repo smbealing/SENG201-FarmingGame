@@ -71,9 +71,8 @@ public class CreateFarmerPanel {
 
 	/**
 	 * Checks whether farmer's name is valid.
-	 * Returns false if any numbers or special characters found,
-	 * otherwise name is valid and true is returned.
 	 * @param name  the name entered by the player (String)
+	 * @return false if any numbers or special characters found, true if name is valid
 	 */
 	private boolean farmerNameIsValid(String name) {
 		Pattern p = Pattern.compile("[^a-z ]", Pattern.CASE_INSENSITIVE);

@@ -57,49 +57,49 @@ public class Animal {
 	}
 	
 	/**
-	 * Getter for animal's name.
+	 * @return the animal's name.
 	 */
 	public String getName() {
 		return name;
 	}
 	
 	/**
-	 * Getter for animal's purchasing price.
+	 * @return the animal's purchasing price.
 	 */
 	public double getPurchasingPrice() {
 		return purchasingPrice;
 	}
 	
 	/**
-	 * Getter for daily income gained from having the animal.
+	 * @return the daily income gained from having the animal.
 	 */
 	public double getIncome() {
 		return income;
 	}
 	
 	/**
-	 * Getter for animal's current health level.
+	 * @return the animal's current health level.
 	 */
 	public int getHealth() {
 		return health;
 	}
 	
 	/**
-	 * Getter for animal's maximum health level.
+	 * @return the animal's maximum health level.
 	 */
 	public int getMaxHealth() {
 		return maxHealth;
 	}
 	
 	/**
-	 * Getter for animal's current happiness level.
+	 * @return the animal's current happiness level.
 	 */
 	public int getHappiness() {
 		return happiness;
 	}
 	
 	/**
-	 * Getter for animal's maximum happiness level.
+	 * @return the animal's maximum happiness level.
 	 */
 	public int getMaxHappiness() {
 		return maxHappiness;

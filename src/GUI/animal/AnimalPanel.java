@@ -45,7 +45,7 @@ public class AnimalPanel {
 
 	/**
 	 * Create the application.
-	 * @param state  the current GameState
+	 * @param tempState  the current GameState
 	 */
 	public AnimalPanel(GameState tempState) {
 		state = tempState;

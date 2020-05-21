@@ -330,7 +330,7 @@ public class CropInventoryPanel {
 	
 	
 	/**
-	 * Fills the String of options displayed to player with crops of their selected type.
+	 * @return the String of options displayed to player with crops of their selected type.
 	 */
 	private String getCropString() {
 		String cropsString = "";
@@ -365,7 +365,7 @@ public class CropInventoryPanel {
 	
 	
 	/**
-	 * Returns the amount of fertiliser the player has available
+	 * @return the amount of fertiliser the player has available
 	 */
 	private int getFertiliserCount() {
 		int count = 0;
@@ -380,7 +380,7 @@ public class CropInventoryPanel {
 	
 	
 	/**
-	 * Returns the amount of pesticide the player has available
+	 * @return the amount of pesticide the player has available
 	 */
 	private int getPesticideCount() {
 		int count = 0;

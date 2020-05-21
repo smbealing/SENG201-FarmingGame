@@ -22,7 +22,7 @@ public class CropItem extends Item {
 	
 	
 	/**
-	 * Getter for crop item's growth boost.
+	 * @return the crop item's growth boost.
 	 */
 	public int getGrowthBoost() {
 		return growthBoost;

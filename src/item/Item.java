@@ -20,9 +20,9 @@ public class Item {
 	
 	/**
 	 * The constructor method for Item.
-	 * @param name  the item's name (String)
-	 * @param purchasingPrice  the item's purchasing price (double)
-	 * @param generalBoost  the general boost provided by the item (integer)
+	 * @param tempName  the item's name (String)
+	 * @param tempPurchasingPrice  the item's purchasing price (double)
+	 * @param tempGeneralBoost  the general boost provided by the item (integer)
 	 */
 	public Item(String tempName, double tempPurchasingPrice, int tempGeneralBoost) {
 		name = tempName;
@@ -32,14 +32,14 @@ public class Item {
 	
 	
 	/**
-	 * Getter for item's name.
+	 * @return the item's name.
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * Getter for item's purchasing price.
+	 * @return the item's purchasing price.
 	 */
 	public double getPurchasingPrice() {
 		return purchasingPrice;
@@ -47,7 +47,7 @@ public class Item {
 	
 	
 	/**
-	 * Getter for item's general boost.
+	 * @return the item's general boost.
 	 */
 	public int getGeneralBoost() {
 		return generalBoost;

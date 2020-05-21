@@ -110,6 +110,7 @@ public class GameState {
 	 * Uses Scanner to handle a player's selection.
 	 * @param num  the selection number (integer)
 	 * @param options  the options being selected from (String)
+	 * @return the player's selection once it is valid
 	 */
 	public int getOption(int num, String options) {
 		s = new Scanner(System.in);

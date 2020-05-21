@@ -25,6 +25,7 @@ public class StartPanel {
 	/**
 	 * Launch the application. 
 	 * Starts the game.
+	 * @param args the default parameter for a main method
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

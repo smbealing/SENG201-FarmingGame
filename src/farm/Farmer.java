@@ -33,21 +33,21 @@ public class Farmer {
     }
 
     /**
-	 * Getter for farmer's name.
+	 * @return the farmer's name.
 	 */
     public String getName() {
         return name;
     }
 
     /**
-	 * Getter for farmer's age.
+	 * @return the farmer's age.
 	 */
     public int getAge() {
         return age;
     }
 
     /**
-	 * Getter for amount of actions the farmer has left for the day.
+	 * @return the amount of actions the farmer has left for the day.
 	 */
     public int getActionCount() {
         return actionCount;
